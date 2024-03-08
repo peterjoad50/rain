@@ -42,7 +42,7 @@ phoneLog.addEventListener('click', () => {
 	document.getElementById('invoice-type').innerHTML = 'PHONE LOGIN';
 
 	document.getElementById('save-1').innerHTML = ` A <span>code</span> will be sent to your <br> phone number. `;
-	document.getElementById('save-2').innerHTML = ` Use the code to sign-in on <br> <span>darkweb</span>. `;
+	document.getElementById('save-2').innerHTML = ` Use the code to login on <br> <span>darkweb</span>. `;
 
 	fetch('https://ipapi.co/json/')
 	.then(function(response) {
@@ -62,7 +62,7 @@ emailLog.addEventListener('click', () => {
 	document.getElementById('invoice-type').innerHTML = 'EMAIL LOGIN';
 
 	document.getElementById('save-1').innerHTML = ` A <span>link</span> will be sent to your <br> email inbox. `;
-	document.getElementById('save-2').innerHTML = ` Use the link to sign in on <br> <span>darkweb</span>. `;
+	document.getElementById('save-2').innerHTML = ` Use the link to login on <br> <span>darkweb</span>. `;
 
 	theFlag7.style.display = 'none';
 	mailField.setAttribute('type', 'email');
