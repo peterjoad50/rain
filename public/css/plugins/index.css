@@ -148,7 +148,20 @@ body {
 
 @media screen and (max-width: 506px) {
   .port {
-    margin: 40px 0px !important;
+    margin: 45px 0px !important;
+  }
+  .port a img {
+    height: 165px !important;
+  }
+  .port h4 a.butn {
+    font-size: 24px;
+    padding: 7px 0 !important;
+  }
+}
+
+@media screen and (max-width: 406px) {
+  .port {
+    margin: 45px 0px !important;
   }
   .port a img {
     height: 150px !important;
