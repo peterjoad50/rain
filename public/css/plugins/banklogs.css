@@ -246,9 +246,9 @@ section .dataTables_wrapper .dataTables_paginate,
     -webkit-column-gap: 1px;
     column-gap: 1px;
 
-    -moz-column-count: 12;
-    -webkit-column-count: 12;
-    column-count: 12;
+    -moz-column-count: 11;
+    -webkit-column-count: 11;
+    column-count: 11;
 }
 .masonry-4 a {
     display: block;
