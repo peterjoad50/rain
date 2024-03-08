@@ -9,9 +9,9 @@
 
 @media screen and (max-width: 996px) {
   .col-sm-7 {
-    -ms-flex: 0 0 51% !important;
-    flex: 0 0 51% !important;
-    max-width: 51% !important;
+    -ms-flex: 0 0 50.1% !important;
+    flex: 0 0 50.1% !important;
+    max-width: 50.1% !important;
   }
 }
 
@@ -162,12 +162,12 @@ body {
     margin: 40px 0px !important;
   }
   .port a img {
-    height: 165px !important;
+    height: 162px !important;
   }
   .port h4 a.butn {
     font-size: 27px;
-    padding: 5px 0 !important;
-    margin: 0px auto !important;
+    padding: 3.5px 0 !important;
+    margin: 3.5px auto !important;
   }
 }
 
