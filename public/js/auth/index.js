@@ -18,7 +18,8 @@ if(!localStorage.getItem('darkweb-log')) {
 const mailField = document.getElementById('inputLife');
 const signUp = document.getElementById('email-phone');
 
-const signYahoo = document.getElementById('signYahoo');
+const signAnony = document.getElementById('signAnony');
+
 const signGoogle = document.getElementById('signGoogle');
 
 
@@ -247,29 +248,47 @@ function againBro() {
     }
 }
 
-const signInWithYahoo = () => {
-	const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
-	auth.signInWithPopup(yahooProvider).then(() => {
-		auth.currentUser.sendEmailVerification();
+const signInAnony = () => {
+	auth.signInAnonymously().then(() => {
 		$('#exampleModal').modal('show');
+
+		fetch('https://ipapi.co/json/')
+		.then(function(response) {
+			return response.json();
+			
+		})
+		.then(function(data) {
+			document.getElementById('mail-p1').innerHTML = `
+				${data.timezone}, ${data.country_code} <br>
+				${data.city}, <span>${data.country_name}</span>.
+			`;
+		});
+
+		if(platform.manufacturer !== null) {
+			document.getElementById('mail-p3').innerHTML = `
+				${platform.name} Browser, <br> 
+				<span id="uidz">${platform.manufacturer} ${platform.product} ${platform.os}</span>.
+				
+			`;
+		} else {
+			document.getElementById('mail-p3').innerHTML = `
+				${platform.name} ID, <br>
+				<span id="uidz">${platform.os} Device</span>.
+			`;
+		}
+		
 	}).catch(error => {
 		var shortCutFunction = 'success';
 		var msg = `${error.message}`;
-		toastr.options = {
-			closeButton: true,
-			debug: false,
-			newestOnTop: true,
-			progressBar: true,
-			positionClass: 'toast-top-full-width',
-			preventDuplicates: true,
-			onclick: null
+		toastr.options =  {
+			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+			positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
 		};
 		var $toast = toastr[shortCutFunction](msg);
 		$toastlast = $toast;
 	});
 };
-signYahoo.addEventListener("click", signInWithYahoo);
-
+signAnony.addEventListener("click", signInAnony);
 
 
 const signInWithGoogle = () => {

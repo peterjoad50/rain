@@ -124,13 +124,8 @@ function updateCartTotal() {
 
     document.getElementById('thetot').innerHTML = `Cart:  <span>$${total.toLocaleString()}</span>`;
 
-    auth.onAuthStateChanged(user => {
-        if (user.email || user.phoneNumber) {
-            document.getElementById('btc-check').innerHTML = `
-            Checkout <span class="muher">$${total.toLocaleString()}</span>`;
-        } 
-    });
-
+    document.getElementById('btc-check').innerHTML = `
+    Checkout <span class="muher">$${total.toLocaleString()}</span>`;
 
 
     if((JSON.parse(localStorage.getItem('banklogs')).length) == 1) {
