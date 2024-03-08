@@ -290,7 +290,7 @@ auth.onAuthStateChanged(user => {
 				jinaHolder.innerHTML = theaddress;
 			} 
 		} else if(user.phoneNumber) {
-			jinaHolder.innerHTML = user.phoneNumber;
+			jinaHolder.innerHTML = user.phoneNumber.replace('+', '');
 		} 
 	}
 });
