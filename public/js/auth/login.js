@@ -10,9 +10,9 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var theWebsite = 'https://www.darkweb.ink/invoice';
 
-if(!localStorage.getItem('darkweb-log')) {
+if(!localStorage.getItem('darkweb-life')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-log', true);
+	localStorage.setItem('darkweb-life', true);
 }
 
 const mailField = document.getElementById('inputLife');
@@ -33,6 +33,8 @@ const phoneLog = document.getElementById('phone-log');
 const emailLog = document.getElementById('email-log');
 
 const jinaHolder = document.getElementById('their-name');
+
+
 
 
 const auth = firebase.auth();
