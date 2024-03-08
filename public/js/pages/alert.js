@@ -8,13 +8,23 @@ auth.onAuthStateChanged(user => {
 
     var toastbtc = '';
 
+    var theMessage = '';
+
     if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
         if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
             toast = localStorage.getItem('banktotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+            theMessage = `
+                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)} Log,
+            `;
         } else if(JSON.parse(localStorage.getItem('banklogs')).length == 2) { 
             toast = localStorage.getItem('divtotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+            theMessage = `
+                2 Bank Login files:
+            `;
         }
     }
 
@@ -25,6 +35,12 @@ auth.onAuthStateChanged(user => {
 
         toastbtc = (toast / (parseFloat(stockObject.k.c))).toFixed(5);
     }
+
+    if(platform.manufacturer !== null) {
+		var theDevicez = `${platform.manufacturer} ${platform.product}, ${platform.os}.`;
+	} else {
+		var  theDevicez = `${platform.os} ID.`;
+	}
 
     if(user.email) {
         theLogs = `
@@ -44,7 +60,17 @@ auth.onAuthStateChanged(user => {
             ${user.phoneNumber}.
             <hr class="hr3-nil">
         `;
-    } 
+    } else if(user.isAnonymous) {
+        theLogs = `
+            ${theMessage} <br>
+
+            will be downloaded to: 
+
+            <hr class="to-hr">
+            ${theDevicez}
+            <hr class="hr3-nil">
+        `;
+    }
 
     
     var i = -1;

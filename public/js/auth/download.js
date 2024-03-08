@@ -127,7 +127,13 @@ auth.onAuthStateChanged(user => {
 			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span> <br>
 			<span id="uidy">${theDevice}</span>
 		`;
-	} 
+	} else if(user.isAnonymous) {
+		emailP.innerHTML = `
+			Logs & cashout guide will <br> 
+			be <span id="mail-span">downloaded</span> to: <br>
+			<span id="uidy">${theDevice}</span>
+		`;
+	}
 });
 
 

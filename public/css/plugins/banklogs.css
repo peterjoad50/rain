@@ -260,9 +260,9 @@ section .dataTables_wrapper .dataTables_paginate,
 
 @media screen and (min-width: 768px) {
     .masonry-4 {
-        -moz-column-count: 13;
-        -webkit-column-count: 13;
-        column-count: 13;
+        -moz-column-count: 12;
+        -webkit-column-count: 12;
+        column-count: 12;
 
         margin: 1px 0;
         padding: 0;
@@ -277,22 +277,22 @@ section .dataTables_wrapper .dataTables_paginate,
 
 @media (min-width: 900px) {
     .col-lg-65 {
-      -ms-flex:0 0 60%;
-      flex:0 0 60%;
-      max-width: 60%;
+      -ms-flex:0 0 67%;
+      flex:0 0 67%;
+      max-width: 67%;
     }  
 
     .col-lg-45 {
-        -ms-flex:0 0 40%;
-        flex:0 0 40%;
-        max-width: 40%;
+        -ms-flex:0 0 33%;
+        flex:0 0 33%;
+        max-width: 33%;
       }  
 }
 
 
 
 .burro {
-    filter: blur(2.4px) !important;
+    filter: blur(2.1px) !important;
 }
 
 
