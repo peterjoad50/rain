@@ -24,10 +24,6 @@
         "destination": "/chase.html"
       },
       {
-        "source": "/rbc",
-        "destination": "/rbc.html"
-      },
-      {
         "source": "/chime",
         "destination": "/chime.html"
       },
@@ -95,11 +91,6 @@
       {
         "source": "/chase.html",
         "destination": "/chase",
-        "type": 301
-      },
-      {
-        "source": "/rbc.html",
-        "destination": "/rbc",
         "type": 301
       },
       {

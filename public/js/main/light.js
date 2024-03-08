@@ -36,39 +36,26 @@
 
     $(document).ready(function() {
 
-        $('#services-carousel').owlCarousel({
+        $('#clients').owlCarousel({
             loop: true,
-            responsiveClass: true,
-            dots: true,
             nav: false,
-            smartSpeed: 500,
+            dots: false,
+                  smartSpeed: 500,
             autoplay: true,
-            autoplayTimeout: 300,
+            autoplayTimeout: 3000,
+            responsiveClass: true,
             autoplayHoverPause: false,
-            stagePadding: 0,
-            slideTransition: 'linear',
-            autoplayTimeout: 5000,
-            autoplaySpeed: 5000,
-            navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+                  stagePadding: 0,
+                  slideTransition: 'linear',
+                  autoplayTimeout: 1300,
+                  autoplaySpeed: 1300,
             responsive: {
-                0: {
-                    items: 3,
-                    margin: 10
-                },
-                768: {
-                    items: 3,
-                    margin: 30
-                },
-                992: {
-                    items: 4,
-                    margin: 30
-                },
-                1200: {
-                    items: 8,
-                    margin: 20
-                }
+                      0: {items: 6, margin: 15}, 
+                      768: {items: 10, margin: 15}, 
+                      992: {items: 12, margin: 20}, 
+                      1200: {items: 17, margin: 20},
             }
-        });
+          });
 
         
         if ($("#rev_slider_2").length !== 0) {
@@ -116,34 +103,6 @@
                                 hide_onleave: false,
 								hide_onmobile: false,
                             },
-
-                            // arrows: {
-                            //     enable: !0,
-                            //     style: "metis",
-                            //     tmp: "",
-                            //     rtl: !1,
-                            //     hide_onleave: false,
-							// 	hide_onmobile: false,
-                            //     hide_under: 0,
-                            //     hide_over: 9999,
-                            //     hide_delay: 200,
-                            //     hide_delay_mobile: 1200,
-                            //     left: {
-                            //         container: "slider",
-                            //         h_align: "left",
-                            //         v_align: "center",
-                            //         h_offset: 20,
-                            //         v_offset: 0
-                            //     },
-                            //     right: {
-                            //         container: "slider",
-                            //         h_align: "right",
-                            //         v_align: "center",
-                            //         h_offset: 20,
-                            //         v_offset: 0
-                            //     }
-                            // },
-
 
                             bullets: {
                                 style: "",

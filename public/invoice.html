@@ -67,9 +67,6 @@
                             <a href="pnc"  class="nav-pnc"></a>
                         </li>
                         <li class="nav-large">
-                            <a href="rbc" class="nav-rbc"></a>
-                        </li>
-                        <li class="nav-large">
                             <a href="truist" class="nav-truist"></a>
                         </li> 
                         <li class="nav-large">
@@ -106,11 +103,7 @@
                                 <li class="nav-small">
                                     <img src="img/partners/citiw.png" class="bord-50">
                                     <a href="citi" class="butn"> Citi Bank <blink class="nav-blink">New</blink> </a>
-                                </li>                                                                                                                                                                                                                                                   
-                                <li class="nav-small">
-                                    <img src="img/carousel/rbc.png">
-                                    <a href="rbc" class="butn"> R.B.C Bank </a>
-                                </li>                                                                                    
+                                </li>                                                                                                                                                                                                                                                                                                                             
                                 <li class="nav-small">
                                     <img src="img/partners/truists.jpg" class="bord-50">
                                     <a href="truist" class="butn"> Truist Bank </a>
@@ -159,9 +152,9 @@
                                         </a>
                                     </li>
                                     <li class="thegold">
-                                        <img src="img/partners/check.png" id="voice-img">
-                                        <a class="butn gold"  id="voice-div" data-bs-toggle="modal" data-bs-target="#discountModal">
-                                            Get Invoice
+                                        <img src="img/partners/tele.png">
+                                        <a class="butn gold"  id="voice-div" data-bs-toggle="modal" data-bs-target="#contactModal">
+                                            Contacts ID
                                         </a>
                                     </li>
                                     <li class="thegold">
@@ -186,67 +179,6 @@
         </header>
         
 
-
-        
-<!-- start projet ection -->
-<section class="bg-img bg-animate" data-background="img/content/home12.jpg" id="confirm">
-    <div class="opacity-full-dark bg-extra-dark-gray">
-        <div id="particles-vs"></div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-
-            <div class="col-lg-5 col-md-7 col-11-5 center-col" id="confirm-div">
-                <div class="modal-content thelinks" id="modalsend">
-                    <div class="brock">
-
-                        <div class="empty-cart">
-                            <div class="text-center section-heading">
-
-                                <h4>
-                                    EMPTY CART
-                                </h4>
-
-                                <hr class="inhr inhrz">
-
-                                <p id="empty-p">
-                                    10% <span>discount</span> on 2 bank logs.
-                                </p>
-
-                                <hr class="inhr">
-                                <div style="display: inline-block" class="link-vone-div">
-                                    <div class="invoice">
-                                        <img src="img/partners/house.png">
-                                        <a class="butn home-btn" id="code-home" href="home">
-                                            Home Page
-                                        </a>
-                                    </div>
-                                </div>        
-        
-
-                                <hr class="inhr">
-                                <div style="display: inline-block" class="link-this-div">
-                                    <div class="invoice">
-                                        <img src="img/partners/table.png">
-                                        <a class="butn ver-btn" id="code-email" href="banklogs">
-                                            Bank Logs
-                                        </a>
-                                    </div>
-                                    <blink class="disc">New</blink>
-                                </div>
-
-
-                                <hr class="inhr inhrs">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
-        </div>
-    </div>
-</section>
 
 
 
@@ -278,7 +210,7 @@
                                         </p>
 
                                         <hr class="nohr">
-                                        <div class="confirm-div link-first-div">
+                                        <div class="link-first-div">
                                             <div class="invoice">
                                                 <img src="img/partners/bit.png" id="bit-coin">
                                                 <a class="butn home-btn link-btn" id="btc-check" data-bs-toggle="modal" data-bs-target="#profileModal">
@@ -288,9 +220,9 @@
                                         </div>
 
                                         <hr class="nohr">
-                                        <div class="link-second-div confirm-div">
+                                        <div class="link-second-div">
                                             <div class="invoice">
-                                                <img id="check-img">
+                                                <img src="img/partners/gogle.png" id="check-img">
                                                 <a class="butn ver-btn" id="check-now" data-bs-toggle="modal" data-bs-target="#discountModal">
                                                     
                                                 </a>
@@ -318,6 +250,8 @@
 
 <section class="bg-img bg-animate" data-background="img/content/home7.jpg">
 
+    <div id="particles-vs"></div>
+    
     <div class="section-heading">
         <h4></h4>
     </div>
@@ -331,7 +265,6 @@
             <div class="item"><img alt="" src="img/carousel/huntington.jpg"></div>
             <div class="item"><img alt="" src="img/carousel/navyfederal.png"></div>
             <div class="item"><img alt="" src="img/carousel/pnc.png"></div>
-            <div class="item"><img alt="" src="img/carousel/rbc.png"></div>
             <div class="item"><img alt="" src="img/carousel/truist.jpg"></div>
             <div class="item"><img alt="" src="img/carousel/wellsfargo.png"></div>
             <div class="item"><img alt="" src="img/carousel/woodforest.jpg"></div>
@@ -377,8 +310,8 @@
             </div>
             <div class="modal-body" id="first-modal">
                 <img src="img/partners/chartpie.png" id="vpn-img">
-                <a class="butn" id="settings" data-bs-toggle="modal" data-bs-target="#profileModal">
-                    
+                <a class="butn" id="settings" href="banklogs">
+                    Bank Logs <img src="img/partners/tele.png">
                 </a>
                 <canvas id="canvas2" width="69px" height="69px"></canvas>
             </div>
@@ -403,37 +336,6 @@
     </div>   
 </div>
 
-<div class="modal fade" id="emailModal" data-bs-backdrop="static" data-bs-keyboard="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="section-heading" style="text-align: center !important;">
-                    <h4 class="set center-col" id="verify-h4"></h4>
-                </div>
-                <button type="button" class="btn-cloze" id="ver-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <p class="modal-p" id="email-1">
-                    Bank logs will be sent via <br>
-                    email to:     
-                </p>
-                <hr class="thehr">
-                <p class="modal-p" id="email-2"> </p>
-                <hr class="thehr" style="margin-top: -3px !important;">
-                <p class="modal-p" id="email-3"> 
-                    Verify your email address <br>
-                    before checkout.
-                </p>
-                <hr class="thehr" style="margin-top: -3px !important;">
-                <li class="next">
-                    <a class="butn modal-btn" id="ver-check">
-                        Verify Email <img src="img/partners/gmails.png">
-                    </a>
-                </li>
-            </div>
-        </div>
-    </div>   
-</div>
 
 <div class="modal fade" id="profileModal" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog">
@@ -474,7 +376,7 @@
             
             <div class="modal-footer modal-checkout" id="cart-footer">
                 <button class="butn" id="showlink" data-bs-toggle="modal" data-bs-target="#discountModal">
-                    Get Invoice <img src="img/partners/check.png">
+                  
                 </button>
 
                 <button class="butn" id="showtoasts" onclick="window.location.assign('download')">
@@ -491,21 +393,16 @@
             <div class="modal-header">
                 <div class="section-heading">
                     <h4 class="set" id="invoice-type">
-                        GET INVOICE
+                        Get Invoice
                     </h4>
                 </div>
                 <button type="button" class="btn-cloze btn-see" data-bs-dismiss="modal"></button>
             </div>
             
             <div class="modal-body">
-                <p class="modal-p" id="save-1">
-                    Bank logs can be sent via <br> 
-                    <span>email</span> to your inbox.
-                </p> <hr class="thehr pending-1">
+                <p class="modal-p" id="save-1"></p> <hr class="thehr pending-1">
 
-                <p class="modal-p" id="save-2">
-                    or via <span>SMS</span> as a link to <br> your phone.
-                </p> <hr class="thehr pending-2">
+                <p class="modal-p" id="save-2"></p> <hr class="thehr pending-2">
 
                 <form id="the-form" onsubmit="signUpFunction()">
                     <div class="form-group col-md-12">
@@ -518,10 +415,40 @@
                     <hr class="thehr">
                     <li class="next" id="verify-li">
                         <a class="butn modal-btn" id="email-phone">
-                            Verify Now <img src="img/partners/check.png">
+                            Verify Now <img src="img/partners/tele.png">
                         </a>
                     </li>
                 </form>
+            </div>
+        </div>
+    </div>   
+</div>
+
+<div class="modal fade" id="contactModal" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="section-heading">
+                    <h4 class="set" id="their-name"> Contacts ID </h4>
+                </div>
+                <button type="button" class="btn-cloze" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-p" id="mail-p1">
+                    For queries on darkweb <br> send an email to: 
+                </p> <hr class="thehr pending-1">
+                <p class="modal-p" id="mail-p2">
+                    <span id="mail-span"> darkweb.log@proton.me </span>
+                </p> <hr class="thehr pending-2">
+                <p class="modal-p" id="mail-p3">
+                    Make your <span id="uids"> User ID </span> the <br> email subject.
+                    
+                </p> <hr class="thehr pending-3">
+                <li class="next">
+                    <a class="butn modal-btn"  id="contact-check" href="mailto: darkweb.log@proton.me" target="_blank">
+                        Send Email <img src="img/partners/tele.png">
+                    </a>
+                </li>
             </div>
         </div>
     </div>   
@@ -576,7 +503,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
     <script src="js/main/core.invoice.js"></script>
     <script src="js/main/invoice.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/platform/1.3.6/platform.min.js"></script>
 
     <script src="js/auth/invoice.js"></script>
     <script src="datatables/js/jquery.datatable2.min.js"></script> 

@@ -1,6 +1,5 @@
 let items = [];
 var table1 = jQuery('#example1').DataTable();
-var setBtn = document.getElementById('settings');
 
 var profileModal = document.getElementById('profileModal');
 var modalDialog = profileModal.getElementsByClassName('modal-dialog')[0];
@@ -77,9 +76,6 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
     }
 } else {
     document.getElementById('cartlength').style.display = 'none';
-    setBtn.innerHTML = `Bank Log <img src="img/partners/bitcoin.png">`;
-    setBtn.removeAttribute('data-bs-toggle');
-    setBtn.setAttribute('href', 'banklogs');
 
     document.getElementById('thetot').setAttribute('data-bs-target', '#vpnModal');
 
@@ -142,8 +138,7 @@ function updateCartTotal() {
 
     document.getElementById('thetot').innerHTML = `Cart:  <span>$${total.toLocaleString()}</span>`;
 
-    
-    setBtn.innerHTML = `Cart: $${total.toLocaleString()} <img src="img/partners/bitcoin.png">`;
+
     document.getElementById('theno1').innerHTML = 'Cart: ' + JSON.parse(localStorage.getItem('banklogs')).length + ' , Total: $' + total.toLocaleString();
 
 
@@ -164,9 +159,10 @@ function updateCartTotal() {
             ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
             <span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
         `;
+            
         theSave2.innerHTML = `
             Bank logs can be sent via <br> 
-            <span>email</span> or <span>SMS</span>.
+            <span>Email</span> or <span>SMS</span>.
         `;
     } else {
         invoiceType.innerHTML = 'Bank Logs';

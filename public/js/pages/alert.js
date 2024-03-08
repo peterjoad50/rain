@@ -8,30 +8,13 @@ auth.onAuthStateChanged(user => {
 
     var toastbtc = '';
 
-    var closeSave = document.getElementById('close-save');
-    var closeExam = document.getElementById('close-exam');
-
-    var paidLogs = false;
-
-    var theMessage = '';
-
     if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
         if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
             toast = localStorage.getItem('banktotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-            theMessage = `
-                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}, <br>
-                ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}.
-            `;
         } else if(JSON.parse(localStorage.getItem('banklogs')).length == 2) { 
             toast = localStorage.getItem('divtotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-            theMessage = `
-                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}, <br>
-                ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}.
-            `;
         }
     }
 
@@ -45,19 +28,23 @@ auth.onAuthStateChanged(user => {
 
     if(user.email) {
         theLogs = `
-            Bank logs will be sent to: 
-            <br> ${user.email}.
+            A verification link has been <br>
+            sent to:
+
+            <hr class="to-hr">
+            ${user.email}.
+            <hr class="hr3-nil">
         `;
     } else if(user.phoneNumber) {
         theLogs = `
-            Bank logs will be sent to: 
-            <br> ${user.phoneNumber}.
+            Bank logs will be sent via SMS <br>
+            as a dynamic link to:
+
+            <hr class="to-hr">
+            ${user.phoneNumber}.
+            <hr class="hr3-nil">
         `;
-    } else if(user.isAnonymous) {
-        theLogs = `
-            ${theMessage}
-        `;
-    }
+    } 
 
     
     var i = -1;
@@ -67,7 +54,7 @@ auth.onAuthStateChanged(user => {
     var getMessage = function() {        
         for (var i = 0; i < items.length; i++) {
             var msgs = [`
-                    ${toastbtc} Bitcoin payment not detected,
+                ${toastbtc} Bitcoin payment not detected,
                 <hr class="hr15-bot">
                     Send $${toastz} BTC:
                 <hr class="to-hr hr15-top">
@@ -100,7 +87,7 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 4500
+            timeOut: 7000
         };
         if (!msg) {
             msg = getMessage();
@@ -108,8 +95,9 @@ auth.onAuthStateChanged(user => {
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
 
-        paidLogs = true;
-        closeExam.addEventListener('click', closeModals);
+        if(user.email) {
+            auth.currentUser.sendEmailVerification();
+        }
     });
 
 
@@ -125,7 +113,7 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 5000
+            timeOut: 7000
         };
         if (!msg) {
             msg = getMessage();
@@ -133,26 +121,10 @@ auth.onAuthStateChanged(user => {
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
 
-        paidLogs = true;
-        closeSave.addEventListener('click', closeModals);
+        if(user.email) {
+            auth.currentUser.sendEmailVerification();
+        }
     });
 
-    function closeModals() {        
-        if(paidLogs) {
-            setTimeout(() => {
-                if(!(user.email && user.phoneNumber)) {
-                    if (!($('#vpnModal').is(':visible'))) {
-                        if (!($('#exampleModal').is(':visible'))) {
-                            if (!($('#saveModal').is(':visible'))) {
-                                if (!($('#emailModal').is(':visible'))) {
-                                    $('#discountModal').modal('show');
-                                }
-                            }
-                        }
-                    } 
-                }
-            }, 2000);
-            paidLogs = false;
-        }
-    }
+
 });

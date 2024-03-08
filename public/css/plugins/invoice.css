@@ -3,16 +3,16 @@
     background-repeat:repeat-x;
     animation:animatedBackground 70s linear infinite 
 }
-#confirm, 
+
 #logs-invoice {
     padding: 0px  10px !important;
     height: 100vh !important;
 }
-#confirm div, 
+
 #logs-invoice div {
     overflow: hidden !important;
 }
-#confirm .section-heading h4, 
+
 #logs-invoice .section-heading h4 {
     color: #121d33;
 }
@@ -58,24 +58,20 @@
     padding: 7.8px 16.5px;
 }
 
-
-.butn#code-email {
-    padding: 7.5px 20px;
-    letter-spacing: 1px !important;
-    word-spacing: 5px !important;
-}
-.butn#code-home {
-    padding: 7.5px 15px;
-    letter-spacing: 1px !important;
-    word-spacing: 3px !important;
-}
   
 .butn#btc-check {
     padding: 7.8px 13px !important;
 }
+.butn#btc-check.add-this {
+    padding: 7.8px 15px !important;
+}
+
 
 .butn#check-now {
     padding: 7.8px 15px !important;
+}
+.butn#check-now.reduce-this {
+    padding: 7.8px 12px !important;
 }
 
 .muher {
@@ -127,9 +123,18 @@
     .butn#btc-check {
         padding: 7.5px 13px !important;
     }
+    .butn#btc-check.add-this {
+        padding: 7.5px 15px !important;
+    }
+    
+    
 
     .butn#check-now {
         padding: 7.5px 13px !important;
+    }
+
+    .butn#check-now.reduce-this {
+        padding: 7.5px 10px !important;
     }
 
    .invoice img {
@@ -148,12 +153,12 @@
     border-radius: 4px;
 }
 #my-invoice {
-    margin: 0.7px !important;
+    margin: 3px !important;
     padding: 0px !important;
     width: 100% !important;
 }
 #invoice-div {
-    margin-top: 10.5vh;
+    margin-top: 12.3vh;
 }
 @media screen and (min-width: 1370px) {
     #invoice-div {
@@ -167,22 +172,19 @@
 }
 @media screen and (max-width: 500px) {
     #invoice-div {
-        margin-top: 14vh;
-    }
-    #confirm-div {
-        margin-top: 4vh;
+        margin-top: 15vh;
     }
 }
 @media screen and (max-width: 381px) {
     #invoice-div {
-        margin-top: 13vh;
+        margin-top: 14vh;
     }
 }
 
 #invoice-div p {
-    margin: 14px auto !important;
+    margin: 16px auto !important;
     font-size: 21px !important;
-    line-height: 52px !important;
+    line-height: 57px !important;
 }
 
 @media screen and (min-width: 1370px) {
@@ -197,25 +199,25 @@
 @media screen and (max-width: 574px) {
     #invoice-div p {
         font-size: 20px !important;
-        line-height: 51px !important;
+        line-height: 54px !important;
     }
 }
 @media screen and (max-width: 404px) {
     #invoice-div p {
         font-size: 19.5px !important;
-        line-height: 50px !important;
+        line-height: 53px !important;
     }
 }
 @media screen and (max-width: 380px) {
     #invoice-div p {
         font-size: 19.3px !important;
-        line-height: 49px !important;
+        line-height: 52px !important;
     }
 }
 @media screen and (max-width: 370px) {
     #invoice-div p {
         font-size: 17.5px !important;
-        line-height: 48px !important;
+        line-height: 51px !important;
     }
 }
 #my-invoice span {
@@ -239,23 +241,6 @@ blink {
 @media screen and (max-width: 380px) {
     blink {
         left: 110px !important;
-    }
-}
-
-blink.disc {
-    position: relative !important;
-    top: -70px !important;
-    left: 110px !important;
-    z-index: 999 !important;
-}
-@media screen and (max-width: 500px) {
-    blink.disc {
-        left: 105px !important;
-    }
-}
-@media screen and (max-width: 390px) {
-    blink.disc {
-        left: 100px !important;
     }
 }
 
@@ -297,12 +282,18 @@ blink.disc {
 
 
 .link-first-div {
-    margin-top: 14px !important;
-    margin-bottom: 16px !important;
+    margin-top: 16px !important;
+    margin-bottom: 18px !important;
+
+    cursor: pointer !important;
+    display: inline-block !important;
 }
 .link-second-div {
-    margin-top: 14px !important;
-    margin-bottom: -16px !important;
+    margin-top: 16px !important;
+    margin-bottom: -14px !important;
+
+    cursor: pointer !important;
+    display: inline-block !important;
 }
 
 
@@ -325,11 +316,6 @@ blink.disc {
     .nohr.nopade {
         margin: 25px auto !important;
     }
-}
-
-.confirm-div {
-    cursor: pointer !important;
-    display: inline-block !important;
 }
 
 #madrid {

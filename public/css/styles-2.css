@@ -20,11 +20,8 @@
 .modal-checkout {
   border-top: 1.4px solid rgba(3, 169, 245, 0.5) !important;
 }
-#phoneNumber,
 #code,
-#inputLife,
-#nameLife,
-#inputEmail {
+#inputLife {
   color: rgb(15, 61, 96) !important;
   border: 1.7px solid rgb(87, 198, 248) !important;
   box-shadow: 0 0 0 1.4px rgb(192, 234, 253) !important;
@@ -236,7 +233,7 @@ blink {
   border: 1.4px solid rgb(15, 57, 90) !important;
   color: rgb(66, 191, 248) !important;
 }
-#name-life,
+
 #the-life {
   box-shadow: 1px 1px 2px 1px rgba(3, 169, 245, 0.5) !important;
 }
@@ -283,8 +280,8 @@ blink {
 #verifyModal .modal-content,
 #vpnModal .modal-content,
 #profileModal .modal-content,
+#contactModal .modal-content,
 #saveModal .modal-content,
-#emailModal .modal-content,
 #exampleModal .modal-content {
   background: rgba(13, 76, 116, 0.5) !important;
   border: 1.4px solid rgba(3, 169, 245, 0.7) !important;
@@ -299,8 +296,6 @@ blink {
 .scroll-down,
 #settings,
 .modal-btn,
-#log-btn,
-#btn-log,
 #vpn,
 .lesnar,
 .gold,
@@ -331,7 +326,7 @@ blink {
 #vpnModal .modal-header .close img,
 #profileModal .modal-header .close img,
 #saveModal .modal-header .close img,
-#emailModal .modal-header .close img,
+#contactModal .modal-header .close img,
 #exampleModal .modal-header .close img,
 .btn-remove {
   border: 1.4px solid rgba(3, 169, 245, 0.7);
@@ -379,19 +374,15 @@ span#uids{
 #showtoasts {
   border: 2.2px solid rgba(3, 169, 245, 0.7);
 }
-#email-phone-2,
-#email-phone {
-  background: rgb(171, 227, 252) !important;
-  color: rgb(16, 47, 75) !important;
-  border: 2.2px solid rgba(7, 134, 197, 0.7);
-}
+
+#email-phone,
 #send-email,
 #showlink {
-  background: rgb(104, 203, 249) !important;
+  background: rgb(154, 221, 252) !important;
   color: rgb(16, 47, 75) !important;
   border: 2.2px solid rgba(7, 134, 197, 0.7);
 }
-#showlink.yellow {
+#showlink {
   background: rgb(154, 221, 99) !important;
 }
 
@@ -414,7 +405,7 @@ span#uids{
 }
 #invoice-table,
 #modalsend {
-  border: 1.3px solid rgba(3, 169, 245, 0.2);
+  border: 2px solid rgba(3, 169, 245, 0.2);
 }
 .pricing-list {
   border: 1.5px solid rgba(3, 169, 245, 0.49);
@@ -525,5 +516,10 @@ span#uids{
   background: rgb(11, 99, 148)
 }
 .cd-time-content {
-  border: 1.4px solid rgb(11, 99, 148)
+  border: 2px solid rgb(11, 99, 148)
 }
+
+span#mail-span {
+  color: rgb(192, 234, 62) !important
+}
+

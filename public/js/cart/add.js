@@ -1,7 +1,6 @@
 let items = [];
 let logz = [];
 var table1 = jQuery('#example1').DataTable();
-var setBtn = document.getElementById('settings');
 
 var profileModal = document.getElementById('profileModal');
 var modalDialog = profileModal.getElementsByClassName('modal-dialog')[0];
@@ -48,9 +47,6 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
     updateCartTotal();
 } else {
     document.getElementById('cartlength').style.display = 'none';
-    setBtn.innerHTML = `Bank Log <img src="img/partners/bitcoin.png">`;
-    setBtn.removeAttribute('data-bs-toggle');
-    setBtn.setAttribute('href', 'banklogs');
 
     document.getElementById('thetot').setAttribute('data-bs-target', '#vpnModal');
 
@@ -87,21 +83,13 @@ function addToCartClicked(event) {
 
     if(accoun.includes('ACCOUNT')) {
         var account = accoun.replace(' ACCOUNT]',']');
-    } else if(accoun.includes('PACKAGE')) {
-        var account = accoun.replace(' PACKAGE]',']');
-    }
+    } 
 
     addItemToCart(price, balance, account,website,image,info1,info2,info3,info4,info5,info6);
 
     updateCartTotal();
 
-    $('#profileModal').modal('show');
-    $('#exampleModal').modal('hide');
-    event.preventDefault();
-
-    setBtn.removeAttribute('href');
-    setBtn.setAttribute('data-bs-toggle', 'modal');
-
+    window.location.assign('invoice');
 }
 
 
@@ -220,10 +208,6 @@ function addItemToCart(price, balance, account,website, image,info1,info2,info3,
         website1,      
     ]).draw();
 
-
-    setBtn.removeAttribute('href');
-    setBtn.setAttribute('data-bs-toggle', 'modal');
-
     document.getElementById('thetot').setAttribute('data-bs-target', '#profileModal');
 
     updateCartTotal();
@@ -290,8 +274,6 @@ function updateCartTotal() {
     });
     document.getElementById('thetot').innerHTML = `Cart:  <span>$${total.toLocaleString()}</span>`;
 
-    setBtn.innerHTML = `Cart: $${total.toLocaleString()} <img src="img/partners/bitcoin.png">`;
-
     document.getElementById('theno1').innerHTML = 'Cart: ' + JSON.parse(localStorage.getItem('banklogs')).length + ' , Total: $' + total.toLocaleString();
 
     var logsContainer =  document.getElementsByClassName('gallery')[0];
@@ -329,9 +311,10 @@ function updateCartTotal() {
             ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
             <span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
         `;
+
         theSave2.innerHTML = `
             Bank logs can be sent via <br> 
-            <span>email</span> or <span>SMS</span>.
+            <span>Email</span> or <span>SMS</span>.
         `;
     } else {
         invoiceType.innerHTML = 'Bank Logs';
@@ -369,7 +352,6 @@ function updateCartTotal2() {
     });
     document.getElementById('thetot').innerHTML = `Cart:  <span>$${total.toLocaleString()}</span>`;
 
-    setBtn.innerHTML = `Cart: $${total.toLocaleString()} <img src="img/partners/bitcoin.png">`;
     document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('banklogs')).length);
 
     if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {

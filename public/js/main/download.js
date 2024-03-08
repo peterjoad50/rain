@@ -94,7 +94,6 @@
       let coHunt = "rgba(208, 173, 85, 0.85)";
       let coNavy = "rgba(22, 160, 134, 0.85)";
       let coPnc = "rgba(134, 188, 66, 0.85)";
-      let coRbc = "rgba(255, 172, 172, 0.85)";
       let coTruist = "rgba(233, 237, 4, 0.85)";
       let coWells = "rgba(148, 235, 148, 0.85)";
       let coWood = "rgba(209, 50, 48, 0.85)";
@@ -137,8 +136,6 @@
             daColor = coNavy;
           } else if (daAc.includes('P.N.C')) {
             daColor = coPnc;
-          } else if (daAc.includes('R.B.C')) {
-            daColor = coRbc;
           } else if (daAc.includes('Truist')) {
             daColor = coTruist;
           } else if (daAc.includes('Wells')) {
@@ -195,8 +192,6 @@
             daColor = coNavy;
           } else if (daAc.includes('P.N.C')) {
             daColor = coPnc;
-          } else if (daAc.includes('R.B.C')) {
-            daColor = coRbc;
           } else if (daAc.includes('Truist')) {
             daColor = coTruist;
           } else if (daAc.includes('Wells')) {
@@ -374,8 +369,8 @@
         autoplayHoverPause: false,
         stagePadding: 0,
         slideTransition: 'linear',
-        autoplayTimeout: 5000,
-        autoplaySpeed: 5000,
+        autoplayTimeout: 2000,
+        autoplaySpeed: 2000,
         navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
         responsive: {
             0: {
@@ -391,7 +386,35 @@
                 margin: 0
             },
             1200: {
-                items: 1.05,
+                items: 1.5,
+                margin: 10
+            }
+        }
+    });
+
+
+
+    $('#usage-p').owlCarousel({
+        loop: true,
+        responsiveClass: true,
+        dots: true,
+        nav: false,
+        smartSpeed: 500,
+        autoplay: true,
+        autoplayTimeout: 300,
+        autoplayHoverPause: false,
+        stagePadding: 0,
+        slideTransition: 'linear',
+        autoplayTimeout: 2000,
+        autoplaySpeed: 2000,
+        navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+        responsive: {
+            0: {
+                items: 1.2,
+                margin: 10
+            },
+            768: {
+                items: 1.5,
                 margin: 10
             }
         }
@@ -460,8 +483,6 @@
   
     function addToCartClicked(event) {
       var btn = event.target;
-      var image = btn.parentElement.parentElement.children[0].children[1].src;
-      var balance = btn.parentElement.parentElement.children[0].children[0].innerText;
       var website = btn.parentElement.children[0].innerText;
       var info1 = btn.parentElement.children[1].innerText;
       var info2 = btn.parentElement.children[2].innerText;
@@ -480,7 +501,6 @@
       modal.find(".info4 p").text(info4);
       modal.find(".info5 p").text(info5);
       modal.find(".info6 p").text(info6);
-      modal.find(".modal-img").attr("src", image);
       modal.find(".account p").text(account);
   
     }

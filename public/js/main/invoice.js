@@ -51,7 +51,6 @@
 
 
     var cxC = document.getElementById('check-now');
-    var cxE = document.getElementById('code-email');
 
     var csImg = document.getElementsByClassName('logo-img')[0];
 
@@ -64,10 +63,7 @@
         document.getElementById('nav2').setAttribute('href', 'img/logos/logo8.png');
         document.getElementById('nav3').setAttribute('href', 'img/logos/logo8.png');
         document.getElementById('nav4').setAttribute('href', 'img/logos/logo8.png');
-
-        cxE.classList.remove('ver-btn');
-        cxE.classList.add('phone-btn');
-
+        
         cxC.classList.remove('ver-btn');
         cxC.classList.add('phone-btn');
 

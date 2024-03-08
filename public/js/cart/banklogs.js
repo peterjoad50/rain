@@ -1,8 +1,6 @@
 let items = [];
 var table1 = jQuery('#example1').DataTable();
 
-var setBtn = document.getElementById('settings');
-
 var profileModal = document.getElementById('profileModal');
 var modalDialog = profileModal.getElementsByClassName('modal-dialog')[0];
 
@@ -71,15 +69,6 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 
     for(var i = 0; i < items.length; i++) {
 
-        var cartCol = document.createElement('div');
-        cartCol.classList.add('alert','alert-warning','alert-dismissible');
-        var cartColItems = document.getElementsByClassName('cart-alerts')[0];
-        var cartColContents = `
-        <i class="fas fa-spin fa-sync-alt spinner-bordez"></i> 
-        Awaiting Sale <strong>${items[i].account}</strong>, ${items[i].balance}
-            <button type="button" class="btn-close" data-bs-dismiss="alert">&times;</button>
-        `
-
         var cartRow = document.createElement('tr');
         var cartRow2 = document.createElement('li');
         cartRow.classList.add('table-warning');
@@ -108,18 +97,11 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
         `;
         cartRow.innerHTML = cartRowContents;
 
-        cartCol.innerHTML = cartColContents;
-        
-        cartColItems.prepend(cartCol);
-
         cartItems.prepend(cartRow);
 
     }
 } else {
     document.getElementById('cartlength').style.display = 'none';
-    setBtn.innerHTML = `Home ID <img src="img/partners/house.png" style="margin-left: 7px !important">`;
-    setBtn.removeAttribute('data-bs-toggle');
-    setBtn.setAttribute('href', 'home');
 
     document.getElementById('thetot').setAttribute('data-bs-target', '#vpnModal');
 
@@ -130,35 +112,35 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 }
 
 
-document.getElementById('balance1').innerHTML = '$6,425';
-document.getElementById('balance2').innerHTML = '$5,384';
-document.getElementById('balance3').innerHTML = '$5,290';
-document.getElementById('balance4').innerHTML = '$4,261';
-document.getElementById('balance5').innerHTML = '$4,402';
-document.getElementById('balance6').innerHTML = '$4,940';
-document.getElementById('balance7').innerHTML = '$6,087';
-document.getElementById('balance8').innerHTML = '$4,259';
-document.getElementById('balance9').innerHTML = '$6,820';
+document.getElementById('balance1').innerHTML = '$9,425';
+document.getElementById('balance2').innerHTML = '$6,384';
+document.getElementById('balance3').innerHTML = '$6,290';
+document.getElementById('balance4').innerHTML = '$6,261';
+document.getElementById('balance5').innerHTML = '$6,402';
+document.getElementById('balance6').innerHTML = '$9,940';
+document.getElementById('balance7').innerHTML = '$9,087';
+document.getElementById('balance8').innerHTML = '$6,259';
+document.getElementById('balance9').innerHTML = '$9,820';
 
-document.getElementById('balance10').innerHTML = '$4,705';
-document.getElementById('balance11').innerHTML = '$6,214';
-document.getElementById('balance12').innerHTML = '$6,390';
-document.getElementById('balance13').innerHTML = '$6,832';
-document.getElementById('balance14').innerHTML = '$4,439';
-document.getElementById('balance15').innerHTML = '$4,228';
-document.getElementById('balance16').innerHTML = '$4,910';
-document.getElementById('balance17').innerHTML = '$6,104';
-document.getElementById('balance18').innerHTML = '$6,724';
-document.getElementById('balance19').innerHTML = '$4,825';
+document.getElementById('balance10').innerHTML = '$6,705';
+document.getElementById('balance11').innerHTML = '$9,214';
+document.getElementById('balance12').innerHTML = '$9,390';
+document.getElementById('balance13').innerHTML = '$9,832';
+document.getElementById('balance14').innerHTML = '$6,439';
+document.getElementById('balance15').innerHTML = '$6,228';
+document.getElementById('balance16').innerHTML = '$6,910';
+document.getElementById('balance17').innerHTML = '$9,104';
+document.getElementById('balance18').innerHTML = '$9,724';
+document.getElementById('balance19').innerHTML = '$6,825';
 
-document.getElementById('balance20').innerHTML = '$6,270';
-document.getElementById('balance21').innerHTML = '$4,309';
-document.getElementById('balance22').innerHTML = '$6,183';
-document.getElementById('balance23').innerHTML = '$6,704';
-document.getElementById('balance24').innerHTML = '$4,860';
-document.getElementById('balance25').innerHTML = '$6,904';
-document.getElementById('balance26').innerHTML = '$4,329';
-document.getElementById('balance27').innerHTML = '$6,608';
+document.getElementById('balance20').innerHTML = '$9,270';
+document.getElementById('balance21').innerHTML = '$6,309';
+document.getElementById('balance22').innerHTML = '$9,183';
+document.getElementById('balance23').innerHTML = '$9,704';
+document.getElementById('balance24').innerHTML = '$6,860';
+document.getElementById('balance25').innerHTML = '$9,904';
+document.getElementById('balance26').innerHTML = '$6,329';
+document.getElementById('balance27').innerHTML = '$9,608';
 
 var jobs = document.getElementsByClassName('prized');
 for(j=0; j< jobs.length; j++) {
@@ -223,7 +205,6 @@ function updateCartTotal() {
 
     document.getElementById('thetot').innerHTML = `Cart:  <span>$${total.toLocaleString()}</span>`;
 
-    setBtn.innerHTML = `Cart: $${total.toLocaleString()} <img src="img/partners/bitcoin.png">`;
     document.getElementById('theno1').innerHTML = 'Cart: ' + JSON.parse(localStorage.getItem('banklogs')).length + ' , Total: $' + total.toLocaleString();
 
     const invoiceType = document.getElementById('invoice-type');
@@ -267,9 +248,10 @@ function updateCartTotal() {
             ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
             <span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
         `;
+                
         theSave2.innerHTML = `
             Bank logs can be sent via <br> 
-            <span>email</span> or <span>SMS</span>.
+            <span>Email</span> or <span>SMS</span>.
         `;
     } else {
         invoiceType.innerHTML = 'Bank Logs';

@@ -1007,15 +1007,7 @@ td {
     width: 65px !important;
     height: 65px !important;
 }
-#bitcoin-logo3 {
-    margin: -10px 0px;
-    border-radius: 0 !important;
-}
-#bitcoin-logo3 img {
-    width: 62px !important;
-    height: 62px !important;
-    border-radius: 0 !important;
-}
+
 .bankof {
     padding: 7px 2px !important;
 }
@@ -1045,14 +1037,7 @@ td {
     #bitcoin-logo2 {
         margin: -8px 0px !important;
     }
-    #bitcoin-logo3 {
-        margin: -10px -7px !important;
-    }
-    #bitcoin-logo3 img {
-        width: 57px !important;
-        height: 57px !important;
-        border-radius: 0 !important;
-    }
+
     #profile-logo img {
         width: 61px !important;
         height: 61px !important;
@@ -1062,16 +1047,10 @@ td {
     #bitcoin-logo2 {
         margin: -8px 0px !important;
     }
-    #bitcoin-logo3 {
-        margin: -10px -7px !important;
-    }
 }
 @media (max-width: 374px) {
     #bitcoin-logo2 {
         margin: -10px 0px !important;
-    }
-    #bitcoin-logo3 {
-        margin: -12px -7px !important;
     }
 }
 #invoice-header {
@@ -1338,9 +1317,10 @@ td {
         padding-left: 11px !important;
         padding-right: 11px !important;
         font-size: 21px;
-        margin: 25px 180px;
+        margin: 25px 170px;
         padding: 11px 0;
         font-weight: 700 !important;
+        letter-spacing: 0.85px !important;
     }
 
     #showtoasts {
@@ -1373,8 +1353,8 @@ td {
 @media (max-width: 480px) {
     #showlink,
     #showtoasts {
-        padding-left: 7px !important;
-        padding-right: 7px !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
         font-size: 18.7px;
         margin: 12px 8px;
     }
@@ -1601,8 +1581,8 @@ td {
     font-size: 25px !important;
 }
 #saveModal .modal-dialog,
+#contactModal .modal-dialog,
 #exampleModal .modal-dialog,
-#emailModal .modal-dialog,
 #verifyModal .modal-dialog, 
 #vpnModal .modal-dialog,
 #discountModal .modal-dialog {
@@ -1610,8 +1590,8 @@ td {
 }
 @media screen and (min-width: 1370px) {
     #saveModal .modal-dialog,
+    #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1621,7 +1601,6 @@ td {
 @media screen and (max-width: 1025px) {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1631,8 +1610,8 @@ td {
 }
 @media screen and (max-width: 825px) {
     #saveModal .modal-dialog,
+    #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1643,7 +1622,7 @@ td {
 @media screen and (max-width: 769px) {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
+    #contactModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1654,7 +1633,7 @@ td {
 @media screen and (max-width: 570px) {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
+    #contactModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1665,7 +1644,7 @@ td {
 @media screen and (max-width: 420px) {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
+    #contactModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1676,7 +1655,7 @@ td {
 @media screen and (max-width: 411px) {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
+    #contactModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1687,7 +1666,7 @@ td {
 @media screen and (max-width: 397px) {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
+    #contactModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1698,7 +1677,7 @@ td {
 @media screen and (max-width: 376px) {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
+    #contactModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1709,7 +1688,7 @@ td {
 @media screen and (max-width: 370px) {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
+    #contactModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1717,9 +1696,7 @@ td {
         max-width: 89vw !important;
     }
 }
-.modal-img {
-    display: none !important;
-}
+
 .jina-div {
     display: grid;
     cursor: pointer !important;
@@ -1728,8 +1705,8 @@ td {
 #verifyModal .modal-dialog,
 #discountModal .modal-dialog,
 #vpnModal .modal-dialog,
+#contactModal .modal-dialog,
 #saveModal .modal-dialog,
-#emailModal .modal-dialog,
 #exampleModal .modal-dialog {
     background: transparent !important;
 }
@@ -1737,8 +1714,8 @@ td {
 #verifyModal .modal-header,
 #discountModal .modal-header,
 #vpnModal .modal-header,
+#contactModal .modal-header,
 #saveModal .modal-header,
-#emailModal .modal-header,
 #exampleModal .modal-header {
     margin: 2px;
     padding: 0;
@@ -1748,9 +1725,9 @@ td {
 
 #verifyModal .modal-header img,
 #discountModal .modal-header img,
+#contactModal .modal-header img,
 #vpnModal .modal-header img,
 #saveModal .modal-header img,
-#emailModal .modal-header img,
 #exampleModal .modal-header img {
     width: 70px;
 }
@@ -1758,9 +1735,9 @@ td {
 
 #verifyModal .modal-header h4.modal-title,
 #discountModal .modal-header h4.modal-title,
+#contactModal .modal-header h4.modal-title,
 #vpnModal .modal-header h4.modal-title,
 #saveModal .modal-header h4.modal-title,
-#emailModal .modal-header h4.modal-title,
 #exampleModal .modal-header h4.modal-title {
     font-weight: 600;
 }
@@ -1768,8 +1745,8 @@ td {
 #verifyModal .modal-header .close img,
 #discountModal .modal-header .close img,
 #vpnModal .modal-header .close img,
+#contactModal .modal-header .close img,
 #saveModal .modal-header .close img,
-#emailModal .modal-header .close img,
 #exampleModal .modal-header .close img {
     width: 30px;
     opacity: 0.7;
@@ -1779,8 +1756,8 @@ td {
 #verifyModal .modal-header .close img:hover,
 #discountModal .modal-header .close img:hover,
 #vpnModal .modal-header .close img:hover,
+#contactModal .modal-header .close img:hover,
 #saveModal .modal-header .close img:hover,
-#emailModal .modal-header .close img:hover,
 #exampleModal .modal-header .close img:hover {
     opacity: 1 !important;
 }
@@ -1788,8 +1765,8 @@ td {
 #verifyModal .modal-footer,
 #discountModal .modal-footer,
 #vpnModal .modal-footer,
+#contactModal .modal-footer,
 #saveModal .modal-footer,
-#emailModal .modal-footer,
 #exampleModal .modal-footer {
     margin: 4px;
     border-top: none;
@@ -1799,8 +1776,8 @@ td {
 #verifyModal .modal-body,
 #discountModal .modal-body,
 #vpnModal .modal-body,
+#contactModal .modal-body,
 #saveModal .modal-body,
-#emailModal .modal-body,
 #exampleModal .modal-body {
     margin: 0;
     padding: 0;
@@ -1809,8 +1786,8 @@ td {
 
 #verifyModal .modal-backdrop div p,
 #discountModal .modal-backdrop div p,
+#contactModal .modal-body div p,
 #saveModal .modal-body div p,
-#emailModal .modal-body div p,
 #exampleModal .modal-body div p {
     background: transparent !important;
 }
@@ -1920,7 +1897,10 @@ td {
 }
 .port a img {
     width: 100% !important;
-    height: 170px;
+    height: 185px;
+}
+.modal-img {
+    display: none !important;
 }
 @media screen and (max-width: 996px) {
     .port a img {
@@ -2017,7 +1997,7 @@ td {
 }
 .navbar-nav > li.nav-large {
     border-radius: 50% !important;
-    margin: 4px 12px !important;
+    margin: 5px 15px !important;
 }  
 .navbar-nav li.nav-large a {
     width: 62px !important;
@@ -2054,9 +2034,7 @@ td {
 .nav-wood {
     background: url(../../img/carousel/woodforest.jpg) no-repeat center center/cover;
 }
-.nav-rbc {
-    background: url(../../img/carousel/rbc.png) no-repeat center center/cover;
-}
+
 .t-head {
     text-transform: uppercase;
     font-weight: 600;
@@ -2185,8 +2163,8 @@ td {
     position: absolute;
     white-space: nowrap;
     top: 24%;
-    left: 25.1%;
-    right: 25.1%;
+    left: 25%;
+    right: 25%;
     font-size: 23px !important;
     opacity: 1 !important;
     padding: 9px 0 !important;
@@ -2195,8 +2173,8 @@ td {
 @media screen and (max-width: 570px) {
     #settings {
         font-size: 22.5px !important;
-        left: 24.6%;
-        right: 24.6%;
+        left: 24%;
+        right: 24%;
     }
 }
 #settings img {
@@ -2606,9 +2584,7 @@ ul.countdown li p {
     margin: 10px auto !important;
     line-height: 30px !important;
 }
-#money-p1,
-#money-p2,
-#money-p3,
+
 #device-p,
 #email-p,
 #usage-p,
@@ -2623,50 +2599,24 @@ ul.countdown li p {
 #anon-b {
     text-align: center !important;
     font-size: 20px !important;
-    line-height: 60px !important;
+    line-height: 70px !important;
 }
 
 #mail-p1,
 #mail-p2,
 #mail-p3 {
     text-align: center !important;
-    font-size: 18.3px !important;   
+    font-size: 19.6px !important;   
 }
 #usage-p,
 #email-p,
 #anon-p {
     text-align: center !important;
-    font-size: 18.3px !important;
-    line-height: 52px !important;
+    font-size: 19px !important;
+    line-height: 53px !important;
 }
 
-#load-1, 
-#load-2 {
-    text-align: center !important;
-    font-size: 21px !important;
-    line-height: 80px !important;
-}
 
-#name-1 {
-    text-align: center !important;
-    font-size: 21px !important;
-    line-height: 65px !important;
-}
-
-@media screen and (max-width: 700px) {
-    #name-1 {
-        text-align: center !important;
-        font-size: 21px !important;
-        line-height: 57px !important;
-    }
-}
-#get-p3,
-#get-p1,
-#get-p2 {
-    text-align: center !important;
-    font-size: 20px !important;
-    line-height: 56px !important;
-}
 #title-img {
     border-radius: 50% !important;
 }
@@ -2679,51 +2629,37 @@ ul.countdown li p {
     line-height: 53px !important;
 }
 
-#email-3,
-#email-1, 
-#email-2 {
-    text-align: center !important;
-    font-size: 19.3px !important;
-    line-height: 53px !important;
-}
-
-
 
 #save-1, 
 #save-2 {
-    font-size: 19.5px !important;
-    line-height: 53px !important;
+    font-size: 19.7px !important;
+    line-height: 55px !important;
 }
+
 #save-2 {
     margin-bottom: 8.5px !important;
 }
 
 
 @media screen and (min-width: 1370px) {
-    #email-3,
-    #email-1, 
-    #email-2 {
-        font-size: 20.3px !important;
-        line-height: 57px !important;
-    }
 
     #save-1, 
     #save-2 {
         font-size: 20.5px !important;
-        line-height: 57px !important;
+        line-height: 58px !important;
     }
     #usage-p,
     #email-p,
     #anon-p {
         text-align: center !important;
-        font-size: 18.5px !important;
+        font-size: 19.3px !important;
         line-height: 56px !important;
     }
 
     #anon-b {
         text-align: center !important;
         font-size: 21px !important;
-        line-height: 63px !important;
+        line-height: 70px !important;
     }
 
 }
@@ -2736,95 +2672,62 @@ ul.countdown li p {
         font-size: 18.8px !important;
         line-height: 52px !important;
     }
-    #email-3,
-    #email-1, 
-    #email-2 {
-        font-size: 18.9px !important;
-        line-height: 52px !important;
-    }
     #save-1, 
     #save-2 {
-        font-size: 19px !important;
-        line-height: 52px !important;
+        font-size: 19.3px !important;
+        line-height: 54px !important;
     }
     #mail-p1,
     #mail-p3,
     #mail-p2 {
-        font-size: 17.8px !important;
+        font-size: 18.6px !important;
     }
     #usage-p,
     #email-p,
     #anon-p {
         text-align: center !important;
-        font-size: 17.9px !important;
-        line-height: 50px !important;
+        font-size: 18.5px !important;
+        line-height: 51px !important;
     }
     
     #anon-b {
         text-align: center !important;
         font-size: 18.9px !important;
-        line-height: 54px !important;
-    }
-    #load-1, 
-    #load-2 {
-        text-align: center !important;
-        font-size: 21.7px !important;
-        line-height: 67px !important;
+        line-height: 60px !important;
     }
 }
-#money-p1,
-#money-p2,
-#money-p3 {
-    line-height: 48px !important;
+
+#usage-p {
+    margin-bottom: -7px !important;
 }
+
+
 
 #mail-p1,
 #mail-p3,
 #mail-p2 {
-    line-height: 52px !important;
+    line-height: 54px !important;
 }
 @media screen and (min-width: 1370px) {
-    #money-p1,
-    #money-p2,
-    #money-p3 {
-        line-height: 53px !important;
-    }
     #mail-p1,
     #mail-p3,
     #mail-p2 {
         line-height: 57px !important;
     }
 }
-.thehr.my-link {
-    opacity: 0.7 !important;
-    margin: -0.7vh auto !important;
-}
+
 @media screen and (max-width: 780px) {
-    .thehr.my-link {
-        opacity: 0.7 !important;
-        margin: -0.5vh auto !important;
-    }
-    #money-p1,
-    #money-p2,
-    #money-p3 {
-        line-height: 48px !important;
-    }
     #mail-p1,
     #mail-p3,
     #mail-p2 {
-        line-height: 51px !important;
+        line-height: 54px !important;
     }
 }
 @media screen and (max-width: 400px) {
-    #money-p1,
-    #money-p2,
-    #money-p3 {
-        line-height: 46px !important;
-    }
     #mail-p1,
     #mail-p3,
     #mail-p2 {
-        line-height: 50px !important;
+        line-height: 53px !important;
     }
 }
    
@@ -2840,17 +2743,11 @@ ul.countdown li p {
         font-size: 18.5px !important;
         line-height: 49px !important;
     }
-    #email-3,
-    #email-1, 
-    #email-2 {
-        font-size: 18.5px !important;
-        line-height: 49px !important;
-    }
 
     #save-1, 
     #save-2 {
-        font-size: 18.7px !important;
-        line-height: 49px !important;
+        font-size: 18.9px !important;
+        line-height: 52px !important;
     }
 }
 @media screen and (max-width: 380px) {
@@ -2862,17 +2759,11 @@ ul.countdown li p {
         font-size: 18.3px !important;
         line-height: 47px !important;
     }
-    #email-3,
-    #email-1, 
-    #email-2 {
-        font-size: 18.3px !important;
-        line-height: 47px !important;
-    }
 
     #save-1, 
     #save-2 {
-        font-size: 18.5px !important;
-        line-height: 47px !important;
+        font-size: 18.7px !important;
+        line-height: 50px !important;
     }
 }
 @media screen and (max-width: 374px) {
@@ -2965,29 +2856,21 @@ ul.countdown li p {
 
 #the-life {
     display: flex !important;
-    width: 97% !important;
+    width: 93.4% !important;
     height: 56px !important;
     margin: 10px auto 0 !important;
 
-    background: rgba(255, 255, 255, 0.3) !important;
-    border-radius: 1px !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 0.3px !important;
 }
-#name-life {
-    width: 92% !important;
-    display: flex !important;
-    height: 53px !important;
-    margin: -5px auto 0 !important;
 
-    background: rgba(255, 255, 255, 0.3) !important;
-    border-radius: 1px !important;
-}
 #the-flag7 {
-    width: 17%;
+    width: 16.7%;
     border: none !important;
-    height: 92% !important;
+    display: none;
+    height: 90% !important;
     margin: auto 7px !important;
 }
-
 
 
 #inputLife {
@@ -2999,41 +2882,25 @@ ul.countdown li p {
     padding: 0 10px !important;
     height: 94% !important;
     margin: auto auto !important;
-    letter-spacing: 1.2px !important;
+    letter-spacing: 1.5px !important;
     align-items: center !important;
 }
 
 #nameLife::placeholder,
 #inputLife::placeholder {
-    letter-spacing: 1.2px !important;
+    letter-spacing: 1.3px !important;
 }
 @media screen and (max-width: 767px) {
     #inputLife::placeholder {
         letter-spacing: 0.3px !important;
     }
     #nameLife::placeholder {
-        letter-spacing: 0.5px !important;
+        letter-spacing: 0.3px !important;
     }
 }
 
 #inputLife {
     font-size: 22px !important;
-}
-
-#phoneNumber {
-    border-radius: 0 !important;
-    font-size: 21px !important;
-    font-weight: 600 !important;
-    padding: 0 10px !important;
-    width: 70% !important;
-    height: 57px !important;
-    margin: auto 7px !important;
-    text-align: left !important;
-}
-@media screen and (max-width: 821px) {
-    #phoneNumber {
-        width: 70% !important;
-    }
 }
 
 #recaptcha-container {
@@ -3064,12 +2931,6 @@ ul.countdown li p {
 #label-date img {
     width: 25px !important;
     height: 25px !important;
-}
-#the-flag2 {
-    width: 20% !important;
-    border: none !important;
-    height: 57px !important;
-    margin: auto 7px !important;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900");
@@ -3132,6 +2993,7 @@ ul.countdown li p {
     word-wrap: break-word;
     font-weight: 700;
     font-size: 1.1rem;
+    line-height: 47px !important;
 }
 @media screen and (max-width: 502px) {
     .toast-message {
@@ -3151,19 +3013,6 @@ ul.countdown li p {
     text-decoration: none;
 }
 .toast-close-button {
-    /* position: relative;
-    right: -0.3em;
-    top: -0.3em;
-    float: right;
-    font-size: 28px;
-    font-weight: 700;
-    color: red;
-    -webkit-text-shadow: 0 1px 0 #fff;
-    text-shadow: 0 1px 0 #fff;
-    opacity: 0.8;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-    filter: alpha(opacity=100);
-    line-height: 1; */
 
     position: relative !important;
     top: 0 !important;
@@ -3453,7 +3302,7 @@ button.toast-close-button {
 }
 @media screen and (max-width: 570px) {
     #profileModal .modal-dialog {
-        max-width: 98vw !important;
+        width: 100vw !important;
     }
 }
 #profileModal .modal-dialog {
@@ -3464,20 +3313,27 @@ button.toast-close-button {
 }
 
 
-#email-save,
-#phone-save {
-    margin-top: 15px !important;
-    margin-bottom: 15px !important;
-    cursor: pointer !important;
-}
 
 
 #send-email {
     cursor: pointer !important;
-    font-size: 22px !important;
-    padding: 6px 11px !important;
+    font-size: 21px !important;
+    padding: 5px 10px !important;
+
+    margin: 7px 35px 3px !important;
 }
 
+@media screen and (max-width: 570px) {
+
+    #send-email {
+        cursor: pointer !important;
+        font-size: 21px !important;
+        padding: 5px 10px !important;
+    
+        margin: 5px 15px 3px !important;
+    }
+    
+}
 
 .gmails {
     margin-left: 5px !important;
@@ -3496,6 +3352,7 @@ button.toast-close-button {
     padding-left: 13px !important;
     padding-right: 13px !important;
     font-size: 23px !important;
+    letter-spacing: 0.85px !important;
 }
 .alert i {
     margin-right: 7px !important;
@@ -3509,41 +3366,6 @@ button.toast-close-button {
 }
 
 
-#email-save {
-    right: 15px !important;
-    font-size: 23px !important;
-    padding: 6px 14px !important;
-}
-#phone-save {
-    left: 15px !important;
-    font-size: 23px !important;
-    padding: 6px 11px !important;
-}
-
-@media screen and (max-width: 780px) {
-    #email-save {
-      right: 13px !important;
-      font-size: 22.5px !important;
-      padding: 6px 13px !important;
-    }
-    #phone-save {
-      left: 13px !important;
-      font-size: 22.5px !important;
-      padding: 6px 10px !important;
-    }
-}
-@media screen and (max-width: 375px) {
-    #email-save {
-      right: 11.5px !important;
-      font-size: 22px !important;
-      padding: 5.5px 12px !important;
-    }
-    #phone-save {
-      left: 11.5px !important;
-      font-size: 22px !important;
-      padding: 5.5px 9px !important;
-    }
-}
 .thehr.thero {
     opacity: 0.375 !important;
     margin: -0.7vh auto !important;
@@ -3638,7 +3460,7 @@ blink.nav-blink {
 
 #their-name {
     text-transform: uppercase !important;
-    letter-spacing: 1.3px !important;
+    letter-spacing: 1.4px !important;
 }
 span#uida {
     color: yellow !important;
@@ -3942,6 +3764,13 @@ img.levt-10 {
 }
 
 
-#verify-h4 {
-    text-transform: uppercase !important;
-}
+#contact-check {
+    letter-spacing: 1.2px !important;
+    cursor: pointer !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    margin: 15px auto 10px !important;
+  }
+  #contact-check img {
+    margin-left: 3px !important;
+  }

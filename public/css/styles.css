@@ -20,11 +20,8 @@
 .modal-checkout {
   border-top: 1.4px solid rgba(134, 188, 66, 0.5) !important;
 }
-#phoneNumber,
 #code,
-#nameLife,
-#inputLife,
-#inputEmail {
+#inputLife {
   color: rgb(45, 66, 54) !important;
   border: 1.7px solid rgb(174, 210, 129) !important;
   box-shadow: 0 0 0 1.4px rgb(225, 238, 208) !important;
@@ -236,7 +233,7 @@ blink {
   border: 1.4px solid rgb(41, 61, 54) !important;
   color: rgb(164, 205, 113) !important;
 }
-#name-life,
+
 #the-life {
   box-shadow: 1px 1px 2px 1px rgba(134, 188, 66, 0.5) !important;
 }
@@ -312,9 +309,9 @@ blink {
 #discountModal .modal-content,
 #verifyModal .modal-content,
 #vpnModal .modal-content,
+#contactModal .modal-content,
 #profileModal .modal-content,
 #saveModal .modal-content,
-#emailModal .modal-content,
 #exampleModal .modal-content {
   background: rgba(57, 82, 56, 0.5) !important;
   border: 1.4px solid rgba(134, 188, 66, 0.7) !important;
@@ -329,8 +326,6 @@ blink {
 .scroll-down,
 #settings,
 .modal-btn,
-#log-btn,
-#btn-log,
 .lesnar,
 .gold,
 #vpn,
@@ -360,8 +355,8 @@ blink {
 #verifyModal .modal-header .close img,
 #vpnModal .modal-header .close img,
 #profileModal .modal-header .close img,
+#contactModal .modal-header .close img,
 #saveModal .modal-header .close img,
-#emailModal .modal-header .close img,
 #exampleModal .modal-header .close img,
 .btn-remove {
   border: 1.4px solid rgba(134, 188, 66, 0.7);
@@ -409,19 +404,15 @@ span#uids {
 #showtoasts {
   border: 2.2px solid rgba(134, 188, 66, 0.7);
 }
-#email-phone-2,
-#email-phone {
-  background: rgb(215, 233, 192) !important;
-  color: rgb(33, 49, 53) !important;
-  border: 2.2px solid rgba(105, 148, 62, 0.7);
-}
+
+#email-phone,
 #send-email,
 #showlink {
-  background: rgb(182, 215, 142) !important;
+  background: rgb(207, 229, 179) !important;
   color: rgb(33, 49, 53) !important;
   border: 2.2px solid rgba(105, 148, 62, 0.7);
 }
-#showlink.yellow {
+#showlink {
   background: rgb(207, 229, 26) !important;
 }
 
@@ -495,7 +486,7 @@ span#uids {
 }
 #invoice-table,
 #modalsend {
-  border: 1.3px solid rgba(134, 188, 66, 0.2);
+  border: 2px solid rgba(134, 188, 66, 0.2);
 }
 ::-webkit-scrollbar-thumb {
   background: rgb(158, 201, 104);
@@ -527,5 +518,10 @@ span#uids {
   background: rgb(76, 109, 59)
 }
 .cd-time-content {
-  border: 1.4px solid rgb(76, 109, 59)
+  border: 2px solid rgb(76, 109, 59)
 }
+
+span#mail-span {
+  color: rgb(225, 239, 17) !important
+}
+

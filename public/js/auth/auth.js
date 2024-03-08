@@ -13,9 +13,7 @@ var theWebsite = 'https://www.darkweb.ink/invoice';
 
 const logoHolder = document.getElementById("logo");
 const vpnHolder = document.getElementById("vpn-img");
-const jinaHolder = document.getElementById("jinaHolder");
 
-const jinaHolder3 = document.getElementById('jinaHolder3');
 
 const theId = document.getElementById('the-id');
 
@@ -28,25 +26,17 @@ const theFlag7 = document.getElementById('the-flag7');
 const mailField = document.getElementById('inputLife');
 const signUp = document.getElementById('email-phone');
 
+const showToth = document.getElementById('showtoasts');
 const showLink = document.getElementById('showlink');
 
 const phoneNumberField = document.getElementById('inputLife');
 const codeField = document.getElementById('code');
 const signInWithPhoneButton = document.getElementById('signInWithPhone');
 
-const voiceDiv = document.getElementById('voice-div');
-const voiceImg = document.getElementById('voice-img');
-
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
-const verClose = document.getElementById('ver-close');
-
-const email2 = document.getElementById('email-2');
-
-const verifyH4 = document.getElementById('verify-h4');
-const verCheck = document.getElementById('ver-check');
 
 const auth = firebase.auth();
 
@@ -55,60 +45,31 @@ auth.onAuthStateChanged(user => {
 	if (!user) {
 		window.location.assign('index');
 	} 
-	if (user.photoURL) {
-		logoHolder.setAttribute("src", user.photoURL);
-		logoHolder.classList.add('logo-50');
-		vpnHolder.setAttribute("src", user.photoURL);
-		vpnHolder.classList.add('logo-50');
-	} 
 
 	if(user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
-			var thePhoneNo = user.phoneNumber;
-			jinaHolder.value = thePhoneNo;
-			jinaHolder3.value = thePhoneNo;
+			showLink.setAttribute('data-bs-target', '#vpnModal');
 		} else {
-			jinaHolder.value = theaddress;
-			jinaHolder3.value = theaddress;
 			phoneShow();
 		}
-
-		email2.innerHTML = `<span>${themail}</span>`;
-		verifyH4.innerHTML = theaddress;
-		verCheck.addEventListener('click', sendEmail);
 		
-		voiceDiv.setAttribute('data-bs-target', '#emailModal');
-		voiceDiv.innerHTML = theaddress;
-		voiceDiv.classList.add('lesnar');
-		voiceDiv.classList.remove('gold');
-		
-		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
-		showLink.setAttribute('data-bs-target', '#emailModal');
-		showLink.classList.add('yellow');		
+		showLink.innerHTML = `
+			${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
-		var thePhoneNo = user.phoneNumber;
-		jinaHolder.value = thePhoneNo;
-		jinaHolder3.value = thePhoneNo;
-		voiceDiv.innerHTML = thePhoneNo;
-		voiceDiv.classList.add('lesnar');
-		voiceDiv.classList.remove('gold');
-		voiceImg.setAttribute('src', 'img/partners/phone.png');
 
-		showLink.classList.add('yellow');
+		showLink.innerHTML = `
+		${thePhoneNo.replace('+', '')} <img src="img/partners/tele.png">`;
+
 		emailShow();
-	}
+	} 
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');
 		closeModal.setAttribute('data-bs-toggle', 'modal');
 		closeModal.setAttribute('data-bs-target', '#profileModal');
-
-		verClose.removeAttribute('data-bs-dismiss');
-		verClose.setAttribute('data-bs-toggle', 'modal');
-		verClose.setAttribute('data-bs-target', '#profileModal');
 	});
 	
 	if(user.uid){
@@ -122,52 +83,9 @@ auth.onAuthStateChanged(user => {
 });
 
 
-function sendEmail() {
-	auth.currentUser.sendEmailVerification();
-	var shortCutFunction = 'success';
-	var msg = `
-		A verification link has been sent to:   <hr class="to-hr hr15-bot">
-		${auth.currentUser.email}<hr class="hr10-nil">
-	`;
-	toastr.options = {
-		closeButton: true,
-		debug: false,
-		newestOnTop: true,
-		progressBar: true,
-		positionClass: 'toast-top-full-width',
-		preventDuplicates: true,
-		onclick: null
-	};
-	var $toast = toastr[shortCutFunction](msg);
-	$toastlast = $toast;
-}
-
-
-
 function phoneShow() {
-	heySave1.innerHTML = ` Bank logs can also be sent <br> via <span>phone</span>. `;
-	heySave2.innerHTML = ` Enter your <span>phone</span> on the <br> input below. `;
-
-	if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-		heySave2.innerHTML = ` Bank logs can also be <br> sent via <span>SMS</span>.`;
-		heySave2.style.letterSpacing = '0.5px';
-		
-		if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
-			heySave1.innerHTML = `
-				${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
-				<span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
-			`;
-		} else {
-			heySave1.innerHTML = `
-				${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
-				<span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
-			`;
-			heySave2.innerHTML = `
-				${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
-				<span> ${(JSON.parse(localStorage.getItem('banklogs'))[1].balance)}</span>.
-			`;
-		}
-	} 
+	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;
+	heySave2.innerHTML = ` As a dynamic link that  <br> expires in <span>7 hours</span>. `;
 
 	fetch('https://ipapi.co/json/')
 	.then(function(response) {return response.json()})
@@ -177,43 +95,19 @@ function phoneShow() {
 		phoneNumberField.style.textAlign = 'left';
 		theFlag7.style.display = 'flex';
 		phoneNumberField.setAttribute('pattern', '[+]{1}[0-9]{11,14}');
-		signUp.innerHTML = `Verify Now <img src="img/partners/phone.png">`;
 	});
 }
 
 function emailShow() {
-	heySave1.innerHTML = ` Bank logs can also be sent <br> via <span>email</span>. `;
-	heySave2.innerHTML = ` Enter your <span>email</span> on the <br> input below. `;
+	heySave1.innerHTML = ` Bank logs can be sent <br> via <span id="mail-span">Email</span>. `;
+	heySave2.innerHTML = ` To the <span id="mail-span">spam / junk</span> folder <br> of your mailbox. `;
 
-	if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-		heySave2.innerHTML = ` Bank logs can also be <br> sent via <span>email</span>.`;
-		heySave2.style.letterSpacing = '0.5px';
-		
-		if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
-			heySave1.innerHTML = `
-				${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
-				<span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
-			`;
-		} else {
-			heySave1.innerHTML = `
-				${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
-				<span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
-			`;
-			heySave2.innerHTML = `
-				${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
-				<span> ${(JSON.parse(localStorage.getItem('banklogs'))[1].balance)}</span>.
-			`;
-		}
-	} 
-	
 	theFlag7.style.display = 'none';
 	mailField.setAttribute('type', 'email');
 	mailField.value = '';
 	phoneNumberField.style.textAlign = 'center';
 	mailField.setAttribute('placeholder', 'Enter your Email...');
-	signUp.innerHTML = `Verify Email <img src="img/partners/gmails.png" class="gmails">`;
 }
-
 
 window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
 	'size': 'invisible'
@@ -239,8 +133,7 @@ const signUpFunction = () => {
 		theUser.linkWithCredential(credential)
 			.then(() => {
 				theUser.updateProfile({
-					phoneNumber: theUser.providerData[0].phoneNumber,
-					isAnonymous: false
+					phoneNumber: theUser.providerData[0].phoneNumber
 				}).then(() => {
 					window.location.assign('invoice');
 				});
@@ -270,8 +163,7 @@ const signUpFunction = () => {
 				auth.currentUser.sendEmailVerification();
 				theUser.updateProfile({
 					displayName: theUser.providerData[0].displayName, 
-					photoURL: theUser.providerData[0].photoURL,
-					isAnonymous: false
+					photoURL: theUser.providerData[0].photoURL
 				}).then(() => {
 					window.location.assign('invoice');
 				});
@@ -283,8 +175,7 @@ const signUpFunction = () => {
 				auth.currentUser.sendEmailVerification();
 				theUser.updateProfile({
 					displayName: theUser.providerData[0].displayName, 
-					photoURL: theUser.providerData[0].photoURL,
-					isAnonymous: false
+					photoURL: theUser.providerData[0].photoURL
 				}).then(() => {
 					window.location.assign('invoice');
 				});
@@ -341,12 +232,7 @@ const signUpFunction = () => {
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} else if(user.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email or SMS.       <hr class=" hr10-nil">
-			`;
-		}
+		} 
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
@@ -367,7 +253,6 @@ function checkBra() {
 			phoneNumberField.style.textAlign = 'left';
 			theFlag7.style.display = 'flex';
 			phoneNumberField.setAttribute('pattern', '[+]{1}[0-9]{11,14}');
-			signUp.innerHTML = `Verify Now <img src="img/partners/phone.png">`;
 			
 			fetch('https://ipapi.co/json/')
 			.then(function(response) {
@@ -381,7 +266,6 @@ function checkBra() {
 
 			mailField.setAttribute('type', 'email');
 			mailField.style.textTransform = 'lowercase';
-			signUp.innerHTML = `Verify Email <img src="img/partners/gmails.png" class="gmails">`;
 		}
 	}
 } 
@@ -391,7 +275,6 @@ function againBro() {
     if (!this.value) {
         mailField.setAttribute('type', 'text');
 		theFlag7.style.display = 'flex';
-		signUp.innerHTML = `Verify Now <img src="img/partners/check.png">`;
     }
 }
 

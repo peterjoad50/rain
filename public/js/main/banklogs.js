@@ -37,6 +37,40 @@
 
     $(document).ready(function() {
 
+        $('#services-carousel').owlCarousel({
+            loop: true,
+            responsiveClass: true,
+            dots: true,
+            nav: false,
+            smartSpeed: 500,
+            autoplay: true,
+            autoplayTimeout: 300,
+            autoplayHoverPause: false,
+            stagePadding: 0,
+            slideTransition: 'linear',
+            autoplayTimeout: 5000,
+            autoplaySpeed: 5000,
+            navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+            responsive: {
+                0: {
+                    items: 2.7,
+                    margin: 10
+                },
+                768: {
+                    items: 3,
+                    margin: 30
+                },
+                992: {
+                    items: 4,
+                    margin: 30
+                },
+                1200: {
+                    items: 7,
+                    margin: 20
+                }
+            }
+        });
+
         $('#clients').owlCarousel({
             loop: true,
             nav: false,

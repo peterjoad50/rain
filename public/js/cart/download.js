@@ -50,7 +50,7 @@ if(localStorage.getItem('banklogs')){
     
     
     
-            if((items[i].account).includes('CHECKING') || (items[i].account).includes('SPENDING') || (items[i].account).includes('CHEQUING')){
+            if((items[i].account).includes('CHECKING') || (items[i].account).includes('SPENDING')){
                 var cartRow3 = document.createElement('div');
                 cartRow3.classList.add('col-lg-3', 'col-xl-2', 'col-md-3', 'col-6');
                 var balance2 = items[i].balance;
@@ -217,6 +217,10 @@ function updateCartTotal() {
         const banking2 = (JSON.parse(localStorage.getItem('banklogs'))[0].info2);
         const banking3 = (JSON.parse(localStorage.getItem('banklogs'))[0].info3);
 
+        const banking4 = (JSON.parse(localStorage.getItem('banklogs'))[0].info4);
+        const banking5 = (JSON.parse(localStorage.getItem('banklogs'))[0].info5);
+        const banking6 = (JSON.parse(localStorage.getItem('banklogs'))[0].info6);
+
         
         if(bankLog.includes('America')) {
             downFile.innerHTML = 'Bank of America';
@@ -231,9 +235,8 @@ function updateCartTotal() {
         `;
 
         anonB.innerHTML = `
-            <span>${bankBal}</span> <br>
-
-            ${banking1}, ${banking2}, ${banking3}
+            ${bankLog} <br>
+            <span>${bankBal}</span>.
         `;
 
         theLogo.src = `${bankImg}`;
@@ -264,7 +267,17 @@ function updateCartTotal() {
         
 
         usaP.innerHTML = `
-            ${banking1} , ${banking2} , ${banking3}
+            <div class="modal-body no-bord"> ${banking1} </div> 
+
+            <div class="modal-body no-bord"> ${banking2} </div> 
+
+            <div class="modal-body no-bord"> ${banking3} </div> 
+
+            <div class="modal-body no-bord"> ${banking4} </div> 
+
+            <div class="modal-body no-bord"> ${banking5} </div> 
+
+            <div class="modal-body no-bord"> ${banking6} </div> 
         `;
 
         titleLog2.innerHTML = `
@@ -338,9 +351,10 @@ function updateCartTotal() {
             ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
             <span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
         `;
+                
         theSave2.innerHTML = `
             Bank logs can be sent via <br> 
-            <span>email</span> or <span>SMS</span>.
+            <span>Email</span> or <span>SMS</span>.
         `;
     } else {
         invoiceType.innerHTML = 'Bank Logs';

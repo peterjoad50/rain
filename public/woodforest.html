@@ -67,9 +67,7 @@
                         <li class="nav-large">
                             <a href="pnc"  class="nav-pnc"></a>
                         </li>
-                        <li class="nav-large nav-1200">
-                            <a href="rbc" class="nav-rbc"></a>
-                        </li>
+
                         <li class="nav-large">
                             <a href="truist" class="nav-truist"></a>
                         </li> 
@@ -108,10 +106,7 @@
                                     <img src="img/partners/citiw.png" class="bord-50">
                                     <a href="citi" class="butn"> Citi Bank <blink class="nav-blink">New</blink> </a>
                                 </li>                                                                                                                                                                                                                                                        
-                                <li class="nav-small">
-                                    <img src="img/carousel/rbc.png">
-                                    <a href="rbc" class="butn"> R.B.C Bank </a>
-                                </li>                                                                                                                                                                             
+                                                                                                                                                                      
                                 <li class="nav-small">
                                     <img src="img/partners/truists.jpg" class="bord-50">
                                     <a href="truist" class="butn"> Truist Bank </a>
@@ -160,9 +155,9 @@
                                         </a>
                                     </li>
                                     <li class="thegold">
-                                        <img src="img/partners/check.png" id="voice-img">
-                                        <a class="butn gold"  id="voice-div" data-bs-toggle="modal" data-bs-target="#discountModal">
-                                            Get Invoice
+                                        <img src="img/partners/tele.png">
+                                        <a class="butn gold"  id="voice-div" data-bs-toggle="modal" data-bs-target="#contactModal">
+                                            Contacts ID
                                         </a>
                                     </li>
                                     <li class="thegold">
@@ -251,33 +246,10 @@
     
     <div class="gallery text-center width-100 product-grid">
 
-        <div class="col-lg-3 col-xl-2 col-md-3 col-6 items savings  wow fadeInRight" data-wow-delay="0.4s">
-            <div class="pricing-list">
-                <div class="pricing-list-price">
-                    <h2 id="wood1"></h2>
-                    <img src="img/partners/woodlogo.png" class="borderp">
-                </div>
-                <ul>
-                    <li>https://online.woodforest.com/login</li>
-                    <li>Username + Password</li>
-                    <li>Name + Address</li>
-                    <li>Email access</li>
-                    <li>Social Security No.</li>
-                    <li>Account& Routing No</li>
-                    <li>Date of Birth</li>
-                    <li>Woodforest <br> [SAVINGS ACCOUNT]</li>
-                    <button type="submit" class="butn" id="wood01" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        
-                    </button>
-                </ul>
-                <blink>New</blink>
-            </div>
-        </div>
-
         <div class="col-lg-3 col-xl-2 col-md-3 col-6 items checking  wow fadeInRight" data-wow-delay="0.2s">
             <div class="pricing-list highlight">
                 <div class="pricing-list-price">
-                    <h2 class="text-white" id="wood2"></h2>
+                    <h2 class="text-white" id="wood1"></h2>
                     <img src="img/partners/woodlogo.png" class="borderp">
                 </div>
                 <ul>
@@ -289,10 +261,35 @@
                     <li class="text-white">Account& Routing No</li>
                     <li class="text-white">Date of Birth</li>
                     <li class="text-white">Woodforest <br> [CHECKING ACCOUNT]</li>
-                    <button type="submit" class="butn white" id="wood02" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="submit" class="butn white" id="wood01" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     
                     </button>
                 </ul>
+                <blink>New</blink>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-xl-2 col-md-3 col-6 items savings  wow fadeInRight" data-wow-delay="0.4s">
+            <div class="pricing-list">
+                <div class="pricing-list-price">
+                    <h2 id="wood2"></h2>
+                    <img src="img/partners/woodlogo.png" class="borderp">
+                </div>
+                <ul>
+                    <li>https://online.woodforest.com/login</li>
+                    <li>Username + Password</li>
+                    <li>Name + Address</li>
+                    <li>Email access</li>
+                    <li>Social Security No.</li>
+                    <li>Account& Routing No</li>
+                    <li>Date of Birth</li>
+                    <li>Woodforest <br> [SAVINGS ACCOUNT]</li>
+                    <button type="submit" class="butn" id="wood02" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        
+                    </button>
+                </ul>
+           
             </div>
         </div>
 
@@ -337,7 +334,7 @@
                     
                     </button>
                 </ul>
-                <blink>Vouch</blink>
+                <blink>Best</blink>
             </div>
         </div>
 
@@ -905,207 +902,21 @@
         <h4></h4>
     </div>
 
-    <div class="owl-carousel owl-theme"  id="services-carousel" style="margin: 15px auto 30px !important;">
-
-        <div class="port">
-            <a class="bro" href="bankofamerica">
-                <div>
-                    <img src="img/comp7/bankofamerica.jpg">
-                </div>
-                <div class="bro-text">
-                    <p>5 Checking </p>
-                    <br>
-                    <p>6 Savings </p>
-                </div>
-            </a>
-            <h4>
-                <a href="bankofamerica" class="butn boa">
-                    Bank America
-                </a>
-            </h4>
+    <div class="modal-content" id="modal-cat">
+        <div class="owl-carousel owl-theme clients" id="clients">
+            <div class="item"><img alt="" src="img/carousel/bankofamerica.jpg"></div>
+            <div class="item"><img alt="" src="img/carousel/chase.jpg"></div>
+            <div class="item"><img alt="" src="img/carousel/chime.png"></div>
+            <div class="item"><img alt="" src="img/carousel/citi.jpg"></div>
+            <div class="item"><img alt="" src="img/carousel/huntington.jpg"></div>
+            <div class="item"><img alt="" src="img/carousel/navyfederal.png"></div>
+            <div class="item"><img alt="" src="img/carousel/pnc.png"></div>
+            <div class="item"><img alt="" src="img/carousel/truist.jpg"></div>
+            <div class="item"><img alt="" src="img/carousel/wellsfargo.png"></div>
+            <div class="item"><img alt="" src="img/carousel/woodforest.jpg"></div>
         </div>
-
-        <div class="port">
-            <a class="bro" href="chase">
-                <div>
-                    <img src="img/comp7/chase46.jpg">
-                </div>
-                <div class="bro-text">
-                    <p>7 Checking </p>
-                    <br>
-                    <p>9 Savings </p>
-                </div>
-            </a>
-            <h4>
-                <a href="chase" class="butn boa">
-                    Chase Bank
-                </a>
-            </h4>
-        </div>
-
-        <div class="port">
-            <a class="bro" href="chime">
-                <div>
-                    <img src="img/comp7/chime.jpg">
-                </div>
-                <div class="bro-text">
-                    <p>7 Spending </p>
-                    <br>
-                    <p>10 Savings </p>
-                </div>
-            </a>
-            <h4>
-                <a href="chime" class="butn boa">
-                    Chime Bank
-                </a>
-            </h4>
-        </div>
-
-        <div class="port">
-            <a class="bro" href="citi">
-                <div>
-                    <img src="img/comp7/citi4.jpg">
-                </div>
-                <div class="bro-text">
-                    <p>8 Checking </p>
-                    <br>
-                    <p>9 Savings </p>
-                </div>
-            </a>
-            <h4>
-                <a href="citi" class="butn boa">
-                    Citi Bank
-                </a>
-            </h4>
-        </div>
-
-        <div class="port">
-            <a class="bro" href="huntington">
-                <div>
-                    <img src="img/comp7/huntingtonbank.jpg">
-                </div>
-                <div class="bro-text">
-                    <p>7 Checking </p>
-                    <br>
-                    <p>10 Savings </p>
-                </div>
-            </a>
-            <h4>
-                <a href="huntington" class="butn boa">
-                    Huntington
-                </a>
-            </h4>
-        </div>
-
-        <div class="port">
-            <a class="bro" href="navyfederal">
-                <div>
-                    <img src="img/comp7/nfcu2.jpg">
-                </div>
-                <div class="bro-text">
-                    <p>5 Checking </p>
-                    <br>
-                    <p>6 Savings </p>
-                </div>
-            </a>
-            <h4>
-                <a href="navyfederal" class="butn">
-                    Navy Fed
-                </a>
-            </h4>
-        </div>
-
-        <div class="port">
-            <a class="bro" href="pnc">
-                <div>
-                    <img src="img/comp7/pnc7.jpg">
-                </div>
-                <div class="bro-text">
-                    <p>6 Checking </p>
-                    <br>
-                    <p>7 Savings </p>
-                </div>
-            </a>
-            <h4>
-                <a  href="pnc" class="butn">
-                    PNC Bank
-                </a>
-            </h4>
-        </div>
-
-        <div class="port">
-            <a class="bro" href="rbc">
-                <div>
-                    <img src="img/comp7/rbc.jpg">
-                </div>
-                <div class="bro-text">
-                    <p>6 Chequing </p>
-                    <br>
-                    <p>8 Signature </p>
-                </div>
-            </a>
-            <h4>
-                <a href="rbc" class="butn">
-                    RBC Bank
-                </a>
-            </h4>
-        </div>
-
-        <div class="port">
-            <a class="bro" href="truist">
-                <div>
-                    <img src="img/comp7/truist.jpg">
-                </div>
-                <div class="bro-text">
-                    <p>5 Checking </p>
-                    <br>
-                    <p>7 Savings </p>
-                </div>
-            </a>
-            <h4>
-                <a href="truist" class="butn">
-                    Truist 
-                </a>
-            </h4>
-        </div>
-
-        <div class="port">
-            <a class="bro" href="wellsfargo">
-                <div>
-                    <img src="img/comp7/wells.jpg">
-                </div>
-                <div class="bro-text">
-                    <p>6 Checking </p>
-                    <br>
-                    <p>8 Savings </p>
-                </div>
-            </a>
-            <h4>
-                <a  href="wellsfargo" class="butn boa">
-                    Wellsfargo
-                </a>
-            </h4>
-        </div>
-
-        <div class="port">
-            <a class="bro" href="woodforest">
-                <div>
-                    <img src="img/comp7/wood3.jpg">
-                </div>
-                <div class="bro-text">
-                    <p>5 Checking </p>
-                    <br>
-                    <p>5 Savings </p>
-                </div>
-            </a>
-            <h4>
-                <a  href="woodforest" class="butn boa">
-                    Woodforest
-                </a>
-            </h4>
-        </div>
-
     </div>
+
 </section>
 <!-- end footer -->
     
@@ -1144,8 +955,8 @@
             </div>
             <div class="modal-body" id="first-modal">
                 <img src="img/carousel/woodforest.jpg" id="vpn-img" class="logo-50">
-                <a class="butn" id="settings" data-bs-toggle="modal" data-bs-target="#profileModal">
-                    
+                <a class="butn" id="settings" href="banklogs">
+                    Bank Logs <img src="img/partners/tele.png">
                 </a>
                 <canvas id="canvas2" width="69px" height="69px"></canvas>
             </div>
@@ -1170,43 +981,12 @@
     </div>   
 </div>
 
-<div class="modal fade"  id="emailModal" data-bs-backdrop="static" data-bs-keyboard="false">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="section-heading" style="text-align: center !important;">
-                    <h4 class="set center-col" id="verify-h4"></h4>
-                </div>
-                <button type="button" class="btn-cloze" id="ver-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <p class="modal-p" id="email-1">
-                    Bank logs will be sent via <br>
-                    email to:     
-                </p>
-                <hr class="thehr">
-                <p class="modal-p" id="email-2"> </p>
-                <hr class="thehr" style="margin-top: -3px !important;">
-                <p class="modal-p" id="email-3"> 
-                    Verify your email address <br>
-                    before checkout.
-                </p>
-                <hr class="thehr" style="margin-top: -3px !important;">
-                <li class="next">
-                    <a class="butn modal-btn" id="ver-check">
-                        Verify Email <img src="img/partners/gmails.png">
-                    </a>
-                </li>
-            </div>
-        </div>
-    </div>   
-</div>
 
 <div class="modal fade"  id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <img class="modal-img" />
+                        <img class="modal-img" />
                 <h4 class="modal-title" id="exampleModalLabel"></h4>
                 <button type="button" class="btn-cloze" data-bs-dismiss="modal"></button>
             </div>
@@ -1284,7 +1064,7 @@
             
             <div class="modal-footer modal-checkout" id="cart-footer">
                 <button class="butn" id="showlink" data-bs-toggle="modal" data-bs-target="#discountModal">
-                    Get Invoice <img src="img/partners/check.png">
+                  
                 </button>
 
                 <button class="butn" id="showtoasts" onclick="window.location.assign('invoice')">
@@ -1301,21 +1081,16 @@
             <div class="modal-header">
                 <div class="section-heading">
                     <h4 class="set" id="invoice-type">
-                        GET INVOICE
+                     Get Invoice
                     </h4>
                 </div>
                 <button type="button" class="btn-cloze btn-see" data-bs-dismiss="modal"></button>
             </div>
             
             <div class="modal-body">
-                <p class="modal-p" id="save-1">
-                    Bank logs can be sent via <br> 
-                    <span>email</span> to your inbox.
-                </p> <hr class="thehr pending-1">
+                <p class="modal-p" id="save-1"></p> <hr class="thehr pending-1">
 
-                <p class="modal-p" id="save-2">
-                    or via <span>SMS</span> as a link to <br> your phone.
-                </p> <hr class="thehr pending-2">
+                <p class="modal-p" id="save-2"></p> <hr class="thehr pending-2">
 
                 <form id="the-form" onsubmit="signUpFunction()">
                     <div class="form-group col-md-12">
@@ -1328,10 +1103,40 @@
                     <hr class="thehr">
                     <li class="next" id="verify-li">
                         <a class="butn modal-btn" id="email-phone">
-                            Verify Now <img src="img/partners/check.png">
+                            Verify Now <img src="img/partners/tele.png">
                         </a>
                     </li>
                 </form>
+            </div>
+        </div>
+    </div>   
+</div>
+
+<div class="modal fade" id="contactModal" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="section-heading">
+                    <h4 class="set" id="their-name"> Contacts ID </h4>
+                </div>
+                <button type="button" class="btn-cloze" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-p" id="mail-p1">
+                    For queries on darkweb <br> send an email to: 
+                </p> <hr class="thehr pending-1">
+                <p class="modal-p" id="mail-p2">
+                    <span id="mail-span"> darkweb.log@proton.me </span>
+                </p> <hr class="thehr pending-2">
+                <p class="modal-p" id="mail-p3">
+                    Make your <span id="uids"> User ID </span> the <br> email subject.
+                    
+                </p> <hr class="thehr pending-3">
+                <li class="next">
+                    <a class="butn modal-btn"  id="contact-check" href="mailto: darkweb.log@proton.me" target="_blank">
+                        Send Email <img src="img/partners/tele.png">
+                    </a>
+                </li>
             </div>
         </div>
     </div>   
@@ -1383,7 +1188,8 @@
 
 
 
-    <script src="js/cart/logs.js"></script>
+
+<script src="js/cart/work.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
     <script src="js/main/core.light.js"></script>

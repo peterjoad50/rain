@@ -13,11 +13,6 @@
     max-width: 15% !important;
   }
 }
-@media screen and (max-width: 1370px) {
-  .ze-display {
-    display: none !important;
-  }
-}
 .center-col {
   cursor:  pointer !important;
 }

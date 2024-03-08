@@ -6,7 +6,7 @@
     border-bottom: none !important;
 }
 .therow {
-	margin: 67px -15px 0 -15px;
+	margin: 75px -15px 0 -15px;
 }
 @media screen and (max-width: 1026px) {
 	.therow {
@@ -22,7 +22,7 @@
     margin-bottom: 0;
 }
 .therow {
-	margin: 0 -15px 0 -15px;
+	margin: 50px -15px 0 -15px;
 }
 @media screen and (max-width: 1026px) {
 	.thecont{
@@ -202,8 +202,8 @@ section .dataTables_wrapper dataTables_length {
 
 @media screen and (min-width: 996px) {
   .col-lg-25 {
-      -ms-flex: 0 0 20% !important;
-      flex: 0 0 20% !important;
-      max-width: 20% !important;
+      -ms-flex: 0 0 19% !important;
+      flex: 0 0 19% !important;
+      max-width: 19% !important;
   }
 }
