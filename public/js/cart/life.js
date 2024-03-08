@@ -61,7 +61,7 @@ if (document.getElementById('boa01')) {
     (document.getElementById("chime1").innerHTML = "$" + (3107).toLocaleString()),
     (document.getElementById("chime2").innerHTML = "$" + (4135).toLocaleString()),
     (document.getElementById("chime3").innerHTML = "$" + (4825).toLocaleString()),
-    (document.getElementById("chime4").innerHTML = "$" + (5407).toLocaleString()),
+    (document.getElementById("chime4").innerHTML = "$" + (5460).toLocaleString()),
     (document.getElementById("chime5").innerHTML = "$" + (6346).toLocaleString()),
     (document.getElementById("chime6").innerHTML = "$" + (7240).toLocaleString()),
     (document.getElementById("chime7").innerHTML = "$" + (7854).toLocaleString()),
