@@ -1,20 +1,11 @@
 @media screen and (min-width: 996px) {
-  .col-lg-25 {
-      -ms-flex: 0 0 17.3% !important;
-      flex: 0 0 17.3% !important;
-      max-width: 17.3% !important;
-  }
   .col-lg-3 {
-    -ms-flex: 0 0 24% !important;
-    flex: 0 0 24% !important;
-    max-width: 24% !important;
+    -ms-flex: 0 0 20% !important;
+    flex: 0 0 20% !important;
+    max-width: 20% !important;
   }
 }
-@media screen and (min-width: 1370px) {
-  .col-xl-2 {
-    max-width: 15% !important;
-  }
-}
+
 .center-col {
   cursor:  pointer !important;
 }
@@ -100,7 +91,7 @@ body {
 .bro-text p{
   color: rgba(255, 255, 255, 0.97) !important;
   margin-top: 50px !important;
-  font-size: 23px !important;
+  font-size: 27px !important;
   line-height: 32px !important;
   font-weight: 600 !important;
 }
@@ -112,7 +103,7 @@ body {
     margin: 3px auto !important;
   }
   .bro-text p {
-    font-size: 19px !important;
+    font-size: 22px !important;
     margin-top: 14px !important;
   }
 }
@@ -135,26 +126,28 @@ body {
 }
 .port h4 a {
   color: rgba(255, 255, 255, 0.92) !important;
-  font-size: 32px;
+  font-size: 35px;
+  margin: 7px auto !important;
+
   font-weight: 600 !important;
   text-transform: uppercase !important;
 }
 
 .port a img {
   width: 100% !important;
-  height: 210px !important;
+  height: 200px !important;
 }
 
 
 @media screen and (max-width: 506px) {
   .port {
-    margin: 45px 0px !important;
+    margin: 42px 0px !important;
   }
   .port a img {
     height: 165px !important;
   }
   .port h4 a.butn {
-    font-size: 24px;
+    font-size: 26px;
     padding: 7px 0 !important;
   }
 }
@@ -176,9 +169,10 @@ body {
 .banner-words-wrapper {
     display: inline-block;
     position: relative;
+    
     text-align: left;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     text-align: center;
 }
 .separator {
