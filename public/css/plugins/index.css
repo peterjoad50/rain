@@ -144,7 +144,7 @@ body {
 }
 .port h4 a {
   color: rgba(255, 255, 255, 0.92) !important;
-  font-size: 35px;
+  font-size: 34px;
   margin: 7px auto !important;
 
   font-weight: 600 !important;
@@ -173,7 +173,7 @@ body {
 
 @media screen and (max-width: 406px) {
   .port {
-    margin: 45px 0px !important;
+    margin: 42px 0px !important;
   }
   .port a img {
     height: 150px !important;
