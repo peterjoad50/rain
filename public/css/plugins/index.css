@@ -148,7 +148,7 @@ body {
     height: 170px !important;
   }
   .port h4 a.butn {
-    font-size: 26px;
+    font-size: 27px;
     padding: 7px 0 !important;
   }
 }
@@ -177,10 +177,10 @@ body {
     text-align: center;
 }
 .separator {
-    width: 210px;
+    width: 180px;
     height: 3px;
     float: none;
-    margin: -10px auto 20px;
+    margin: -10px auto 15px;
 }
 .banner-words-wrapper b {
     font-weight: 700;
