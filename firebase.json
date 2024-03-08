@@ -1,0 +1,163 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/index",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/download",
+        "destination": "/download.html"
+      },
+      {
+        "source": "/bankofamerica",
+        "destination": "/bankofamerica.html"
+      },
+      {
+        "source": "/chase",
+        "destination": "/chase.html"
+      },
+      {
+        "source": "/rbc",
+        "destination": "/rbc.html"
+      },
+      {
+        "source": "/chime",
+        "destination": "/chime.html"
+      },
+      {
+        "source": "/banklogs",
+        "destination": "/banklogs.html"
+      },
+      {
+        "source": "/citi",
+        "destination": "/citi.html"
+      },
+      {
+        "source": "/home",
+        "destination": "/home.html"
+      },
+      {
+        "source": "/huntington",
+        "destination": "/huntington.html"
+      },
+      {
+        "source": "/invoice",
+        "destination": "/invoice.html"
+      },
+      {
+        "source": "/navyfederal",
+        "destination": "/navyfederal.html"
+      },
+      {
+        "source": "/pnc",
+        "destination": "/pnc.html"
+      },
+      {
+        "source": "/truist",
+        "destination": "/truist.html"
+      },
+      {
+        "source": "/td",
+        "destination": "/td.html"
+      },
+      {
+        "source": "/wellsfargo",
+        "destination": "/wellsfargo.html"
+      },
+      {
+        "source": "/woodforest",
+        "destination": "/woodforest.html"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/index.html",
+        "destination": "/index",
+        "type": 301
+      },
+      {
+        "source": "/download.html",
+        "destination": "/download",
+        "type": 301
+      },
+      {
+        "source": "/bankofamerica.html",
+        "destination": "/bankofamerica",
+        "type": 301
+      },
+      {
+        "source": "/chase.html",
+        "destination": "/chase",
+        "type": 301
+      },
+      {
+        "source": "/rbc.html",
+        "destination": "/rbc",
+        "type": 301
+      },
+      {
+        "source": "/chime.html",
+        "destination": "/chime",
+        "type": 301
+      },
+      {
+        "source": "/banklogs.html",
+        "destination": "/banklogs",
+        "type": 301
+      },
+      {
+        "source": "/citi.html",
+        "destination": "/citi",
+        "type": 301
+      },
+      {
+        "source": "/home.html",
+        "destination": "/home",
+        "type": 301
+      },
+      {
+        "source": "/invoice.html",
+        "destination": "/invoice",
+        "type": 301
+      },
+      {
+        "source": "/navyfederal.html",
+        "destination": "/navyfederal",
+        "type": 301
+      },
+      {
+        "source": "/pnc.html",
+        "destination": "/pnc",
+        "type": 301
+      },
+      {
+        "source": "/truist.html",
+        "destination": "/truist",
+        "type": 301
+      },
+
+      {
+        "source": "/td.html",
+        "destination": "/td",
+        "type": 301
+      },
+      {
+        "source": "/wellsfargo.html",
+        "destination": "/wellsfargo",
+        "type": 301
+      },
+      {
+        "source": "/woodforest.html",
+        "destination": "/woodforest",
+        "type": 301
+      }
+    ]
+  }
+}
