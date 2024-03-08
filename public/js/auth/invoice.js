@@ -122,12 +122,7 @@ auth.onAuthStateChanged(user => {
 			${thePhoneNo.replace('+', '')} <img src="img/partners/tele.png">`;
 
 		emailShow();
-	} else if(user.isAnonymous) {
-		wildPa.innerHTML = `
-		Logs can be sent to <span>Email</span>.
-		`;
-		checkNow.innerHTML = 'Email / Phone';
-	}
+	} 
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');

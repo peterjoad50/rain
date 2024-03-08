@@ -60,17 +60,7 @@ auth.onAuthStateChanged(user => {
             ${user.phoneNumber}.
             <hr class="hr3-nil">
         `;
-    } else if(user.isAnonymous) {
-        theLogs = `
-            ${theMessage} <br>
-
-            will be downloaded to: 
-
-            <hr class="to-hr">
-            ${theDevicez}
-            <hr class="hr3-nil">
-        `;
-    }
+    } 
 
     
     var i = -1;
