@@ -250,54 +250,6 @@ function againBro() {
 }
 
 
-const signInWithYahoo = () => {
-	const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
-	auth.signInWithPopup(yahooProvider).then(() => {
-		auth.currentUser.sendEmailVerification();
-		$('#exampleModal').modal('show');
-	}).catch(error => {
-		var shortCutFunction = 'success';
-		var msg = `${error.message}`;
-		toastr.options = {
-			closeButton: true,
-			debug: false,
-			newestOnTop: true,
-			progressBar: true,
-			positionClass: 'toast-top-full-width',
-			preventDuplicates: true,
-			onclick: null
-		};
-		var $toast = toastr[shortCutFunction](msg);
-		$toastlast = $toast;
-	});
-};
-signYahoo.addEventListener("click", signInWithYahoo);
-
-
-
-const signInWithGoogle = () => {
-	const googleProvider = new firebase.auth.GoogleAuthProvider;
-	auth.signInWithPopup(googleProvider).then(() => {
-		auth.currentUser.sendEmailVerification();
-		$('#exampleModal').modal('show');
-	}).catch(error => {
-		var shortCutFunction = 'success';
-		var msg = `${error.message}`;
-		toastr.options = {
-			closeButton: true,
-			debug: false,
-			newestOnTop: true,
-			progressBar: true,
-			positionClass: 'toast-top-full-width',
-			preventDuplicates: true,
-			onclick: null
-		};
-		var $toast = toastr[shortCutFunction](msg);
-		$toastlast = $toast;
-	});
-};
-signGoogle.addEventListener("click", signInWithGoogle);
-
 
 auth.onAuthStateChanged(user => {
 	if(user) {

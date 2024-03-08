@@ -5,7 +5,9 @@
       max-width: 17.3% !important;
   }
   .col-lg-3 {
-    max-width: 20.7% !important;
+    -ms-flex: 0 0 24% !important;
+    flex: 0 0 24% !important;
+    max-width: 24% !important;
   }
 }
 @media screen and (min-width: 1370px) {
@@ -133,148 +135,27 @@ body {
 }
 .port h4 a {
   color: rgba(255, 255, 255, 0.92) !important;
-  font-size: 28.5px;
+  font-size: 32px;
   font-weight: 600 !important;
   text-transform: uppercase !important;
 }
-.port h4 a.boa {
-  font-size: 26.5px;
-}
+
 .port a img {
   width: 100% !important;
-  height: 180px;
+  height: 210px !important;
 }
-@media screen and (min-width: 996px) {
-  .port {
-    border-radius: 0;
-    width: 85% !important;
-    margin: 10px 7.5% 30px !important;
-  }
-  .port a img {
-    height: 175px;
-  }
-}
-@media screen and (max-width: 996px) {
-  .port a img {
-    height: 250px;
-  }
-  .port h4 a {
-    font-size: 36px;
-  }
-  .port h4 a.boa {
-    font-size: 36px;
-  }
-}
-@media screen and (max-width: 821px) {
-  .port {
-    margin: 35px 15px !important;
-  }
-  .port a img {
-    height: 250px;
-  }
-  .port h4 a.butn {
-    font-size: 39px;
-    padding: 20px 0 !important;
-  }
-  .port h4 a.butn.boa {
-    font-size: 37px;
-    padding: 20px 0 !important;
-  }
-}
-@media screen and (max-width: 769px) {
-  .port {
-    margin: 20px 15px !important;
-  }
-  .port a img {
-    height: 230px;
-  }
-  .port h4 a.butn {
-    font-size: 35px;
-    padding: 14px 0 !important;
-  }
-  .port h4 a.butn.boa {
-    font-size: 33px;
-    padding: 14px 0 !important;
-  }
-}
+
+
 @media screen and (max-width: 506px) {
   .port {
-    margin: 15px 0px !important;
+    margin: 40px 0px !important;
   }
   .port a img {
-    height: 140px;
+    height: 150px !important;
   }
   .port h4 a.butn {
     font-size: 24px;
     padding: 7px 0 !important;
-  }
-  .port h4 a.butn.boa {
-    font-size: 22px;
-    padding: 7px 0 !important;
-  }
-}
-@media screen and (max-width: 420px) {
-  .port {
-    margin: 21px 0px !important;
-  }
-  .port a img {
-    height: 137px;
-  }
-  .port h4 a.butn {
-    font-size: 23px;
-    padding: 6px 0 !important;
-  }
-  .port h4 a.butn.boa {
-    font-size: 21px;
-    padding: 6px 0 !important;
-  }
-}
-@media screen and (max-width: 396px) {
-  .port {
-    margin: 21px 0px !important;
-  }
-  .port a img {
-    height: 130px;
-  }
-  .port h4 a.butn {
-    font-size: 22px;
-    padding: 5px 0 !important;
-  }
-  .port h4 a.butn.boa {
-    font-size: 20px;
-    padding: 5px 0 !important;
-  }
-}
-@media screen and (max-width: 380px) {
-  .port {
-    margin: 21px 0px !important;
-  }
-  .port a img {
-    height: 125px;
-  }
-  .port h4 a.butn {
-    font-size: 21px;
-    padding: 4.5px 0 !important;
-  }
-  .port h4 a.butn.boa {
-    font-size: 19px;
-    padding: 4.5px 0 !important;
-  }
-}
-@media screen and (max-width: 370px) {
-  .port {
-    margin: 17px 0px !important;
-  }
-  .port a img {
-    height: 115px;
-  }
-  .port h4 a.butn {
-    font-size: 20px;
-    padding: 4px 0 !important;
-  }
-  .port h4 a.butn.boa {
-    font-size: 18px;
-    padding: 4px 0 !important;
   }
 }
 
@@ -288,8 +169,8 @@ body {
     text-align: center;
 }
 .separator {
-    width: 140px;
-    height: 1.4px;
+    width: 210px;
+    height: 3px;
     float: none;
     margin: -10px auto 20px;
 }
@@ -322,30 +203,22 @@ body {
     width: 3px;
     height: 100%;
 }
-@media screen and (max-width: 767px) {
-    .banner-words-wrapper b {
-        font-size: 39px;
-    }
-}
+
 @media screen and (max-width: 570px) {
   .banner-words-wrapper b {
-    font-size: 37px;
-  }
-}
-@media screen and (max-width: 397px) {
-  .banner-words-wrapper b {
-    font-size: 35px;
-  }
-}
-@media screen and (max-width: 370px) {
-  .banner-words-wrapper b {
-    font-size: 33px;
+    font-size: 42px;
   }
 }
 
+
+
 blink {
-  top: 30px;
-  right: -5px;
+  top: 50px;
+  right: -10px;
+
+  padding: 5px;
+  margin: 3px;
+  font-size: 19px;
 }
 .butn.modal-btn {
   margin: 3vh 0 1vh;
