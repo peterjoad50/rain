@@ -7,6 +7,14 @@
   }
 }
 
+@media screen and (max-width: 996px) {
+  .col-sm-7 {
+    -ms-flex: 0 0 51% !important;
+    flex: 0 0 51% !important;
+    max-width: 51% !important;
+  }
+}
+
 .center-col {
   cursor:  pointer !important;
 }
