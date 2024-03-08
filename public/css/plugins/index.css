@@ -3,6 +3,7 @@
     -ms-flex: 0 0 20% !important;
     flex: 0 0 20% !important;
     max-width: 20% !important;
+    margin-top: 30px !important;
   }
 }
 
@@ -141,10 +142,10 @@ body {
 
 @media screen and (max-width: 506px) {
   .port {
-    margin: 42px 0px !important;
+    margin: 40px 0px !important;
   }
   .port a img {
-    height: 165px !important;
+    height: 170px !important;
   }
   .port h4 a.butn {
     font-size: 26px;
