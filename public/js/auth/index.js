@@ -10,17 +10,14 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var theWebsite = 'https://www.darkweb.ink/invoice';
 
-if(!localStorage.getItem('darkweb-life')) {
-	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-life', true);
-}
+
 
 const mailField = document.getElementById('inputLife');
 const signUp = document.getElementById('email-phone');
 
-const signYahoo = document.getElementById('signYahoo');
-const signGoogle = document.getElementById('signGoogle');
+const signAnony = document.getElementById('signAnony');
 
+const signGoogle = document.getElementById('signGoogle');
 
 const phoneNumberField = document.getElementById('inputLife');
 const codeField = document.getElementById('code');
@@ -34,15 +31,13 @@ const emailLog = document.getElementById('email-log');
 const jinaHolder = document.getElementById('their-name');
 
 
-
-
 const auth = firebase.auth();
 
 phoneLog.addEventListener('click', () => {
 	document.getElementById('invoice-type').innerHTML = 'PHONE LOGIN';
 
 	document.getElementById('save-1').innerHTML = ` A <span>code</span> will be sent to your <br> phone number. `;
-	document.getElementById('save-2').innerHTML = ` Use the code to login on <br> <span>darkweb</span>. `;
+	document.getElementById('save-2').innerHTML = ` Use the code to sign-in on <br> <span>darkweb</span>. `;
 
 	fetch('https://ipapi.co/json/')
 	.then(function(response) {
@@ -54,6 +49,7 @@ phoneLog.addEventListener('click', () => {
 		phoneNumberField.style.textAlign = 'left';
 		theFlag7.style.display = 'flex';
 		phoneNumberField.setAttribute('pattern', '[+]{1}[0-9]{11,14}');
+		signUp.innerHTML = `Verify Now <img src="img/partners/phone.png">`;
 	});
 });
 
@@ -62,13 +58,14 @@ emailLog.addEventListener('click', () => {
 	document.getElementById('invoice-type').innerHTML = 'EMAIL LOGIN';
 
 	document.getElementById('save-1').innerHTML = ` A <span>link</span> will be sent to your <br> email inbox. `;
-	document.getElementById('save-2').innerHTML = ` Use the link to login on <br> <span>darkweb</span>. `;
+	document.getElementById('save-2').innerHTML = ` Use the link to sign in on <br> <span>darkweb</span>. `;
 
 	theFlag7.style.display = 'none';
 	mailField.setAttribute('type', 'email');
 	mailField.value = '';
 	phoneNumberField.style.textAlign = 'center';
 	mailField.setAttribute('placeholder', 'Enter your Email...');
+	signUp.innerHTML = `Verify Email <img src="img/partners/gmails.png" class="gmails">`;
 });
 
 
@@ -201,7 +198,6 @@ const signUpFunction = () => {
 }
 
 
-
 signUp.addEventListener('click', signUpFunction);
 document.getElementById('the-form').addEventListener('submit', signUpFunction);
 
@@ -224,6 +220,7 @@ function checkBra() {
 			phoneNumberField.style.textAlign = 'left';
 			theFlag7.style.display = 'flex';
 			phoneNumberField.setAttribute('pattern', '[+]{1}[0-9]{11,14}');
+			signUp.innerHTML = `Verify Phone <img src="img/partners/phone.png">`;
 			
 			fetch('https://ipapi.co/json/')
 			.then(function(response) {
@@ -237,6 +234,7 @@ function checkBra() {
 		
 			mailField.setAttribute('type', 'email');
 			mailField.style.textTransform = 'lowercase';
+			signUp.innerHTML = `Verify Email <img src="img/partners/gmails.png" class="gmails">`;
 		}
 	}
 } 
@@ -246,9 +244,77 @@ function againBro() {
     if (!this.value) {
         mailField.setAttribute('type', 'text');
 		theFlag7.style.display = 'flex';
+		signUp.innerHTML = `Verify Now <img src="img/partners/check.png">`;
     }
 }
 
+
+const signInAnony = () => {
+	auth.signInAnonymously().then(() => {
+		$('#exampleModal').modal('show');
+
+		fetch('https://ipapi.co/json/')
+		.then(function(response) {
+			return response.json();
+			
+		})
+		.then(function(data) {
+			document.getElementById('mail-p1').innerHTML = `
+				${data.timezone}, ${data.country_code} <br>
+				${data.city}, <span>${data.country_name}</span>.
+			`;
+		});
+
+		if(platform.manufacturer !== null) {
+			document.getElementById('mail-p3').innerHTML = `
+				${platform.name} Browser, <br> 
+				<span id="uidz">${platform.manufacturer} ${platform.product} ${platform.os}</span>.
+				
+			`;
+		} else {
+			document.getElementById('mail-p3').innerHTML = `
+				${platform.name} ID, <br>
+				<span id="uidz">${platform.os} Device</span>.
+			`;
+		}
+		
+	}).catch(error => {
+		var shortCutFunction = 'success';
+		var msg = `${error.message}`;
+		toastr.options =  {
+			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+			positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+		};
+		var $toast = toastr[shortCutFunction](msg);
+		$toastlast = $toast;
+	});
+};
+signAnony.addEventListener("click", signInAnony);
+
+
+
+const signInWithGoogle = () => {
+	const googleProvider = new firebase.auth.GoogleAuthProvider;
+	auth.signInWithPopup(googleProvider).then(() => {
+		auth.currentUser.sendEmailVerification();
+		$('#exampleModal').modal('show');
+	}).catch(error => {
+		var shortCutFunction = 'success';
+		var msg = `${error.message}`;
+		toastr.options = {
+			closeButton: true,
+			debug: false,
+			newestOnTop: true,
+			progressBar: true,
+			positionClass: 'toast-top-full-width',
+			preventDuplicates: true,
+			onclick: null
+		};
+		var $toast = toastr[shortCutFunction](msg);
+		$toastlast = $toast;
+	});
+};
+signGoogle.addEventListener("click", signInWithGoogle);
 
 
 auth.onAuthStateChanged(user => {
@@ -294,6 +360,7 @@ auth.onAuthStateChanged(user => {
 		} 
 	}
 });
+
 
 fetch('https://ipapi.co/json/')
 	.then(function(response) {
