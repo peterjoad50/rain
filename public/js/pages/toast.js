@@ -8,6 +8,11 @@ auth.onAuthStateChanged(user => {
 
     var toastbtc = '';
 
+    var closeSave = document.getElementById('close-save');
+    var closeExam = document.getElementById('close-exam');
+
+    var paidLogs = false;
+
     var theMessage = '';
 
     if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
@@ -112,7 +117,7 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 7000
+            timeOut: 6000
         };
         if (!msg) {
             msg = getMessage();
@@ -123,6 +128,9 @@ auth.onAuthStateChanged(user => {
         if(user.email) {
             auth.currentUser.sendEmailVerification();
         }
+
+        paidLogs = true;
+        closeExam.addEventListener('click', closeModals);
     });
 
 
@@ -138,7 +146,7 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 7000
+            timeOut: 6000
         };
         if (!msg) {
             msg = getMessage();
@@ -149,7 +157,28 @@ auth.onAuthStateChanged(user => {
         if(user.email) {
             auth.currentUser.sendEmailVerification();
         }
+
+        paidLogs = true;
+        closeSave.addEventListener('click', closeModals);
     });
+
+    function closeModals() {        
+        if(paidLogs) {
+            setTimeout(() => {
+                if(!(user.email && user.phoneNumber)) {
+                    if (!($('#vpnModal').is(':visible'))) {
+                        if (!($('#exampleModal').is(':visible'))) {
+                            if (!($('#saveModal').is(':visible'))) {
+                                $('#discountModal').modal('show');
+                            }
+                        }
+                    } 
+                }
+            }, 1200);
+            paidLogs = false;
+        }
+    }
+
 
 
 });
