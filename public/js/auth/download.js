@@ -129,7 +129,7 @@ auth.onAuthStateChanged(user => {
 		`;
 	} else if(user.isAnonymous) {
 		emailP.innerHTML = `
-			Logins & cashout guide <br> 
+			Logins & cashout method <br> 
 			will be <span id="mail-span">saved</span> on this <br>
 
 			<span id="uidy">${theDevice}</span>
