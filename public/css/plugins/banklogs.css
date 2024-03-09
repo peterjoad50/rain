@@ -295,7 +295,6 @@ section .dataTables_wrapper .dataTables_paginate,
     filter: blur(2px) !important;
 }
 
-
   
   #example tbody td:nth-child(1) hr {
     margin-top: 10px !important;
