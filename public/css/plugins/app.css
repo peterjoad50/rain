@@ -2594,7 +2594,7 @@ ul.countdown li p {
 #anon-p {
     text-align: center !important;
     font-size: 19px !important;
-    line-height: 53px !important;
+    line-height: 52px !important;
 }
 
 
@@ -2668,7 +2668,7 @@ ul.countdown li p {
     #anon-p {
         text-align: center !important;
         font-size: 18.5px !important;
-        line-height: 51px !important;
+        line-height: 50px !important;
     }
     
     #anon-b {
@@ -2679,7 +2679,7 @@ ul.countdown li p {
 }
 
 #usage-p {
-    margin-bottom: -7px !important;
+    margin-bottom: -18px !important;
 }
 
 

@@ -97,7 +97,7 @@ padding: 10px;
 }
 
 #exampleModal .modal-dialog {
-top: 2vh !important;
+top: 2.5vh !important;
 }
 @media screen and (min-width: 1370px) {
 #exampleModal .modal-dialog {
@@ -105,8 +105,8 @@ top: 2vh !important;
 }
 }
 #anon-check {
-  margin-top: 15px !important;
-  margin-bottom: 10px !important;
+  margin-top: 10px !important;
+  margin-bottom: 7px !important;
   cursor: pointer !important;
   padding-left: 13px !important;
   padding-left: 13px !important;
