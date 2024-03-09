@@ -67,9 +67,14 @@ auth.onAuthStateChanged(user => {
 			phoneShow();
 		}
 		
+		voiceDiv.innerHTML = theaddress.substring(0, 12);
+
 		showLink.innerHTML = `
 			${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
+		var thePhoneNo = user.phoneNumber;
+		voiceDiv.innerHTML = thePhoneNo;
+
 		showLink.innerHTML = `
 		${thePhoneNo.replace('+', '')} <img src="img/partners/tele.png">`;
 

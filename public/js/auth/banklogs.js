@@ -94,6 +94,8 @@ auth.onAuthStateChanged(user => {
 				}
 			}
 		}
+
+		voiceDiv.innerHTML = theaddress.substring(0, 12);
 		
 		showLink.innerHTML = `
 			${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
@@ -101,6 +103,8 @@ auth.onAuthStateChanged(user => {
 		var thePhoneNo = user.phoneNumber;
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
+
+		voiceDiv.innerHTML = thePhoneNo;
 
 		showLink.innerHTML = `
 			${thePhoneNo.replace('+', '')} <img src="img/partners/tele.png">`;
