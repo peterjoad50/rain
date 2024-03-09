@@ -124,7 +124,7 @@ border-radius: 5px !important;
 
 @media screen and (max-width: 500px) {
   #exampleModal .modal-dialog {
-      top: 13vh !important;
+      top: 13.5vh !important;
   }
 }
 
