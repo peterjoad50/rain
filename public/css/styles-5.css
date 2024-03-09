@@ -349,9 +349,12 @@ blink {
 .navbar-nav li.nav-small.open a,
 .gold#voice-div,
 .gold#vpn-nav {
-  border: 1px solid rgb(72, 65, 40) !important;
+  border: 1.3px solid rgb(72, 65, 40) !important;
   background: rgb(252, 207, 86) !important;
   box-shadow: 0 0 0 1px rgb(252, 207, 86) !important;
+}
+.gold#voice-div {
+  background: rgb(167, 231, 86) !important;
 }
 #canvas,
 #canvas2 {
