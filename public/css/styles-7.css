@@ -277,7 +277,6 @@ blink {
 #discountModal .modal-content,
 #verifyModal .modal-content,
 #vpnModal .modal-content,
-#contactModal .modal-content,
 #profileModal .modal-content,
 #saveModal .modal-content,
 #exampleModal .modal-content {
@@ -324,7 +323,6 @@ blink {
 #verifyModal .modal-header .close img,
 #vpnModal .modal-header .close img,
 #profileModal .modal-header .close img,
-#contactModal .modal-header .close img,
 #saveModal .modal-header .close img,
 .btn-remove {
   border: 1.4px solid rgba(73, 192, 208, 0.7);
