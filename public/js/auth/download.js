@@ -38,6 +38,8 @@ const showLink = document.getElementById('showlink');
 
 const phoneNumberField = document.getElementById('inputLife');
 
+const voiceDiv = document.getElementById('voice-div');
+
 const codeField = document.getElementById('code');
 const signInWithPhoneButton = document.getElementById('signInWithPhone');
 

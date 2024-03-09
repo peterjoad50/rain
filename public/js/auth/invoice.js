@@ -44,6 +44,7 @@ const heySave2 = document.getElementById('save-2');
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
 
+const voiceDiv = document.getElementById('voice-div');
 
 const wouldPa = document.getElementById('would');
 const wildPa = document.getElementById('wild');

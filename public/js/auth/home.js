@@ -38,6 +38,7 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
+const voiceDiv = document.getElementById('voice-div');
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
 
