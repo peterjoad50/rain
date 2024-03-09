@@ -89,7 +89,9 @@ function addToCartClicked(event) {
 
     updateCartTotal();
 
-    window.location.assign('invoice');
+    $('#profileModal').modal('show');
+    $('#exampleModal').modal('hide');
+    event.preventDefault();
 }
 
 

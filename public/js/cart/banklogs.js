@@ -112,42 +112,42 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 }
 
 
-document.getElementById('balance1').innerHTML = '$7,425';
-document.getElementById('balance2').innerHTML = '$6,384';
-document.getElementById('balance3').innerHTML = '$6,290';
-document.getElementById('balance4').innerHTML = '$5,261';
-document.getElementById('balance5').innerHTML = '$5,402';
-document.getElementById('balance6').innerHTML = '$7,940';
-document.getElementById('balance7').innerHTML = '$7,087';
-document.getElementById('balance8').innerHTML = '$5,259';
-document.getElementById('balance9').innerHTML = '$7,820';
+document.getElementById('balance1').innerHTML = '$8,425';
+document.getElementById('balance2').innerHTML = '$7,384';
+document.getElementById('balance3').innerHTML = '$7,290';
+document.getElementById('balance4').innerHTML = '$6,261';
+document.getElementById('balance5').innerHTML = '$6,402';
+document.getElementById('balance6').innerHTML = '$8,940';
+document.getElementById('balance7').innerHTML = '$8,087';
+document.getElementById('balance8').innerHTML = '$6,259';
+document.getElementById('balance9').innerHTML = '$8,820';
 
-document.getElementById('balance10').innerHTML = '$5,705';
-document.getElementById('balance11').innerHTML = '$7,214';
-document.getElementById('balance12').innerHTML = '$7,390';
-document.getElementById('balance13').innerHTML = '$7,832';
-document.getElementById('balance14').innerHTML = '$5,439';
-document.getElementById('balance15').innerHTML = '$5,228';
-document.getElementById('balance16').innerHTML = '$5,910';
-document.getElementById('balance17').innerHTML = '$7,104';
-document.getElementById('balance18').innerHTML = '$7,724';
+document.getElementById('balance10').innerHTML = '$6,705';
+document.getElementById('balance11').innerHTML = '$8,214';
+document.getElementById('balance12').innerHTML = '$8,390';
+document.getElementById('balance13').innerHTML = '$8,832';
+document.getElementById('balance14').innerHTML = '$6,439';
+document.getElementById('balance15').innerHTML = '$6,228';
+document.getElementById('balance16').innerHTML = '$6,910';
+document.getElementById('balance17').innerHTML = '$8,104';
+document.getElementById('balance18').innerHTML = '$8,724';
 document.getElementById('balance19').innerHTML = '$6,825';
 
-document.getElementById('balance20').innerHTML = '$7,270';
+document.getElementById('balance20').innerHTML = '$8,270';
 document.getElementById('balance21').innerHTML = '$6,309';
-document.getElementById('balance22').innerHTML = '$7,183';
-document.getElementById('balance23').innerHTML = '$7,704';
-document.getElementById('balance24').innerHTML = '$5,860';
-document.getElementById('balance25').innerHTML = '$7,904';
-document.getElementById('balance26').innerHTML = '$5,329';
-document.getElementById('balance27').innerHTML = '$7,608';
+document.getElementById('balance22').innerHTML = '$8,183';
+document.getElementById('balance23').innerHTML = '$8,704';
+document.getElementById('balance24').innerHTML = '$6,860';
+document.getElementById('balance25').innerHTML = '$8,904';
+document.getElementById('balance26').innerHTML = '$6,329';
+document.getElementById('balance27').innerHTML = '$8,608';
 
 var jobs = document.getElementsByClassName('prized');
 for(j=0; j< jobs.length; j++) {
     var theJob = jobs[j];
     var thePrize = theJob.parentElement.children[1].children[2].innerText;
     
-    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString();
+    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 57).toFixed(0)).toLocaleString();
 
     theJob.innerHTML = '$'+ thePr;
 }

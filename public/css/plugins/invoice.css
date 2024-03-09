@@ -60,10 +60,7 @@
 
   
 .butn#btc-check {
-    padding: 7.8px 13px !important;
-}
-.butn#btc-check.add-this {
-    padding: 7.8px 15px !important;
+    padding: 7.8px 12.5px !important;
 }
 
 
@@ -121,13 +118,8 @@
     }
 
     .butn#btc-check {
-        padding: 7.5px 13px !important;
+        padding: 7.5px 12.5px !important;
     }
-    .butn#btc-check.add-this {
-        padding: 7.5px 15px !important;
-    }
-    
-    
 
     .butn#check-now {
         padding: 7.5px 13px !important;

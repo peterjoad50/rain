@@ -309,13 +309,13 @@ section .dataTables_wrapper .dataTables_paginate,
   }
   #hr-table {
     opacity: 0.5 !important;
-    margin-top: 1px !important;
-    margin-bottom: 10px !important;
+    margin-top: 3px !important;
+    margin-bottom: 13px !important;
   }
   #hr-table-2 {
     opacity: 0.5 !important;
-    margin-top: 10px !important;
-    margin-bottom: 1px !important;
+    margin-top: 13px !important;
+    margin-bottom: 3px !important;
   }
   
 
