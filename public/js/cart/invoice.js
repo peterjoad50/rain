@@ -61,6 +61,15 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
     document.getElementById('btc-check').removeAttribute('data-bs-toggle');
     document.getElementById('btc-check').setAttribute('href', 'home');
 
+    auth.onAuthStateChanged(user => {
+        if (user.isAnonymous) {
+            document.getElementById('would').innerHTML = `
+                You are currently logged <br> in anonymously.
+            `;
+        } 
+    });
+    
+
     document.getElementById('thetot').setAttribute('data-bs-target', '#vpnModal');
 
     if (window.innerWidth > 1092) {
