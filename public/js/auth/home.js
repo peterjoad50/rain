@@ -63,10 +63,11 @@ auth.onAuthStateChanged(user => {
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
 			showLink.setAttribute('data-bs-target', '#vpnModal');
+			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			phoneShow();
 		}
-		
+
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
 
 		showLink.innerHTML = `

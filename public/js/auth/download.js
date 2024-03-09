@@ -76,6 +76,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 
+			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 			showLink.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			jinaHolder.value = theaddress;

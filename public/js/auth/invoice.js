@@ -90,7 +90,7 @@ auth.onAuthStateChanged(user => {
 			`;
 			checkNow.innerHTML = 'View Account';
 			checkNow.setAttribute('data-bs-target', '#vpnModal');
-
+			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 			showLink.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			wouldPa.innerHTML = `

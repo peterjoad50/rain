@@ -69,6 +69,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder3.value = thePhoneNo;
 			jinaHolder2.innerHTML = themail;
 
+			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 			showLink.setAttribute('data-bs-target', '#vpnModal');
 
 			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {

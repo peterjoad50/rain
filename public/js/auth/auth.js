@@ -53,12 +53,13 @@ auth.onAuthStateChanged(user => {
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
+			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 			showLink.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			phoneShow();
 		}
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
-		
+
 		showLink.innerHTML = `
 			${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
