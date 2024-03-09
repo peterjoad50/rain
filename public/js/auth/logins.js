@@ -10,6 +10,10 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var theWebsite = 'https://www.darkweb.ink/invoice';
 
+if(!localStorage.getItem('darkweb-ink')) {
+	localStorage.setItem('banklogs', []);
+	localStorage.setItem('darkweb-ink', true);
+}
 
 
 const mailField = document.getElementById('inputLife');
