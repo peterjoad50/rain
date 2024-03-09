@@ -277,8 +277,4 @@ function updateCartTotal() {
             modalDialog.style.minWidth = '92vw';
         } 
     } 
-
-    if(localStorage.getItem('timez-set')) {
-        localStorage.removeItem('timez-set');
-    }
 }
