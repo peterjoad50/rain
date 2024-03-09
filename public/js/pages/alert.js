@@ -16,7 +16,7 @@ auth.onAuthStateChanged(user => {
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
             theMessage = `
-                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)} Log,
+                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)} Log
             `;
         } else if(JSON.parse(localStorage.getItem('banklogs')).length == 2) { 
             toast = localStorage.getItem('divtotal');
@@ -60,7 +60,16 @@ auth.onAuthStateChanged(user => {
             ${user.phoneNumber}.
             <hr class="hr3-nil">
         `;
-    } 
+    } else if(user.isAnonymous) {
+        theLogs = `
+            To download ${theMessage}, 
+            on this
+
+            <hr class="to-hr">
+            ${theDevicez}
+            <hr class="hr3-nil">
+        `
+    }
 
     
     var i = -1;

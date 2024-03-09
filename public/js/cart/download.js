@@ -205,6 +205,7 @@ function updateCartTotal() {
     localStorage.setItem('divtotal', discountTotal);
     var disTot = localStorage.getItem('divtotal');
 
+    document.getElementById('invoice-type').innerHTML = `Send $${parseInt(total).toLocaleString()} BTC`;
 
 
     if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
@@ -288,7 +289,7 @@ function updateCartTotal() {
         modalAmount.innerHTML = `
             Send $ <span id="omanyala" class="countup">${parseInt(total).toLocaleString()}</span> 
         `;
-        document.getElementById('invoice-type').innerHTML = `Send $${parseInt(total).toLocaleString()} BTC`;
+        
         document.getElementById('disb').style.display = 'none';
     } else if(JSON.parse(localStorage.getItem('banklogs')).length > 1) {
         var Loginz = (JSON.parse(localStorage.getItem('banklogs')));
@@ -333,20 +334,11 @@ function updateCartTotal() {
     } 
 
 
-
-    const invoiceType = document.getElementById('invoice-type');
     const theSave1 = document.getElementById('save-1');
     const theSave2 = document.getElementById('save-2');
     var bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
 
     if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
-        if(bankLog.includes('Huntington') || bankLog.includes('Woodforest')) {
-            invoiceType.innerHTML = bankLog.split('Bank')[0];
-        } else if(bankLog.includes('America')) {
-            invoiceType.innerHTML = 'BankofAmerica';
-        } else {
-            invoiceType.innerHTML = bankLog.split('[')[0];
-        }
         theSave1.innerHTML = `
             ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
             <span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
@@ -357,8 +349,6 @@ function updateCartTotal() {
             <span>Email</span> or <span>SMS</span>.
         `;
     } else {
-        invoiceType.innerHTML = 'Bank Logs';
-
         theSave1.innerHTML = `
             ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
             <span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
@@ -369,5 +359,5 @@ function updateCartTotal() {
         `;
     }
 
-localStorage.setItem('banktotal',total);
+    localStorage.setItem('banktotal',total);
 }
