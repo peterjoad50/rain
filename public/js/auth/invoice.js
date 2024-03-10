@@ -72,13 +72,6 @@ auth.onAuthStateChanged(user => {
 		}
 	}
 
-	if (user.photoURL) {
-		logoHolder.setAttribute("src", user.photoURL);
-		logoHolder.classList.add('logo-50');
-		vpnHolder.setAttribute("src", user.photoURL);
-		vpnHolder.classList.add('logo-50');
-	} 
-
 	if(user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
@@ -155,6 +148,7 @@ auth.onAuthStateChanged(user => {
 	
 });
 
+
 function sendEmail() {
 	auth.currentUser.sendEmailVerification();
 	var shortCutFunction = 'success';
@@ -166,10 +160,24 @@ function sendEmail() {
 	toastr.options = {
 		closeButton: true, debug: false, newestOnTop: true, progressBar: true, 
 		positionClass: 'toast-top-full-width', preventDuplicates: true,
-		onclick: null, timeOut: 7000
+		onclick: null, timeOut: 5000
 	};
 	var $toast = toastr[shortCutFunction](msg);
 	$toastlast = $toast;
+
+	var themail = auth.currentUser.email;
+	var theaddress2 = themail.substring(0, themail.indexOf('@'));
+	if(auth.currentUser.displayName) {
+		var theaddress2 = auth.currentUser.displayName;
+	}
+
+	setTimeout(() => {
+		if(!auth.currentUser.phoneNumber) {
+			showLink.innerHTML = `
+				${theaddress2.substring(0, 10)} <img src="img/partners/tele.png">`;
+			showLink.setAttribute('data-bs-target', '#discountModal');
+		}
+	}, 7000);
 }
 
 
