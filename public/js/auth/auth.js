@@ -189,7 +189,8 @@ const signUpFunction = () => {
 				var shortCutFunction = 'success';
 				var msg = `
 					A verification link has been sent to:   <hr class="to-hr hr15-bot">
-					${email}<hr class="hr10-nil">
+					${email} <hr class="hr10-nil">
+					Check the spam / junk folder.  <hr class="hr3-nil">
 				`;
 				toastr.options =  {
 					closeButton: true, debug: false, newestOnTop: true, progressBar: true,

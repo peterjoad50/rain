@@ -47,7 +47,9 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
-
+const verifyH4 = document.getElementById('verify-h4');
+const email2 = document.getElementById('email-2');
+const verCheck = document.getElementById('ver-check');
 
 
 if(!window.location.href.includes('rkweb')){
@@ -82,6 +84,10 @@ auth.onAuthStateChanged(user => {
 			jinaHolder3.value = theaddress;
 			phoneShow();
 		}
+
+		verCheck.addEventListener('click', sendEmail);
+		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
+		verifyH4.innerHTML = theaddress;
 
 		jinaHolder2.innerHTML = themail;
 
@@ -133,6 +139,23 @@ auth.onAuthStateChanged(user => {
 		`;
 	} 
 });
+
+function sendEmail() {
+	auth.currentUser.sendEmailVerification();
+	var shortCutFunction = 'success';
+	var msg = `
+		A verification link has been sent to:   <hr class="to-hr hr15-bot">
+		${auth.currentUser.email} <hr class="hr10-nil">
+		Check the spam / junk folder.  <hr class="hr3-nil">
+	`;
+	toastr.options = {
+		closeButton: true, debug: false, newestOnTop: true, progressBar: true, 
+		positionClass: 'toast-top-full-width', preventDuplicates: true,
+		onclick: null, timeOut: 7000
+	};
+	var $toast = toastr[shortCutFunction](msg);
+	$toastlast = $toast;
+}
 
 
 function phoneShow() {
@@ -238,7 +261,8 @@ const signUpFunction = () => {
 				var shortCutFunction = 'success';
 				var msg = `
 					A verification link has been sent to:   <hr class="to-hr hr15-bot">
-					${email}<hr class="hr10-nil">
+					${email} <hr class="hr10-nil">
+					Check the spam / junk folder.  <hr class="hr3-nil">
 				`;
 				toastr.options =  {
 					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
