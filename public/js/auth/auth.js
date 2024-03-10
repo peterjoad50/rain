@@ -44,9 +44,9 @@ const auth = firebase.auth();
 
 
 auth.onAuthStateChanged(user => {
-	// if (!user) {
-	// 	window.location.assign('index');
-	// } 
+	if (!user) {
+		window.location.assign('index');
+	} 
 
 	if(user.email) {
 		var themail = user.email;
