@@ -126,6 +126,7 @@ function sendEmail() {
 			showLink.innerHTML = `
 				${theaddress2.substring(0, 10)} <img src="img/partners/tele.png">`;
 			showLink.setAttribute('data-bs-target', '#discountModal');
+			showLink.classList.add('green');
 		}
 	}, 7000);
 }
