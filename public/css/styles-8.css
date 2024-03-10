@@ -355,9 +355,6 @@ blink {
   background: rgb(100, 192, 174) !important;
   box-shadow: 0 0 0 1px rgb(100, 192, 174) !important;
 }
-.gold#voice-div {
-  background: rgb(92, 224, 130) !important;
-}
 #canvas,
 #canvas2 {
   border: 1.4px solid #16a086;
@@ -388,7 +385,10 @@ span#uids {
 #showlink {
   background: rgb(162, 218, 54) !important;
 }
-
+#showlink.green,
+.gold#voice-div {
+  background: rgb(92, 224, 130) !important;
+}
 #text-to-copy {
   border: 1.4px solid rgba(22, 160, 134, 0.7);
 }
