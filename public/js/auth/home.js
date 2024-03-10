@@ -62,7 +62,6 @@ auth.onAuthStateChanged(user => {
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
-			showLink.setAttribute('data-bs-target', '#vpnModal');
 			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			phoneShow();
@@ -71,13 +70,11 @@ auth.onAuthStateChanged(user => {
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
 
 		showLink.innerHTML = `
-			${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
+			Verify Mail <img src="img/partners/tele.png">`;
+		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 		voiceDiv.innerHTML = thePhoneNo;
-
-		showLink.innerHTML = `
-		${thePhoneNo.replace('+', '')} <img src="img/partners/tele.png">`;
 
 		emailShow();
 	} 

@@ -91,7 +91,6 @@ auth.onAuthStateChanged(user => {
 			checkNow.innerHTML = 'View Account';
 			checkNow.setAttribute('data-bs-target', '#vpnModal');
 			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
-			showLink.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
@@ -108,8 +107,8 @@ auth.onAuthStateChanged(user => {
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
 
 		showLink.innerHTML = `
-			${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
-			
+			Verify Mail <img src="img/partners/tele.png">`;
+		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
@@ -122,9 +121,6 @@ auth.onAuthStateChanged(user => {
 			Logs can be sent to <span>Email</span>.
 		`;
 		checkNow.innerHTML = 'Email Invoice';
-
-		showLink.innerHTML = `
-			${thePhoneNo.replace('+', '')} <img src="img/partners/tele.png">`;
 
 		emailShow();
 	} 

@@ -77,7 +77,6 @@ auth.onAuthStateChanged(user => {
 			jinaHolder3.value = thePhoneNo;
 
 			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
-			showLink.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
@@ -89,7 +88,8 @@ auth.onAuthStateChanged(user => {
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
 
 		showLink.innerHTML = `
-			${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
+			Verify Mail <img src="img/partners/tele.png">`;
+		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
@@ -97,9 +97,6 @@ auth.onAuthStateChanged(user => {
 		
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
-
-		showLink.innerHTML = `
-		${thePhoneNo.replace('+', '')} <img src="img/partners/tele.png">`;
 
 		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();

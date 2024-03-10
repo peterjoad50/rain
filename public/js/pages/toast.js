@@ -8,28 +8,13 @@ auth.onAuthStateChanged(user => {
 
     var toastbtc = '';
 
-    var closeSave = document.getElementById('close-save');
-    var closeExam = document.getElementById('close-exam');
-
-    var paidLogs = false;
-
-    var theMessage = '';
-
     if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
         if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
             toast = localStorage.getItem('banktotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-            theMessage = `
-                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)} Log
-            `;
         } else if(JSON.parse(localStorage.getItem('banklogs')).length == 2) { 
             toast = localStorage.getItem('divtotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-            theMessage = `
-                2 Bank Login files:
-            `;
         }
     }
 
@@ -110,9 +95,6 @@ auth.onAuthStateChanged(user => {
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
-
-        paidLogs = true;
-        closeExam.addEventListener('click', closeModals);
     });
 
 
@@ -135,28 +117,6 @@ auth.onAuthStateChanged(user => {
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
-
-        paidLogs = true;
-        closeSave.addEventListener('click', closeModals);
     });
-
-    function closeModals() {        
-        if(paidLogs) {
-            setTimeout(() => {
-                if(!(user.email && user.phoneNumber)) {
-                    if (!($('#vpnModal').is(':visible'))) {
-                        if (!($('#exampleModal').is(':visible'))) {
-                            if (!($('#saveModal').is(':visible'))) {
-                                $('#discountModal').modal('show');
-                            }
-                        }
-                    } 
-                }
-            }, 1200);
-            paidLogs = false;
-        }
-    }
-
-
 
 });
