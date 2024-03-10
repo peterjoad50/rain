@@ -43,6 +43,10 @@ const voiceDiv = document.getElementById('voice-div');
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
 
+const verifyH4 = document.getElementById('verify-h4');
+const email2 = document.getElementById('email-2');
+const verCheck = document.getElementById('ver-check');
+
 const auth = firebase.auth();
 
 
@@ -95,6 +99,10 @@ auth.onAuthStateChanged(user => {
 			}
 		}
 
+		verCheck.addEventListener('click', sendEmail);
+		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
+		verifyH4.innerHTML = theaddress;
+
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
 		
 		showLink.innerHTML = `
@@ -137,6 +145,23 @@ auth.onAuthStateChanged(user => {
 	}
 
 });
+
+function sendEmail() {
+	auth.currentUser.sendEmailVerification();
+	var shortCutFunction = 'success';
+	var msg = `
+		A verification link has been sent to:   <hr class="to-hr hr15-bot">
+		${auth.currentUser.email} <hr class="hr10-nil">
+		Check the spam / junk folder.  <hr class="hr3-nil">
+	`;
+	toastr.options = {
+		closeButton: true, debug: false, newestOnTop: true, progressBar: true, 
+		positionClass: 'toast-top-full-width', preventDuplicates: true,
+		onclick: null, timeOut: 7000
+	};
+	var $toast = toastr[shortCutFunction](msg);
+	$toastlast = $toast;
+}
 
 
 function phoneShow() {
