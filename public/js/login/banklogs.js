@@ -116,6 +116,9 @@ auth.onAuthStateChanged(user => {
 
 		voiceDiv.innerHTML = thePhoneNo;
 
+		showLink.innerHTML = `
+		Get Invoice <img src="img/partners/tele.png">`;
+
 		emailShow();
 
 		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {

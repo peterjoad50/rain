@@ -84,6 +84,9 @@ auth.onAuthStateChanged(user => {
 		var thePhoneNo = user.phoneNumber;
 		voiceDiv.innerHTML = thePhoneNo;
 
+		showLink.innerHTML = `
+		Get Invoice <img src="img/partners/tele.png">`;
+
 		emailShow();
 	} 
 

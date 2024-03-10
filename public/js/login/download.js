@@ -99,6 +99,9 @@ auth.onAuthStateChanged(user => {
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
+		showLink.innerHTML = `
+		Get Invoice <img src="img/partners/tele.png">`;
+
 		voiceDiv.innerHTML = thePhoneNo;
 		
 		jinaHolder.value = thePhoneNo;
