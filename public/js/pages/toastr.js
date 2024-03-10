@@ -6,6 +6,9 @@ auth.onAuthStateChanged(user => {
 
     var theLogs = '';
 
+    var closeSave = document.getElementById('close-save');
+    var closeExam = document.getElementById('close-exam');
+
     var toastbtc = '';
 
     if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
@@ -137,5 +140,25 @@ auth.onAuthStateChanged(user => {
                 } 
             }
         }, 12000);
+    }
+
+    closeSave.addEventListener('click', closeThis);
+    closeExam.addEventListener('click', closeThis);
+
+    function closeThis() {        
+        setTimeout(() => {
+            if(!(user.email && user.phoneNumber)) {
+                if (!($('#vpnModal').is(':visible'))) {
+                    if (!($('#exampleModal').is(':visible'))) {
+                        if (!($('#saveModal').is(':visible'))) {
+                            if (!($('#emailModal').is(':visible'))) {
+                                $('#discountModal').modal('show');
+                            }
+                        }
+                    }
+                } 
+            }
+        }, 3000);
+        paidLogs = false;
     }
 });
