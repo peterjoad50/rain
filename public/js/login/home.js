@@ -141,7 +141,7 @@ function sendEmail() {
 			showLink.setAttribute('data-bs-target', '#discountModal');
 			showLink.classList.add('green');
 		}
-	}, 7000);
+	}, 8000);
 }
 
 
