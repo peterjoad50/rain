@@ -43,6 +43,7 @@ const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
+const verClose = document.getElementById('ver-close');
 
 const voiceDiv = document.getElementById('voice-div');
 
@@ -137,6 +138,10 @@ auth.onAuthStateChanged(user => {
 		closeModal.removeAttribute('data-bs-dismiss');
 		closeModal.setAttribute('data-bs-toggle', 'modal');
 		closeModal.setAttribute('data-bs-target', '#profileModal');
+
+		verClose.removeAttribute('data-bs-dismiss');
+		verClose.setAttribute('data-bs-toggle', 'modal');
+		verClose.setAttribute('data-bs-target', '#profileModal');
 	});
 
 	if(user.uid){

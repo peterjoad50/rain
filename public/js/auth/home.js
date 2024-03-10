@@ -41,6 +41,7 @@ const heySave2 = document.getElementById('save-2');
 const voiceDiv = document.getElementById('voice-div');
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
+const verClose = document.getElementById('ver-close');
 
 const verifyH4 = document.getElementById('verify-h4');
 const email2 = document.getElementById('email-2');
@@ -90,6 +91,10 @@ auth.onAuthStateChanged(user => {
 		closeModal.removeAttribute('data-bs-dismiss');
 		closeModal.setAttribute('data-bs-toggle', 'modal');
 		closeModal.setAttribute('data-bs-target', '#profileModal');
+
+		verClose.removeAttribute('data-bs-dismiss');
+		verClose.setAttribute('data-bs-toggle', 'modal');
+		verClose.setAttribute('data-bs-target', '#profileModal');
 	});
 
 	if(user.uid){
