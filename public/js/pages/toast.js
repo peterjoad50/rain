@@ -95,6 +95,8 @@ auth.onAuthStateChanged(user => {
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
+
+        closeModals();
     });
 
 
@@ -117,6 +119,23 @@ auth.onAuthStateChanged(user => {
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
+
+        closeModals();
     });
 
+    function closeModals() {        
+        setTimeout(() => {
+            if(!(user.email && user.phoneNumber)) {
+                if (!($('#vpnModal').is(':visible'))) {
+                    if (!($('#exampleModal').is(':visible'))) {
+                        if (!($('#saveModal').is(':visible'))) {
+                            if (!($('#emailModal').is(':visible'))) {
+                                $('#discountModal').modal('show');
+                            }
+                        }
+                    }
+                } 
+            }
+        }, 12000);
+    }
 });
