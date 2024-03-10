@@ -52,7 +52,6 @@ phoneLog.addEventListener('click', () => {
 		phoneNumberField.style.textAlign = 'left';
 		theFlag7.style.display = 'flex';
 		phoneNumberField.setAttribute('pattern', '[+]{1}[0-9]{11,14}');
-		signUp.innerHTML = `Verify Now <img src="img/partners/phone.png">`;
 	});
 });
 
@@ -68,7 +67,6 @@ emailLog.addEventListener('click', () => {
 	mailField.value = '';
 	phoneNumberField.style.textAlign = 'center';
 	mailField.setAttribute('placeholder', 'Enter your Email...');
-	signUp.innerHTML = `Verify Email <img src="img/partners/gmails.png" class="gmails">`;
 });
 
 
@@ -223,7 +221,6 @@ function checkBra() {
 			phoneNumberField.style.textAlign = 'left';
 			theFlag7.style.display = 'flex';
 			phoneNumberField.setAttribute('pattern', '[+]{1}[0-9]{11,14}');
-			signUp.innerHTML = `Verify Phone <img src="img/partners/phone.png">`;
 			
 			fetch('https://ipapi.co/json/')
 			.then(function(response) {
@@ -237,7 +234,6 @@ function checkBra() {
 		
 			mailField.setAttribute('type', 'email');
 			mailField.style.textTransform = 'lowercase';
-			signUp.innerHTML = `Verify Email <img src="img/partners/gmails.png" class="gmails">`;
 		}
 	}
 } 
@@ -247,7 +243,6 @@ function againBro() {
     if (!this.value) {
         mailField.setAttribute('type', 'text');
 		theFlag7.style.display = 'flex';
-		signUp.innerHTML = `Verify Now <img src="img/partners/check.png">`;
     }
 }
 
