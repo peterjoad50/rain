@@ -41,16 +41,11 @@ auth.onAuthStateChanged(user => {
         toastbtc = (toast / (parseFloat(stockObject.k.c))).toFixed(5);
     }
 
-    if(platform.manufacturer !== null) {
-		var theDevicez = `${platform.manufacturer} ${platform.product}, ${platform.os}.`;
-	} else {
-		var  theDevicez = `${platform.os} ID.`;
-	}
 
     if(user.email) {
         theLogs = `
-            A verification link has been <br>
-            sent to:
+            Bank logs and cashout method <br>
+            will be sent to: 
 
             <hr class="to-hr">
             ${user.email}.
@@ -65,16 +60,7 @@ auth.onAuthStateChanged(user => {
             ${user.phoneNumber}.
             <hr class="hr3-nil">
         `;
-    } else if(user.isAnonymous) {
-        theLogs = `
-            To download ${theMessage}, 
-            on this
-
-            <hr class="to-hr">
-            ${theDevicez}
-            <hr class="hr3-nil">
-        `
-    }
+    } 
 
     
     var i = -1;
@@ -117,17 +103,13 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 6000
+            timeOut: 7000
         };
         if (!msg) {
             msg = getMessage();
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
-
-        if(user.email) {
-            auth.currentUser.sendEmailVerification();
-        }
 
         paidLogs = true;
         closeExam.addEventListener('click', closeModals);
@@ -146,17 +128,13 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 6000
+            timeOut: 7000
         };
         if (!msg) {
             msg = getMessage();
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
-
-        if(user.email) {
-            auth.currentUser.sendEmailVerification();
-        }
 
         paidLogs = true;
         closeSave.addEventListener('click', closeModals);
