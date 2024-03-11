@@ -55,6 +55,11 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 
 } else {
     document.getElementById('cartlength').style.display = 'none';
+    
+    wouldYou.innerHTML = `
+        You are currently logged <br>
+        in <span>anonymously</span>.
+    `
 
     document.getElementById('btc-check').innerHTML = 'Homepage ID';
     document.getElementById('btc-check').removeAttribute('data-bs-toggle');

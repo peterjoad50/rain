@@ -140,7 +140,13 @@ auth.onAuthStateChanged(user => {
 			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span> <br>
 			<span id="uidy">${theDevice}</span>
 		`;
-	} 
+	} else if(user.isAnonymous) {
+		emailP.innerHTML = `
+			Logs & cashout method <br>
+			will be <span id="uida">saved</span> to: <br>
+			<span id="uidy">${theDevice}</span>
+		`;
+	}
 });
 
 function sendEmail() {
