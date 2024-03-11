@@ -45,8 +45,6 @@ const heySave2 = document.getElementById('save-2');
 const closeModal = document.getElementsByClassName('btn-see')[0];
 const verClose = document.getElementById('ver-close');
 
-const voiceDiv = document.getElementById('voice-div');
-
 const wouldPa = document.getElementById('would');
 const wildPa = document.getElementById('wild');
 
@@ -86,7 +84,6 @@ auth.onAuthStateChanged(user => {
 				& via SMS to: <span>${thePhoneNo}</span>.
 			`;
 			
-			voiceDiv.setAttribute('data-bs-target', '#emailModal');
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			wouldPa.innerHTML = `
@@ -108,7 +105,6 @@ auth.onAuthStateChanged(user => {
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
 
-		voiceDiv.innerHTML = theaddress.substring(0, 12);
 		showLink.innerHTML = `
 		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else	if (user.phoneNumber) {
@@ -116,8 +112,6 @@ auth.onAuthStateChanged(user => {
 
 		showLink.innerHTML = `
 		Get Invoice <img src="img/partners/tele.png">`;
-
-		voiceDiv.innerHTML = thePhoneNo;
 
 		wouldPa.innerHTML = `
 			Bank logs will be sent to <br>

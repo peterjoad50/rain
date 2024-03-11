@@ -36,8 +36,6 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
-const voiceDiv = document.getElementById('voice-div');
-
 const closeModal = document.getElementsByClassName('btn-see')[0];
 const verClose = document.getElementById('ver-close');
 
@@ -58,12 +56,10 @@ auth.onAuthStateChanged(user => {
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
-			voiceDiv.setAttribute('data-bs-target', '#emailModal');
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			phoneShow();
 		}
-		voiceDiv.innerHTML = theaddress.substring(0, 12);
 
 		verCheck.addEventListener('click', sendEmail);
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
@@ -73,7 +69,6 @@ auth.onAuthStateChanged(user => {
 		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
-		voiceDiv.innerHTML = thePhoneNo;
 
 		showLink.innerHTML = `
 			Get Invoice <img src="img/partners/tele.png">`;

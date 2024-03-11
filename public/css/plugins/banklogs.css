@@ -295,7 +295,7 @@ section .dataTables_wrapper .dataTables_paginate,
 }
 
 .burro {
-    filter: blur(2px) !important;
+    filter: blur(2.7px) !important;
 }
 
   

@@ -39,8 +39,6 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
-const voiceDiv = document.getElementById('voice-div');
-
 const closeModal = document.getElementsByClassName('btn-see')[0];
 const verClose = document.getElementById('ver-close');
 
@@ -73,8 +71,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 			jinaHolder2.innerHTML = themail;
-
-			voiceDiv.setAttribute('data-bs-target', '#emailModal');
+			
 			showLink.setAttribute('data-bs-target', '#emailModal');
 
 			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
@@ -105,15 +102,12 @@ auth.onAuthStateChanged(user => {
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
 
-		voiceDiv.innerHTML = theaddress.substring(0, 12);
 		showLink.innerHTML = `
 		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
-
-		voiceDiv.innerHTML = thePhoneNo;
 
 		showLink.innerHTML = `
 		Get Invoice <img src="img/partners/tele.png">`;

@@ -38,8 +38,6 @@ const showLink = document.getElementById('showlink');
 
 const phoneNumberField = document.getElementById('inputLife');
 
-const voiceDiv = document.getElementById('voice-div');
-
 const codeField = document.getElementById('code');
 const signInWithPhoneButton = document.getElementById('signInWithPhone');
 
@@ -78,7 +76,6 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 
-			voiceDiv.setAttribute('data-bs-target', '#emailModal');
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			jinaHolder.value = theaddress;
@@ -92,7 +89,6 @@ auth.onAuthStateChanged(user => {
 
 		jinaHolder2.innerHTML = themail;
 
-		voiceDiv.innerHTML = theaddress.substring(0, 12);
 		showLink.innerHTML = `
 		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
@@ -100,8 +96,6 @@ auth.onAuthStateChanged(user => {
 
 		showLink.innerHTML = `
 		Get Invoice <img src="img/partners/tele.png">`;
-
-		voiceDiv.innerHTML = thePhoneNo;
 		
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
