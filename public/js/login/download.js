@@ -96,6 +96,7 @@ auth.onAuthStateChanged(user => {
 
 		showLink.innerHTML = `
 		Get Invoice <img src="img/partners/tele.png">`;
+		showLink.classList.add('green');
 		
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;

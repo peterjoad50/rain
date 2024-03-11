@@ -112,6 +112,7 @@ auth.onAuthStateChanged(user => {
 
 		showLink.innerHTML = `
 		Get Invoice <img src="img/partners/tele.png">`;
+		showLink.classList.add('green');
 
 		wouldPa.innerHTML = `
 			Bank logs will be sent to <br>
