@@ -6,29 +6,15 @@ auth.onAuthStateChanged(user => {
 
     var theLogs = '';
 
-    var closeSave = document.getElementById('close-save');
-    var closeExam = document.getElementById('close-exam');
-
     var toastbtc = '';
-
-    var theMessage = '';
 
     if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
         if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
             toast = localStorage.getItem('banktotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-            theMessage = `
-                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)} Log,
-            `;
         } else if(JSON.parse(localStorage.getItem('banklogs')).length == 2) { 
             toast = localStorage.getItem('divtotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-            theMessage = `
-                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)},
-                ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}, 
-            `;
         }
     }
 
@@ -39,12 +25,6 @@ auth.onAuthStateChanged(user => {
 
         toastbtc = (toast / (parseFloat(stockObject.k.c))).toFixed(5);
     }
-
-    if(platform.manufacturer !== null) {
-		var theDevicez = `${platform.manufacturer} ${platform.product}, ${platform.os}.`;
-	} else {
-		var theDevicez = `${platform.os} ID.`;
-	}
 
     if(user.email) {
         theLogs = `
@@ -64,15 +44,7 @@ auth.onAuthStateChanged(user => {
             ${user.phoneNumber}.
             <hr class="hr3-nil">
         `;
-    } else if(user.isAnonymous) {
-        theLogs = `
-            To download ${theMessage} on this
-
-            <hr class="to-hr">
-            ${theDevicez}.
-            <hr class="hr3-nil">
-        `;
-    }
+    } 
 
     
     var i = -1;
@@ -115,7 +87,7 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 7000
+            timeOut: 6000
         };
         if (!msg) {
             msg = getMessage();
@@ -137,7 +109,7 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 7000
+            timeOut: 6000
         };
         if (!msg) {
             msg = getMessage();
@@ -145,24 +117,4 @@ auth.onAuthStateChanged(user => {
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
     });
-
-    closeSave.addEventListener('click', closeThis);
-    closeExam.addEventListener('click', closeThis);
-
-    function closeThis() {        
-        setTimeout(() => {
-            if(!(user.email && user.phoneNumber)) {
-                if (!($('#vpnModal').is(':visible'))) {
-                    if (!($('#exampleModal').is(':visible'))) {
-                        if (!($('#saveModal').is(':visible'))) {
-                            if (!($('#emailModal').is(':visible'))) {
-                                $('#discountModal').modal('show');
-                            }
-                        }
-                    }
-                } 
-            }
-        }, 3000);
-        paidLogs = false;
-    }
 });

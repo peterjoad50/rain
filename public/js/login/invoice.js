@@ -51,7 +51,6 @@ const wouldPa = document.getElementById('would');
 const wildPa = document.getElementById('wild');
 
 const checkNow = document.getElementById('check-now');
-const checkImg = document.getElementById('check-img');
 
 const bitcoinCheckz = document.getElementById('btc-check');
 const bitcoinImg = document.getElementById('bit-coin');
@@ -86,31 +85,32 @@ auth.onAuthStateChanged(user => {
 			wildPa.innerHTML = `
 				& via SMS to: <span>${thePhoneNo}</span>.
 			`;
-			checkNow.innerHTML = 'View Account';
-			checkNow.setAttribute('data-bs-target', '#vpnModal');
-			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
+			
+			voiceDiv.setAttribute('data-bs-target', '#emailModal');
+			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
 				<span>${themail}</span> 
 			`;
 			wildPa.innerHTML = `
-				Logs can be sent to <span>SMS</span>.
+				Verify your <span>Email</span> address.
 			`;
-			checkNow.innerHTML = 'Phone Invoice';
 		
 			phoneShow();
 		}
+
+		checkNow.innerHTML = 'Verify Email ID';
+		checkNow.classList.add('reduce-this');
+		checkNow.setAttribute('data-bs-target', '#emailModal');
 
 		verCheck.addEventListener('click', sendEmail);
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
 
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
-
 		showLink.innerHTML = `
-			Verify Mail <img src="img/partners/tele.png">`;
-		showLink.setAttribute('data-bs-target', '#emailModal');
+		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
@@ -128,12 +128,7 @@ auth.onAuthStateChanged(user => {
 		checkNow.innerHTML = 'Email Invoice';
 
 		emailShow();
-	} else if(user.isAnonymous) {
-		wildPa.innerHTML = `
-			Logs can be sent to <span>Email</span>.
-		`;
-		checkNow.innerHTML = 'Email / Phone';
-	}
+	} 
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');
@@ -168,27 +163,11 @@ function sendEmail() {
 	toastr.options = {
 		closeButton: true, debug: false, newestOnTop: true, progressBar: true, 
 		positionClass: 'toast-top-full-width', preventDuplicates: true,
-		onclick: null, timeOut: 5000
+		onclick: null, timeOut: 6000
 	};
 	var $toast = toastr[shortCutFunction](msg);
 	$toastlast = $toast;
-
-	var themail = auth.currentUser.email;
-	var theaddress2 = themail.substring(0, themail.indexOf('@'));
-	if(auth.currentUser.displayName) {
-		var theaddress2 = auth.currentUser.displayName;
-	}
-
-	setTimeout(() => {
-		if(!auth.currentUser.phoneNumber) {
-			showLink.innerHTML = `
-				${theaddress2.substring(0, 10)} <img src="img/partners/tele.png">`;
-			showLink.setAttribute('data-bs-target', '#discountModal');
-			showLink.classList.add('green');
-		}
-	}, 8000);
 }
-
 
 function phoneShow() {
 	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;
@@ -341,12 +320,7 @@ const signUpFunction = () => {
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email or SMS.       <hr class=" hr10-nil">
-			`;
-		}
+		} 
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,

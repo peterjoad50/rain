@@ -1,7 +1,6 @@
 let items = [];
 var table3 = jQuery('#example1').DataTable();
 var anonLink = document.getElementById('anon-link');
-var wouldYou = document.getElementById('would');
 var bitCoin = document.getElementById('bit-coin');
 
 var theLogo = document.getElementById('logo');
@@ -55,11 +54,6 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 
 } else {
     document.getElementById('cartlength').style.display = 'none';
-    
-    wouldYou.innerHTML = `
-        You are currently logged <br>
-        in <span>anonymously</span>.
-    `
 
     document.getElementById('btc-check').innerHTML = 'Homepage ID';
     document.getElementById('btc-check').removeAttribute('data-bs-toggle');
@@ -154,10 +148,6 @@ function updateCartTotal() {
 
         document.getElementById('jinaHolder2').innerHTML = '[' + bankLog2.replace(']', ' ACCOUNT]'); 
 
-        wouldYou.innerHTML = `
-            ${bankLog} <br> <span>${bankBal}</span> 
-        `;
-
         bitCoin.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
 
         theLogo.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
@@ -175,15 +165,6 @@ function updateCartTotal() {
 
     } else if((JSON.parse(localStorage.getItem('banklogs')).length) > 1) {
         bitCoin.classList.add('bit-img');
-
-        document.getElementById('would').innerHTML = `
-            ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
-            <span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
-        `;
-        document.getElementById('wild').innerHTML = `
-            ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
-            <span> ${(JSON.parse(localStorage.getItem('banklogs'))[1].balance)}</span>.
-        `;
 
         document.getElementById('jinaHolder').value = '2 Bank Logs';
         document.getElementById('jinaHolder3').value = '2 Bank Logs';

@@ -78,7 +78,8 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 
-			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
+			voiceDiv.setAttribute('data-bs-target', '#emailModal');
+			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
@@ -92,10 +93,8 @@ auth.onAuthStateChanged(user => {
 		jinaHolder2.innerHTML = themail;
 
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
-
 		showLink.innerHTML = `
-			Verify Mail <img src="img/partners/tele.png">`;
-		showLink.setAttribute('data-bs-target', '#emailModal');
+		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
@@ -140,13 +139,7 @@ auth.onAuthStateChanged(user => {
 			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span> <br>
 			<span id="uidy">${theDevice}</span>
 		`;
-	} else if(user.isAnonymous) {
-		emailP.innerHTML = `
-			Logs & cashout method <br>
-			will be <span id="uida">saved</span> to: <br>
-			<span id="uidy">${theDevice}</span>
-		`;
-	}
+	} 
 });
 
 function sendEmail() {
@@ -160,27 +153,11 @@ function sendEmail() {
 	toastr.options = {
 		closeButton: true, debug: false, newestOnTop: true, progressBar: true, 
 		positionClass: 'toast-top-full-width', preventDuplicates: true,
-		onclick: null, timeOut: 5000
+		onclick: null, timeOut: 6000
 	};
 	var $toast = toastr[shortCutFunction](msg);
 	$toastlast = $toast;
-
-	var themail = auth.currentUser.email;
-	var theaddress2 = themail.substring(0, themail.indexOf('@'));
-	if(auth.currentUser.displayName) {
-		var theaddress2 = auth.currentUser.displayName;
-	}
-
-	setTimeout(() => {
-		if(!auth.currentUser.phoneNumber) {
-			showLink.innerHTML = `
-				${theaddress2.substring(0, 10)} <img src="img/partners/tele.png">`;
-			showLink.setAttribute('data-bs-target', '#discountModal');
-			showLink.classList.add('green');
-		}
-	}, 8000);
 }
-
 
 function phoneShow() {
 	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;
@@ -333,12 +310,7 @@ const signUpFunction = () => {
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email or SMS.       <hr class=" hr10-nil">
-			`;
-		}
+		} 
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,

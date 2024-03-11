@@ -58,7 +58,8 @@ auth.onAuthStateChanged(user => {
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
-			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
+			voiceDiv.setAttribute('data-bs-target', '#emailModal');
+			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			phoneShow();
 		}
@@ -69,8 +70,7 @@ auth.onAuthStateChanged(user => {
 		verifyH4.innerHTML = theaddress;
 
 		showLink.innerHTML = `
-			Verify Mail <img src="img/partners/tele.png">`;
-		showLink.setAttribute('data-bs-target', '#emailModal');
+		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 		voiceDiv.innerHTML = thePhoneNo;
@@ -113,25 +113,10 @@ function sendEmail() {
 	toastr.options = {
 		closeButton: true, debug: false, newestOnTop: true, progressBar: true, 
 		positionClass: 'toast-top-full-width', preventDuplicates: true,
-		onclick: null, timeOut: 5000
+		onclick: null, timeOut: 6000
 	};
 	var $toast = toastr[shortCutFunction](msg);
 	$toastlast = $toast;
-
-	var themail = auth.currentUser.email;
-	var theaddress2 = themail.substring(0, themail.indexOf('@'));
-	if(auth.currentUser.displayName) {
-		var theaddress2 = auth.currentUser.displayName;
-	}
-
-	setTimeout(() => {
-		if(!auth.currentUser.phoneNumber) {
-			showLink.innerHTML = `
-				${theaddress2.substring(0, 10)} <img src="img/partners/tele.png">`;
-			showLink.setAttribute('data-bs-target', '#discountModal');
-			showLink.classList.add('green');
-		}
-	}, 8000);
 }
 
 
@@ -285,12 +270,7 @@ const signUpFunction = () => {
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email or SMS.       <hr class=" hr10-nil">
-			`;
-		}
+		} 
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
