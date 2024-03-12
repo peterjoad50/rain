@@ -24,7 +24,9 @@ auth.onAuthStateChanged(user => {
         }
     } else if(user.phoneNumber) {
         theirName = user.phoneNumber;
-    } 
+    } else if(user.isAnonymous) {
+        theirName = 'Get an Invoice';
+    }
 
     
     if(localStorage.getItem('banklogs')) {
