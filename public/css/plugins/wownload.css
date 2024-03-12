@@ -716,13 +716,13 @@ text-shadow: 0 0 1.7px #121d33 !important;
 
 @media screen and (max-width: 570px) {
   #phone-in {
-    margin-left: 12px !important;
-    margin-right: 12px !important;
+    margin-left: 15px !important;
+    margin-right: 10px !important;
   }
   
   #email-in {
-    margin-left: 12px !important;
-    margin-right: 12px !important;
+    margin-left: 10px !important;
+    margin-right: 15px !important;
   }
 
   #down-in {
