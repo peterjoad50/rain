@@ -57,6 +57,8 @@ const emailLogins = document.getElementById('email-logs');
 
 const voiceDiv = document.getElementById('voice-div');
 
+const bannerWords = document.getElementsByClassName('banner-words-wrapper')[0];
+
 
 if(!window.location.href.includes('rkweb')){
 	if(!window.location.href.includes('5500')) {
@@ -114,6 +116,11 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = thePhoneNo;
 
 		emailLogins.style.display = 'block';
+
+		bannerWords.innerHTML = `
+			<b class="is-visible">Logs Will Be Sent</b>
+			<b>to: ${thePhoneNo}</b>
+		`;
 
 		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();
