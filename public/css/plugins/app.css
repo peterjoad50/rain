@@ -1581,7 +1581,6 @@ td {
     font-size: 25px !important;
 }
 #saveModal .modal-dialog,
-#contactModal .modal-dialog,
 #emailModal .modal-dialog,
 #exampleModal .modal-dialog,
 #verifyModal .modal-dialog, 
@@ -1591,7 +1590,6 @@ td {
 }
 @media screen and (min-width: 1370px) {
     #saveModal .modal-dialog,
-    #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
@@ -1602,7 +1600,6 @@ td {
 }
 @media screen and (max-width: 1025px) {
     #saveModal .modal-dialog,
-    #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
@@ -1614,7 +1611,6 @@ td {
 }
 @media screen and (max-width: 825px) {
     #saveModal .modal-dialog,
-    #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
@@ -1626,7 +1622,6 @@ td {
 }
 @media screen and (max-width: 769px) {
     #saveModal .modal-dialog,
-    #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
@@ -1638,7 +1633,6 @@ td {
 }
 @media screen and (max-width: 570px) {
     #saveModal .modal-dialog,
-    #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
@@ -1650,7 +1644,6 @@ td {
 }
 @media screen and (max-width: 420px) {
     #saveModal .modal-dialog,
-    #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
@@ -1662,7 +1655,6 @@ td {
 }
 @media screen and (max-width: 411px) {
     #saveModal .modal-dialog,
-    #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #emailModal .modal-dialog,
@@ -1674,7 +1666,6 @@ td {
 }
 @media screen and (max-width: 397px) {
     #saveModal .modal-dialog,
-    #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #emailModal .modal-dialog,
@@ -1686,7 +1677,6 @@ td {
 }
 @media screen and (max-width: 376px) {
     #saveModal .modal-dialog,
-    #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
@@ -1698,7 +1688,6 @@ td {
 }
 @media screen and (max-width: 370px) {
     #saveModal .modal-dialog,
-    #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #emailModal .modal-dialog,
@@ -1718,7 +1707,6 @@ td {
 #discountModal .modal-dialog,
 #emailModal .modal-dialog,
 #vpnModal .modal-dialog,
-#contactModal .modal-dialog,
 #saveModal .modal-dialog,
 #exampleModal .modal-dialog {
     background: transparent !important;
@@ -1727,7 +1715,6 @@ td {
 #verifyModal .modal-header,
 #discountModal .modal-header,
 #vpnModal .modal-header,
-#contactModal .modal-header,
 #emailModal .modal-header,
 #saveModal .modal-header,
 #exampleModal .modal-header {
@@ -1741,7 +1728,6 @@ td {
 #discountModal .modal-header img,
 #emailModal .modal-header img,
 #vpnModal .modal-header img,
-#contactModal .modal-header img,
 #emailModal .modal-header img,
 #saveModal .modal-header img,
 #exampleModal .modal-header img {
@@ -1752,7 +1738,6 @@ td {
 #verifyModal .modal-header h4.modal-title,
 #discountModal .modal-header h4.modal-title,
 #emailModal .modal-header h4.modal-title,
-#contactModal .modal-header h4.modal-title,
 #vpnModal .modal-header h4.modal-title,
 #saveModal .modal-header h4.modal-title,
 #exampleModal .modal-header h4.modal-title {
@@ -1763,7 +1748,6 @@ td {
 #discountModal .modal-header .close img,
 #emailModal .modal-header .close img,
 #vpnModal .modal-header .close img,
-#contactModal .modal-header .close img,
 #saveModal .modal-header .close img,
 #exampleModal .modal-header .close img {
     width: 30px;
@@ -1774,7 +1758,6 @@ td {
 #verifyModal .modal-header .close img:hover,
 #discountModal .modal-header .close img:hover,
 #vpnModal .modal-header .close img:hover,
-#contactModal .modal-header .close img:hover,
 #emailModal .modal-header .close img:hover,
 #saveModal .modal-header .close img:hover,
 #exampleModal .modal-header .close img:hover {
@@ -1784,7 +1767,6 @@ td {
 #verifyModal .modal-footer,
 #discountModal .modal-footer,
 #emailModal .modal-footer,
-#contactModal .modal-footer,
 #vpnModal .modal-footer,
 #saveModal .modal-footer,
 #exampleModal .modal-footer {
@@ -1797,7 +1779,6 @@ td {
 #discountModal .modal-body,
 #emailModal .modal-body,
 #vpnModal .modal-body,
-#contactModal .modal-body,
 #saveModal .modal-body,
 #exampleModal .modal-body {
     margin: 0;
@@ -1808,7 +1789,6 @@ td {
 #verifyModal .modal-backdrop div p,
 #discountModal .modal-backdrop div p,
 #emailModal .modal-backdrop div p,
-#contactModal .modal-backdrop div p,
 #saveModal .modal-body div p,
 #exampleModal .modal-body div p {
     background: transparent !important;

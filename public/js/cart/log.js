@@ -58,9 +58,9 @@ if (document.getElementById('boa01')) {
     (document.getElementById("chase014").innerHTML = "Buy: $" + parseFloat((document.getElementById("chase14").innerHTML.replace("$", "").replace(",", "") / 57).toFixed(0)).toLocaleString())
 
 } else if (document.getElementById('chime01')) {
-    (document.getElementById("chime1").innerHTML = "$" + (1102).toLocaleString()),
-    (document.getElementById("chime2").innerHTML = "$" + (2301).toLocaleString()),
-    (document.getElementById("chime3").innerHTML = "$" + (3137).toLocaleString()),
+    (document.getElementById("chime1").innerHTML = "$" + (1154).toLocaleString()),
+    (document.getElementById("chime2").innerHTML = "$" + (2071).toLocaleString()),
+    (document.getElementById("chime3").innerHTML = "$" + (3107).toLocaleString()),
     (document.getElementById("chime4").innerHTML = "$" + (3825).toLocaleString()),
     (document.getElementById("chime5").innerHTML = "$" + (4407).toLocaleString()),
     (document.getElementById("chime6").innerHTML = "$" + (5346).toLocaleString()),
@@ -227,10 +227,10 @@ if (document.getElementById('boa01')) {
     (document.getElementById("truist010").innerHTML = "Buy: $" + parseFloat((document.getElementById("truist10").innerHTML.replace("$", "").replace(",", "") / 57).toFixed(0)).toLocaleString()),
     (document.getElementById("truist011").innerHTML = "Buy: $" + parseFloat((document.getElementById("truist11").innerHTML.replace("$", "").replace(",", "") / 57).toFixed(0)).toLocaleString())
 } else if (document.getElementById('wells01')) {
-    (document.getElementById("wells1").innerHTML = "$" + (1079).toLocaleString()),
-    (document.getElementById("wells2").innerHTML = "$" + (2219).toLocaleString()),
+    (document.getElementById("wells1").innerHTML = "$" + (1078).toLocaleString()),
+    (document.getElementById("wells2").innerHTML = "$" + (2106).toLocaleString()),
     (document.getElementById("wells3").innerHTML = "$" + (3027).toLocaleString()),
-    (document.getElementById("wells4").innerHTML = "$" + (3970).toLocaleString()),
+    (document.getElementById("wells4").innerHTML = "$" + (3950).toLocaleString()),
     (document.getElementById("wells5").innerHTML = "$" + (4509).toLocaleString()),
     (document.getElementById("wells6").innerHTML = "$" + (5056).toLocaleString()),
     (document.getElementById("wells7").innerHTML = "$" + (5940).toLocaleString()),

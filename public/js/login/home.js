@@ -47,6 +47,11 @@ const verCheck = document.getElementById('ver-check');
 
 const auth = firebase.auth();
 
+if(!localStorage.getItem('darkweb-log')) {
+	localStorage.setItem('banklogs', []);
+	localStorage.setItem('darkweb-log', true);
+}
+
 auth.onAuthStateChanged(user => {
 	if (!user) {
 		auth.signInAnonymously().then(() => {
