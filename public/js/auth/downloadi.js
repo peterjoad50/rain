@@ -95,7 +95,7 @@ auth.onAuthStateChanged(user => {
 
 			bannerWords.innerHTML = `
 				<b class="is-visible">Logs Will Be Sent</b>
-				<b>to: ${themail.substring(0, 15)}...</b>
+				<b>${themail.substring(0, 15)}...</b>
 			`;
 			
 			phoneShow();
