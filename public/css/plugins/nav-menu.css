@@ -420,7 +420,7 @@ header.scrollHeader .navbar-default {
   height: 3px;
 }
 #jinaHolder2::-webkit-scrollbar {
-  height: 1.3px !important;
+  height: 1.2px !important;
 }
 @media (min-width: 569px) and (max-width: 1091px) {
   #jinaHolder {
@@ -430,7 +430,7 @@ header.scrollHeader .navbar-default {
 @media screen and (max-width: 567px) {
   #jinaHolder {
     font-size: 23px;
-    letter-spacing: 1px !important;
+    letter-spacing: 0.92px !important;
  }
   #jinaHolder2 {
     font-size: 16px !important;
