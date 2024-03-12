@@ -88,6 +88,9 @@ auth.onAuthStateChanged(user => {
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
+
+			phoneLogins.style.display = 'block';
+			
 			phoneShow();
 		}
 
@@ -109,6 +112,8 @@ auth.onAuthStateChanged(user => {
 		
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
+
+		emailLogins.style.display = 'block';
 
 		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();
