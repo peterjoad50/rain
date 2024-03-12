@@ -101,7 +101,7 @@ auth.onAuthStateChanged(user => {
 			phoneShow();
 		}
 
-		voiceDiv.innerHTML = theaddress.substring(0, 12);
+		voiceDiv.innerHTML = 'Verify Mail';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 
 		verCheck.addEventListener('click', sendEmail);

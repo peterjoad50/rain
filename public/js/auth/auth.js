@@ -67,7 +67,7 @@ auth.onAuthStateChanged(user => {
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
 
-		voiceDiv.innerHTML = theaddress.substring(0, 12);
+		voiceDiv.innerHTML = 'Verify Mail';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 
 		showLink.innerHTML = `
