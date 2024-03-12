@@ -160,6 +160,24 @@ auth.onAuthStateChanged(user => {
 		closeModal.setAttribute('data-bs-target', '#exampleModal');
 	});
 
+	phoneLog.addEventListener('click', () => {
+		closeModal.setAttribute('data-bs-dismiss', 'modal');
+		closeModal.removeAttribute('data-bs-toggle');
+		closeModal.removeAttribute('data-bs-target');
+	});
+
+	emailLog.addEventListener('click', () => {
+		closeModal.setAttribute('data-bs-dismiss', 'modal');
+		closeModal.removeAttribute('data-bs-toggle');
+		closeModal.removeAttribute('data-bs-target');
+	});
+
+	showLink.addEventListener('click', () => {
+		closeModal.setAttribute('data-bs-dismiss', 'modal');
+		closeModal.removeAttribute('data-bs-toggle');
+		closeModal.removeAttribute('data-bs-target');
+	});
+
 	if(user.uid){
 		theId.innerHTML = user.uid;
 		let theDatez2 = new Date(user.metadata.b * 1);
