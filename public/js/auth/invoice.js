@@ -67,7 +67,7 @@ const auth = firebase.auth();
 auth.onAuthStateChanged(user => {
 	if(!user) {
 		if(!auth.isSignInWithEmailLink(window.location.href)) {
-			window.location.assign('index');
+			window.location.assign('home');
 		}
 	}
 
@@ -127,10 +127,15 @@ auth.onAuthStateChanged(user => {
 
 		emailShow();
 	} else if(user.isAnonymous) {
-		wildPa.innerHTML = `
-			Logs can be sent to <span>Email</span>.
+		wouldPa.innerHTML = `
+			Bank logs can be sent <br>
+			via <span>Email</span> or <span>SMS</span>.
 		`;
-		checkNow.innerHTML = 'Email / Phone';
+
+		wildPa.innerHTML = `
+			Get a <span>Logins Invoice</span>. 
+		`;
+		checkNow.innerHTML = 'Logins Invoice';
 	}
 
 	showLink.addEventListener('click', () => {

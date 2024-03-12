@@ -55,19 +55,27 @@ const verCheck = document.getElementById('ver-check');
 const phoneLogins = document.getElementById('phone-logs');
 const emailLogins = document.getElementById('email-logs');
 
+const emailIn = document.getElementById('email-in');
+const phoneIn = document.getElementById('phone-in');
+
+const downIn = document.getElementById('down-in');
+const invoiceIn = document.getElementById('invoice-in');
+
 const voiceDiv = document.getElementById('voice-div');
 
 const bannerWords = document.getElementsByClassName('banner-words-wrapper')[0];
 
+const closeModal = document.getElementsByClassName('btn-see')[0];
+
 
 if(!window.location.href.includes('rkweb')){
 	if(!window.location.href.includes('5500')) {
-		window.location.assign('index')
+		window.location.assign('home')
 	}
 }
 auth.onAuthStateChanged(user => {
 	if (!user) {
-		window.location.assign('index');
+		window.location.assign('home');
 	} 
 
 	if (user.photoURL) {
@@ -110,6 +118,8 @@ auth.onAuthStateChanged(user => {
 
 		jinaHolder2.innerHTML = themail;
 
+		invoiceIn.style.display = 'block';
+
 		showLink.innerHTML = `
 		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
@@ -127,18 +137,28 @@ auth.onAuthStateChanged(user => {
 			<b>to: ${thePhoneNo}</b>
 		`;
 
+		invoiceIn.style.display = 'block';
+
 		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();
 	} else if(user.isAnonymous) {
 		phoneLog.addEventListener('click', phoneShow);
 		emailLog.addEventListener('click', emailShow);
 
+		downIn.style.display = 'flex';
 
 		phoneLogins.style.display = 'block';
 		emailLogins.style.display = 'block';
-	}
- 
 
+		phoneIn.addEventListener('click', phoneShow);
+		emailIn.addEventListener('click', emailShow);
+	}
+
+	downIn.addEventListener('click', () => {
+		closeModal.removeAttribute('data-bs-dismiss');
+		closeModal.setAttribute('data-bs-toggle', 'modal');
+		closeModal.setAttribute('data-bs-target', '#exampleModal');
+	});
 
 	if(user.uid){
 		theId.innerHTML = user.uid;
@@ -149,29 +169,21 @@ auth.onAuthStateChanged(user => {
 		labelDate.innerHTML = `Time ID: (${therealDate})`;
 	}
 
-	if(platform.manufacturer !== null) {
-		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}.`;
-	} else {
-		var  theDevice = `${platform.os} ID.`;
-	}
-
 	if(user.email) {
 		emailP.innerHTML = `
 			Bank logs will be sent to: <br>
-			<span id="uida" style="letter-spacing: 0.1px !important">${user.email}</span> <br>
-			<span id="uidy">${theDevice}</span>.
+			<span id="uida" style="letter-spacing: 0.1px !important">${user.email}</span>.
 		`;
 	} else if(user.phoneNumber) {
 		emailP.innerHTML = `
 			Bank logs will be sent to: <br>
-			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span> <br>
-			<span id="uidy">${theDevice}</span>
+			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span>.
 		`;
 	} else if(user.isAnonymous) {
 		emailP.innerHTML = `
-			Logs & cashout method <br>
-			will be <span id="uida">saved</span> on this: <br>
-			<span id="uidy">${theDevice}</span>.`;
+			Bank logs can be sent <br>
+			via <span>Email</span> or <span>SMS</span>.
+		`;
 	}
 });
 
