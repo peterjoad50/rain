@@ -136,6 +136,7 @@ auth.onAuthStateChanged(user => {
 			Get a <span>Logins Invoice</span>. 
 		`;
 		checkNow.innerHTML = 'Logins Invoice';
+		checkNow.classList.add('reduce-this');
 	}
 
 	showLink.addEventListener('click', () => {
