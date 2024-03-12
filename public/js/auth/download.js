@@ -31,6 +31,9 @@ const theFlag7 = document.getElementById('the-flag7');
 const mailField = document.getElementById('inputLife');
 const signUp = document.getElementById('email-phone');
 
+const phoneLog = document.getElementById('phone-log');
+const emailLog = document.getElementById('email-log');
+
 
 const showToth = document.getElementById('showtoasts');
 
@@ -48,6 +51,9 @@ const heySave2 = document.getElementById('save-2');
 const verifyH4 = document.getElementById('verify-h4');
 const email2 = document.getElementById('email-2');
 const verCheck = document.getElementById('ver-check');
+
+const phoneLogins = document.getElementById('phone-logs');
+const emailLogins = document.getElementById('email-logs');
 
 const voiceDiv = document.getElementById('voice-div');
 
@@ -106,7 +112,14 @@ auth.onAuthStateChanged(user => {
 
 		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();
-	} 
+	} else if(user.isAnonymous) {
+		phoneLog.addEventListener('click', phoneShow);
+		emailLog.addEventListener('click', emailShow);
+
+
+		phoneLogins.style.display = 'block';
+		emailLogins.style.display = 'block';
+	}
  
 
 

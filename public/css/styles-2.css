@@ -398,11 +398,11 @@ span#uids{
 }
 
 .port a img{
-  border: 1.4px solid rgba(3, 169, 245, 0.49);
+  border: 2px solid rgba(3, 169, 245, 0.49);
   border-bottom: none;
 }
 .port h4{
-  border: 1.4px solid rgba(3, 169, 245, 0.49);
+  border: 2px solid rgba(3, 169, 245, 0.3);
 }
 .port:hover {
   box-shadow: 0 3px 7px 0 rgba(3, 169, 245, 0.7);
