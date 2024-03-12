@@ -6,17 +6,38 @@ auth.onAuthStateChanged(user => {
 
     var theLogs = '';
 
+    var theDevicez = '';
+
+    var theMessage = '';
+
     var toastbtc = '';
 
     if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
         if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
             toast = localStorage.getItem('banktotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+            theMessage = `
+                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)} Log
+            `;
         } else if(JSON.parse(localStorage.getItem('banklogs')).length == 2) { 
             toast = localStorage.getItem('divtotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+            theMessage = `
+                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}, <br>
+                ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)} 
+            `;
+
         }
     }
+
+    if(platform.manufacturer !== null) {
+		var theDevicez = `${platform.manufacturer} ${platform.product}, ${platform.os}.`;
+	} else {
+		var  theDevicez = `${platform.os} ID.`;
+	}
+
 
     let ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@kline_1h');
    
@@ -44,7 +65,15 @@ auth.onAuthStateChanged(user => {
             ${user.phoneNumber}.
             <hr class="hr3-nil">
         `;
-    } 
+    } else if(user.isAnonymous) {
+        theLogs = `
+        To download: ${theMessage} on this: 
+
+        <hr class="to-hr">
+        ${theDevicez}
+        <hr class="hr3-nil">
+        `;
+    }
 
     
     var i = -1;
@@ -87,7 +116,7 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 6000
+            timeOut: 7000
         };
         if (!msg) {
             msg = getMessage();
@@ -109,7 +138,7 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 6000
+            timeOut: 7000
         };
         if (!msg) {
             msg = getMessage();
