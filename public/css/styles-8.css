@@ -293,6 +293,7 @@ blink {
   background-color: rgba(22, 160, 134, 1);
 }
 .scroll-down,
+#log-btn,
 #settings,
 .modal-btn,
 .lesnar,

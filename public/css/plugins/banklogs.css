@@ -295,8 +295,17 @@ section .dataTables_wrapper .dataTables_paginate,
 }
 
 .burro {
-    filter: blur(2.7px) !important;
+    filter: blur(2.5px) !important;
 }
+
+#log-btn {
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    font-size: 16px !important;
+    padding: 5.7px 10px;
+    margin-bottom: 0px !important;
+}
+
 
   
   #example tbody td:nth-child(1) hr {
