@@ -92,6 +92,11 @@ auth.onAuthStateChanged(user => {
 			jinaHolder3.value = theaddress;
 
 			phoneLogins.style.display = 'block';
+
+			bannerWords.innerHTML = `
+				<b class="is-visible">Logs Will Be Sent</b>
+				<b>to: ${themail.substring(0, 15)}...</b>
+			`;
 			
 			phoneShow();
 		}
