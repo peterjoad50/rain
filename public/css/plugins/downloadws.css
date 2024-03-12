@@ -716,6 +716,22 @@ text-shadow: 0 0 1.7px #121d33 !important;
 
 @media screen and (max-width: 570px) {
   #phone-in {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+  
+  #email-in {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+
+  #down-in {
+    margin-top: -45px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #phone-in {
     margin-left: 11px !important;
     margin-right: 11px !important;
   }
@@ -726,6 +742,6 @@ text-shadow: 0 0 1.7px #121d33 !important;
   }
 
   #down-in {
-    margin-top: -40px !important;
+    margin-top: -42px !important;
   }
 }
