@@ -50,7 +50,7 @@ const auth = firebase.auth();
 auth.onAuthStateChanged(user => {
 	if (!user) {
 		auth.signInAnonymously().then(() => {
-			window.location.reload();
+			theId.innerHTML = user.uid;
 		})
 	} 
 	if (user.photoURL) {
