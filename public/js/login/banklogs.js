@@ -46,6 +46,8 @@ const verifyH4 = document.getElementById('verify-h4');
 const email2 = document.getElementById('email-2');
 const verCheck = document.getElementById('ver-check');
 
+const voiceDiv = document.getElementById('voice-div');
+
 const auth = firebase.auth();
 
 
@@ -98,6 +100,9 @@ auth.onAuthStateChanged(user => {
 			}
 		}
 
+		voiceDiv.innerHTML = theaddress.substring(0, 12);
+		voiceDiv.setAttribute('data-bs-target', '#emailModal');
+
 		verCheck.addEventListener('click', sendEmail);
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
@@ -109,8 +114,6 @@ auth.onAuthStateChanged(user => {
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
 
-		showLink.innerHTML = `
-		Get Invoice <img src="img/partners/tele.png">`;
 		showLink.classList.add('green');
 
 		emailShow();

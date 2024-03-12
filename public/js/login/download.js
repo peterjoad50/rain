@@ -49,6 +49,8 @@ const verifyH4 = document.getElementById('verify-h4');
 const email2 = document.getElementById('email-2');
 const verCheck = document.getElementById('ver-check');
 
+const voiceDiv = document.getElementById('voice-div');
+
 
 if(!window.location.href.includes('rkweb')){
 	if(!window.location.href.includes('5500')) {
@@ -83,6 +85,9 @@ auth.onAuthStateChanged(user => {
 			phoneShow();
 		}
 
+		voiceDiv.innerHTML = theaddress.substring(0, 12);
+		voiceDiv.setAttribute('data-bs-target', '#emailModal');
+
 		verCheck.addEventListener('click', sendEmail);
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
@@ -94,8 +99,6 @@ auth.onAuthStateChanged(user => {
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
-		showLink.innerHTML = `
-		Get Invoice <img src="img/partners/tele.png">`;
 		showLink.classList.add('green');
 		
 		jinaHolder.value = thePhoneNo;
