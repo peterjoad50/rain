@@ -56,7 +56,9 @@ if(!localStorage.getItem('log-darkweb')) {
 
 auth.onAuthStateChanged(user => {
 	if (!user) {
-		$('#discountModal').modal('show');
+		auth.signInAnonymously().then(() => {
+			$('#discountModal').modal('show');
+		})
 	} 
 	if (user.photoURL) {
 		logoHolder.setAttribute("src", user.photoURL);
