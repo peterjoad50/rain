@@ -45,8 +45,9 @@ if(localStorage.getItem('banklogs')) {
                 elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
             }
 
-            
-            else if(width <= 300) {
+
+            else if(width <= 400) {
+                elemj.classList.add("bg-warning");
                 var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
                 elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
 
@@ -59,12 +60,6 @@ if(localStorage.getItem('banklogs')) {
                         closeModal2.style.display = 'none';
                     }
                 })
-            }
-
-            else if(width <= 400) {
-                elemj.classList.add("bg-warning");
-                var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
             }
 
 
