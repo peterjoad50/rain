@@ -53,7 +53,7 @@ const auth = firebase.auth();
 
 auth.onAuthStateChanged(user => {
 	if (!user) {
-		window.location.assign('home');
+		window.location.assign('index');
 	} 
 
 	if (user.photoURL) {
@@ -125,20 +125,7 @@ auth.onAuthStateChanged(user => {
 				`; 
 			}
 		}
-	} else if(user.isAnonymous) {
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-			goodies = JSON.parse(localStorage.getItem('banklogs'));
-			for (var i = 0; i < goodies.length; i++) {
-				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-					<hr id="hr-table">
-					<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#discountModal">
-					INVOICE
-					</button>
-					<hr id="hr-table-2">
-				`;
-			}
-		}
-	}
+	} 
 
 	closeModal.style.display = 'block';
 
@@ -331,12 +318,7 @@ const signUpFunction = () => {
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email or SMS.       <hr class=" hr10-nil">
-			`;
-		}
+		} 
 		
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,

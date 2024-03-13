@@ -19,18 +19,9 @@ auth.onAuthStateChanged(user => {
         if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
             toast = localStorage.getItem('banktotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-            theMessage = `
-                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)} Log
-            `;
         } else if(JSON.parse(localStorage.getItem('banklogs')).length == 2) { 
             toast = localStorage.getItem('divtotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-            theMessage = `
-                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}, <br>
-                ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)} 
-            `;
         }
     }
 
@@ -61,16 +52,7 @@ auth.onAuthStateChanged(user => {
             ${user.phoneNumber}.
             <hr class="hr3-nil">
         `;
-    } else if(user.isAnonymous) {
-        theLogs = `
-            ${theMessage} <br>
-            can be sent via 
-
-            <hr class="to-hr">
-            Email or via SMS.
-            <hr class="hr3-nil">
-        `;
-    }
+    } 
 
     
     var i = -1;

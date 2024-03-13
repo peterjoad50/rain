@@ -64,7 +64,7 @@ if(!window.location.href.includes('rkweb')){
 }
 auth.onAuthStateChanged(user => {
 	if (!user) {
-		window.location.assign('home');
+		window.location.assign('index');
 	} 
 
 	if (user.photoURL) {
@@ -122,17 +122,8 @@ auth.onAuthStateChanged(user => {
 
 		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();
-	} else if(user.isAnonymous) {
-		emailLogins.style.display = 'block';
-		phoneLogins.style.display = 'block';
-	}
+	} 
 
-	if(user.email || user.phoneNumber) {
-		closeModal.style.display = 'block'
-	} else if(user.isAnonymous) {
-		closeInvoice.style.display = 'block'
-		$('#discountModal').modal('show');
-	}
 
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
@@ -337,12 +328,7 @@ const signUpFunction = () => {
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email or SMS.       <hr class=" hr10-nil">
-			`;
-		}
+		} 
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
