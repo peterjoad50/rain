@@ -127,6 +127,7 @@ auth.onAuthStateChanged(user => {
 		phoneLogins.style.display = 'block';
 	}
 	
+	localStorage.removeItem('anon-ink');
 
 	if(user.email || user.phoneNumber) {
 		closeModal.style.display = 'block'

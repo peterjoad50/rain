@@ -49,9 +49,9 @@ const verCheck = document.getElementById('ver-check');
 
 const auth = firebase.auth();
 
-if(!localStorage.getItem('log-darkweb')) {
+if(!localStorage.getItem('darkweb-ink')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('log-darkweb', true);
+	localStorage.setItem('darkweb-ink', true);
 }
 
 auth.onAuthStateChanged(user => {
@@ -92,14 +92,7 @@ auth.onAuthStateChanged(user => {
 		emailShow();
 	} 
 
-	if(user.email || user.phoneNumber) {
-		closeModal.style.display = 'block'
-	} else if(user.isAnonymous) {
-		if(localStorage.getItem('anon-ink')) {
-			closeInvoice.style.display = 'block'
-			$('#discountModal').modal('show');
-		} else { closeModal.style.display = 'block' }
-	}
+	closeModal.style.display = 'block';
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');

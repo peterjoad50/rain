@@ -220,12 +220,7 @@ function updateCartTotal() {
         } 
     } 
 
-
-    auth.onAuthStateChanged(user => {
-        if(user.email || user.phoneNumber || (user.isAnonymous && localStorage.getItem('anon-ink'))) {
-            if(localStorage.getItem('timez-set')) {
-                localStorage.removeItem('timez-set');
-            }
-        }
-    });
+    if(localStorage.getItem('timez-set')) {
+        localStorage.removeItem('timez-set');
+    }
 }

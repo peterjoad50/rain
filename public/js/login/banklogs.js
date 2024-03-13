@@ -140,14 +140,7 @@ auth.onAuthStateChanged(user => {
 		}
 	}
 
-	if(user.email || user.phoneNumber) {
-		closeModal.style.display = 'block'
-	} else if(user.isAnonymous) {
-		if(localStorage.getItem('anon-ink')) {
-			closeInvoice.style.display = 'block'
-			$('#discountModal').modal('show');
-		} else { closeModal.style.display = 'block' }
-	}
+	closeModal.style.display = 'block';
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');
