@@ -782,8 +782,8 @@
             </div>    
           
             <div class="modal-footer modal-checkout" id="cart-footer">
-                <button class="butn" id="showlink" data-bs-toggle="modal" data-bs-target="#discountModal">
-                    Darkweb ID <img src="img/partners/tele.png">
+                <button class="butn" id="showlink"  data-bs-toggle="modal" data-bs-target="#discountModal">
+                    
                 </button>
 
                 <button class="butn" id="showtoasts" onclick="window.location.assign('invoice')">
@@ -829,19 +829,22 @@
             <div class="modal-header">
                 <div class="section-heading">
                     <h4 class="set" id="invoice-type">
-                        Darkweb ID
+                        Darkweb
                     </h4>
                 </div>
-                <button type="button" class="btn-cloze btn-see" data-bs-dismiss="modal"></button>
+
+                <button type="button" class="close" id="profile-logo">
+                    <img src="img/partners/anonymous.png">
+                </button>
             </div>
             
             <div class="modal-body">
                 <p class="modal-p" id="save-1">
-                    Bank logs can be sent <br> via <span>Email</span>,
+                    Bank logs can be sent <br> via <span>Email</span> or <span>SMS</span>,
                 </p> <hr class="thehr pending-1">
 
                 <p class="modal-p"  id="save-2">
-                    or via <span>SMS</span> as a dynamic <br> link to your phone.
+                    as a dynamic link that <br> expires in <span>7 hours</span>.
                 </p> <hr class="thehr pending-2">
 
                 <form id="the-form" onsubmit="signUpFunction()">

@@ -57,9 +57,12 @@ if(!localStorage.getItem('log-darkweb')) {
 auth.onAuthStateChanged(user => {
 	if (!user) {
 		auth.signInAnonymously().then(() => {
-			$('#discountModal').modal('show');
+			setTimeout(() => {
+				$('#discountModal').modal('show');
+			}, 2000);
 		})
 	} 
+	
 	if (user.photoURL) {
 		logoHolder.setAttribute("src", user.photoURL);
 		logoHolder.classList.add('logo-50');
@@ -88,12 +91,14 @@ auth.onAuthStateChanged(user => {
 		showLink.innerHTML = `
 		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
-		var thePhoneNo = user.phoneNumber;
-
 		showLink.classList.add('green');
 		
 		emailShow();
-	} 
+	} else if(user.isAnonymous) {
+		setTimeout(() => {
+			$('#discountModal').modal('show');
+		}, 2000);
+	}
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');

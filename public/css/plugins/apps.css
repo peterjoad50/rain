@@ -1026,6 +1026,22 @@ td {
     height: 65px !important;
 }
 
+
+
+#invoice-logo {
+    opacity: 1 !important;
+    margin: 3px;
+    border-radius: 0 !important;
+}
+#invoice-logo img {
+    opacity: 1 !important;
+    border-radius: 0 !important;
+    border: none !important;
+    width: 65px !important;
+    height: 65px !important;
+}
+
+
 @media (max-width: 576px) {
     #modal-amount,
     #modal-amount span {
@@ -1039,6 +1055,10 @@ td {
     }
 
     #profile-logo img {
+        width: 61px !important;
+        height: 61px !important;
+    }
+    #invoice-logo img {
         width: 61px !important;
         height: 61px !important;
     }
@@ -2192,10 +2212,6 @@ td {
 }
 #thetot span {
     margin-left: 7px !important;
-    font-weight: 700 !important;
-}
-#invoice-type span {
-    margin-left: 10px !important;
     font-weight: 700 !important;
 }
 #vpn-img {
@@ -3434,7 +3450,7 @@ button.toast-close-button {
 
 #invoice-type {
   text-transform: uppercase !important;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   margin-left: 1px !important;
 }
 

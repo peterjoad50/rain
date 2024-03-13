@@ -73,12 +73,12 @@ auth.onAuthStateChanged(user => {
 		showLink.innerHTML = `
 		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
-		var thePhoneNo = user.phoneNumber;
-
 		showLink.classList.add('green');
 
 		emailShow();
-	} 
+	} else if(user.isAnonymous) {
+		window.location.assign('home');
+	}
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');

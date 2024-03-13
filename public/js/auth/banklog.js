@@ -128,7 +128,9 @@ auth.onAuthStateChanged(user => {
 				`; 
 			}
 		}
-	} 
+	} else if(user.isAnonymous) {
+		window.location.assign('home');
+	}
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');

@@ -131,7 +131,9 @@ auth.onAuthStateChanged(user => {
 
 		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();
-	} 
+	} else if(user.isAnonymous) {
+		window.location.assign('home');
+	}
 
 	if(user.uid){
 		theId.innerHTML = user.uid;
