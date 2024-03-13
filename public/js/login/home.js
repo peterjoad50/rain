@@ -39,6 +39,8 @@ const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
+const closeInvoice = document.getElementById('invoice-logo');
+
 const verClose = document.getElementById('ver-close');
 
 const verifyH4 = document.getElementById('verify-h4');
@@ -55,9 +57,7 @@ if(!localStorage.getItem('log-darkweb')) {
 auth.onAuthStateChanged(user => {
 	if (!user) {
 		auth.signInAnonymously().then(() => {
-			setTimeout(() => {
-				$('#discountModal').modal('show');
-			}, 1200);
+			theId.innerHTML = user.uid;
 		})
 	} 
 
@@ -90,10 +90,16 @@ auth.onAuthStateChanged(user => {
 		showLink.classList.add('green');
 		
 		emailShow();
+	} 
+
+	if(user.email || user.phoneNumber) {
+		closeModal.style.display = 'block';
 	} else if(user.isAnonymous) {
-		setTimeout(() => {
-			$('#discountModal').modal('show');
-		}, 1200);
+		if(localStorage.getItem('anon-ink')) {
+			closeInvoice.style.display = 'block';
+		} else  {
+			closeModal.style.display = 'block';
+		}
 	}
 
 	showLink.addEventListener('click', () => {

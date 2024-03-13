@@ -823,28 +823,25 @@
 
 
 
-<div class="modal fade" id="discountModal"  data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal fade"  id="discountModal"  data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="section-heading">
-                    <h4 class="set" id="invoice-type">
-                        Darkweb
-                    </h4>
+                    <h4 class="set" id="invoice-type"> Darkweb </h4>
                 </div>
-
-                <button type="button" class="close" id="profile-logo">
+                <button type="button" class="close" id="invoice-logo" style="display: none;">
                     <img src="img/partners/anonymous.png">
                 </button>
+                <button type="button" class="btn-cloze btn-see" style="display: none;" data-bs-dismiss="modal"></button>
             </div>
-            
+    
             <div class="modal-body">
                 <p class="modal-p" id="save-1">
-                    Bank logs can be sent <br> via <span>Email</span> or <span>SMS</span>,
+                    Bank logs can be sent <br> via <span>Email</span>,
                 </p> <hr class="thehr pending-1">
-
                 <p class="modal-p"  id="save-2">
-                    as a dynamic link that <br> expires in <span>7 hours</span>.
+                    or via <span>SMS</span> as a dynamic <br> link to your phone.
                 </p> <hr class="thehr pending-2">
 
                 <form id="the-form" onsubmit="signUpFunction()">
@@ -857,9 +854,7 @@
                     </div>
                     <hr class="thehr">
                     <li class="next" id="verify-li">
-                        <a class="butn modal-btn" id="email-phone">
-                            Verify Now <img src="img/partners/tele.png">
-                        </a>
+                        <a class="butn modal-btn" id="email-phone"> Verify Now <img src="img/partners/tele.png"> </a>
                     </li>
                 </form>
             </div>
