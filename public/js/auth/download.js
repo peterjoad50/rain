@@ -55,8 +55,6 @@ const verCheck = document.getElementById('ver-check');
 const phoneLogins = document.getElementById('phone-logs');
 const emailLogins = document.getElementById('email-logs');
 
-const voiceDiv = document.getElementById('voice-div');
-
 const bannerWords = document.getElementsByClassName('banner-words-wrapper')[0];
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
@@ -100,9 +98,6 @@ auth.onAuthStateChanged(user => {
 			
 			phoneShow();
 		}
-
-		voiceDiv.innerHTML = 'Verify Mail';
-		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 
 		verCheck.addEventListener('click', sendEmail);
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;

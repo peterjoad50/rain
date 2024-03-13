@@ -45,8 +45,6 @@ const verifyH4 = document.getElementById('verify-h4');
 const email2 = document.getElementById('email-2');
 const verCheck = document.getElementById('ver-check');
 
-const voiceDiv = document.getElementById('voice-div');
-
 const auth = firebase.auth();
 
 if(!localStorage.getItem('log-darkweb')) {
@@ -80,9 +78,6 @@ auth.onAuthStateChanged(user => {
 		} else {
 			phoneShow();
 		}
-
-		voiceDiv.innerHTML = 'Verify Mail';
-		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 
 		verCheck.addEventListener('click', sendEmail);
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;

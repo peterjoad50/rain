@@ -69,6 +69,16 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 
     for(var i = 0; i < items.length; i++) {
 
+        var cartCol = document.createElement('div');
+        cartCol.classList.add('alert','alert-warning','alert-dismissible');
+        var cartColItems = document.getElementsByClassName('cart-alerts')[0];
+        var cartColContents = `
+        <i class="fas fa-spin fa-sync-alt spinner-bordez"></i> 
+        Pending Sale <strong>${items[i].account}</strong>, ${items[i].balance}
+            <button type="button" class="btn-close" data-bs-dismiss="alert">&times;</button>
+        `
+
+
         var cartRow = document.createElement('tr');
         var cartRow2 = document.createElement('li');
         cartRow.classList.add('table-warning');
@@ -96,6 +106,10 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
             <td>${items[i].website}</td>
         `;
         cartRow.innerHTML = cartRowContents;
+
+        cartCol.innerHTML = cartColContents;
+        
+        cartColItems.prepend(cartCol);
 
         cartItems.prepend(cartRow);
 
