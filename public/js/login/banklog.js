@@ -124,7 +124,15 @@ auth.onAuthStateChanged(user => {
 			}
 		}
 	} else if(user.isAnonymous) {
-		window.location.assign('home');
+		
+	}
+
+	if(user.email || user.phoneNumber) {
+		closeModal.style.display = 'block'
+	} else if(user.isAnonymous) {
+		if(localStorage.getItem('anon-ink')) {
+			closeInvoice.style.display = 'block'
+		} else { closeModal.style.display = 'block' }
 	}
 
 	showLink.addEventListener('click', () => {

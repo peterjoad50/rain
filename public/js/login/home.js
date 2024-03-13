@@ -93,13 +93,11 @@ auth.onAuthStateChanged(user => {
 	} 
 
 	if(user.email || user.phoneNumber) {
-		closeModal.style.display = 'block';
+		closeModal.style.display = 'block'
 	} else if(user.isAnonymous) {
 		if(localStorage.getItem('anon-ink')) {
-			closeInvoice.style.display = 'block';
-		} else  {
-			closeModal.style.display = 'block';
-		}
+			closeInvoice.style.display = 'block'
+		} else { closeModal.style.display = 'block' }
 	}
 
 	showLink.addEventListener('click', () => {

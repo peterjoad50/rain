@@ -116,7 +116,8 @@ auth.onAuthStateChanged(user => {
 
 		wouldPa.innerHTML = `
 			Bank logs will be sent to <br>
-			<span id="yourEmail">${thePhoneNo}</span> `;
+			<span id="yourEmail">${thePhoneNo}</span> 
+		`;
 		wildPa.innerHTML = `
 			Logs can be sent via <span>Email</span>.
 		`;
@@ -124,7 +125,22 @@ auth.onAuthStateChanged(user => {
 
 		emailShow();
 	} else if(user.isAnonymous) {
-		window.location.assign('home');
+		wouldPa.innerHTML = `
+			Bank logs can be sent via <br>
+			<span>Email</span> or <span>SMS</span>.
+		`;
+		wildPa.innerHTML = `
+			Get a <span>Logins Invoice</span>.
+		`;
+		checkNow.innerHTML = 'Logins Invoice';
+	}
+
+	if(user.email || user.phoneNumber) {
+		closeModal.style.display = 'block'
+	} else if(user.isAnonymous) {
+		if(localStorage.getItem('anon-ink')) {
+			closeInvoice.style.display = 'block'
+		} else { closeModal.style.display = 'block' }
 	}
 
 	showLink.addEventListener('click', () => {
