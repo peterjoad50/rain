@@ -119,11 +119,6 @@ auth.onAuthStateChanged(user => {
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
-
-        if(user.isAnonymous) {
-            paidLogs = true;
-            closeExam.addEventListener('click', closeModals);
-        }
     });
 
 
@@ -146,23 +141,5 @@ auth.onAuthStateChanged(user => {
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
-
-        if(user.isAnonymous) {
-            paidLogs = true;
-            closeSave.addEventListener('click', closeModals);
-        }
     });
-
-    function closeModals() {        
-        if(paidLogs) {
-            setTimeout(() => {
-                localStorage.setItem('ink-tools', true);
-                $('#discountModal').modal('show');
-                
-                closeInvoice2.style.display = 'block';
-                closeModal2.style.display = 'none';
-            }, 1200);
-            paidLogs = false;
-        }
-    }
 });

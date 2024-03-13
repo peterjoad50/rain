@@ -130,10 +130,8 @@ auth.onAuthStateChanged(user => {
 	if(user.email || user.phoneNumber) {
 		closeModal.style.display = 'block'
 	} else if(user.isAnonymous) {
-		if(localStorage.getItem('ink-tools')) {
-			closeInvoice.style.display = 'block'
-			$('#discountModal').modal('show');
-		} else { closeModal.style.display = 'block' }
+		closeInvoice.style.display = 'block'
+		$('#discountModal').modal('show');
 	}
 
 	if(platform.manufacturer !== null) {
