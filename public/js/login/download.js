@@ -126,13 +126,14 @@ auth.onAuthStateChanged(user => {
 		emailLogins.style.display = 'block';
 		phoneLogins.style.display = 'block';
 	}
-
+	
 
 	if(user.email || user.phoneNumber) {
 		closeModal.style.display = 'block'
 	} else if(user.isAnonymous) {
 		if(localStorage.getItem('anon-ink')) {
 			closeInvoice.style.display = 'block'
+			$('#discountModal').modal('show');
 		} else { closeModal.style.display = 'block' }
 	}
 

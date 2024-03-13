@@ -74,15 +74,14 @@ auth.onAuthStateChanged(user => {
 		showLink.classList.add('green');
 
 		emailShow();
-	} else if(user.isAnonymous) {
-		
-	}
+	} 
 
 	if(user.email || user.phoneNumber) {
 		closeModal.style.display = 'block'
 	} else if(user.isAnonymous) {
 		if(localStorage.getItem('anon-ink')) {
 			closeInvoice.style.display = 'block'
+			$('#discountModal').modal('show');
 		} else { closeModal.style.display = 'block' }
 	}
 

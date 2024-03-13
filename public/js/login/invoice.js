@@ -142,6 +142,7 @@ auth.onAuthStateChanged(user => {
 	} else if(user.isAnonymous) {
 		if(localStorage.getItem('anon-ink')) {
 			closeInvoice.style.display = 'block'
+			$('#discountModal').modal('show');
 		} else { closeModal.style.display = 'block' }
 	}
 
