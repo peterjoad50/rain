@@ -65,9 +65,6 @@
 
 
 .butn#check-now {
-    padding: 7.8px 15px !important;
-}
-.butn#check-now.reduce-this {
     padding: 7.8px 12px !important;
 }
 
@@ -122,11 +119,7 @@
     }
 
     .butn#check-now {
-        padding: 7.5px 13px !important;
-    }
-
-    .butn#check-now.reduce-this {
-        padding: 7.5px 10px !important;
+        padding: 7.5px 10.5px !important;
     }
 
    .invoice img {

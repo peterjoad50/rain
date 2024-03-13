@@ -1028,20 +1028,6 @@ td {
 
 
 
-#invoice-logo {
-    opacity: 1 !important;
-    margin: 3px;
-    border-radius: 0 !important;
-}
-#invoice-logo img {
-    opacity: 1 !important;
-    border-radius: 0 !important;
-    border: none !important;
-    width: 65px !important;
-    height: 65px !important;
-}
-
-
 @media (max-width: 576px) {
     #modal-amount,
     #modal-amount span {
@@ -1055,10 +1041,6 @@ td {
     }
 
     #profile-logo img {
-        width: 61px !important;
-        height: 61px !important;
-    }
-    #invoice-logo img {
         width: 61px !important;
         height: 61px !important;
     }

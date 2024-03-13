@@ -49,8 +49,6 @@ const verClose = document.getElementById('ver-close');
 const wouldPa = document.getElementById('would');
 const wildPa = document.getElementById('wild');
 
-const checkNow = document.getElementById('check-now');
-
 const bitcoinCheckz = document.getElementById('btc-check');
 const bitcoinImg = document.getElementById('bit-coin');
 
@@ -82,22 +80,12 @@ auth.onAuthStateChanged(user => {
 			wildPa.innerHTML = `
 				& via SMS to: <span>${thePhoneNo}</span>.
 			`;
-
-			checkNow.innerHTML = 'Verify Email ID';
-			checkNow.classList.add('reduce-this');
-			checkNow.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
 				<span>${themail}</span> 
 			`;
-			wildPa.innerHTML = `
-				Logs can be sent to <span>SMS</span>.
-			`;
 
-			checkNow.innerHTML = 'Phone Invoice';
-			checkNow.classList.add('reduce-this');
-		
 			phoneShow();
 		}
 
@@ -117,24 +105,9 @@ auth.onAuthStateChanged(user => {
 			Bank logs will be sent to <br>
 			<span id="yourEmail">${thePhoneNo}</span> 
 		`;
-		wildPa.innerHTML = `
-			Logs can be sent via <span>Email</span>.
-		`;
-		checkNow.innerHTML = 'Email Invoice';
 
 		emailShow();
-	} else if(user.isAnonymous) {
-		wouldPa.innerHTML = `
-			Bank logins are sent <br>
-			via <span>Email</span> or <span>SMS</span>.
-		`;
-		wildPa.innerHTML = `
-			with a cashout guide.
-		`;
-		checkNow.innerHTML = 'Cashout Guide';
-		checkNow.classList.add('reduce-this');
-		checkNow.setAttribute('data-bs-target', '#vpnModal');
-	}
+	} 
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');

@@ -51,8 +51,6 @@ const verCheck = document.getElementById('ver-check');
 const phoneLogins = document.getElementById('phone-logs');
 const emailLogins = document.getElementById('email-logs');
 
-const bannerWords = document.getElementsByClassName('banner-words-wrapper')[0];
-
 
 if(!window.location.href.includes('rkweb')){
 	if(!window.location.href.includes('5500')) {
@@ -84,11 +82,6 @@ auth.onAuthStateChanged(user => {
 			jinaHolder3.value = theaddress;
 
 			phoneLogins.style.display = 'block';
-
-			bannerWords.innerHTML = `
-				<b class="is-visible">Bank Logs Can Be</b>
-				<b>Sent via SMS</b>
-			`;
 			
 			phoneShow();
 		}
@@ -111,11 +104,6 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = thePhoneNo;
 
 		emailLogins.style.display = 'block';
-
-		bannerWords.innerHTML = `
-			<b class="is-visible">Logs Will Be Sent</b>
-			<b>to: ${thePhoneNo}</b>
-		`;
 
 		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();
