@@ -31,10 +31,6 @@ const theFlag7 = document.getElementById('the-flag7');
 const mailField = document.getElementById('inputLife');
 const signUp = document.getElementById('email-phone');
 
-const phoneLog = document.getElementById('phone-log');
-const emailLog = document.getElementById('email-log');
-
-
 const showToth = document.getElementById('showtoasts');
 
 const showLink = document.getElementById('showlink');
