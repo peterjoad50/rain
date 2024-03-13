@@ -6,8 +6,6 @@ auth.onAuthStateChanged(user => {
 
     var theLogs = '';
 
-    var theDevicez = '';
-
     var theMessage = '';
 
     var toastbtc = '';
@@ -31,12 +29,6 @@ auth.onAuthStateChanged(user => {
 
         }
     }
-
-    if(platform.manufacturer !== null) {
-		var theDevicez = `${platform.manufacturer} ${platform.product}, ${platform.os}.`;
-	} else {
-		var  theDevicez = `${platform.os} ID.`;
-	}
 
 
     let ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@kline_1h');
@@ -65,15 +57,7 @@ auth.onAuthStateChanged(user => {
             ${user.phoneNumber}.
             <hr class="hr3-nil">
         `;
-    } else if(user.isAnonymous) {
-        theLogs = `
-        To download: ${theMessage} on this: 
-
-        <hr class="to-hr">
-        ${theDevicez}
-        <hr class="hr3-nil">
-        `;
-    }
+    } 
 
     
     var i = -1;
@@ -82,15 +66,26 @@ auth.onAuthStateChanged(user => {
 
     var getMessage = function() {        
         for (var i = 0; i < items.length; i++) {
-            var msgs = [`
-                ${toastbtc} Bitcoin payment not detected,
-                <hr class="hr15-bot">
-                    Send $${toastz} BTC:
-                <hr class="to-hr hr15-top">
-                    ${theLogs}
-                <hr class="hr3-nil">
-            `];
-
+            if(user.email || user.phoneNumber) {
+                var msgs = [`
+                    ${toastbtc} Bitcoin payment not detected,
+                    <hr class="hr15-bot">
+                        Send $${toastz} BTC:
+                    <hr class="to-hr hr15-top">
+                        ${theLogs}
+                    <hr class="hr3-nil">
+                `];
+            } else {
+                var msgs = [`
+                        Login with Email or Phone <br>
+                        to download:
+                    <hr class="hr15-bot">
+                        ${theMessage} <br>
+                    <hr class="to-hr hr15-top">
+                        from this darkweb store.
+                    <hr class="hr3-nil">
+                `];
+            }
 
             i++;
             if (i === msgs.length) {

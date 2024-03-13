@@ -55,12 +55,6 @@ const verCheck = document.getElementById('ver-check');
 const phoneLogins = document.getElementById('phone-logs');
 const emailLogins = document.getElementById('email-logs');
 
-const emailIn = document.getElementById('email-in');
-const phoneIn = document.getElementById('phone-in');
-
-const downIn = document.getElementById('down-in');
-const invoiceIn = document.getElementById('invoice-in');
-
 const voiceDiv = document.getElementById('voice-div');
 
 const bannerWords = document.getElementsByClassName('banner-words-wrapper')[0];
@@ -118,8 +112,6 @@ auth.onAuthStateChanged(user => {
 
 		jinaHolder2.innerHTML = themail;
 
-		invoiceIn.style.display = 'block';
-
 		showLink.innerHTML = `
 		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
@@ -137,46 +129,9 @@ auth.onAuthStateChanged(user => {
 			<b>to: ${thePhoneNo}</b>
 		`;
 
-		invoiceIn.style.display = 'block';
-
 		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();
-	} else if(user.isAnonymous) {
-		phoneLog.addEventListener('click', phoneShow);
-		emailLog.addEventListener('click', emailShow);
-
-		downIn.style.display = 'flex';
-
-		phoneLogins.style.display = 'block';
-		emailLogins.style.display = 'block';
-
-		phoneIn.addEventListener('click', phoneShow);
-		emailIn.addEventListener('click', emailShow);
-	}
-
-	downIn.addEventListener('click', () => {
-		closeModal.removeAttribute('data-bs-dismiss');
-		closeModal.setAttribute('data-bs-toggle', 'modal');
-		closeModal.setAttribute('data-bs-target', '#exampleModal');
-	});
-
-	phoneLog.addEventListener('click', () => {
-		closeModal.setAttribute('data-bs-dismiss', 'modal');
-		closeModal.removeAttribute('data-bs-toggle');
-		closeModal.removeAttribute('data-bs-target');
-	});
-
-	emailLog.addEventListener('click', () => {
-		closeModal.setAttribute('data-bs-dismiss', 'modal');
-		closeModal.removeAttribute('data-bs-toggle');
-		closeModal.removeAttribute('data-bs-target');
-	});
-
-	showLink.addEventListener('click', () => {
-		closeModal.setAttribute('data-bs-dismiss', 'modal');
-		closeModal.removeAttribute('data-bs-toggle');
-		closeModal.removeAttribute('data-bs-target');
-	});
+	} 
 
 	if(user.uid){
 		theId.innerHTML = user.uid;
@@ -197,12 +152,7 @@ auth.onAuthStateChanged(user => {
 			Bank logs will be sent to: <br>
 			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span>.
 		`;
-	} else if(user.isAnonymous) {
-		emailP.innerHTML = `
-			Bank logs can be sent <br>
-			via <span>Email</span> or <span>SMS</span>.
-		`;
-	}
+	} 
 });
 
 function sendEmail() {
@@ -373,12 +323,7 @@ const signUpFunction = () => {
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email or SMS.       <hr class=" hr10-nil">
-			`;
-		}
+		} 
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,

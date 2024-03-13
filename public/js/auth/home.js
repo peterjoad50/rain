@@ -49,16 +49,14 @@ const voiceDiv = document.getElementById('voice-div');
 
 const auth = firebase.auth();
 
-if(!localStorage.getItem('darkweb-log')) {
+if(!localStorage.getItem('log-darkweb')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-log', true);
+	localStorage.setItem('log-darkweb', true);
 }
 
 auth.onAuthStateChanged(user => {
 	if (!user) {
-		auth.signInAnonymously().then(() => {
-			theId.innerHTML = user.uid;
-		})
+		$('#discountModal').modal('show');
 	} 
 	if (user.photoURL) {
 		logoHolder.setAttribute("src", user.photoURL);
