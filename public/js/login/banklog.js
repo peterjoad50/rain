@@ -40,6 +40,8 @@ const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
+const closeInvoice = document.getElementById('invoice-logo');
+
 const verClose = document.getElementById('ver-close');
 
 const verifyH4 = document.getElementById('verify-h4');
@@ -124,7 +126,18 @@ auth.onAuthStateChanged(user => {
 			}
 		}
 	} else if(user.isAnonymous) {
-		
+		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+			goodies = JSON.parse(localStorage.getItem('banklogs'));
+			for (var i = 0; i < goodies.length; i++) {
+				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+					<hr id="hr-table">
+					<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#discountModal">
+					INVOICE
+					</button>
+					<hr id="hr-table-2">
+				`;
+			}
+		}
 	}
 
 	if(user.email || user.phoneNumber) {

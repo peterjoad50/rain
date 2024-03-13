@@ -294,6 +294,7 @@ blink {
   background-color: rgba(3, 169, 245, 1);
 }
 .scroll-down,
+#log-btn,
 #settings,
 .modal-btn,
 #vpn,

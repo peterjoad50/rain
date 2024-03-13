@@ -58,6 +58,7 @@ const emailLogins = document.getElementById('email-logs');
 const bannerWords = document.getElementsByClassName('banner-words-wrapper')[0];
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
+const closeInvoice = document.getElementById('invoice-logo');
 
 
 if(!window.location.href.includes('rkweb')){
@@ -126,7 +127,16 @@ auth.onAuthStateChanged(user => {
 		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();
 	} else if(user.isAnonymous) {
-		window.location.assign('home');
+		
+	}
+
+
+	if(user.email || user.phoneNumber) {
+		closeModal.style.display = 'block'
+	} else if(user.isAnonymous) {
+		if(localStorage.getItem('anon-ink')) {
+			closeInvoice.style.display = 'block'
+		} else { closeModal.style.display = 'block' }
 	}
 
 	if(user.uid){
