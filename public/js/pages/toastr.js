@@ -8,6 +8,11 @@ auth.onAuthStateChanged(user => {
 
     var theMessage = '';
 
+    var closeSave = document.getElementById('close-save');
+    var closeExam = document.getElementById('close-exam');
+
+    var paidLogs = false;
+
     var toastbtc = '';
 
     if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
@@ -107,13 +112,18 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 7000
+            timeOut: 5700
         };
         if (!msg) {
             msg = getMessage();
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
+
+        if(user.isAnonymous) {
+            paidLogs = true;
+            closeExam.addEventListener('click', closeModals);
+        }
     });
 
 
@@ -129,12 +139,30 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 7000
+            timeOut: 5700
         };
         if (!msg) {
             msg = getMessage();
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
+
+        if(user.isAnonymous) {
+            paidLogs = true;
+            closeSave.addEventListener('click', closeModals);
+        }
     });
+
+    function closeModals() {        
+        if(paidLogs) {
+            setTimeout(() => {
+                localStorage.setItem('anon-ink', true);
+                $('#discountModal').modal('show');
+                
+                closeInvoice2.style.display = 'block';
+                closeModal2.style.display = 'none';
+            }, 1200);
+            paidLogs = false;
+        }
+    }
 });
