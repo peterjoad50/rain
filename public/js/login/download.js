@@ -136,6 +136,14 @@ auth.onAuthStateChanged(user => {
 		} else { closeModal.style.display = 'block' }
 	}
 
+	if(platform.manufacturer !== null) {
+		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
+		var theBrowser = `${platform.name} Browser`;
+	} else {
+		var  theDevice = `${platform.os} Device`;
+		var theBrowser = `${platform.name} ID`;
+	}
+
 	if(user.uid){
 		theId.innerHTML = user.uid;
 		let theDatez2 = new Date(user.metadata.b * 1);
@@ -155,7 +163,12 @@ auth.onAuthStateChanged(user => {
 			Bank logs will be sent to: <br>
 			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span>.
 		`;
-	} 
+	} else if(user.isAnonymous) {
+		emailP.innerHTML = `
+			<span id="uida">${theBrowser}</span>, <br>
+			<span id="uidy">${theDevice}</span>.
+		`;
+	}
 });
 
 function sendEmail() {
