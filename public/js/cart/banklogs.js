@@ -129,7 +129,7 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 document.getElementById('balance1').innerHTML = '$7,425';
 document.getElementById('balance2').innerHTML = '$6,384';
 document.getElementById('balance3').innerHTML = '$6,290';
-document.getElementById('balance4').innerHTML = '$5,261';
+document.getElementById('balance4').innerHTML = '$5,439';
 document.getElementById('balance5').innerHTML = '$5,402';
 document.getElementById('balance6').innerHTML = '$5,940';
 document.getElementById('balance7').innerHTML = '$7,087';
