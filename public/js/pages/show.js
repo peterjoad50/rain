@@ -156,7 +156,7 @@ auth.onAuthStateChanged(user => {
     function closeModals() {        
         if(paidLogs) {
             setTimeout(() => {
-                localStorage.setItem('anon-ink', true);
+                localStorage.setItem('ink-tools', true);
                 $('#discountModal').modal('show');
                 
                 closeInvoice2.style.display = 'block';

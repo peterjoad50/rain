@@ -130,7 +130,7 @@ auth.onAuthStateChanged(user => {
 	if(user.email || user.phoneNumber) {
 		closeModal.style.display = 'block'
 	} else if(user.isAnonymous) {
-		if(localStorage.getItem('anon-ink')) {
+		if(localStorage.getItem('ink-tools')) {
 			closeInvoice.style.display = 'block'
 			$('#discountModal').modal('show');
 		} else { closeModal.style.display = 'block' }

@@ -50,16 +50,6 @@ if(localStorage.getItem('banklogs')) {
                 elemj.classList.add("bg-warning");
                 var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
                 elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
-
-                auth.onAuthStateChanged(user => {
-                    if(user.isAnonymous) {
-                        localStorage.setItem('anon-ink', true);
-                        $('#discountModal').modal('show');
-                        
-                        closeInvoice2.style.display = 'block';
-                        closeModal2.style.display = 'none';
-                    }
-                })
             }
 
 
