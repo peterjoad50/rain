@@ -26,7 +26,6 @@ auth.onAuthStateChanged(user => {
                 ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}, <br>
                 ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)} 
             `;
-
         }
     }
 
@@ -57,7 +56,16 @@ auth.onAuthStateChanged(user => {
             ${user.phoneNumber}.
             <hr class="hr3-nil">
         `;
-    } 
+    } else if(user.isAnonymous) {
+        theLogs = `
+            ${theMessage} <br>
+            can be sent via 
+
+            <hr class="to-hr">
+            Email or via SMS.
+            <hr class="hr3-nil">
+        `;
+    }
 
     
     var i = -1;
@@ -66,26 +74,14 @@ auth.onAuthStateChanged(user => {
 
     var getMessage = function() {        
         for (var i = 0; i < items.length; i++) {
-            if(user.email || user.phoneNumber) {
-                var msgs = [`
-                    ${toastbtc} Bitcoin payment not detected,
-                    <hr class="hr15-bot">
-                        Send $${toastz} BTC:
-                    <hr class="to-hr hr15-top">
-                        ${theLogs}
-                    <hr class="hr3-nil">
-                `];
-            } else {
-                var msgs = [`
-                        Login with Email or Phone <br>
-                        to download:
-                    <hr class="hr15-bot">
-                        ${theMessage} <br>
-                    <hr class="to-hr hr15-top">
-                        from this darkweb store.
-                    <hr class="hr3-nil">
-                `];
-            }
+            var msgs = [`
+                ${toastbtc} Bitcoin payment not detected,
+                <hr class="hr15-bot">
+                    Send $${toastz} BTC:
+                <hr class="to-hr hr15-top">
+                    ${theLogs}
+                <hr class="hr3-nil">
+            `];
 
             i++;
             if (i === msgs.length) {
