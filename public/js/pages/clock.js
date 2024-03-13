@@ -1,5 +1,8 @@
 var j = true;
 
+const closeModal2 = document.getElementsByClassName('btn-see')[0];
+const closeInvoice2 = document.getElementById('invoice-logo');
+
 if(localStorage.getItem('banklogs')) {
     if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
         var elemj = document.getElementById('pablos');        
@@ -36,18 +39,34 @@ if(localStorage.getItem('banklogs')) {
             } 
 
 
-            else if(width <= 199) {
+            else if(width <= 200) {
                 elemj.classList.add("bg-danger");
                 var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
                 elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
             }
 
+            
+            else if(width <= 300) {
+                var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
+                elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
 
-            else if(width <= 399) {
+                auth.onAuthStateChanged(user => {
+                    if(user.isAnonymous) {
+                        localStorage.setItem('anon-ink', true);
+                        $('#discountModal').modal('show');
+                        
+                        closeInvoice2.style.display = 'block';
+                        closeModal2.style.display = 'none';
+                    }
+                })
+            }
+
+            else if(width <= 400) {
                 elemj.classList.add("bg-warning");
                 var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
                 elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
             }
+
 
 
             else {

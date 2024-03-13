@@ -62,8 +62,6 @@ const verCheck = document.getElementById('ver-check');
 const auth = firebase.auth();
 
 
-
-
 auth.onAuthStateChanged(user => {
 	if(!user) {
 		if(!auth.isSignInWithEmailLink(window.location.href)) {

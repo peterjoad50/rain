@@ -172,9 +172,6 @@ function removeItemFromCart(price, balance,account,website,image,info1,info2,inf
     }
     localStorage.setItem('banklogs', JSON.stringify(items.filter(checkAdult)));
     items = items.filter(checkAdult);
-    if(localStorage.getItem('timez-set')) {
-        localStorage.removeItem('timez-set');
-    }
     window.location.reload()
 }
 
