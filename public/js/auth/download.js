@@ -87,8 +87,6 @@ auth.onAuthStateChanged(user => {
 			var thePhoneNo = user.phoneNumber;
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
-
-			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
@@ -113,7 +111,8 @@ auth.onAuthStateChanged(user => {
 		jinaHolder2.innerHTML = themail;
 
 		showLink.innerHTML = `
-		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
+			${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
+		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 

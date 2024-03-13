@@ -291,7 +291,6 @@ blink {
   background-color: rgba(250, 183, 2, 1);
 }
 .scroll-down,
-#log-btn,
 #settings,
 .modal-btn,
 #vpn,
@@ -375,7 +374,6 @@ span#uids {
 }
 
 #email-phone,
-#send-email,
 #showlink {
   background: rgb(252, 226, 154) !important;
   color: rgb(47, 48, 45) !important;

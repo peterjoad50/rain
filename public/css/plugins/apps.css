@@ -3354,27 +3354,6 @@ button.toast-close-button {
 
 
 
-
-#send-email {
-    cursor: pointer !important;
-    font-size: 21px !important;
-    padding: 5px 10px !important;
-
-    margin: 7px 35px 3px !important;
-}
-
-@media screen and (max-width: 570px) {
-
-    #send-email {
-        cursor: pointer !important;
-        font-size: 21px !important;
-        padding: 5px 10px !important;
-    
-        margin: 5px 15px 3px !important;
-    }
-    
-}
-
 .gmails {
     margin-left: 5px !important;
     width: 28px !important;

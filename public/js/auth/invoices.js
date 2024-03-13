@@ -85,16 +85,21 @@ auth.onAuthStateChanged(user => {
 			wildPa.innerHTML = `
 				& via SMS to: <span>${thePhoneNo}</span>.
 			`;
-			
-			showLink.setAttribute('data-bs-target', '#emailModal');
+
+			checkNow.innerHTML = 'Verify Email ID';
+			checkNow.classList.add('reduce-this');
+			checkNow.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
 				<span>${themail}</span> 
 			`;
 			wildPa.innerHTML = `
-				Verify your <span>Email</span> address.
+				Logs can be sent to <span>SMS</span>.
 			`;
+
+			checkNow.innerHTML = 'Phone Invoice';
+			checkNow.classList.add('reduce-this');
 		
 			phoneShow();
 		}
@@ -102,16 +107,13 @@ auth.onAuthStateChanged(user => {
 		voiceDiv.innerHTML = 'Verify Mail';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 
-		checkNow.innerHTML = 'Verify Email ID';
-		checkNow.classList.add('reduce-this');
-		checkNow.setAttribute('data-bs-target', '#emailModal');
-
 		verCheck.addEventListener('click', sendEmail);
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
 
 		showLink.innerHTML = `
-		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
+			${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
+		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
@@ -121,7 +123,7 @@ auth.onAuthStateChanged(user => {
 			Bank logs will be sent to <br>
 			<span id="yourEmail">${thePhoneNo}</span> `;
 		wildPa.innerHTML = `
-			Logs can be sent to <span>Email</span>.
+			Logs can be sent via <span>Email</span>.
 		`;
 		checkNow.innerHTML = 'Email Invoice';
 

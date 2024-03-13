@@ -58,7 +58,7 @@ auth.onAuthStateChanged(user => {
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
-			showLink.setAttribute('data-bs-target', '#emailModal');
+			
 		} else {
 			phoneShow();
 		}
@@ -71,7 +71,8 @@ auth.onAuthStateChanged(user => {
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 
 		showLink.innerHTML = `
-		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
+			${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
+		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else 	if (user.phoneNumber) {
 		showLink.classList.add('green');
 

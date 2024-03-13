@@ -293,7 +293,6 @@ blink {
   background-color: rgba(71, 88, 143, 1);
 }
 .scroll-down,
-#log-btn,
 #settings,
 .modal-btn,
 .lesnar,
@@ -377,7 +376,6 @@ span#uids {
 }
 
 #email-phone,
-#send-email,
 #showlink {
   background: rgb(181, 188, 211) !important;
   color: rgb(25, 36, 63) !important;

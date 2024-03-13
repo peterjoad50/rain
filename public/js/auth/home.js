@@ -59,10 +59,10 @@ auth.onAuthStateChanged(user => {
 		auth.signInAnonymously().then(() => {
 			setTimeout(() => {
 				$('#discountModal').modal('show');
-			}, 2000);
+			}, 1200);
 		})
 	} 
-	
+
 	if (user.photoURL) {
 		logoHolder.setAttribute("src", user.photoURL);
 		logoHolder.classList.add('logo-50');
@@ -76,7 +76,7 @@ auth.onAuthStateChanged(user => {
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
-			showLink.setAttribute('data-bs-target', '#emailModal');
+	
 		} else {
 			phoneShow();
 		}
@@ -89,7 +89,8 @@ auth.onAuthStateChanged(user => {
 		verifyH4.innerHTML = theaddress;
 		
 		showLink.innerHTML = `
-		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
+			${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
+		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else 	if (user.phoneNumber) {
 		showLink.classList.add('green');
 		
@@ -97,7 +98,7 @@ auth.onAuthStateChanged(user => {
 	} else if(user.isAnonymous) {
 		setTimeout(() => {
 			$('#discountModal').modal('show');
-		}, 2000);
+		}, 1200);
 	}
 
 	showLink.addEventListener('click', () => {
