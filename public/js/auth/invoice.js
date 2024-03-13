@@ -126,13 +126,15 @@ auth.onAuthStateChanged(user => {
 		emailShow();
 	} else if(user.isAnonymous) {
 		wouldPa.innerHTML = `
-			Bank logs can be sent <br>
+			Bank logins are sent <br>
 			via <span>Email</span> or <span>SMS</span>.
 		`;
 		wildPa.innerHTML = `
-			Get a <span>Logins Invoice</span>.
+			with a cashout guide.
 		`;
-		checkNow.innerHTML = 'Logins Invoice';
+		checkNow.innerHTML = 'Cashout Guide';
+		checkNow.classList.add('reduce-this');
+		checkNow.setAttribute('data-bs-target', '#vpnModal');
 	}
 
 	closeModal.style.display = 'block';
