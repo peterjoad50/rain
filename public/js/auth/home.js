@@ -39,7 +39,6 @@ const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
-const closeInvoice = document.getElementById('invoice-logo');
 
 const verClose = document.getElementById('ver-close');
 
@@ -47,12 +46,12 @@ const verifyH4 = document.getElementById('verify-h4');
 const email2 = document.getElementById('email-2');
 const verCheck = document.getElementById('ver-check');
 
-const auth = firebase.auth();
-
-if(!localStorage.getItem('darkweb-ink')) {
+if(!localStorage.getItem('inkdarkweb')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-ink', true);
+	localStorage.setItem('inkdarkweb', true);
 }
+
+const auth = firebase.auth();
 
 auth.onAuthStateChanged(user => {
 	if (!user) {
@@ -89,8 +88,6 @@ auth.onAuthStateChanged(user => {
 		
 		emailShow();
 	} 
-
-	closeModal.style.display = 'block';
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');

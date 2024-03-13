@@ -53,13 +53,10 @@ const emailLogins = document.getElementById('email-logs');
 
 const bannerWords = document.getElementsByClassName('banner-words-wrapper')[0];
 
-const closeModal = document.getElementsByClassName('btn-see')[0];
-const closeInvoice = document.getElementById('invoice-logo');
-
 
 if(!window.location.href.includes('rkweb')){
 	if(!window.location.href.includes('5500')) {
-		window.location.assign('home')
+		window.location.assign('index')
 	}
 }
 auth.onAuthStateChanged(user => {

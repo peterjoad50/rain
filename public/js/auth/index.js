@@ -10,6 +10,10 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var theWebsite = 'https://www.darkweb.ink/invoice';
 
+if(!localStorage.getItem('inkdarkweb')) {
+	localStorage.setItem('banklogs', []);
+	localStorage.setItem('inkdarkweb', true);
+}
 
 
 const mailField = document.getElementById('inputLife');
@@ -88,7 +92,7 @@ const signUpFunction = () => {
 		const credential = firebase.auth.PhoneAuthProvider.credential(sentCodeId, code);
 		auth.signInWithCredential(credential)
 			.then(() => {
-				window.location.assign('home');
+				$('#exampleModal').modal('show');
 			})
 			.catch(error => {
 				var shortCutFunction = 'success';
@@ -230,7 +234,7 @@ const signInWithYahoo = () => {
 	const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
 	auth.signInWithPopup(yahooProvider).then(() => {
 		auth.currentUser.sendEmailVerification();
-		window.location.assign('home');
+		$('#exampleModal').modal('show');
 	}).catch(error => {
 		var shortCutFunction = 'success';
 		var msg = `${error.message}`;
@@ -254,7 +258,7 @@ const signInWithGoogle = () => {
 	const googleProvider = new firebase.auth.GoogleAuthProvider;
 	auth.signInWithPopup(googleProvider).then(() => {
 		auth.currentUser.sendEmailVerification();
-		window.location.assign('home');
+		$('#exampleModal').modal('show');
 	}).catch(error => {
 		var shortCutFunction = 'success';
 		var msg = `${error.message}`;

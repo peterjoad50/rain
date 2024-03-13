@@ -40,7 +40,6 @@ const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
-const closeInvoice = document.getElementById('invoice-logo');
 
 const verClose = document.getElementById('ver-close');
 
@@ -126,8 +125,6 @@ auth.onAuthStateChanged(user => {
 			}
 		}
 	} 
-
-	closeModal.style.display = 'block';
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');

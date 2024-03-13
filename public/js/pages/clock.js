@@ -1,7 +1,5 @@
 var j = true;
 
-const closeModal2 = document.getElementsByClassName('btn-see')[0];
-const closeInvoice2 = document.getElementById('invoice-logo');
 
 if(localStorage.getItem('banklogs')) {
     if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
@@ -51,8 +49,6 @@ if(localStorage.getItem('banklogs')) {
                 var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
                 elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
             }
-
-
 
             else {
                 var minutes = Math.floor(width/60);
