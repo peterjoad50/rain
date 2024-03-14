@@ -240,11 +240,11 @@ section .dataTables_wrapper .dataTables_paginate,
     margin-top: 0;
 }
 .masonry-4 {
-    margin: 1.5px 0;
+    margin: 2px 0;
     padding: 0;
-    -moz-column-gap: 1.5px;
-    -webkit-column-gap: 1.5px;
-    column-gap: 1.5px;
+    -moz-column-gap: 2px;
+    -webkit-column-gap: 2px;
+    column-gap: 2px;
 
     -moz-column-count: 10;
     -webkit-column-count: 10;
