@@ -184,7 +184,7 @@ const signUpFunction = () => {
 				theUser.updateProfile({
 					phoneNumber: theUser.providerData[0].phoneNumber
 				}).then(() => {
-					window.location.assign('invoice');
+					window.location.reload();
 				});
 			})
 			.catch(error => {
@@ -215,7 +215,7 @@ const signUpFunction = () => {
 					displayName: theUser.providerData[0].displayName, 
 					photoURL: theUser.providerData[0].photoURL
 				}).then(() => {
-					window.location.assign('invoice');
+					window.location.reload();
 				});
 			})
 		} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
@@ -227,7 +227,7 @@ const signUpFunction = () => {
 					displayName: theUser.providerData[0].displayName, 
 					photoURL: theUser.providerData[0].photoURL
 				}).then(() => {
-					window.location.assign('invoice');
+					window.location.reload();
 				});
 			})
 		} else {
