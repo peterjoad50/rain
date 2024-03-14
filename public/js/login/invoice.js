@@ -66,6 +66,12 @@ auth.onAuthStateChanged(user => {
 		}
 	}
 
+	if(platform.manufacturer !== null) {
+		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
+	} else {
+		var  theDevice = `${platform.os} Device`;
+	}
+
 	if(user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
@@ -89,6 +95,10 @@ auth.onAuthStateChanged(user => {
 			phoneShow();
 		}
 
+		wildPa.innerHTML = `
+			with a cashout guide.
+		`;
+
 		verCheck.addEventListener('click', sendEmail);
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
@@ -106,11 +116,18 @@ auth.onAuthStateChanged(user => {
 			<span id="yourEmail">${thePhoneNo}</span> 
 		`;
 
+		wildPa.innerHTML = `
+			with a cashout guide.
+		`;
+
 		emailShow();
 	} else if(user.isAnonymous) {
 		wouldPa.innerHTML = `
-			Bank logs can be sent <br>
-			via <span>Email</span> or <span>SMS</span>,
+			Bank log files will be <br>
+			<span>downloaded</span> on this: <br>
+		`;
+		wildPa.innerHTML = `
+			<span>${theDevice}</span>
 		`;
 	}
 
