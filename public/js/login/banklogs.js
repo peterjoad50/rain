@@ -103,8 +103,6 @@ auth.onAuthStateChanged(user => {
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
 
-		showLink.innerHTML = `
-		${theaddress.substring(0, 10)} <img src="img/partners/tele.png">`;
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 		jinaHolder.value = thePhoneNo;
