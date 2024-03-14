@@ -72,8 +72,6 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 			jinaHolder2.innerHTML = themail;
-			
-			showLink.setAttribute('data-bs-target', '#emailModal');
 
 			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
 				goodies = JSON.parse(localStorage.getItem('banklogs'));
@@ -102,6 +100,8 @@ auth.onAuthStateChanged(user => {
 		verCheck.addEventListener('click', sendEmail);
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
+
+		showLink.setAttribute('data-bs-target', '#emailModal');
 
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;

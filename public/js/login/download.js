@@ -78,7 +78,6 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 
-			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
@@ -93,7 +92,8 @@ auth.onAuthStateChanged(user => {
 		verifyH4.innerHTML = theaddress;
 
 		jinaHolder2.innerHTML = themail;
-		
+
+		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 

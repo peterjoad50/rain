@@ -86,8 +86,6 @@ auth.onAuthStateChanged(user => {
 			wildPa.innerHTML = `
 				& via SMS to: <span>${thePhoneNo}</span>.
 			`;
-
-			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
@@ -104,6 +102,8 @@ auth.onAuthStateChanged(user => {
 		verCheck.addEventListener('click', sendEmail);
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
+
+		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 

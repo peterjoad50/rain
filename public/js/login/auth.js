@@ -57,7 +57,7 @@ auth.onAuthStateChanged(user => {
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
-			showLink.setAttribute('data-bs-target', '#emailModal');
+			
 		} else {
 			phoneShow();
 		}
@@ -65,6 +65,8 @@ auth.onAuthStateChanged(user => {
 		verCheck.addEventListener('click', sendEmail);
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
+
+		showLink.setAttribute('data-bs-target', '#emailModal');
 
 	} else 	if (user.phoneNumber) {
 		showLink.classList.add('green');
