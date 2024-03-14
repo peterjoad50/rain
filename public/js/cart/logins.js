@@ -1,6 +1,6 @@
 if (document.getElementById('boa01')) {
-    (document.getElementById('boa1').innerHTML = "$" + (1735).toLocaleString()),
-    (document.getElementById('boa2').innerHTML = "$" + (2423).toLocaleString()),
+    (document.getElementById('boa1').innerHTML = "$" + (1705).toLocaleString()),
+    (document.getElementById('boa2').innerHTML = "$" + (2413).toLocaleString()),
     (document.getElementById('boa3').innerHTML = "$" + (3125).toLocaleString()),
     (document.getElementById('boa4').innerHTML = "$" + (3938).toLocaleString()),
     (document.getElementById('boa5').innerHTML = "$" + (4478).toLocaleString()),
