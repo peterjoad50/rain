@@ -11,60 +11,60 @@ firebase.initializeApp(firebaseConfig);
 var theWebsite = 'https://www.darkweb.ink/invoice';
 
 
-
-const theId = document.getElementById('the-id');
-const theDate = document.getElementById('the-date');
-const labelDate = document.getElementById('label-date');
-
+const auth = firebase.auth();
 const logoHolder = document.getElementById("logo");
 const vpnHolder = document.getElementById("vpn-img");
 const jinaHolder = document.getElementById("jinaHolder");
 
 const jinaHolder3 = document.getElementById('jinaHolder3');
+const jinaHolder2 = document.getElementById('jinaHolder2');
+
+const theId = document.getElementById('the-id');
+
+const theDate = document.getElementById('the-date');
+const labelDate = document.getElementById('label-date');
+
+const emailP = document.getElementById('email-p');
 
 const theFlag7 = document.getElementById('the-flag7');
-
-const showToth = document.getElementById('showtoasts');
-const showLink = document.getElementById('showlink');
 
 const mailField = document.getElementById('inputLife');
 const signUp = document.getElementById('email-phone');
 
+const showToth = document.getElementById('showtoasts');
+
+const showLink = document.getElementById('showlink');
 
 const phoneNumberField = document.getElementById('inputLife');
+
 const codeField = document.getElementById('code');
 const signInWithPhoneButton = document.getElementById('signInWithPhone');
 
+
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
-
-const closeModal = document.getElementsByClassName('btn-see')[0];
-
-const verClose = document.getElementById('ver-close');
 
 const verifyH4 = document.getElementById('verify-h4');
 const email2 = document.getElementById('email-2');
 const verCheck = document.getElementById('ver-check');
 
-if(!localStorage.getItem('inkdarkweb')) {
-	localStorage.setItem('banklogs', []);
-	localStorage.setItem('inkdarkweb', true);
+const phoneLogins = document.getElementById('phone-logs');
+const emailLogins = document.getElementById('email-logs');
+
+
+if(!window.location.href.includes('rkweb')){
+	if(!window.location.href.includes('5500')) {
+		window.location.assign('home')
+	}
 }
-
-const auth = firebase.auth();
-
 auth.onAuthStateChanged(user => {
 	if (!user) {
-		auth.signInAnonymously().then(() => {
-			$('#vpnModal').modal('show');
-			theId.innerHTML = user.uid;
-		})
+		window.location.assign('home');
 	} 
 
 	if (user.photoURL) {
 		logoHolder.setAttribute("src", user.photoURL);
 		logoHolder.classList.add('logo-50');
-
 		vpnHolder.setAttribute("src", user.photoURL);
 		vpnHolder.classList.add('logo-50');
 	} 
@@ -74,31 +74,56 @@ auth.onAuthStateChanged(user => {
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
-			
+			var thePhoneNo = user.phoneNumber;
+			jinaHolder.value = thePhoneNo;
+			jinaHolder3.value = thePhoneNo;
+
 		} else {
+			jinaHolder.value = theaddress;
+			jinaHolder3.value = theaddress;
+
+			phoneLogins.style.display = 'block';
+			
 			phoneShow();
 		}
 
 		verCheck.addEventListener('click', sendEmail);
 		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
 		verifyH4.innerHTML = theaddress;
-		
+
+		jinaHolder2.innerHTML = themail;
+
 		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else 	if (user.phoneNumber) {
+		var thePhoneNo = user.phoneNumber;
+
 		showLink.classList.add('green');
 		
+		jinaHolder.value = thePhoneNo;
+		jinaHolder3.value = thePhoneNo;
+
+		emailLogins.style.display = 'block';
+
+		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();
-	} 
+	} else if(user.isAnonymous) {
+		emailLogins.style.display = 'block';
+		phoneLogins.style.display = 'block';
+		
+		emailLogins.addEventListener('click', emailShow);
+		phoneLogins.addEventListener('click', phoneShow);
 
-	showLink.addEventListener('click', () => {
-		closeModal.removeAttribute('data-bs-dismiss');
-		closeModal.setAttribute('data-bs-toggle', 'modal');
-		closeModal.setAttribute('data-bs-target', '#profileModal');
+		window.location.assign('home');
+	}
 
-		verClose.removeAttribute('data-bs-dismiss');
-		verClose.setAttribute('data-bs-toggle', 'modal');
-		verClose.setAttribute('data-bs-target', '#profileModal');
-	});
+
+	if(platform.manufacturer !== null) {
+		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
+		var theBrowser = `${platform.name} Browser`;
+	} else {
+		var  theDevice = `${platform.os} Device`;
+		var theBrowser = `${platform.name} ID`;
+	}
 
 	if(user.uid){
 		theId.innerHTML = user.uid;
@@ -109,8 +134,23 @@ auth.onAuthStateChanged(user => {
 		labelDate.innerHTML = `Time ID: (${therealDate})`;
 	}
 
+	if(user.email) {
+		emailP.innerHTML = `
+			Bank logs will be sent to: <br>
+			<span id="uida" style="letter-spacing: 0.1px !important">${user.email}</span>.
+		`;
+	} else if(user.phoneNumber) {
+		emailP.innerHTML = `
+			Bank logs will be sent to: <br>
+			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span>.
+		`;
+	} else if(user.isAnonymous) {
+		emailP.innerHTML = `
+			<span id="uida">${theBrowser}</span>, <br>
+			<span id="uidy">${theDevice}</span>.
+		`;
+	}
 });
-
 
 function sendEmail() {
 	auth.currentUser.sendEmailVerification();
@@ -128,7 +168,6 @@ function sendEmail() {
 	var $toast = toastr[shortCutFunction](msg);
 	$toastlast = $toast;
 }
-
 
 function phoneShow() {
 	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;
@@ -156,6 +195,7 @@ function emailShow() {
 	mailField.setAttribute('placeholder', 'Enter your Email...');
 }
 
+
 window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
 	'size': 'invisible'
 });
@@ -164,11 +204,10 @@ recaptchaVerifier.render().then(widgetId => {
   window.recaptchaWidgetId = widgetId;
 });
 
-
 const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
-
+	
 	const phoneNumber = phoneNumberField.value;
 	const appVerifier = window.recaptchaVerifier;
 
@@ -196,8 +235,7 @@ const signUpFunction = () => {
 				$toastlast = $toast;
 			})
 	}
-
-
+	
 	var actionCodeSettings = {
 		url: `${theWebsite}#${mailField.value}`,
 		handleCodeInApp: true,
@@ -246,7 +284,7 @@ const signUpFunction = () => {
 			});
 		}
 	} else if(email.includes('+') && (email.length >= 10)) { 
-
+	
 		auth.signInWithPhoneNumber(phoneNumber, appVerifier)
 		.then(confirmationResult => {
 			const sentCodeId = confirmationResult.verificationId;
@@ -268,7 +306,8 @@ const signUpFunction = () => {
 			$('#verifyModal').modal('show');
 			$('#discountModal').modal('hide');
 		})
-		
+
+
 	} else {
 		var shortCutFunction = 'success';
 		if(auth.currentUser.email) {
@@ -283,11 +322,11 @@ const signUpFunction = () => {
 			`;
 		} else if(auth.currentUser.isAnonymous) {
 			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Bank logs can be sent via email / SMS      <hr class=" hr10-nil">
+			Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
+			Logs are sent via email / SMS      <hr class=" hr10-nil">
 			`;
 		}
-		
+
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 			positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
@@ -298,6 +337,14 @@ const signUpFunction = () => {
 }
 signUp.addEventListener('click', signUpFunction);
 document.getElementById('the-form').addEventListener('submit', signUpFunction);
+
+
+
+
+
+
+
+
 
 mailField.addEventListener('keyup', checkBra);
 function checkBra() {
@@ -332,6 +379,7 @@ function againBro() {
     }
 }
 
+
 document.getElementById('the-life').addEventListener('click', focusOn);
 function focusOn() {
 	document.getElementById('inputLife').focus();
@@ -349,6 +397,7 @@ fetch('https://ipapi.co/json/')
 	return response.json();
 })
 .then(function(data) {
+
 	var countyCode = data.country_code;
 	var newCode = countyCode.toLowerCase();
 
@@ -363,10 +412,95 @@ fetch('https://ipapi.co/json/')
 
 
 
-var d = new Date();
-var n = d.getMonth() + 1;
-var y = d.getFullYear();
-var m = d.getDate();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -380,6 +514,7 @@ if(!window.location.href.includes('5502')) {
 		}   
 	});
 }
+
 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -465,6 +600,22 @@ function drawHand(ctx, pos, length, width) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var canvas2 = document.getElementById("canvas2");
 var ctx2 = canvas2.getContext("2d");
 var radius2 = canvas2.height / 2;
@@ -534,7 +685,7 @@ function drawTime2(ctx2, radius2) {
 	drawHand2(ctx2, second2, radius2 * 0.9, radius2 * 0.02);
 }
 
-function drawHand2(ctx2, pos, length, width) {
+function drawHand2(ctx, pos, length, width) {
 	ctx2.beginPath();
 	ctx2.lineWidth = width;
 	ctx2.lineCap = "round";
@@ -545,9 +696,36 @@ function drawHand2(ctx2, pos, length, width) {
 	ctx2.rotate(-pos);
 }
 
-
-
-
-
-
-
+if(!window.location.href.includes('5502')) {
+	function disableCtrlKeyCombination(e){
+		var forbiddenKeys = new Array('a', 'n', 'c', 'x', 'i', 'v', 'j' , 'w', 'i');
+		var key;
+		var isCtrl;
+		if(window.event){
+			key = window.event.keyCode;
+			if(window.event.ctrlKey) {
+				isCtrl = true;
+			} else {
+				isCtrl = false;
+			}
+		} else {
+			key = e.which; 
+			if(e.ctrlKey) {
+				isCtrl = true;
+			}
+			else {
+				isCtrl = false;
+			}
+		}
+		//if ctrl is pressed check if other key is in forbidenKeys array
+		if(isCtrl) {
+			for(i=0; i<forbiddenKeys.length; i++) {
+				if(forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
+					alert('Key combination CTRL + '+String.fromCharCode(key) +' has been disabled.');
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+}

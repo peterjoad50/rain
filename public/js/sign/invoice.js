@@ -127,6 +127,8 @@ auth.onAuthStateChanged(user => {
 		wildPa.innerHTML = `
 			<span>${theDevice}</span>
 		`;
+
+		window.location.assign('home');
 	}
 
 	showLink.addEventListener('click', () => {
@@ -322,7 +324,7 @@ const signUpFunction = () => {
 		} else if(auth.currentUser.isAnonymous) {
 			var msg = `
 				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Bank logs can be sent via email / SMS      <hr class=" hr10-nil">
+				Logs are sent via email / SMS      <hr class=" hr10-nil">
 			`;
 		}
 

@@ -60,10 +60,6 @@
         "destination": "/pnc.html"
       },
       {
-        "source": "/tickets",
-        "destination": "/tickets.html"
-      },
-      {
         "source": "/truist",
         "destination": "/truist.html"
       },
@@ -85,11 +81,6 @@
       {
         "source": "/download.html",
         "destination": "/download",
-        "type": 301
-      },
-      {
-        "source": "/tickets.html",
-        "destination": "/tickets",
         "type": 301
       },
       {

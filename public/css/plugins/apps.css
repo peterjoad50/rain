@@ -1026,6 +1026,19 @@ td {
     height: 65px !important;
 }
 
+#sign-logo {
+    opacity: 1 !important;
+    margin: 3px;
+    border-radius: 0 !important;
+}
+#sign-logo img {
+    opacity: 1 !important;
+    border-radius: 0 !important;
+    border: none !important;
+    width: 60px !important;
+    height: 60px !important;
+}
+
 
 
 @media (max-width: 576px) {
@@ -1043,6 +1056,11 @@ td {
     #profile-logo img {
         width: 61px !important;
         height: 61px !important;
+    }
+
+    #sign-logo img {
+        width: 57px !important;
+        height: 57px !important;
     }
 }
 @media (max-width: 384px) {
@@ -2795,29 +2813,6 @@ ul.countdown li p {
     padding: 3px !important;
 }
 
-.empty-cart {
-    background: rgba(255, 255, 255, 0.92) !important;
-    padding: 20px 1px !important;
-  }
-  .empty-cart p {
-    font-size: 19px !important;
-    color: #121d33 !important;
-    line-height: 39px !important;
-    margin-top: 20px !important;
-  }
-  @media screen and (max-width: 526px) {
-    .empty-cart p {
-      font-size: 18.5px !important;
-    }
-  }
-  @media screen and (max-width: 390px) {
-    .empty-cart p {
-      font-size: 18px !important;
-    }
-  }
-  .empty-cart p span {
-    font-weight: 600 !important;
-  }
 
   .inhr {
     padding: 0 !important;
@@ -3414,23 +3409,6 @@ blink.nav-blink {
 
 
 
-.empty-cart h4 {
-    font-size: 29px !important;
-    margin-bottom: 25px !important;
-}
-
-@media screen and (max-width: 500px) {
-    .empty-cart h4 {
-        font-size: 27px !important;
-    }
-}
-@media screen and (max-width: 380px) {
-    .empty-cart h4 {
-        font-size: 25px !important;
-    }
-}
-
-
 .link-vone-div {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
@@ -3782,7 +3760,8 @@ img.levt-10 {
 #send-email {
     cursor: pointer !important;
     font-size: 22px !important;
-    padding: 6px 11px !important;
+    padding: 5.7px 10px !important;
+    margin: -5px 30px -10px !important;
 }
 
 

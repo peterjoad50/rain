@@ -60,10 +60,9 @@ a:active {
   color: #47588f;
   text-decoration: none;
 }
-#my-invoice,
-.empty-cart {
+#my-invoice {
   border: 5px solid rgba(71, 88, 143, 0.5) !important;
-  background: rgba(71, 88, 143, 0.13) !important;
+  background: rgba(71, 88, 143, 0.3) !important;
 }
 .thegold {
   background-color: rgba(71, 88, 143, 0.3);

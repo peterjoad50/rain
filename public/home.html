@@ -718,8 +718,8 @@
             </div>
             <div class="modal-body" id="first-modal">
                 <img src="img/partners/house.png" id="vpn-img">
-                <a class="butn" id="settings" data-bs-dismiss="modal">
-                    Darkweb <img src="img/partners/tele.png">
+                <a class="butn" id="settings" href="banklogs">
+                    Bank Log <img src="img/partners/bitcoin.png">
                 </a>
                 <canvas id="canvas2" width="69px" height="69px"></canvas>
             </div>
@@ -782,7 +782,7 @@
             </div>    
           
             <div class="modal-footer modal-checkout" id="cart-footer">
-                <button class="butn" id="showlink" data-bs-toggle="modal" data-bs-target="#discountModal">
+                <button class="butn" id="showlink" data-bs-toggle="modal" data-bs-target="#vpnModal">
                     Dark Web <img src="img/partners/tele.png">
                 </button>
 
@@ -863,15 +863,18 @@
                 <div class="section-heading">
                     <h4 class="set" id="invoice-type"> Darkweb </h4>
                 </div>
-                <button type="button" class="btn-cloze btn-see" data-bs-dismiss="modal"></button>
+
+                <button type="button" class="close" id="sign-logo">
+                    <img src="img/partners/anonymous.png">
+                </button>
             </div>
     
             <div class="modal-body">
                 <p class="modal-p" id="save-1">
-                    Bank logs can be sent <br> via <span>Email</span>,
+                    A login link will be sent <br> via <span>Email</span> or <span>SMS</span>,
                 </p> <hr class="thehr pending-1">
                 <p class="modal-p"  id="save-2">
-                    or via <span>SMS</span> as a dynamic <br> link to your phone.
+                    You'll use the link to login <br> here on <span>darkweb</span>.
                 </p> <hr class="thehr pending-2">
 
                 <form id="the-form" onsubmit="signUpFunction()">
@@ -932,7 +935,7 @@
     <script src="js/main/home.js"></script>
     <script src="datatables/js/jquery.datatable.min.js"></script>
     <script src="js/cart/home.js"></script>
-    <script src="js/login/home.js"></script>
+    <script src="js/sign/home.js"></script>
 
 </body>
 </html>
