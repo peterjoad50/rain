@@ -151,7 +151,7 @@ function updateCartTotal() {
         if(bankLog.includes('Huntington') || bankLog.includes('Woodforest')) {
             invoiceType.innerHTML = bankLog.split('Bank')[0];
         } else if(bankLog.includes('America')) {
-            invoiceType.innerHTML = 'BankofAmerica';
+            invoiceType.innerHTML = 'Bank America';
         } else {
             invoiceType.innerHTML = bankLog.split('[')[0];
         }

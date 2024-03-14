@@ -107,7 +107,10 @@ auth.onAuthStateChanged(user => {
 
 		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();
-	} 
+	} else if(user.isAnonymous) {
+		emailLogins.style.display = 'block';
+		phoneLogins.style.display = 'block';
+	}
 
 
 	if(platform.manufacturer !== null) {
