@@ -571,7 +571,7 @@ blink.bitc {
   left: 0;
   top: 0;
   text-transform: uppercase;
-  font-size: 45px;
+  font-size: 42px;
 text-shadow: 0 0 1.7px #121d33 !important;
 }
 .banner-words-wrapper b.is-visible {
@@ -593,17 +593,17 @@ text-shadow: 0 0 1.7px #121d33 !important;
 }
 @media screen and (max-width: 767px) {
   .banner-words-wrapper b {
-      font-size: 39px;
+      font-size: 35px;
   }
 }
 @media screen and (max-width: 570px) {
 .banner-words-wrapper b {
-  font-size: 34px;
+  font-size: 32px;
 }
 }
 @media screen and (max-width: 397px) {
 .banner-words-wrapper b {
-  font-size: 30px;
+  font-size: 28px;
 }
 }
 

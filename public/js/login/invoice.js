@@ -107,7 +107,12 @@ auth.onAuthStateChanged(user => {
 		`;
 
 		emailShow();
-	} 
+	} else if(user.isAnonymous) {
+		wouldPa.innerHTML = `
+			Bank logs can be sent <br>
+			via <span>Email</span> or <span>SMS</span>,
+		`;
+	}
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');

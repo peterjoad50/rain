@@ -110,6 +110,9 @@ auth.onAuthStateChanged(user => {
 	} else if(user.isAnonymous) {
 		emailLogins.style.display = 'block';
 		phoneLogins.style.display = 'block';
+		
+		emailLogins.addEventListener('click', emailShow);
+		phoneLogins.addEventListener('click', phoneShow);
 	}
 
 
