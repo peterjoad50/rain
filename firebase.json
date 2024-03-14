@@ -9,7 +9,11 @@
     "rewrites": [
       {
         "source": "/index",
-        "destination": "/index.html"
+        "destination": "/home.html"
+      },
+      {
+        "source": "/",
+        "destination": "/home.html"
       },
       {
         "source": "/download",
@@ -60,10 +64,6 @@
         "destination": "/truist.html"
       },
       {
-        "source": "/td",
-        "destination": "/td.html"
-      },
-      {
         "source": "/wellsfargo",
         "destination": "/wellsfargo.html"
       },
@@ -75,7 +75,7 @@
     "redirects": [
       {
         "source": "/index.html",
-        "destination": "/index",
+        "destination": "/home",
         "type": 301
       },
       {
@@ -131,12 +131,6 @@
       {
         "source": "/truist.html",
         "destination": "/truist",
-        "type": 301
-      },
-
-      {
-        "source": "/td.html",
-        "destination": "/td",
         "type": 301
       },
       {
