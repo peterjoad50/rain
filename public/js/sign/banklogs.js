@@ -134,7 +134,7 @@ auth.onAuthStateChanged(user => {
 			}
 		}
 
-		// window.location.assign('home');
+		window.location.assign('home');
 	}
 
 	showLink.addEventListener('click', () => {
