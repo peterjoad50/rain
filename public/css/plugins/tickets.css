@@ -288,9 +288,9 @@ section .dataTables_wrapper .dataTables_paginate,
 }
 @media screen and (min-width: 1200px) {
     .masonry-4 {
-        -moz-column-count: 24;
-        -webkit-column-count: 24;
-        column-count: 24;
+        -moz-column-count: 21;
+        -webkit-column-count: 21;
+        column-count: 21;
     }
 }
 
