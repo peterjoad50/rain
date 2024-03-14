@@ -2197,8 +2197,8 @@ td {
 @media screen and (max-width: 570px) {
     #settings {
         font-size: 22.5px !important;
-        left: 24%;
-        right: 24%;
+        left: 24.25%;
+        right: 24.25%;
     }
 }
 #settings img {

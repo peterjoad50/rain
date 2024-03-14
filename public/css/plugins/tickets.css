@@ -240,19 +240,19 @@ section .dataTables_wrapper .dataTables_paginate,
     margin-top: 0;
 }
 .masonry-4 {
-    margin: 1.5px 0;
+    margin: 1px 0;
     padding: 0;
-    -moz-column-gap: 1.5px;
-    -webkit-column-gap: 1.5px;
-    column-gap: 1.5px;
+    -moz-column-gap: 1px;
+    -webkit-column-gap: 1px;
+    column-gap: 1px;
 
-    -moz-column-count: 14;
-    -webkit-column-count: 14;
-    column-count: 14;
+    -moz-column-count: 12;
+    -webkit-column-count: 12;
+    column-count: 12;
 }
 .masonry-4 a {
     display: block;
-    margin-top: 7px;
+    margin-top: 3px;
 }
 .masonry-4 a:first-child {
     margin-top: 0;
@@ -266,9 +266,9 @@ section .dataTables_wrapper .dataTables_paginate,
 
         margin: 3px 0;
         padding: 0;
-        -moz-column-gap: 3px;
-        -webkit-column-gap: 3px;
-        column-gap: 3px;
+        -moz-column-gap: 1.5px;
+        -webkit-column-gap: 1.5px;
+        column-gap: 1.5px;
     
     }
 }
