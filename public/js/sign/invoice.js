@@ -44,17 +44,11 @@ const heySave2 = document.getElementById('save-2');
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
 
-const verClose = document.getElementById('ver-close');
-
 const wouldPa = document.getElementById('would');
 const wildPa = document.getElementById('wild');
 
 const bitcoinCheckz = document.getElementById('btc-check');
 const bitcoinImg = document.getElementById('bit-coin');
-
-const verifyH4 = document.getElementById('verify-h4');
-const email2 = document.getElementById('email-2');
-const verCheck = document.getElementById('ver-check');
 
 const auth = firebase.auth();
 
@@ -86,6 +80,8 @@ auth.onAuthStateChanged(user => {
 			wildPa.innerHTML = `
 				& via SMS to: <span>${thePhoneNo}</span>.
 			`;
+
+			showLink.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
@@ -98,12 +94,6 @@ auth.onAuthStateChanged(user => {
 		wildPa.innerHTML = `
 			with a cashout guide.
 		`;
-
-		verCheck.addEventListener('click', sendEmail);
-		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
-		verifyH4.innerHTML = theaddress;
-
-		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
@@ -135,10 +125,6 @@ auth.onAuthStateChanged(user => {
 		closeModal.removeAttribute('data-bs-dismiss');
 		closeModal.setAttribute('data-bs-toggle', 'modal');
 		closeModal.setAttribute('data-bs-target', '#profileModal');
-
-		verClose.removeAttribute('data-bs-dismiss');
-		verClose.setAttribute('data-bs-toggle', 'modal');
-		verClose.setAttribute('data-bs-target', '#profileModal');
 	});
 
 	if(user.uid){
@@ -151,24 +137,6 @@ auth.onAuthStateChanged(user => {
 	}
 	
 });
-
-
-function sendEmail() {
-	auth.currentUser.sendEmailVerification();
-	var shortCutFunction = 'success';
-	var msg = `
-		A verification link has been sent to:   <hr class="to-hr hr15-bot">
-		${auth.currentUser.email} <hr class="hr10-nil">
-		Check the spam / junk folder.  <hr class="hr3-nil">
-	`;
-	toastr.options = {
-		closeButton: true, debug: false, newestOnTop: true, progressBar: true, 
-		positionClass: 'toast-top-full-width', preventDuplicates: true,
-		onclick: null, timeOut: 6000
-	};
-	var $toast = toastr[shortCutFunction](msg);
-	$toastlast = $toast;
-}
 
 function phoneShow() {
 	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;

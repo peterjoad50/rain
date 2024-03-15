@@ -38,12 +38,6 @@ const heySave2 = document.getElementById('save-2');
 
 const closeModal = document.getElementsByClassName('btn-see')[0];
 
-const verClose = document.getElementById('ver-close');
-
-const verifyH4 = document.getElementById('verify-h4');
-const email2 = document.getElementById('email-2');
-const verCheck = document.getElementById('ver-check');
-
 const auth = firebase.auth();
 
 
@@ -57,17 +51,10 @@ auth.onAuthStateChanged(user => {
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
-			
+			showLink.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			phoneShow();
 		}
-
-		verCheck.addEventListener('click', sendEmail);
-		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
-		verifyH4.innerHTML = theaddress;
-
-		showLink.setAttribute('data-bs-target', '#emailModal');
-
 	} else 	if (user.phoneNumber) {
 		showLink.classList.add('green');
 
@@ -78,10 +65,6 @@ auth.onAuthStateChanged(user => {
 		closeModal.removeAttribute('data-bs-dismiss');
 		closeModal.setAttribute('data-bs-toggle', 'modal');
 		closeModal.setAttribute('data-bs-target', '#profileModal');
-
-		verClose.removeAttribute('data-bs-dismiss');
-		verClose.setAttribute('data-bs-toggle', 'modal');
-		verClose.setAttribute('data-bs-target', '#profileModal');
 	});
 	
 	if(user.uid){
@@ -93,24 +76,6 @@ auth.onAuthStateChanged(user => {
 		labelDate.innerHTML = `Time ID: (${therealDate})`;
 	}
 });
-
-
-function sendEmail() {
-	auth.currentUser.sendEmailVerification();
-	var shortCutFunction = 'success';
-	var msg = `
-		A verification link has been sent to:   <hr class="to-hr hr15-bot">
-		${auth.currentUser.email} <hr class="hr10-nil">
-		Check the spam / junk folder.  <hr class="hr3-nil">
-	`;
-	toastr.options = {
-		closeButton: true, debug: false, newestOnTop: true, progressBar: true, 
-		positionClass: 'toast-top-full-width', preventDuplicates: true,
-		onclick: null, timeOut: 6000
-	};
-	var $toast = toastr[shortCutFunction](msg);
-	$toastlast = $toast;
-}
 
 
 function phoneShow() {

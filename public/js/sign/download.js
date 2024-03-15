@@ -44,10 +44,6 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
-const verifyH4 = document.getElementById('verify-h4');
-const email2 = document.getElementById('email-2');
-const verCheck = document.getElementById('ver-check');
-
 const phoneLogins = document.getElementById('phone-logs');
 const emailLogins = document.getElementById('email-logs');
 
@@ -78,6 +74,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 
+			showLink.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
@@ -87,13 +84,7 @@ auth.onAuthStateChanged(user => {
 			phoneShow();
 		}
 
-		verCheck.addEventListener('click', sendEmail);
-		email2.innerHTML = ` <span id="mail-span"> ${user.email} </span> `;
-		verifyH4.innerHTML = theaddress;
-
 		jinaHolder2.innerHTML = themail;
-
-		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
@@ -149,23 +140,6 @@ auth.onAuthStateChanged(user => {
 		`;
 	}
 });
-
-function sendEmail() {
-	auth.currentUser.sendEmailVerification();
-	var shortCutFunction = 'success';
-	var msg = `
-		A verification link has been sent to:   <hr class="to-hr hr15-bot">
-		${auth.currentUser.email} <hr class="hr10-nil">
-		Check the spam / junk folder.  <hr class="hr3-nil">
-	`;
-	toastr.options = {
-		closeButton: true, debug: false, newestOnTop: true, progressBar: true, 
-		positionClass: 'toast-top-full-width', preventDuplicates: true,
-		onclick: null, timeOut: 6000
-	};
-	var $toast = toastr[shortCutFunction](msg);
-	$toastlast = $toast;
-}
 
 function phoneShow() {
 	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;

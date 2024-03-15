@@ -1565,7 +1565,6 @@ td {
 }
 #saveModal .modal-dialog,
 #contactModal .modal-dialog,
-#emailModal .modal-dialog,
 #exampleModal .modal-dialog,
 #verifyModal .modal-dialog, 
 #vpnModal .modal-dialog,
@@ -1576,7 +1575,6 @@ td {
     #saveModal .modal-dialog,
     #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1587,7 +1585,6 @@ td {
     #saveModal .modal-dialog,
     #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1599,7 +1596,6 @@ td {
     #saveModal .modal-dialog,
     #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1611,7 +1607,6 @@ td {
     #saveModal .modal-dialog,
     #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1623,7 +1618,6 @@ td {
     #saveModal .modal-dialog,
     #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1635,7 +1629,6 @@ td {
     #saveModal .modal-dialog,
     #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1648,7 +1641,6 @@ td {
     #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #verifyModal .modal-dialog, 
-    #emailModal .modal-dialog,
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
         top: 19vh !important;
@@ -1660,7 +1652,6 @@ td {
     #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #verifyModal .modal-dialog, 
-    #emailModal .modal-dialog,
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
         top: 19vh !important;
@@ -1673,7 +1664,6 @@ td {
     #exampleModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
-    #emailModal .modal-dialog,
     #discountModal .modal-dialog {
         top: 19vh !important;
         max-width: 88vw !important;
@@ -1684,7 +1674,6 @@ td {
     #contactModal .modal-dialog,
     #exampleModal .modal-dialog,
     #verifyModal .modal-dialog, 
-    #emailModal .modal-dialog,
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
         top: 19vh !important;
@@ -1699,7 +1688,6 @@ td {
 
 #verifyModal .modal-dialog,
 #discountModal .modal-dialog,
-#emailModal .modal-dialog,
 #contactModal .modal-dialog,
 #vpnModal .modal-dialog,
 #saveModal .modal-dialog,
@@ -1711,7 +1699,6 @@ td {
 #discountModal .modal-header,
 #vpnModal .modal-header,
 #contactModal .modal-header,
-#emailModal .modal-header,
 #saveModal .modal-header,
 #exampleModal .modal-header {
     margin: 2px;
@@ -1722,10 +1709,8 @@ td {
 
 #verifyModal .modal-header img,
 #discountModal .modal-header img,
-#emailModal .modal-header img,
 #vpnModal .modal-header img,
 #contactModal .modal-header img,
-#emailModal .modal-header img,
 #saveModal .modal-header img,
 #exampleModal .modal-header img {
     width: 70px;
@@ -1734,7 +1719,6 @@ td {
 
 #verifyModal .modal-header h4.modal-title,
 #discountModal .modal-header h4.modal-title,
-#emailModal .modal-header h4.modal-title,
 #contactModal .modal-header h4.modal-title,
 #vpnModal .modal-header h4.modal-title,
 #saveModal .modal-header h4.modal-title,
@@ -1744,7 +1728,6 @@ td {
 
 #verifyModal .modal-header .close img,
 #discountModal .modal-header .close img,
-#emailModal .modal-header .close img,
 #contactModal .modal-header .close img,
 #vpnModal .modal-header .close img,
 #saveModal .modal-header .close img,
@@ -1757,7 +1740,6 @@ td {
 #verifyModal .modal-header .close img:hover,
 #discountModal .modal-header .close img:hover,
 #vpnModal .modal-header .close img:hover,
-#emailModal .modal-header .close img:hover,
 #contactModal .modal-header .close img:hover,
 #saveModal .modal-header .close img:hover,
 #exampleModal .modal-header .close img:hover {
@@ -1766,7 +1748,6 @@ td {
 
 #verifyModal .modal-footer,
 #discountModal .modal-footer,
-#emailModal .modal-footer,
 #vpnModal .modal-footer,
 #contactModal .modal-footer,
 #saveModal .modal-footer,
@@ -1778,7 +1759,6 @@ td {
 
 #verifyModal .modal-body,
 #discountModal .modal-body,
-#emailModal .modal-body,
 #contactModal .modal-body,
 #vpnModal .modal-body,
 #saveModal .modal-body,
@@ -1790,7 +1770,6 @@ td {
 
 #verifyModal .modal-backdrop div p,
 #discountModal .modal-backdrop div p,
-#emailModal .modal-backdrop div p,
 #saveModal .modal-body div p,
 #contactModal .modal-body div p,
 #exampleModal .modal-body div p {
@@ -2602,9 +2581,6 @@ ul.countdown li p {
     font-size: 20px !important;
     line-height: 70px !important;
 }
-#email-1,
-#email-2,
-#email-3,
 
 #mail-p1,
 #mail-p2,
@@ -2681,9 +2657,6 @@ ul.countdown li p {
         font-size: 19.3px !important;
         line-height: 54px !important;
     }
-    #email-1,
-    #email-2,
-    #email-3,
 
     #mail-p1,
     #mail-p3,
@@ -2710,19 +2683,12 @@ ul.countdown li p {
 }
 
 
-#email-1,
-#email-2,
-#email-3,
-
 #mail-p1,
 #mail-p3,
 #mail-p2 {
     line-height: 54px !important;
 }
 @media screen and (min-width: 1370px) {
-    #email-1,
-    #email-2,
-    #email-3,
 
     #mail-p1,
     #mail-p3,
@@ -2732,9 +2698,6 @@ ul.countdown li p {
 }
 
 @media screen and (max-width: 780px) {
-    #email-1,
-    #email-2,
-    #email-3,
 
     #mail-p1,
     #mail-p3,
@@ -2743,9 +2706,6 @@ ul.countdown li p {
     }
 }
 @media screen and (max-width: 400px) {
-    #email-1,
-    #email-2,
-    #email-3,
 
     #mail-p1,
     #mail-p3,
@@ -3426,11 +3386,7 @@ blink.nav-blink {
 }
 #contact-h4 {
     text-transform: uppercase !important;
-    letter-spacing: 1px !important;    
-}
-#verify-h4 {
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
+    letter-spacing: 1.5px !important;    
 }
 span#uida {
     color: yellow !important;
@@ -3746,16 +3702,6 @@ img.levt-10 {
     margin-left: 3px !important;
   }
 
-#ver-check {
-    letter-spacing: 1.1px !important;
-    cursor: pointer !important;
-    padding-left: 11px !important;
-    padding-right: 11px !important;
-    margin: 15px auto 10px !important;
-}
-#ver-check img {
-    margin-left: 3px !important;
-}
 
 #send-email {
     cursor: pointer !important;
