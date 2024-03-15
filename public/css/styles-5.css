@@ -276,7 +276,6 @@ blink {
 #verifyModal .modal-content,
 #vpnModal .modal-content,
 #profileModal .modal-content,
-#contactModal .modal-content,
 #saveModal .modal-content,
 #exampleModal .modal-content {
   background: rgba(95, 80, 35, 0.5) !important;
@@ -321,7 +320,6 @@ blink {
 #discountModal .modal-header .close img,
 #verifyModal .modal-header .close img,
 #vpnModal .modal-header .close img,
-#contactModal .modal-header .close img,
 #profileModal .modal-header .close img,
 #saveModal .modal-header .close img,
 #exampleModal .modal-header .close img,

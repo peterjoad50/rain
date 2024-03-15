@@ -276,7 +276,6 @@ blink {
 #discountModal .modal-content,
 #verifyModal .modal-content,
 #vpnModal .modal-content,
-#contactModal .modal-content,
 #profileModal .modal-content,
 #saveModal .modal-content,
 #exampleModal .modal-content {
@@ -322,7 +321,6 @@ blink {
 #discountModal .modal-header .close img,
 #verifyModal .modal-header .close img,
 #vpnModal .modal-header .close img,
-#contactModal .modal-header .close img,
 #profileModal .modal-header .close img,
 #saveModal .modal-header .close img,
 .btn-remove {

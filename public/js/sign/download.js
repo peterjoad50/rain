@@ -105,6 +105,9 @@ auth.onAuthStateChanged(user => {
 		phoneLogins.addEventListener('click', phoneShow);
 	}
 
+	showLink.addEventListener('click', () => {
+		localStorage.setItem('sign-logo', true);
+	});
 
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
