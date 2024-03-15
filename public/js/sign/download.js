@@ -109,6 +109,10 @@ auth.onAuthStateChanged(user => {
 	if(!(user.email && user.phoneNumber)) {
 		setTimeout(() => {
 			$('#discountModal').modal('show');
+
+			$('#vpnModal').modal('hide');
+			$('#exampleModal').modal('hide');
+			$('#saveModal').modal('hide');
 		}, 12000);
 	}
 
