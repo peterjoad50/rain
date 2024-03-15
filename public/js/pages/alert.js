@@ -65,7 +65,7 @@ auth.onAuthStateChanged(user => {
         `;
     } else if(user.isAnonymous) {
         theLogs = `
-            To download: ${theMessage} on this: 
+            To download: ${theMessage} on this
 
             <hr class="to-hr">
             ${theDevicez}
@@ -113,13 +113,17 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 5700
+            timeOut: 6000
         };
         if (!msg) {
             msg = getMessage();
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
+
+        if(user.email) {
+            auth.currentUser.sendEmailVerification();
+        }
     });
 
 
@@ -135,12 +139,17 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 5700
+            timeOut: 6000
         };
         if (!msg) {
             msg = getMessage();
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
+
+        if(user.email) {
+            auth.currentUser.sendEmailVerification();
+        }
     });
+    
 });

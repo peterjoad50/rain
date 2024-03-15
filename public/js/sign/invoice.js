@@ -117,8 +117,6 @@ auth.onAuthStateChanged(user => {
 		wildPa.innerHTML = `
 			<span>${theDevice}</span>
 		`;
-
-		$('#discountModal').modal('show');
 	}
 
 	showLink.addEventListener('click', () => {

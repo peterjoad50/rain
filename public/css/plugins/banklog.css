@@ -156,6 +156,16 @@ section .dataTables_wrapper .dataTables_paginate,
 .burro {
     filter: blur(2.5px) !important;
 }
+
+#send-email {
+    cursor: pointer !important;
+    font-size: 21px !important;
+    padding: 5.7px 10px !important;
+    margin: -5px 12px -10px !important;
+}
+
+
+
   
   #example tbody td:nth-child(1) hr {
     margin-top: 10px !important;
@@ -425,9 +435,9 @@ section .dataTables_wrapper .dataTables_paginate,
 
 @media screen and (min-width: 768px) {
     .masonry-4 {
-        -moz-column-count: 27;
-        -webkit-column-count: 27;
-        column-count: 27;
+        -moz-column-count: 12;
+        -webkit-column-count: 12;
+        column-count: 12;
 
         margin: 3px 0;
         padding: 0;
