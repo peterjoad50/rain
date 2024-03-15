@@ -109,7 +109,7 @@ auth.onAuthStateChanged(user => {
 	if(!(user.email && user.phoneNumber)) {
 		setTimeout(() => {
 			$('#discountModal').modal('show');
-		}, 16000);
+		}, 12000);
 	}
 
 

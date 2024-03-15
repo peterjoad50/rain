@@ -148,11 +148,6 @@ section .dataTables_wrapper .dataTables_paginate,
       }  
 }
 
-#their-name {
-    text-transform: uppercase !important;
-    letter-spacing: 2px !important;
-}
-
 .burro {
     filter: blur(2.5px) !important;
 }
