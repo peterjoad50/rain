@@ -46,9 +46,11 @@ const verifyH4 = document.getElementById('verify-h4');
 const email2 = document.getElementById('email-2');
 const verCheck = document.getElementById('ver-check');
 
-if(!localStorage.getItem('darkwebink')) {
+if(!localStorage.getItem('darkweblog')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkwebink', true);
+	localStorage.setItem('darkweblog', true);
+
+	window.location.reload();
 }
 
 const auth = firebase.auth();
@@ -56,7 +58,6 @@ const auth = firebase.auth();
 auth.onAuthStateChanged(user => {
 	if (!user) {
 		auth.signInAnonymously().then(() => {
-			$('#discountModal').modal('show');
 			theId.innerHTML = user.uid;
 		})
 	} 
@@ -88,9 +89,7 @@ auth.onAuthStateChanged(user => {
 		showLink.classList.add('green');
 		
 		emailShow();
-	} else if(user.isAnonymous) {
-		$('#discountModal').modal('show');
-	}
+	} 
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');

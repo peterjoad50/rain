@@ -5,13 +5,8 @@
     border-right: none !important;
     border-bottom: none !important;
 }
-.therow {
-	margin: 75px -15px 0 -15px;
-}
+
 @media screen and (max-width: 1026px) {
-	.therow {
-		margin: 80px -15px 0 -15px;
-	}
     .col-12 {
         margin-bottom: 21px;
     }
@@ -22,7 +17,7 @@
     margin-bottom: 0;
 }
 .therow {
-	margin: 50px -15px 0 -15px;
+	margin: 85px -15px 0 -15px;
 }
 @media screen and (max-width: 1026px) {
 	.thecont{

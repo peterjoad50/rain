@@ -133,8 +133,6 @@ auth.onAuthStateChanged(user => {
 				`; 
 			}
 		}
-
-		window.location.assign('home');
 	}
 
 	showLink.addEventListener('click', () => {

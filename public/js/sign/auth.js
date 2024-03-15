@@ -72,9 +72,7 @@ auth.onAuthStateChanged(user => {
 		showLink.classList.add('green');
 
 		emailShow();
-	} else if(user.isAnonymous) {
-		window.location.assign('home');
-	}
+	} 
 
 	showLink.addEventListener('click', () => {
 		closeModal.removeAttribute('data-bs-dismiss');

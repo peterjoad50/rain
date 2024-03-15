@@ -128,7 +128,7 @@ auth.onAuthStateChanged(user => {
 			<span>${theDevice}</span>
 		`;
 
-		window.location.assign('home');
+		$('#discountModal').modal('show');
 	}
 
 	showLink.addEventListener('click', () => {
