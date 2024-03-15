@@ -33,6 +33,8 @@ const phoneNumberField = document.getElementById('inputLife');
 const codeField = document.getElementById('code');
 const signInWithPhoneButton = document.getElementById('signInWithPhone');
 
+const voiceDiv = document.getElementById('voice-div');
+
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
@@ -50,11 +52,16 @@ auth.onAuthStateChanged(user => {
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
 			showLink.setAttribute('data-bs-target', '#vpnModal');
+			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			phoneShow();
 		}
+
+		voiceDiv.innerHTML = theaddress.substring(0, 11);
 	} else 	if (user.phoneNumber) {
 		showLink.classList.add('green');
+
+		voiceDiv.innerHTML = user.phoneNumber;
 
 		emailShow();
 	} 

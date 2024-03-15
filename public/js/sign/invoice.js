@@ -48,6 +48,8 @@ const wildPa = document.getElementById('wild');
 const bitcoinCheckz = document.getElementById('btc-check');
 const bitcoinImg = document.getElementById('bit-coin');
 
+const voiceDiv = document.getElementById('voice-div');
+
 const auth = firebase.auth();
 
 
@@ -80,14 +82,19 @@ auth.onAuthStateChanged(user => {
 			`;
 
 			showLink.setAttribute('data-bs-target', '#vpnModal');
+			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
 				<span>${themail}</span> 
 			`;
 
+			voiceDiv.innerHTML = user.phoneNumber;
+
 			phoneShow();
 		}
+
+		voiceDiv.innerHTML = theaddress.substring(0, 11);
 
 		wildPa.innerHTML = `
 			with a cashout guide.

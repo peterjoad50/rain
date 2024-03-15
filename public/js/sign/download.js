@@ -47,6 +47,8 @@ const heySave2 = document.getElementById('save-2');
 const phoneLogins = document.getElementById('phone-logs');
 const emailLogins = document.getElementById('email-logs');
 
+const voiceDiv = document.getElementById('voice-div');
+
 
 if(!window.location.href.includes('rkweb')){
 	if(!window.location.href.includes('5500')) {
@@ -75,6 +77,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder3.value = thePhoneNo;
 
 			showLink.setAttribute('data-bs-target', '#vpnModal');
+			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
@@ -84,11 +87,15 @@ auth.onAuthStateChanged(user => {
 			phoneShow();
 		}
 
+		voiceDiv.innerHTML = theaddress.substring(0, 11);
+
 		jinaHolder2.innerHTML = themail;
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
 		showLink.classList.add('green');
+
+		voiceDiv.innerHTML = user.phoneNumber;
 		
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;

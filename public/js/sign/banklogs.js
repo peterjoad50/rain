@@ -39,6 +39,8 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
+const voiceDiv = document.getElementById('voice-div');
+
 const auth = firebase.auth();
 
 
@@ -74,6 +76,7 @@ auth.onAuthStateChanged(user => {
 			}
 
 			showLink.setAttribute('data-bs-target', '#vpnModal');
+			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
@@ -91,12 +94,16 @@ auth.onAuthStateChanged(user => {
 			}
 		}
 
+		voiceDiv.innerHTML = theaddress.substring(0, 11);
+
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
 
 		showLink.classList.add('green');
+
+		voiceDiv.innerHTML = user.phoneNumber;
 
 		emailShow();
 
