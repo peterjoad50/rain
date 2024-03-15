@@ -58,10 +58,6 @@ auth.onAuthStateChanged(user => {
 
 		emailShow();
 	} 
-
-	showLink.addEventListener('click', () => {
-		localStorage.setItem('sign-logo', true);
-	});
 	
 	if(user.uid){
 		theId.innerHTML = user.uid;

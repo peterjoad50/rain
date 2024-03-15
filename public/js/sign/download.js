@@ -105,9 +105,13 @@ auth.onAuthStateChanged(user => {
 		phoneLogins.addEventListener('click', phoneShow);
 	}
 
-	showLink.addEventListener('click', () => {
-		localStorage.setItem('sign-logo', true);
-	});
+
+	if(!(user.email && user.phoneNumber)) {
+		setTimeout(() => {
+			$('#discountModal').modal('show');
+		}, 16000);
+	}
+
 
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;

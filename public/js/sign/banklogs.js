@@ -123,10 +123,6 @@ auth.onAuthStateChanged(user => {
 		}
 	}
 
-	showLink.addEventListener('click', () => {
-		localStorage.setItem('sign-logo', true);
-	});
-
 	if(user.uid){
 		theId.innerHTML = user.uid;
 		let theDatez2 = new Date(user.metadata.b * 1);
