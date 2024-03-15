@@ -47,8 +47,8 @@ auth.onAuthStateChanged(user => {
 
     if(user.email) {
         theLogs = `
-            Bank logs and cashout method <br>
-            will be sent to: 
+            A verification link has been <br>
+            sent to: 
 
             <hr class="to-hr">
             ${user.email}.
