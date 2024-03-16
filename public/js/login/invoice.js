@@ -87,6 +87,8 @@ auth.onAuthStateChanged(user => {
 				& via SMS to: <span>${thePhoneNo}</span>.
 			`;
 
+			checkiImg.setAttribute('src', 'img/partners/gogle.png');
+
 			showLink.setAttribute('data-bs-target', '#vpnModal');
 			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 		} else {
@@ -104,6 +106,8 @@ auth.onAuthStateChanged(user => {
 			checkNow.setAttribute('data-bs-target', '#discountModal');
 			checkNow.innerHTML = 'Phone Invoice';
 
+			checkiImg.setAttribute('src', 'img/partners/phone.png');
+
 			phoneShow();
 		}
 
@@ -117,6 +121,8 @@ auth.onAuthStateChanged(user => {
 			Bank logs will be sent to <br>
 			<span id="yourEmail">${thePhoneNo}</span> 
 		`;
+
+		checkiImg.setAttribute('src', 'img/partners/gogle.png');
 
 		checkNow.setAttribute('data-bs-target', '#discountModal');
 		checkNow.innerHTML = 'Email Invoice';
