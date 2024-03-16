@@ -51,8 +51,6 @@ const checkiImg = document.getElementById('check-img');
 
 const checkNow = document.getElementById('check-now');
 
-const voiceDiv = document.getElementById('voice-div');
-
 const signLogo = document.getElementById('sign-logo');
 
 const auth = firebase.auth();
@@ -92,7 +90,6 @@ auth.onAuthStateChanged(user => {
 			`;
 
 			showLink.setAttribute('data-bs-target', '#vpnModal');
-			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
@@ -108,14 +105,10 @@ auth.onAuthStateChanged(user => {
 
 			phoneShow();
 		}
-
-		voiceDiv.innerHTML = theaddress.substring(0, 11);
 	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
 		showLink.classList.add('green');
-
-		voiceDiv.innerHTML = thePhoneNo;
 
 		wouldPa.innerHTML = `
 			Bank logs will be sent to <br>

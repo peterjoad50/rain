@@ -38,8 +38,6 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
-const voiceDiv = document.getElementById('voice-div');
-
 const signLogo = document.getElementById('sign-logo');
 
 if(!localStorage.getItem('darkweb-logs')) {
@@ -74,18 +72,13 @@ auth.onAuthStateChanged(user => {
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
 			showLink.setAttribute('data-bs-target', '#vpnModal');
-			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 		} else {
 			phoneShow();
 		}
-
-		voiceDiv.innerHTML = theaddress.substring(0, 11);
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
 		showLink.classList.add('green');
-
-		voiceDiv.innerHTML = thePhoneNo;
 		
 		emailShow();
 	} 
