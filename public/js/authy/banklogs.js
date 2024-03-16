@@ -97,9 +97,11 @@ auth.onAuthStateChanged(user => {
 				goodies = JSON.parse(localStorage.getItem('banklogs'));
 				for (var i = 0; i < goodies.length; i++) {
 					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-						<hr id="hr-table">
 						${theaddress}
-						<hr id="hr-table-2">
+						<hr id="hr-table">
+						<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#discountModal">
+						PHONE ID
+						</button>
 					`;
 				}
 			}
@@ -118,9 +120,11 @@ auth.onAuthStateChanged(user => {
 			goodies = JSON.parse(localStorage.getItem('banklogs'));
 			for (var i = 0; i < goodies.length; i++) {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-					<hr id="hr-table">
 					${thePhoneNo.slice(0, -3)}...
-					<hr id="hr-table-2">
+					<hr id="hr-table">
+					<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#discountModal">
+					EMAIL ID
+					</button>
 				`; 
 			}
 		}

@@ -151,6 +151,14 @@ section .dataTables_wrapper .dataTables_paginate,
 .burro {
     filter: blur(2.5px) !important;
 }
+#log-btn {
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    font-size: 15px !important;
+    padding: 5px 10px;
+    margin-bottom: 0px !important;
+}
+
 
 #send-email {
     cursor: pointer !important;
@@ -172,16 +180,9 @@ section .dataTables_wrapper .dataTables_paginate,
   }
   #hr-table {
     opacity: 0.5 !important;
-    margin-top: 3px !important;
-    margin-bottom: 13px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
   }
-  #hr-table-2 {
-    opacity: 0.5 !important;
-    margin-top: 13px !important;
-    margin-bottom: 3px !important;
-  }
-  
-
 
 
   .bro-text {
