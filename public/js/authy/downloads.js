@@ -113,11 +113,22 @@ auth.onAuthStateChanged(user => {
 	if(!(user.email && user.phoneNumber)) {
 		setTimeout(() => {
 			$('#discountModal').modal('show');
+
+			$('#contactModal').modal('hide');
+			$('#saveModal').modal('hide');
+			$('#vpnModal').modal('hide');
+			$('#exampleModal').modal('hide');
+
 			localStorage.setItem('sign-logo', true);
 		}, 12000);
 
 		if(localStorage.getItem('sign-logo')) {
 			$('#discountModal').modal('show');
+
+			$('#contactModal').modal('hide');
+			$('#saveModal').modal('hide');
+			$('#vpnModal').modal('hide');
+			$('#exampleModal').modal('hide');
 		}
 	}
 
