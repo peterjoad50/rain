@@ -202,7 +202,7 @@ function updateCartTotal() {
     localStorage.setItem('divtotal', discountTotal);
     var disTot = localStorage.getItem('divtotal');
 
-    document.getElementById('invoice-type').innerHTML = `Send $${parseInt(total).toLocaleString()} BTC`;
+    const invoiceType = document.getElementById('invoice-type');
 
 
     if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
@@ -224,6 +224,14 @@ function updateCartTotal() {
             downFile.innerHTML = 'Bank of America';
         } else {
             downFile.innerHTML = bankLog.split('[')[0];
+        }
+
+        if(bankLog.includes('Huntington') || bankLog.includes('Woodforest')) {
+            invoiceType.innerHTML = bankLog.split('Bank')[0];
+        } else if(bankLog.includes('America')) {
+            invoiceType.innerHTML = 'Bank America';
+        } else {
+            invoiceType.innerHTML = bankLog.split('[')[0];
         }
 
         downFile.innerHTML = bankLog.split('[')[0];
