@@ -48,7 +48,7 @@ auth.onAuthStateChanged(user => {
     if(user.email) {
         theLogs = `
             A verification link has been <br>
-            sent to: 
+            sent to your email:
 
             <hr class="to-hr">
             ${user.email}.
