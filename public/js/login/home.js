@@ -79,9 +79,11 @@ auth.onAuthStateChanged(user => {
 
 		voiceDiv.innerHTML = theaddress.substring(0, 11);
 	} else 	if (user.phoneNumber) {
+		var thePhoneNo = user.phoneNumber;
+
 		showLink.classList.add('green');
 
-		voiceDiv.innerHTML = user.phoneNumber;
+		voiceDiv.innerHTML = thePhoneNo;
 		
 		emailShow();
 	} 

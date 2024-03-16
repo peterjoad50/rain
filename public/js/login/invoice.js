@@ -97,8 +97,6 @@ auth.onAuthStateChanged(user => {
 				<span>${themail}</span> 
 			`;
 
-			voiceDiv.innerHTML = user.phoneNumber;
-
 			wildPa.innerHTML = `
 				Logs can be sent via <span>SMS</span>
 			`;
@@ -116,6 +114,8 @@ auth.onAuthStateChanged(user => {
 		var thePhoneNo = user.phoneNumber;
 
 		showLink.classList.add('green');
+
+		voiceDiv.innerHTML = thePhoneNo;
 
 		wouldPa.innerHTML = `
 			Bank logs will be sent to <br>
