@@ -109,8 +109,8 @@ function phoneShow() {
 }
 
 function emailShow() {
-	heySave1.innerHTML = ` Bank logs can be sent <br> via <span id="mail-span">Email</span>. `;
-	heySave2.innerHTML = ` To the <span id="mail-span">spam / junk</span> folder <br> of your mailbox. `;
+	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
+	heySave2.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox. `;
 
 	theFlag7.style.display = 'none';
 	mailField.setAttribute('type', 'email');

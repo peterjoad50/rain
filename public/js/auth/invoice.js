@@ -47,6 +47,7 @@ const wildPa = document.getElementById('wild');
 
 const bitcoinCheck = document.getElementById('btc-check');
 const bitcoinImg = document.getElementById('bit-coin');
+const checkiImg = document.getElementById('check-img');
 
 const checkNow = document.getElementById('check-now');
 
@@ -131,7 +132,7 @@ auth.onAuthStateChanged(user => {
 			via <span>Email</span> or <span>SMS</span>.
 		`;
 		wildPa.innerHTML = `
-			Choose an invoice below.
+			Choose an <span>invoice</span> below.
 		`;
 
 		bitcoinCheck.innerHTML = 'Email Invoice';
@@ -140,8 +141,23 @@ auth.onAuthStateChanged(user => {
 		checkNow.innerHTML = 'Phone Invoice';
 		checkNow.addEventListener('click', phoneShow);
 
-		document.getElementById('bit-coin').setAttribute('src', 'img/partners/gogle.png');
-		document.getElementById('check-img').setAttribute('src', 'img/partners/phone.png');
+		bitcoinImg.setAttribute('src', 'img/partners/gogle.png');
+		checkiImg.setAttribute('src', 'img/partners/phone.png');
+	}
+
+
+	if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) == 0)) {
+		bitcoinCheck.innerHTML = 'Homepage ID';
+		bitcoinCheck.removeAttribute('data-bs-toggle');
+		bitcoinCheck.setAttribute('href', 'home');
+	
+	
+		checkNow.innerHTML = 'Cashout Guide';
+		checkNow.removeAttribute('data-bs-toggle');
+		checkNow.setAttribute('href', 'banklogs');
+
+		bitcoinImg.setAttribute('src', 'img/partners/house.png');
+		checkiImg.setAttribute('src', 'img/partners/grad.png');
 	}
 
 
@@ -178,8 +194,8 @@ function phoneShow() {
 }
 
 function emailShow() {
-	heySave1.innerHTML = ` Bank logs can be sent <br> via <span id="mail-span">Email</span>. `;
-	heySave2.innerHTML = ` To the <span id="mail-span">spam / junk</span> folder <br> of your mailbox. `;
+	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
+	heySave2.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox. `;
 
 	theFlag7.style.display = 'none';
 	mailField.setAttribute('type', 'email');

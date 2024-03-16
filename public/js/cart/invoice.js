@@ -4,6 +4,8 @@ var anonLink = document.getElementById('anon-link');
 
 var bitCoin = document.getElementById('bit-coin');
 
+const btcChecking = document.getElementById('btc-check');
+
 var theLogo = document.getElementById('logo');
 var theLogo2 = document.getElementById('vpn-img');
 
@@ -55,18 +57,6 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 
 } else {
     document.getElementById('cartlength').style.display = 'none';
-
-    document.getElementById('btc-check').innerHTML = 'Homepage ID';
-    document.getElementById('btc-check').removeAttribute('data-bs-toggle');
-    document.getElementById('btc-check').setAttribute('href', 'home');
-
-    document.getElementById('bit-coin').setAttribute('src', 'img/partners/btc.png');
-
-    document.getElementById('check-now').innerHTML = 'Cashout Guide';
-    document.getElementById('check-now').removeAttribute('data-bs-toggle');
-    document.getElementById('check-now').setAttribute('href', 'banklogs');
-    document.getElementById('check-img').setAttribute('src', 'img/partners/gogle.png');
-    
 
     document.getElementById('thetot').setAttribute('data-bs-target', '#vpnModal');
 

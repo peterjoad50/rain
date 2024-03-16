@@ -59,7 +59,7 @@ if (document.getElementById('boa01')) {
 
 } else if (document.getElementById('chime01')) {
     (document.getElementById("chime1").innerHTML = "$" + (3027).toLocaleString()),
-    (document.getElementById("chime2").innerHTML = "$" + (4201).toLocaleString()),
+    (document.getElementById("chime2").innerHTML = "$" + (4189).toLocaleString()),
     (document.getElementById("chime3").innerHTML = "$" + (4937).toLocaleString()),
     (document.getElementById("chime4").innerHTML = "$" + (5602).toLocaleString()),
     (document.getElementById("chime5").innerHTML = "$" + (6107).toLocaleString()),
