@@ -159,6 +159,13 @@ function updateCartTotal() {
         theLogo2.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
 
         if(bankLog.includes('Chime') || bankLog.includes('Wells')) {
+
+            auth.onAuthStateChanged(user => {
+                if(user.email || user.phoneNumber) {
+                    bitCoin.classList.add('bit-img');
+                }
+            });
+
             theLogo.classList.add('bit-img');
             theLogo2.classList.add('bit-img');
 
