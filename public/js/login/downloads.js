@@ -110,6 +110,17 @@ auth.onAuthStateChanged(user => {
 		emailShow();
 	} 
 
+	if(!(user.email && user.phoneNumber)) {
+		setTimeout(() => {
+			$('#discountModal').modal('show');
+			localStorage.setItem('sign-logo', true);
+		}, 12000);
+
+		if(localStorage.getItem('sign-logo')) {
+			$('#discountModal').modal('show');
+		}
+	}
+
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
 	} else {

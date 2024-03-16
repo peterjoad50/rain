@@ -47,7 +47,6 @@ const wildPa = document.getElementById('wild');
 
 const bitcoinCheck = document.getElementById('btc-check');
 const bitcoinImg = document.getElementById('bit-coin');
-const checkiImg = document.getElementById('check-img');
 
 const checkNow = document.getElementById('check-now');
 
@@ -97,11 +96,8 @@ auth.onAuthStateChanged(user => {
 			`;
 
 			wildPa.innerHTML = `
-				Logs can be sent via <span>SMS</span>
+				with a cashout <span>guide<span>.
 			`;
-
-			checkNow.setAttribute('data-bs-target', '#discountModal');
-			checkNow.innerHTML = 'Phone Invoice';
 
 			phoneShow();
 		}
@@ -115,11 +111,8 @@ auth.onAuthStateChanged(user => {
 			<span id="yourEmail">${thePhoneNo}</span> 
 		`;
 
-		checkNow.setAttribute('data-bs-target', '#discountModal');
-		checkNow.innerHTML = 'Email Invoice';
-
 		wildPa.innerHTML = `
-			Logs can be sent via <span>Email</span>
+			with a cashout <span>guide<span>.
 		`;
 
 		emailShow();
@@ -131,13 +124,7 @@ auth.onAuthStateChanged(user => {
 		bitcoinCheck.removeAttribute('data-bs-toggle');
 		bitcoinCheck.setAttribute('href', 'home');
 	
-	
-		checkNow.innerHTML = 'Cashout Guide';
-		checkNow.removeAttribute('data-bs-toggle');
-		checkNow.setAttribute('href', 'banklogs');
-
 		bitcoinImg.setAttribute('src', 'img/partners/house.png');
-		checkiImg.setAttribute('src', 'img/partners/grad.png');
 	}
 
 
