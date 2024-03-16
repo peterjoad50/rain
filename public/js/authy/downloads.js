@@ -120,7 +120,7 @@ auth.onAuthStateChanged(user => {
 			$('#exampleModal').modal('hide');
 
 			localStorage.setItem('sign-logo', true);
-		}, 12000);
+		}, 7000);
 
 		if(localStorage.getItem('sign-logo')) {
 			$('#discountModal').modal('show');
