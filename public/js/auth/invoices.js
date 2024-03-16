@@ -48,6 +48,8 @@ const wildPa = document.getElementById('wild');
 const bitcoinCheckz = document.getElementById('btc-check');
 const bitcoinImg = document.getElementById('bit-coin');
 
+const checkNow = document.getElementById('check-now');
+
 const voiceDiv = document.getElementById('voice-div');
 
 const auth = firebase.auth();
@@ -99,14 +101,17 @@ auth.onAuthStateChanged(user => {
 
 			voiceDiv.innerHTML = user.phoneNumber;
 
+			wildPa.innerHTML = `
+				Logs can be sent via <span>SMS</span>
+			`;
+
+			checkNow.setAttribute('data-bs-target', '#discountModal');
+			checkNow.innerHTML = 'Phone Invoice';
+
 			phoneShow();
 		}
 
 		voiceDiv.innerHTML = theaddress.substring(0, 11);
-
-		wildPa.innerHTML = `
-			with a cashout guide.
-		`;
 	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
@@ -117,8 +122,11 @@ auth.onAuthStateChanged(user => {
 			<span id="yourEmail">${thePhoneNo}</span> 
 		`;
 
+		checkNow.setAttribute('data-bs-target', '#discountModal');
+		checkNow.innerHTML = 'Email Invoice';
+
 		wildPa.innerHTML = `
-			with a cashout guide.
+			Logs can be sent via <span>Email</span>
 		`;
 
 		emailShow();
