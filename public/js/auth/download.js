@@ -50,6 +50,14 @@ const emailLogins = document.getElementById('email-logs');
 const voiceDiv = document.getElementById('voice-div');
 
 
+if(!localStorage.getItem('darkweb-win')) {
+	localStorage.setItem('banklogs', []);
+	localStorage.setItem('darkweb-win', true);
+
+	window.location.assign('home');
+}
+
+
 if(!window.location.href.includes('rkweb')){
 	if(!window.location.href.includes('5500')) {
 		window.location.assign('home')

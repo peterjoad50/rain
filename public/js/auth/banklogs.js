@@ -41,6 +41,14 @@ const heySave2 = document.getElementById('save-2');
 
 const voiceDiv = document.getElementById('voice-div');
 
+if(!localStorage.getItem('darkweb-win')) {
+	localStorage.setItem('banklogs', []);
+	localStorage.setItem('darkweb-win', true);
+
+	window.location.assign('home');
+}
+
+
 const auth = firebase.auth();
 
 

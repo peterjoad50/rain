@@ -40,6 +40,14 @@ const heySave2 = document.getElementById('save-2');
 
 const auth = firebase.auth();
 
+if(!localStorage.getItem('darkweb-win')) {
+	localStorage.setItem('banklogs', []);
+	localStorage.setItem('darkweb-win', true);
+
+	window.location.assign('home');
+}
+
+
 
 auth.onAuthStateChanged(user => {
 	if (!user) {

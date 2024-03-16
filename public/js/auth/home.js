@@ -44,7 +44,7 @@ if(!localStorage.getItem('darkweb-win')) {
 	localStorage.setItem('banklogs', []);
 	localStorage.setItem('darkweb-win', true);
 
-	window.location.reload();
+	window.location.assign('home');
 }
 
 const auth = firebase.auth();
