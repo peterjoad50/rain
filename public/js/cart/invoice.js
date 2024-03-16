@@ -121,15 +121,10 @@ function updateCartTotal() {
 
     document.getElementById('thetot').innerHTML = `Cart:  <span>$${total.toLocaleString()}</span>`;
 
-    auth.onAuthStateChanged(user => {
-        if(user.email || user.phoneNumber) {
-            document.getElementById('btc-check').innerHTML = `
-                Checkout <span class="muher">$${total.toLocaleString()}</span>
-            `;
-            document.getElementById('btc-check').setAttribute('data-bs-target', '#profileModal');
-        }
-    });
-
+    document.getElementById('btc-check').innerHTML = `
+        Checkout <span class="muher">$${total.toLocaleString()}</span>
+    `;
+    document.getElementById('btc-check').setAttribute('data-bs-target', '#profileModal');
 
     if((JSON.parse(localStorage.getItem('banklogs')).length) == 1) {
 
@@ -149,22 +144,14 @@ function updateCartTotal() {
 
         document.getElementById('jinaHolder2').innerHTML = '[' + bankLog2.replace(']', ' ACCOUNT]'); 
 
-        auth.onAuthStateChanged(user => {
-            if(user.email || user.phoneNumber) {
-                bitCoin.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
-            }
-        });
+        bitCoin.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
 
         theLogo.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
         theLogo2.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
 
         if(bankLog.includes('Chime') || bankLog.includes('Wells')) {
 
-            auth.onAuthStateChanged(user => {
-                if(user.email || user.phoneNumber) {
-                    bitCoin.classList.add('bit-img');
-                }
-            });
+            bitCoin.classList.add('bit-img');
 
             theLogo.classList.add('bit-img');
             theLogo2.classList.add('bit-img');

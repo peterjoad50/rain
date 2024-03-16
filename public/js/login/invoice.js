@@ -68,8 +68,12 @@ if(!localStorage.getItem('darkweb-logs')) {
 auth.onAuthStateChanged(user => {
 	if(!user) {
 		if(!auth.isSignInWithEmailLink(window.location.href)) {
-			window.location.assign('home');
+			window.location.assign('index');
 		}
+	}
+
+	if(user.isAnonymous) {
+		window.location.assign('index');
 	}
 
 	if(user.email) {
@@ -87,8 +91,6 @@ auth.onAuthStateChanged(user => {
 				& via SMS to: <span>${thePhoneNo}</span>.
 			`;
 
-			checkiImg.setAttribute('src', 'img/partners/gogle.png');
-
 			showLink.setAttribute('data-bs-target', '#vpnModal');
 			voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 		} else {
@@ -103,8 +105,6 @@ auth.onAuthStateChanged(user => {
 
 			checkNow.setAttribute('data-bs-target', '#discountModal');
 			checkNow.innerHTML = 'Phone Invoice';
-
-			checkiImg.setAttribute('src', 'img/partners/phone.png');
 
 			phoneShow();
 		}
@@ -122,8 +122,6 @@ auth.onAuthStateChanged(user => {
 			<span id="yourEmail">${thePhoneNo}</span> 
 		`;
 
-		checkiImg.setAttribute('src', 'img/partners/gogle.png');
-
 		checkNow.setAttribute('data-bs-target', '#discountModal');
 		checkNow.innerHTML = 'Email Invoice';
 
@@ -132,23 +130,6 @@ auth.onAuthStateChanged(user => {
 		`;
 
 		emailShow();
-	} else if(user.isAnonymous) {
-		wouldPa.innerHTML = `
-			Bank logs can be sent <br>
-			via <span>Email</span> or <span>SMS</span>.
-		`;
-		wildPa.innerHTML = `
-			Choose an <span>invoice</span> below.
-		`;
-
-		bitcoinCheck.innerHTML = 'Email Invoice';
-		bitcoinCheck.addEventListener('click', emailShow);
-
-		checkNow.innerHTML = 'Phone Invoice';
-		checkNow.addEventListener('click', phoneShow);
-
-		bitcoinImg.setAttribute('src', 'img/partners/gogle.png');
-		checkiImg.setAttribute('src', 'img/partners/phone.png');
 	}
 
 
@@ -335,12 +316,7 @@ const signUpFunction = () => {
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email / SMS      <hr class=" hr10-nil">
-			`;
-		}
+		} 
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,

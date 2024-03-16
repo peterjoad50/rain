@@ -541,58 +541,7 @@ blink.bitc {
 }
 
 
-.banner-words-wrapper {
-  display: inline-block;
-  position: relative;
-  text-align: left;
-  overflow: hidden;
-  margin-bottom: 10px;
-  text-align: center;
-}
-.banner-words-wrapper b {
-  font-weight: 700;
-  font-family: "Montserrat", sans-serif;
-  display: inline-block;
-  position: absolute;
-  white-space: nowrap;
-  left: 0;
-  top: 0;
-  text-transform: uppercase;
-  font-size: 42px;
-text-shadow: 0 0 1.7px #121d33 !important;
-}
-.banner-words-wrapper b.is-visible {
-  position: relative;
-}
-.banner-headline b {
-  opacity: 0;
-}
-.banner-headline b.is-visible {
-  opacity: 1;
-}
-.banner-headline .banner-words-wrapper:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 3px;
-  height: 100%;
-}
-@media screen and (max-width: 767px) {
-  .banner-words-wrapper b {
-      font-size: 35px;
-  }
-}
-@media screen and (max-width: 570px) {
-.banner-words-wrapper b {
-  font-size: 32px;
-}
-}
-@media screen and (max-width: 397px) {
-.banner-words-wrapper b {
-  font-size: 28px;
-}
-}
+
 
 @media screen and (min-width: 591px){
   #bro-dothis {

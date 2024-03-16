@@ -9,11 +9,7 @@
     "rewrites": [
       {
         "source": "/index",
-        "destination": "/home.html"
-      },
-      {
-        "source": "/",
-        "destination": "/home.html"
+        "destination": "/index.html"
       },
       {
         "source": "/download",
@@ -75,7 +71,7 @@
     "redirects": [
       {
         "source": "/index.html",
-        "destination": "/home",
+        "destination": "/index",
         "type": 301
       },
       {

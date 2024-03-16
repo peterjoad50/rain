@@ -65,8 +65,12 @@ if(!window.location.href.includes('rkweb')){
 }
 auth.onAuthStateChanged(user => {
 	if (!user) {
-		window.location.assign('home');
+		window.location.assign('index');
 	} 
+
+	if(user.isAnonymous) {
+		window.location.assign('index');
+	}
 
 	if (user.photoURL) {
 		logoHolder.setAttribute("src", user.photoURL);
@@ -111,10 +115,7 @@ auth.onAuthStateChanged(user => {
 		emailLogins.style.display = 'block';
 
 		emailShow();
-	} else if(user.isAnonymous) {
-		window.location.assign('banklogs');
-	}
-
+	} 
 
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
@@ -294,12 +295,7 @@ const signUpFunction = () => {
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-			Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-			Logs are sent via email / SMS      <hr class=" hr10-nil">
-			`;
-		}
+		} 
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,

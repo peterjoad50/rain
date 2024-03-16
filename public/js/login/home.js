@@ -53,10 +53,12 @@ const auth = firebase.auth();
 
 auth.onAuthStateChanged(user => {
 	if (!user) {
-		auth.signInAnonymously().then(() => {
-			theId.innerHTML = user.uid;
-		})
+		window.location.assign('index');
 	} 
+
+	if(user.isAnonymous) {
+		window.location.assign('index');
+	}
 
 	if (user.photoURL) {
 		logoHolder.setAttribute("src", user.photoURL);
@@ -256,12 +258,7 @@ const signUpFunction = () => {
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email / SMS      <hr class=" hr10-nil">
-			`;
-		}
+		} 
 		
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
