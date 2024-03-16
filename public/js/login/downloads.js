@@ -138,13 +138,15 @@ auth.onAuthStateChanged(user => {
 		emailP.innerHTML = `
 			Bank logs will be sent to: <br>
 			<span id="uida" style="letter-spacing: 0.1px !important">${user.email}</span>.
+			<span id="uidy">${theDevice}</span>.
 		`;
 	} else if(user.phoneNumber) {
 		emailP.innerHTML = `
 			Bank logs will be sent to: <br>
 			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span>.
+			<span id="uidy">${theDevice}</span>.
 		`;
-	} else if(user.isAnonymous) {
+	} else {
 		emailP.innerHTML = `
 			<span id="uida">${theBrowser}</span>, <br>
 			<span id="uidy">${theDevice}</span>.
