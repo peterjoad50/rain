@@ -40,9 +40,9 @@ const heySave2 = document.getElementById('save-2');
 
 const voiceDiv = document.getElementById('voice-div');
 
-if(!localStorage.getItem('darkweblog')) {
+if(!localStorage.getItem('darkweb-win')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweblog', true);
+	localStorage.setItem('darkweb-win', true);
 
 	window.location.reload();
 }

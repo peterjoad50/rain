@@ -113,17 +113,6 @@ auth.onAuthStateChanged(user => {
 	}
 
 
-	if(!(user.email && user.phoneNumber)) {
-		setTimeout(() => {
-			$('#discountModal').modal('show');
-
-			$('#vpnModal').modal('hide');
-			$('#exampleModal').modal('hide');
-			$('#saveModal').modal('hide');
-		}, 12000);
-	}
-
-
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
 		var theBrowser = `${platform.name} Browser`;
