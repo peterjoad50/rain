@@ -38,11 +38,13 @@ const voiceDiv = document.getElementById('voice-div');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
+const signLogo = document.getElementById('sign-logo');
+
 const auth = firebase.auth();
 
-if(!localStorage.getItem('darkweb-win')) {
+if(!localStorage.getItem('darkweb-logs')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-win', true);
+	localStorage.setItem('darkweb-logs', true);
 
 	window.location.assign('home');
 }
@@ -73,6 +75,12 @@ auth.onAuthStateChanged(user => {
 
 		emailShow();
 	} 
+
+	showLink.addEventListener('click', () => {
+		signLogo.removeAttribute('data-bs-dismiss');
+		signLogo.setAttribute('data-bs-toggle', 'modal');
+		signLogo.setAttribute('data-bs-target', '#profileModal');
+	});
 	
 	if(user.uid){
 		theId.innerHTML = user.uid;

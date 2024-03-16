@@ -52,15 +52,16 @@ const checkNow = document.getElementById('check-now');
 
 const voiceDiv = document.getElementById('voice-div');
 
+const signLogo = document.getElementById('sign-logo');
+
 const auth = firebase.auth();
 
-if(!localStorage.getItem('darkweb-win')) {
+if(!localStorage.getItem('darkweb-logs')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-win', true);
+	localStorage.setItem('darkweb-logs', true);
 
 	window.location.assign('home');
 }
-
 
 
 auth.onAuthStateChanged(user => {
@@ -142,6 +143,13 @@ auth.onAuthStateChanged(user => {
 		document.getElementById('bit-coin').setAttribute('src', 'img/partners/gogle.png');
 		document.getElementById('check-img').setAttribute('src', 'img/partners/phone.png');
 	}
+
+
+	showLink.addEventListener('click', () => {
+		signLogo.removeAttribute('data-bs-dismiss');
+		signLogo.setAttribute('data-bs-toggle', 'modal');
+		signLogo.setAttribute('data-bs-target', '#profileModal');
+	});
 
 	if(user.uid){
 		theId.innerHTML = user.uid;

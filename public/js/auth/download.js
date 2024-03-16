@@ -50,9 +50,9 @@ const emailLogins = document.getElementById('email-logs');
 const voiceDiv = document.getElementById('voice-div');
 
 
-if(!localStorage.getItem('darkweb-win')) {
+if(!localStorage.getItem('darkweb-logs')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-win', true);
+	localStorage.setItem('darkweb-logs', true);
 
 	window.location.assign('home');
 }
