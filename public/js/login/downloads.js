@@ -110,7 +110,6 @@ auth.onAuthStateChanged(user => {
 
 		emailLogins.style.display = 'block';
 
-		jinaHolder2.innerHTML = 'Logs sent via SMS';
 		emailShow();
 	} else if(user.isAnonymous) {
 		window.location.assign('banklogs');
@@ -119,10 +118,8 @@ auth.onAuthStateChanged(user => {
 
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
-		var theBrowser = `${platform.name} Browser`;
 	} else {
 		var  theDevice = `${platform.os} Device`;
-		var theBrowser = `${platform.name} ID`;
 	}
 
 	if(user.uid){
@@ -136,19 +133,12 @@ auth.onAuthStateChanged(user => {
 
 	if(user.email) {
 		emailP.innerHTML = `
-			Bank logs will be sent to: <br>
-			<span id="uida" style="letter-spacing: 0.1px !important">${user.email}</span>.
+			<span id="uida" style="letter-spacing: 0.1px !important">${user.email}</span>,  <br>
 			<span id="uidy">${theDevice}</span>.
 		`;
 	} else if(user.phoneNumber) {
 		emailP.innerHTML = `
-			Bank logs will be sent to: <br>
-			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span>.
-			<span id="uidy">${theDevice}</span>.
-		`;
-	} else {
-		emailP.innerHTML = `
-			<span id="uida">${theBrowser}</span>, <br>
+			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span>, <br>
 			<span id="uidy">${theDevice}</span>.
 		`;
 	}

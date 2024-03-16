@@ -97,7 +97,7 @@ padding: 10px;
 }
 
 #exampleModal .modal-dialog {
-top: 4vh !important;
+  top: 4vh !important;
 }
 @media screen and (min-width: 1370px) {
 #exampleModal .modal-dialog {
