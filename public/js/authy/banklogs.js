@@ -41,13 +41,6 @@ const heySave2 = document.getElementById('save-2');
 
 const signLogo = document.getElementById('sign-logo');
 
-if(!localStorage.getItem('darkweb-logs')) {
-	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-logs', true);
-
-	window.location.assign('home');
-}
-
 
 const auth = firebase.auth();
 

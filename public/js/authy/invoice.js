@@ -54,14 +54,6 @@ const signLogo = document.getElementById('sign-logo');
 
 const auth = firebase.auth();
 
-if(!localStorage.getItem('darkweb-logs')) {
-	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-logs', true);
-
-	window.location.assign('home');
-}
-
-
 auth.onAuthStateChanged(user => {
 	if(!user) {
 		if(!auth.isSignInWithEmailLink(window.location.href)) {

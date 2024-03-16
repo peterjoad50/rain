@@ -48,14 +48,6 @@ const phoneLogins = document.getElementById('phone-logs');
 const emailLogins = document.getElementById('email-logs');
 
 
-if(!localStorage.getItem('darkweb-logs')) {
-	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-logs', true);
-
-	window.location.assign('home');
-}
-
-
 if(!window.location.href.includes('rkweb')){
 	if(!window.location.href.includes('5500')) {
 		window.location.assign('home')
