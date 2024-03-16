@@ -102,28 +102,6 @@ auth.onAuthStateChanged(user => {
 		emailShow();
 	} 
 
-	if(!(user.email && user.phoneNumber)) {
-		setTimeout(() => {
-			$('#discountModal').modal('show');
-
-			$('#contactModal').modal('hide');
-			$('#saveModal').modal('hide');
-			$('#vpnModal').modal('hide');
-			$('#exampleModal').modal('hide');
-
-			localStorage.setItem('sign-logo', true);
-		}, 5000);
-
-		if(localStorage.getItem('sign-logo')) {
-			$('#discountModal').modal('show');
-
-			$('#contactModal').modal('hide');
-			$('#saveModal').modal('hide');
-			$('#vpnModal').modal('hide');
-			$('#exampleModal').modal('hide');
-		}
-	}
-
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
 	} else {

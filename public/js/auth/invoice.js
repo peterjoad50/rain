@@ -11,56 +11,57 @@ firebase.initializeApp(firebaseConfig);
 var theWebsite = 'https://www.darkweb.ink/invoice';
 
 
-const theId = document.getElementById('the-id');
-const theDate = document.getElementById('the-date');
-const labelDate = document.getElementById('label-date');
 
 const logoHolder = document.getElementById("logo");
 const vpnHolder = document.getElementById("vpn-img");
 const jinaHolder = document.getElementById("jinaHolder");
-const jinaHolder2 = document.getElementById('jinaHolder2');
+
 const jinaHolder3 = document.getElementById('jinaHolder3');
+const jinaHolder2 = document.getElementById('jinaHolder2');
 
+const theId = document.getElementById('the-id');
 
-const theFlag7 = document.getElementById('the-flag7');
-
-
-const showToth = document.getElementById('showtoasts');
-const showLink = document.getElementById('showlink');
+const theDate = document.getElementById('the-date');
+const labelDate = document.getElementById('label-date');
 
 
 const mailField = document.getElementById('inputLife');
 const signUp = document.getElementById('email-phone');
 
+const theFlag7 = document.getElementById('the-flag7');
+
 const phoneNumberField = document.getElementById('inputLife');
 const codeField = document.getElementById('code');
 const signInWithPhoneButton = document.getElementById('signInWithPhone');
 
+const showToth = document.getElementById('showtoasts');
+const showLink = document.getElementById('showlink');
+
+const madrid = document.getElementById('madrid');
+
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
-const signLogo = document.getElementById('sign-logo');
+const wouldPa = document.getElementById('would');
+const wildPa = document.getElementById('wild');
 
+const bitcoinCheck = document.getElementById('btc-check');
+const bitcoinImg = document.getElementById('bit-coin');
+
+const checkNow = document.getElementById('check-now');
 
 const auth = firebase.auth();
 
-
 auth.onAuthStateChanged(user => {
-	if (!user) {
-		window.location.assign('index');
-	} 
+	if(!user) {
+		if(!auth.isSignInWithEmailLink(window.location.href)) {
+			window.location.assign('index');
+		}
+	}
 
 	if(user.isAnonymous) {
 		window.location.assign('index');
 	}
-
-	if (user.photoURL) {
-		logoHolder.setAttribute("src", user.photoURL);
-		logoHolder.classList.add('logo-50');
-
-		vpnHolder.setAttribute("src", user.photoURL);
-		vpnHolder.classList.add('logo-50');
-	} 
 
 	if(user.email) {
 		var themail = user.email;
@@ -68,66 +69,53 @@ auth.onAuthStateChanged(user => {
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
 			var thePhoneNo = user.phoneNumber;
-			jinaHolder.value = thePhoneNo;
-			jinaHolder3.value = thePhoneNo;
-			jinaHolder2.innerHTML = themail;
 
-			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-				goodies = JSON.parse(localStorage.getItem('banklogs'));
-				for (var i = 0; i < goodies.length; i++) {
-					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-						${theaddress} <hr id="hr-table"> ${thePhoneNo.slice(0, -3)}...`;
-				}
-			}
+			wouldPa.innerHTML = `
+				Bank logs will be sent to <br>
+				<span>${themail}</span>,
+			`;
+			wildPa.innerHTML = `
+				& via SMS to: <span>${thePhoneNo}</span>.
+			`;
 
 			showLink.setAttribute('data-bs-target', '#vpnModal');
 		} else {
-			jinaHolder.value = theaddress;
-			jinaHolder3.value = theaddress;
-			
-			phoneShow();
-			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-				goodies = JSON.parse(localStorage.getItem('banklogs'));
-				for (var i = 0; i < goodies.length; i++) {
-					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-						${theaddress}
-						<hr id="hr-table">
-						<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#discountModal">
-						PHONE ID
-						</button>
-					`;
-				}
-			}
-		}
+			wouldPa.innerHTML = `
+				Bank logs will be sent to <br>
+				<span>${themail}</span> 
+			`;
 
-	} else 	if (user.phoneNumber) {
+			wildPa.innerHTML = `
+				with a cashout <span>guide<span>.
+			`;
+
+			phoneShow();
+		}
+	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
-		jinaHolder.value = thePhoneNo;
-		jinaHolder3.value = thePhoneNo;
 
 		showLink.classList.add('green');
 
+		wouldPa.innerHTML = `
+			Bank logs will be sent to <br>
+			<span id="yourEmail">${thePhoneNo}</span> 
+		`;
+
+		wildPa.innerHTML = `
+			with a cashout <span>guide<span>.
+		`;
+
 		emailShow();
+	}
 
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-			goodies = JSON.parse(localStorage.getItem('banklogs'));
-			for (var i = 0; i < goodies.length; i++) {
-				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-					${thePhoneNo.slice(0, -3)}...
-					<hr id="hr-table">
-					<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#discountModal">
-					EMAIL ID
-					</button>
-				`; 
-			}
-		}
-	} 
 
-	showLink.addEventListener('click', () => {
-		signLogo.removeAttribute('data-bs-dismiss');
-		signLogo.setAttribute('data-bs-toggle', 'modal');
-		signLogo.setAttribute('data-bs-target', '#profileModal');
-	});
+	if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) == 0)) {
+		bitcoinCheck.innerHTML = 'Homepage ID';
+		bitcoinCheck.removeAttribute('data-bs-toggle');
+		bitcoinCheck.setAttribute('href', 'home');
+	
+		bitcoinImg.setAttribute('src', 'img/partners/house.png');
+	}
 
 	if(user.uid){
 		theId.innerHTML = user.uid;
@@ -137,7 +125,7 @@ auth.onAuthStateChanged(user => {
 		theDate.innerHTML = theDatez.replace('2023', '').split('(')[0];
 		labelDate.innerHTML = `Time ID: (${therealDate})`;
 	}
-
+	
 });
 
 function phoneShow() {
@@ -166,6 +154,7 @@ function emailShow() {
 	mailField.setAttribute('placeholder', 'Enter your Email...');
 }
 
+
 window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
 	'size': 'invisible'
 });
@@ -173,6 +162,7 @@ window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-contai
 recaptchaVerifier.render().then(widgetId => {
   window.recaptchaWidgetId = widgetId;
 });
+
 
 const signUpFunction = () => {
 	event.preventDefault();
@@ -191,7 +181,7 @@ const signUpFunction = () => {
 				theUser.updateProfile({
 					phoneNumber: theUser.providerData[0].phoneNumber
 				}).then(() => {
-					window.location.assign('invoice');
+					window.location.reload();
 				});
 			})
 			.catch(error => {
@@ -221,7 +211,7 @@ const signUpFunction = () => {
 					displayName: theUser.providerData[0].displayName, 
 					photoURL: theUser.providerData[0].photoURL
 				}).then(() => {
-					window.location.assign('invoice');
+					window.location.reload();
 				});
 			})
 		} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
@@ -233,7 +223,7 @@ const signUpFunction = () => {
 					displayName: theUser.providerData[0].displayName, 
 					photoURL: theUser.providerData[0].photoURL
 				}).then(() => {
-					window.location.assign('invoice');
+					window.location.reload();
 				});
 			})
 		} else {
@@ -276,7 +266,7 @@ const signUpFunction = () => {
 			$('#verifyModal').modal('show');
 			$('#discountModal').modal('hide');
 		})
-		
+
 	} else {
 		var shortCutFunction = 'success';
 		if(auth.currentUser.email) {
@@ -290,7 +280,7 @@ const signUpFunction = () => {
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
 		} 
-		
+
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 			positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
@@ -340,18 +330,106 @@ function focusOn() {
 	document.getElementById('inputLife').focus();
 }
 
-
 mailField.addEventListener('focus', focusBro);
 function focusBro() {
 	mailField.style.textAlign = 'left';
 	mailField.removeAttribute('placeholder');
 }
 
+if (auth.isSignInWithEmailLink(window.location.href)) {
+    var email = '';
+
+	var theLink = window.location.href;
+	var noTimes = theLink.split('#').length-1;
+
+	if(noTimes == 1) {
+		theLink =  theLink.substring(theLink.indexOf("#") + 1);
+		email = theLink;
+	}
+	
+	var credential = new firebase.auth.EmailAuthProvider.credentialWithLink(email, window.location.href);
+
+	auth.onAuthStateChanged(user1 => {
+		if(!user1) {
+			auth.signInWithEmailLink(email, window.location.href)
+			.then(() => {
+				auth.currentUser.sendEmailVerification();
+				var shortCutFunction = 'success';
+				var msg = `
+					Login Success: <br> <hr class="to-hr hr15-bot">  
+					${email}                             <hr class="hr10-nil">
+				`;
+				toastr.options =  {
+					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
+					timeOut: 1500
+				};
+				var $toast = toastr[shortCutFunction](msg);
+				$toastlast = $toast;
+			})
+			.then(() => {
+				setTimeout(() => {
+					if(window.location.href.includes('@')) {
+						window.location.assign('home');
+					}
+				}, 1500);
+			})
+			.catch((error) => {
+				var shortCutFunction = 'success';
+				var msg = `${error.message}`;
+				toastr.options =  {
+					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+				};
+				var $toast = toastr[shortCutFunction](msg);
+				$toastlast = $toast;
+			});
+		} else if(user1) {
+			auth.currentUser.linkWithCredential(credential)
+			.then(() => {
+				auth.currentUser.sendEmailVerification();
+				var shortCutFunction = 'success';
+				var msg = `
+					Login Success: <br> <hr class="to-hr hr15-bot">  
+					${email}                             <hr class="hr10-nil">
+				`;
+				toastr.options =  {
+					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
+					timeOut: 1500
+				};
+				var $toast = toastr[shortCutFunction](msg);
+				$toastlast = $toast;
+			})
+			.then(() => {
+				setTimeout(() => {
+					if(window.location.href.includes('@')) {
+						window.location.assign('home');
+					}
+				}, 1500);
+			})
+			.catch((error) => {
+				var shortCutFunction = 'success';
+				var msg = `${error.message}`;
+				toastr.options =  {
+					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+				};
+				var $toast = toastr[shortCutFunction](msg);
+				$toastlast = $toast;
+			});
+		} 
+	});
+}
+
+
+
 fetch('https://ipapi.co/json/')
 .then(function(response) {
 	return response.json();
 })
 .then(function(data) {
+
 	var countyCode = data.country_code;
 	var newCode = countyCode.toLowerCase();
 
@@ -362,22 +440,6 @@ fetch('https://ipapi.co/json/')
 	`;
 	document.getElementById('the-ip').innerHTML = ` ${data.region},  ${data.org}.`;
 });
-
-
-
-
-
-
-
-
-
-
-
-
-var d = new Date();
-var n = d.getMonth() + 1;
-var y = d.getFullYear();
-var m = d.getDate();
 
 
 
@@ -472,6 +534,44 @@ function drawHand(ctx, pos, length, width) {
 	ctx.rotate(-pos);
 }
 
+if(!window.location.href.includes('5502')) {
+	function disableCtrlKeyCombination(e){
+		var forbiddenKeys = new Array('a', 'n', 'c', 'x', 'i', 'v', 'j' , 'w', 'i');
+		var key;
+		var isCtrl;
+		if(window.event){
+			key = window.event.keyCode;
+			if(window.event.ctrlKey) {
+				isCtrl = true;
+			} else {
+				isCtrl = false;
+			}
+		} else {
+			key = e.which; 
+			if(e.ctrlKey) {
+				isCtrl = true;
+			}
+			else {
+				isCtrl = false;
+			}
+		}
+		//if ctrl is pressed check if other key is in forbidenKeys array
+		if(isCtrl) {
+			for(i=0; i<forbiddenKeys.length; i++) {
+				if(forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
+					alert('Key combination CTRL + '+String.fromCharCode(key) +' has been disabled.');
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+}
+
+
+
+
+
 
 
 
@@ -545,7 +645,7 @@ function drawTime2(ctx2, radius2) {
 	drawHand2(ctx2, second2, radius2 * 0.9, radius2 * 0.02);
 }
 
-function drawHand2(ctx2, pos, length, width) {
+function drawHand2(ctx, pos, length, width) {
 	ctx2.beginPath();
 	ctx2.lineWidth = width;
 	ctx2.lineCap = "round";
@@ -555,21 +655,3 @@ function drawHand2(ctx2, pos, length, width) {
 	ctx2.stroke();
 	ctx2.rotate(-pos);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -11,7 +11,6 @@ firebase.initializeApp(firebaseConfig);
 var theWebsite = 'https://www.darkweb.ink/invoice';
 
 
-
 const theId = document.getElementById('the-id');
 const theDate = document.getElementById('the-date');
 const labelDate = document.getElementById('label-date');
@@ -19,17 +18,19 @@ const labelDate = document.getElementById('label-date');
 const logoHolder = document.getElementById("logo");
 const vpnHolder = document.getElementById("vpn-img");
 const jinaHolder = document.getElementById("jinaHolder");
-
+const jinaHolder2 = document.getElementById('jinaHolder2');
 const jinaHolder3 = document.getElementById('jinaHolder3');
 
+
 const theFlag7 = document.getElementById('the-flag7');
+
 
 const showToth = document.getElementById('showtoasts');
 const showLink = document.getElementById('showlink');
 
+
 const mailField = document.getElementById('inputLife');
 const signUp = document.getElementById('email-phone');
-
 
 const phoneNumberField = document.getElementById('inputLife');
 const codeField = document.getElementById('code');
@@ -38,16 +39,9 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
-const signLogo = document.getElementById('sign-logo');
-
-if(!localStorage.getItem('darkweb-logs')) {
-	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-logs', true);
-
-	window.location.assign('home');
-}
 
 const auth = firebase.auth();
+
 
 auth.onAuthStateChanged(user => {
 	if (!user) {
@@ -71,23 +65,61 @@ auth.onAuthStateChanged(user => {
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
+			var thePhoneNo = user.phoneNumber;
+			jinaHolder.value = thePhoneNo;
+			jinaHolder3.value = thePhoneNo;
+			jinaHolder2.innerHTML = themail;
+
+			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+				goodies = JSON.parse(localStorage.getItem('banklogs'));
+				for (var i = 0; i < goodies.length; i++) {
+					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+						${theaddress} <hr id="hr-table"> ${thePhoneNo.slice(0, -3)}...`;
+				}
+			}
+
 			showLink.setAttribute('data-bs-target', '#vpnModal');
 		} else {
+			jinaHolder.value = theaddress;
+			jinaHolder3.value = theaddress;
+			
 			phoneShow();
+			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+				goodies = JSON.parse(localStorage.getItem('banklogs'));
+				for (var i = 0; i < goodies.length; i++) {
+					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+						${theaddress}
+						<hr id="hr-table">
+						<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#discountModal">
+						PHONE ID
+						</button>
+					`;
+				}
+			}
 		}
+
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
+		jinaHolder.value = thePhoneNo;
+		jinaHolder3.value = thePhoneNo;
 
 		showLink.classList.add('green');
-		
-		emailShow();
-	} 
 
-	showLink.addEventListener('click', () => {
-		signLogo.removeAttribute('data-bs-dismiss');
-		signLogo.setAttribute('data-bs-toggle', 'modal');
-		signLogo.setAttribute('data-bs-target', '#profileModal');
-	});
+		emailShow();
+
+		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+			goodies = JSON.parse(localStorage.getItem('banklogs'));
+			for (var i = 0; i < goodies.length; i++) {
+				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+					${thePhoneNo.slice(0, -3)}...
+					<hr id="hr-table">
+					<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#discountModal">
+					EMAIL ID
+					</button>
+				`; 
+			}
+		}
+	} 
 
 	if(user.uid){
 		theId.innerHTML = user.uid;
@@ -134,11 +166,10 @@ recaptchaVerifier.render().then(widgetId => {
   window.recaptchaWidgetId = widgetId;
 });
 
-
 const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
-
+	
 	const phoneNumber = phoneNumberField.value;
 	const appVerifier = window.recaptchaVerifier;
 
@@ -152,7 +183,7 @@ const signUpFunction = () => {
 				theUser.updateProfile({
 					phoneNumber: theUser.providerData[0].phoneNumber
 				}).then(() => {
-					window.location.reload();
+					window.location.assign('invoice');
 				});
 			})
 			.catch(error => {
@@ -166,7 +197,6 @@ const signUpFunction = () => {
 				$toastlast = $toast;
 			})
 	}
-
 
 	var actionCodeSettings = {
 		url: `${theWebsite}#${mailField.value}`,
@@ -183,7 +213,7 @@ const signUpFunction = () => {
 					displayName: theUser.providerData[0].displayName, 
 					photoURL: theUser.providerData[0].photoURL
 				}).then(() => {
-					window.location.reload();
+					window.location.assign('invoice');
 				});
 			})
 		} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
@@ -195,7 +225,7 @@ const signUpFunction = () => {
 					displayName: theUser.providerData[0].displayName, 
 					photoURL: theUser.providerData[0].photoURL
 				}).then(() => {
-					window.location.reload();
+					window.location.assign('invoice');
 				});
 			})
 		} else {
@@ -324,6 +354,14 @@ fetch('https://ipapi.co/json/')
 	`;
 	document.getElementById('the-ip').innerHTML = ` ${data.region},  ${data.org}.`;
 });
+
+
+
+
+
+
+
+
 
 
 
@@ -509,6 +547,17 @@ function drawHand2(ctx2, pos, length, width) {
 	ctx2.stroke();
 	ctx2.rotate(-pos);
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

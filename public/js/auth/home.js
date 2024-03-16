@@ -11,23 +11,25 @@ firebase.initializeApp(firebaseConfig);
 var theWebsite = 'https://www.darkweb.ink/invoice';
 
 
-const logoHolder = document.getElementById("logo");
-const vpnHolder = document.getElementById("vpn-img");
-
 
 const theId = document.getElementById('the-id');
-
 const theDate = document.getElementById('the-date');
 const labelDate = document.getElementById('label-date');
 
+const logoHolder = document.getElementById("logo");
+const vpnHolder = document.getElementById("vpn-img");
+const jinaHolder = document.getElementById("jinaHolder");
+
+const jinaHolder3 = document.getElementById('jinaHolder3');
 
 const theFlag7 = document.getElementById('the-flag7');
+
+const showToth = document.getElementById('showtoasts');
+const showLink = document.getElementById('showlink');
 
 const mailField = document.getElementById('inputLife');
 const signUp = document.getElementById('email-phone');
 
-const showToth = document.getElementById('showtoasts');
-const showLink = document.getElementById('showlink');
 
 const phoneNumberField = document.getElementById('inputLife');
 const codeField = document.getElementById('code');
@@ -36,10 +38,14 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
-const signLogo = document.getElementById('sign-logo');
+if(!localStorage.getItem('darkweb-logs')) {
+	localStorage.setItem('banklogs', []);
+	localStorage.setItem('darkweb-logs', true);
+
+	window.location.assign('home');
+}
 
 const auth = firebase.auth();
-
 
 auth.onAuthStateChanged(user => {
 	if (!user) {
@@ -49,6 +55,14 @@ auth.onAuthStateChanged(user => {
 	if(user.isAnonymous) {
 		window.location.assign('index');
 	}
+
+	if (user.photoURL) {
+		logoHolder.setAttribute("src", user.photoURL);
+		logoHolder.classList.add('logo-50');
+
+		vpnHolder.setAttribute("src", user.photoURL);
+		vpnHolder.classList.add('logo-50');
+	} 
 
 	if(user.email) {
 		var themail = user.email;
@@ -63,16 +77,10 @@ auth.onAuthStateChanged(user => {
 		var thePhoneNo = user.phoneNumber;
 
 		showLink.classList.add('green');
-
+		
 		emailShow();
 	} 
 
-	showLink.addEventListener('click', () => {
-		signLogo.removeAttribute('data-bs-dismiss');
-		signLogo.setAttribute('data-bs-toggle', 'modal');
-		signLogo.setAttribute('data-bs-target', '#profileModal');
-	});
-	
 	if(user.uid){
 		theId.innerHTML = user.uid;
 		let theDatez2 = new Date(user.metadata.b * 1);
@@ -81,8 +89,8 @@ auth.onAuthStateChanged(user => {
 		theDate.innerHTML = theDatez.replace('2023', '').split('(')[0];
 		labelDate.innerHTML = `Time ID: (${therealDate})`;
 	}
-});
 
+});
 
 function phoneShow() {
 	heySave1.innerHTML = ` Bank logs will be sent <br> via <span>SMS</span>. `;
@@ -122,7 +130,7 @@ recaptchaVerifier.render().then(widgetId => {
 const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
-	
+
 	const phoneNumber = phoneNumberField.value;
 	const appVerifier = window.recaptchaVerifier;
 
@@ -136,7 +144,7 @@ const signUpFunction = () => {
 				theUser.updateProfile({
 					phoneNumber: theUser.providerData[0].phoneNumber
 				}).then(() => {
-					window.location.assign('invoice');
+					window.location.reload();
 				});
 			})
 			.catch(error => {
@@ -150,7 +158,8 @@ const signUpFunction = () => {
 				$toastlast = $toast;
 			})
 	}
-	
+
+
 	var actionCodeSettings = {
 		url: `${theWebsite}#${mailField.value}`,
 		handleCodeInApp: true,
@@ -166,7 +175,7 @@ const signUpFunction = () => {
 					displayName: theUser.providerData[0].displayName, 
 					photoURL: theUser.providerData[0].photoURL
 				}).then(() => {
-					window.location.assign('invoice');
+					window.location.reload();
 				});
 			})
 		} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
@@ -178,7 +187,7 @@ const signUpFunction = () => {
 					displayName: theUser.providerData[0].displayName, 
 					photoURL: theUser.providerData[0].photoURL
 				}).then(() => {
-					window.location.assign('invoice');
+					window.location.reload();
 				});
 			})
 		} else {
@@ -221,7 +230,7 @@ const signUpFunction = () => {
 			$('#verifyModal').modal('show');
 			$('#discountModal').modal('hide');
 		})
-
+		
 	} else {
 		var shortCutFunction = 'success';
 		if(auth.currentUser.email) {
@@ -235,7 +244,7 @@ const signUpFunction = () => {
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
 		} 
-
+		
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 			positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
@@ -285,12 +294,12 @@ function focusOn() {
 	document.getElementById('inputLife').focus();
 }
 
+
 mailField.addEventListener('focus', focusBro);
 function focusBro() {
 	mailField.style.textAlign = 'left';
 	mailField.removeAttribute('placeholder');
 }
-
 
 fetch('https://ipapi.co/json/')
 .then(function(response) {
@@ -311,6 +320,12 @@ fetch('https://ipapi.co/json/')
 
 
 
+var d = new Date();
+var n = d.getMonth() + 1;
+var y = d.getFullYear();
+var m = d.getDate();
+
+
 
 document.getElementById("thebodyz").oncontextmenu = function() {
 	return false
@@ -322,7 +337,6 @@ if(!window.location.href.includes('5502')) {
 		}   
 	});
 }
-
 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -404,6 +418,10 @@ function drawHand(ctx, pos, length, width) {
 	ctx.rotate(-pos);
 }
 
+
+
+
+
 var canvas2 = document.getElementById("canvas2");
 var ctx2 = canvas2.getContext("2d");
 var radius2 = canvas2.height / 2;
@@ -473,7 +491,7 @@ function drawTime2(ctx2, radius2) {
 	drawHand2(ctx2, second2, radius2 * 0.9, radius2 * 0.02);
 }
 
-function drawHand2(ctx, pos, length, width) {
+function drawHand2(ctx2, pos, length, width) {
 	ctx2.beginPath();
 	ctx2.lineWidth = width;
 	ctx2.lineCap = "round";
@@ -483,5 +501,10 @@ function drawHand2(ctx, pos, length, width) {
 	ctx2.stroke();
 	ctx2.rotate(-pos);
 }
+
+
+
+
+
 
 
