@@ -131,7 +131,9 @@ auth.onAuthStateChanged(user => {
 			for (var i = 0; i < goodies.length; i++) {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
 					<hr id="hr-table">
-					Anonymous
+					<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#discountModal">
+					INVOICE
+					</button>
 					<hr id="hr-table-2">
 				`; 
 			}

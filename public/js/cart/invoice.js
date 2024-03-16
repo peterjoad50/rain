@@ -59,6 +59,13 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
     document.getElementById('btc-check').innerHTML = 'Homepage ID';
     document.getElementById('btc-check').removeAttribute('data-bs-toggle');
     document.getElementById('btc-check').setAttribute('href', 'home');
+
+    document.getElementById('bit-coin').setAttribute('src', 'img/partners/btc.png');
+
+    document.getElementById('check-now').innerHTML = 'Cashout Guide';
+    document.getElementById('check-now').removeAttribute('data-bs-toggle');
+    document.getElementById('check-now').setAttribute('href', 'banklogs');
+    document.getElementById('check-img').setAttribute('src', 'img/partners/gogle.png');
     
 
     document.getElementById('thetot').setAttribute('data-bs-target', '#vpnModal');
@@ -124,8 +131,14 @@ function updateCartTotal() {
 
     document.getElementById('thetot').innerHTML = `Cart:  <span>$${total.toLocaleString()}</span>`;
 
-    document.getElementById('btc-check').innerHTML = `
-    Checkout <span class="muher">$${total.toLocaleString()}</span>`;
+    auth.onAuthStateChanged(user => {
+        if(user.email || user.phoneNumber) {
+            document.getElementById('btc-check').innerHTML = `
+                Checkout <span class="muher">$${total.toLocaleString()}</span>
+            `;
+            document.getElementById('btc-check').setAttribute('data-bs-target', '#profileModal');
+        }
+    });
 
 
     if((JSON.parse(localStorage.getItem('banklogs')).length) == 1) {
@@ -146,14 +159,16 @@ function updateCartTotal() {
 
         document.getElementById('jinaHolder2').innerHTML = '[' + bankLog2.replace(']', ' ACCOUNT]'); 
 
-        bitCoin.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
+        auth.onAuthStateChanged(user => {
+            if(user.email || user.phoneNumber) {
+                bitCoin.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
+            }
+        });
 
         theLogo.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
         theLogo2.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
 
         if(bankLog.includes('Chime') || bankLog.includes('Wells')) {
-            bitCoin.classList.add('bit-img');
-
             theLogo.classList.add('bit-img');
             theLogo2.classList.add('bit-img');
 

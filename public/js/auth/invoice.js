@@ -45,7 +45,7 @@ const heySave2 = document.getElementById('save-2');
 const wouldPa = document.getElementById('would');
 const wildPa = document.getElementById('wild');
 
-const bitcoinCheckz = document.getElementById('btc-check');
+const bitcoinCheck = document.getElementById('btc-check');
 const bitcoinImg = document.getElementById('bit-coin');
 
 const checkNow = document.getElementById('check-now');
@@ -68,12 +68,6 @@ auth.onAuthStateChanged(user => {
 		if(!auth.isSignInWithEmailLink(window.location.href)) {
 			window.location.assign('home');
 		}
-	}
-
-	if(platform.manufacturer !== null) {
-		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
-	} else {
-		var  theDevice = `${platform.os} Device`;
 	}
 
 	if(user.email) {
@@ -132,12 +126,21 @@ auth.onAuthStateChanged(user => {
 		emailShow();
 	} else if(user.isAnonymous) {
 		wouldPa.innerHTML = `
-			Bank log files will be <br>
-			<span>downloaded</span> on this: <br>
+			Bank logs can be sent <br>
+			via <span>Email</span> or <span>SMS</span>.
 		`;
 		wildPa.innerHTML = `
-			<span>${theDevice}</span>
+			Choose an invoice below.
 		`;
+
+		bitcoinCheck.innerHTML = 'Email Invoice';
+		bitcoinCheck.addEventListener('click', emailShow);
+
+		checkNow.innerHTML = 'Phone Invoice';
+		checkNow.addEventListener('click', phoneShow);
+
+		document.getElementById('bit-coin').setAttribute('src', 'img/partners/gogle.png');
+		document.getElementById('check-img').setAttribute('src', 'img/partners/phone.png');
 	}
 
 	if(user.uid){

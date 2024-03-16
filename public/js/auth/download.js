@@ -118,6 +118,8 @@ auth.onAuthStateChanged(user => {
 		
 		emailLogins.addEventListener('click', emailShow);
 		phoneLogins.addEventListener('click', phoneShow);
+
+		window.location.assign('banklogs');
 	}
 
 
