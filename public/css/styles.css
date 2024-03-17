@@ -61,7 +61,7 @@ a:active {
 }
 #my-invoice {
   border: 5px solid rgba(134, 188, 66, 0.5) !important;
-  background: rgba(134, 188, 66, 0.3) !important;
+  background: rgb(29, 44, 53) !important;
 }
 .thegold {
   background-color: rgba(134, 188, 66, 0.3);

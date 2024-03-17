@@ -117,8 +117,6 @@
     margin: 4px !important;
     padding: 0px !important;
     width: 100% !important;
-
-    background: rgba(18, 29, 51, 1) !important;
 }
 #invoice-div {
     margin-top: 12.3vh;
@@ -212,7 +210,7 @@ blink {
 
 #invoice-body-div {
     margin: 0 !important;
-    background: #fff !important;
+    background: rgba(255, 255, 255, 0.7) !important;
 }
 #invoice-body-div p {
     font-weight: 500 !important;
@@ -290,7 +288,7 @@ blink {
     width: 99% !important;
 
     padding: 0 10px !important;
-    height: 96% !important;
+    height: 94% !important;
     margin: auto auto !important;
     letter-spacing: 2px !important;
     align-items: center !important;
@@ -306,6 +304,26 @@ blink {
     }
     #nameLife::placeholder {
         letter-spacing: 0.3px !important;
+    }
+
+    #inputLife {
+        letter-spacing: 1.2px !important;
+        padding: 0 7px !important;
+    }
+
+    #the-flag7 {
+        width: 17%;
+        height: 90% !important;
+        margin: auto 7px !important;
+    }
+
+    #the-life {
+        width: 96% !important;
+        height: 56px !important;
+        margin: 10px auto 0 !important;
+    
+        background: rgba(255, 255, 255, 0.5) !important;
+        border-radius: 0.3px !important;
     }
 }
 

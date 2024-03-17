@@ -303,12 +303,12 @@ const signUpFunction = () => {
 		var shortCutFunction = 'success';
 		if(auth.currentUser.email) {
 			var msg = `
-				Bank logs will be sent via SMS.  <hr class="to-hr hr15-bot">
+				Bank logs can be sent <br> via SMS.  <hr class="to-hr hr15-bot">
 				Enter a valid phone number.          <hr class=" hr10-nil">
 			`;
 		} else if(auth.currentUser.phoneNumber) {
 			var msg = `
-				Bank logs will be sent via email.     <hr class="to-hr hr15-bot">
+				Bank logs can be sent <br> via Email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
 		} 

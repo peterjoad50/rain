@@ -39,9 +39,6 @@ const showLink = document.getElementById('showlink');
 
 const madrid = document.getElementById('madrid');
 
-const heySave1 = document.getElementById('save-1');
-const heySave2 = document.getElementById('save-2');
-
 const wouldPa = document.getElementById('would');
 const wildPa = document.getElementById('wild');
 
@@ -149,9 +146,6 @@ function sendEmail() {
 
 
 function phoneShow() {
-	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;
-	heySave2.innerHTML = ` As a dynamic link that  <br> expires in <span>7 hours</span>. `;
-
 	fetch('https://ipapi.co/json/')
 	.then(function(response) {return response.json()})
 	.then(function(data) {
@@ -164,9 +158,6 @@ function phoneShow() {
 }
 
 function emailShow() {
-	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
-	heySave2.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox. `;
-
 	theFlag7.style.display = 'none';
 	mailField.setAttribute('type', 'email');
 	mailField.value = '';
@@ -290,12 +281,12 @@ const signUpFunction = () => {
 		var shortCutFunction = 'success';
 		if(auth.currentUser.email) {
 			var msg = `
-				Bank logs will be sent via SMS.  <hr class="to-hr hr15-bot">
+				Bank logs can be sent <br> via SMS.  <hr class="to-hr hr15-bot">
 				Enter a valid phone number.          <hr class=" hr10-nil">
 			`;
 		} else if(auth.currentUser.phoneNumber) {
 			var msg = `
-				Bank logs will be sent via email.     <hr class="to-hr hr15-bot">
+				Bank logs can be sent <br> via Email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
 		} 
