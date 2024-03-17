@@ -188,29 +188,11 @@
     display: flex;
     margin-left: -14px !important;
 }
-blink {
-    position: relative;
-    top: -70px !important;
-    left: 118px !important;
-    z-index: 999 !important;
-}
-@media screen and (max-width: 500px) {
-    blink {
-        left: 113px !important;
-    }
-}
-@media screen and (max-width: 380px) {
-    blink {
-        left: 110px !important;
-    }
-}
-
-
 
 
 #invoice-body-div {
     margin: 0 !important;
-    background: rgba(255, 255, 255, 0.85) !important;
+    background: rgba(255, 255, 255, 0.75) !important;
 }
 #invoice-body-div p {
     font-weight: 500 !important;

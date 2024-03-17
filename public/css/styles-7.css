@@ -510,7 +510,7 @@ span#uids {
 }
 
 #my-invoice p {
-  color: #49c0d0 !important;
+  color: rgb(164, 224, 232) !important;
 }
 #my-invoice p span {
   color: rgb(139, 209, 68) !important;

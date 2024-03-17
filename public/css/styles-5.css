@@ -517,7 +517,7 @@ span#uids {
   background: rgb(253, 219, 129)
 }
 #my-invoice p {
-  color: #fab702 !important;
+  color: rgb(251, 219, 129) !important;
 }
 #my-invoice p span {
   color: rgb(139, 209, 68) !important;
