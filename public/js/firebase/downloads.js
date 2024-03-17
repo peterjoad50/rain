@@ -48,10 +48,7 @@ const voiceDiv = document.getElementById('voice-div');
 
 const emailH4 = document.getElementById('email-h4');
 const verCheck = document.getElementById('ver-check');
-
-const mailP1 = document.getElementById('mail-p1');
 const mailP2 = document.getElementById('mail-p2');
-const mailP3 = document.getElementById('mail-p3');
 
 if(!window.location.href.includes('rkweb')){
 	if(!window.location.href.includes('5500')) {
@@ -92,12 +89,8 @@ auth.onAuthStateChanged(user => {
 		showLink.setAttribute('data-bs-target', '#emailModal');
 
 		emailH4.innerHTML = theaddress.substring(0, 13);
-		verCheck.innerHTML = `Verify Email <img src="img/partners/tele.png">`;
 		verCheck.addEventListener('click', sendEmail);
-
-		mailP1.innerHTML = `Bank logs will be sent via <br> email to:`;
 		mailP2.innerHTML = `<span id="mail-span">${user.email}</span>`;
-		mailP3.innerHTML = `Verify your email address <br> before checkout.`;
 
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
 
