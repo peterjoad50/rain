@@ -121,6 +121,8 @@ auth.onAuthStateChanged(user => {
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
 
+		voiceDiv.innerHTML = thePhoneNo;
+
 		showLink.classList.add('green');
 
 		emailH4.innerHTML = thePhoneNo.replace('+', '');

@@ -114,6 +114,8 @@ auth.onAuthStateChanged(user => {
 	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
+		voiceDiv.innerHTML = thePhoneNo;
+
 		showLink.classList.add('green');
 
 		emailH4.innerHTML = thePhoneNo.replace('+', '');

@@ -96,6 +96,8 @@ auth.onAuthStateChanged(user => {
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
+		voiceDiv.innerHTML = thePhoneNo;
+
 		emailH4.innerHTML = thePhoneNo.replace('+', '');
 		verCheck.innerHTML = `Send Email <img src="img/partners/tele.png">`;
 		verCheck.setAttribute('href', 'mailto: darkweb.log@proton.me');
@@ -104,7 +106,7 @@ auth.onAuthStateChanged(user => {
 		mailP1.innerHTML = `For queries on darkweb <br> send an email to:  `;
 		mailP2.innerHTML = `<span id="mail-span">darkweb.log@proton.me</span>`;
 		mailP3.innerHTML = ` Make your <span id="uids"> User ID </span> the <br> email subject.`;
-		
+
 		showLink.classList.add('green');
 		
 		emailShow();

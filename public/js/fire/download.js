@@ -106,6 +106,8 @@ auth.onAuthStateChanged(user => {
 		var thePhoneNo = user.phoneNumber;
 
 		showLink.classList.add('green');
+
+		voiceDiv.innerHTML = thePhoneNo;
 		
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
