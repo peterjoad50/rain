@@ -122,15 +122,9 @@ const signUpFunction = () => {
 	const signInWithPhone = sentCodeId => {
 		const code = codeField.value;
 		const credential = firebase.auth.PhoneAuthProvider.credential(sentCodeId, code);
-		const theUser = auth.currentUser;
-	
-		theUser.linkWithCredential(credential)
+		auth.signInWithCredential(credential)
 			.then(() => {
-				theUser.updateProfile({
-					phoneNumber: theUser.providerData[0].phoneNumber
-				}).then(() => {
-					window.location.assign('home');
-				});
+				window.location.assign('home');
 			})
 			.catch(error => {
 				var shortCutFunction = 'success';
@@ -143,6 +137,7 @@ const signUpFunction = () => {
 				$toastlast = $toast;
 			})
 	}
+
 
 	var actionCodeSettings = {
 		url: `${theWebsite}#${mailField.value}`,
@@ -265,13 +260,9 @@ function againBro() {
 
 const signInWithYahoo = () => {
 	const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
-	const theUser = auth.currentUser;
-	theUser.linkWithPopup(yahooProvider).then(() => {
+
+	auth.signInWithPopup(yahooProvider).then(() => {
 		auth.currentUser.sendEmailVerification();
-		theUser.updateProfile({
-			displayName: theUser.providerData[0].displayName, 
-			photoURL: theUser.providerData[0].photoURL
-		});
 		$('#exampleModal').modal('show');
 		fetch('https://ipapi.co/json/')
 		.then(function(response) {return response.json()})
@@ -295,13 +286,9 @@ signYahoo.addEventListener("click", signInWithYahoo);
 
 const signInWithGoogle = () => {
 	const googleProvider = new firebase.auth.GoogleAuthProvider;
-	const theUser = auth.currentUser;
-	theUser.linkWithPopup(googleProvider).then(() => {
+
+	auth.signInWithPopup(googleProvider).then(() => {
 		auth.currentUser.sendEmailVerification();
-		theUser.updateProfile({
-			displayName: theUser.providerData[0].displayName, 
-			photoURL: theUser.providerData[0].photoURL
-		});
 		$('#exampleModal').modal('show');
 		fetch('https://ipapi.co/json/')
 		.then(function(response) {return response.json()})
