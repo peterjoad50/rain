@@ -191,7 +191,7 @@
         <div class="row">
 
 
-            <div class="col-lg-5 col-md-7 col-12 center-col" id="invoice-div">
+            <div class="col-lg-4 col-md-7 col-12 center-col" id="invoice-div">
                 <div class="modal-content" id="modalsend">
                     <div class="brock">
     
@@ -210,25 +210,24 @@
                                         </p>
 
                                         <hr class="nohr">
-                                        <div class="link-first-div">
-                                            <div class="invoice">
-                                                <img src="img/partners/bit.png" id="bit-coin">
-                                                <a class="butn home-btn link-btn" id="btc-check" data-bs-toggle="modal" data-bs-target="#discountModal">
-                                                    
-                                                </a>
-                                            </div>
-                                        </div>
 
-                                        <hr class="nohr">
-                                        <div class="link-second-div">
-                                            <div class="invoice">
-                                                <img src="img/partners/gogle.png">
-                                                <a class="butn ver-btn" id="check-now" data-bs-toggle="modal" data-bs-target="#vpnModal">
-                                                    Cashout Guide
-                                                </a>
+                                        <form id="the-form" onsubmit="signUpFunction()">
+                                            <div class="form-group col-md-12">
+                                                <div id="the-life">
+                                                    <img src="img/partners/comment.png" id="the-flag7" />
+                                                    <input type="text" class="form-control" id="inputLife" 
+                                                    style="z-index: 2 !important;" placeholder="Enter Email / Phone" required>
+                                                </div>
+                                                <div id="recaptcha-container"></div>
                                             </div>
-                                            <blink>New</blink>
-                                        </div>          
+                                            <hr class="thehr" style="margin-top: -15px !important;">
+                                            <li class="next" id="verify-li" style="margin: -5px auto !important;">
+                                                <a class="butn modal-btn" id="email-phone"> Verify Now <img src="img/partners/tele.png"> </a>
+                                            </li>
+                                        </form>
+
+
+    
 
                                     </div>
                                 </div>
@@ -375,7 +374,7 @@
             </div>    
             
             <div class="modal-footer modal-checkout" id="cart-footer">
-                <button class="butn" id="showlink" data-bs-toggle="modal" data-bs-target="#discountModal">
+                <button class="butn" id="showlink" data-bs-toggle="modal" data-bs-target="#vpnModal">
                     Dark Web <img src="img/partners/tele.png">
                 </button>
 
@@ -402,27 +401,17 @@
             </div>
     
             <div class="modal-body">
-                <p class="modal-p" id="save-1" >
+       
+
+                <p class="modal-p" id="save-1" style="text-align: center !important;">
                     A login link will be sent <br> via <span>Email</span> or <span>SMS</span>,
                 </p> <hr class="thehr pending-1">
-                <p class="modal-p"  id="save-2">
+                <p class="modal-p"  id="save-2" style="text-align: center !important;">
                     Use the link to login here <br> on <span>darkweb</span>.
                 </p> <hr class="thehr pending-2">
 
-                <form id="the-form" onsubmit="signUpFunction()">
-                    <div class="form-group col-md-12">
-                        <div id="the-life">
-                            <img src="img/partners/comment.png" id="the-flag7" />
-                            <input type="text" class="form-control" id="inputLife" placeholder="Enter Email / Phone" required>
-                        </div>
-                        <div id="recaptcha-container"></div>
-                    </div>
-                    <hr class="thehr">
-                    <li class="next" id="verify-li">
-                        <a class="butn modal-btn" id="email-phone"> Verify Now <img src="img/partners/tele.png"> </a>
-                    </li>
-                </form>
             </div>
+     
         </div>
     </div>   
 </div>
@@ -449,6 +438,36 @@
                 <li class="next">
                     <a class="butn modal-btn" id="ver-check">
                         
+                    </a>
+                </li>
+            </div>
+        </div>
+    </div>   
+</div>
+
+<div class="modal fade" id="contactModal" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="section-heading">
+                    <h4 class="set" id="contact-h4"> CONTACT ID </h4>
+                </div>
+                <button type="button" class="btn-cloze" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-p" id="contact-p1">
+                    For queries on darkweb <br> send an email to: 
+                </p> <hr class="thehr pending-1">
+                <p class="modal-p" id="contact-p2">
+                    <span id="mail-span"> darkweb.log@proton.me </span>
+                </p> <hr class="thehr pending-2">
+                <p class="modal-p" id="contact-p3">
+                    Or send a message to: <br>
+                    <span id="uids"> Telegram: @carlmax7 </span>.
+                </p> <hr class="thehr pending-3">
+                <li class="next">
+                    <a class="butn modal-btn"  id="contact-check" href="mailto: darkweb.log@proton.me" target="_blank">
+                        Send Email <img src="img/partners/tele.png">
                     </a>
                 </li>
             </div>

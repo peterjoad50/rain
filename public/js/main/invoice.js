@@ -49,9 +49,6 @@
     var theC = document.getElementById('colors');
     var theLog = document.getElementById('cart-logo');
 
-
-    var cxC = document.getElementById('check-now');
-
     var csImg = document.getElementsByClassName('logo-img')[0];
 
     if (window.innerWidth > 768) {
@@ -63,9 +60,6 @@
         document.getElementById('nav2').setAttribute('href', 'img/logos/logo8.png');
         document.getElementById('nav3').setAttribute('href', 'img/logos/logo8.png');
         document.getElementById('nav4').setAttribute('href', 'img/logos/logo8.png');
-        
-        cxC.classList.remove('ver-btn');
-        cxC.classList.add('phone-btn');
 
         csImg.setAttribute('src', 'img/logos/logo8.png');
 

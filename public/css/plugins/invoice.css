@@ -54,19 +54,6 @@
 .butn.home-btn.check {
     padding: 7.8px 14px;
 }
-.butn.link-btn {
-    padding: 7.8px 16.5px;
-}
-
-  
-.butn#btc-check {
-    padding: 7.8px 14px !important;
-}
-
-
-.butn#check-now {
-    padding: 7.8px 12px !important;
-}
 
 .muher {
     margin-left: 3px !important;
@@ -110,17 +97,6 @@
    .butn.home-btn.check {
         padding: 7.5px 13.5px;
     }
-    .butn.link-btn {
-        padding: 7.5px 16.5px;
-    }
-
-    .butn#btc-check {
-        padding: 7.5px 14px !important;
-    }
-
-    .butn#check-now {
-        padding: 7.5px 11.5px !important;
-    }
 
    .invoice img {
         width: 49px !important;
@@ -138,9 +114,11 @@
     border-radius: 4px;
 }
 #my-invoice {
-    margin: 3px !important;
+    margin: 4px !important;
     padding: 0px !important;
     width: 100% !important;
+
+    background: rgba(18, 29, 51, 1) !important;
 }
 #invoice-div {
     margin-top: 12.3vh;
@@ -206,7 +184,7 @@
     }
 }
 #my-invoice span {
-    font-weight: 600;
+    font-weight: 500;
 }
 .invoice {
     display: flex;
@@ -241,14 +219,6 @@ blink {
 }
 
 
-
-#wnvoice-body-div {
-    margin: 3px !important;
-    background: rgba(18, 29, 51, 0.5) !important;
-}
-#wnvoice-body-div p {
-    font-weight: 500 !important;
-}
 @media (min-width: 1092px) {
 	.col-lg-5 {
 		-ms-flex: 0 0 38.5%;
@@ -266,24 +236,6 @@ blink {
   }
 
 
-
-
-
-
-.link-first-div {
-    margin-top: 16px !important;
-    margin-bottom: 18px !important;
-
-    cursor: pointer !important;
-    display: inline-block !important;
-}
-.link-second-div {
-    margin-top: 16px !important;
-    margin-bottom: -14px !important;
-
-    cursor: pointer !important;
-    display: inline-block !important;
-}
 
 
 

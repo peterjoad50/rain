@@ -2,13 +2,9 @@ let items = [];
 var table3 = jQuery('#example1').DataTable();
 var anonLink = document.getElementById('anon-link');
 
-var bitCoin = document.getElementById('bit-coin');
-
 var theLogo = document.getElementById('logo');
 var theLogo2 = document.getElementById('vpn-img');
 
-const bitcoinCheck = document.getElementById('btc-check');
-const bitcoinImg = document.getElementById('bit-coin');
 
 var profileModal = document.getElementById('profileModal');
 var modalDialog = profileModal.getElementsByClassName('modal-dialog')[0];
@@ -129,11 +125,6 @@ function updateCartTotal() {
 
     document.getElementById('thetot').innerHTML = `Cart:  <span>$${total.toLocaleString()}</span>`;
 
-    document.getElementById('btc-check').innerHTML = `
-        Checkout <span class="muher">$${total.toLocaleString()}</span>
-    `;
-    document.getElementById('btc-check').setAttribute('data-bs-target', '#profileModal');
-
     if((JSON.parse(localStorage.getItem('banklogs')).length) == 1) {
 
         var bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
@@ -152,14 +143,10 @@ function updateCartTotal() {
 
         document.getElementById('jinaHolder2').innerHTML = '[' + bankLog2.replace(']', ' ACCOUNT]'); 
 
-        bitCoin.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
-
         theLogo.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
         theLogo2.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
 
         if(bankLog.includes('Chime') || bankLog.includes('Wells')) {
-
-            bitCoin.classList.add('bit-img');
 
             theLogo.classList.add('bit-img');
             theLogo2.classList.add('bit-img');
@@ -169,7 +156,6 @@ function updateCartTotal() {
         } 
 
     } else if((JSON.parse(localStorage.getItem('banklogs')).length) > 1) {
-        bitCoin.classList.add('bit-img');
 
         document.getElementById('jinaHolder').value = '2 Bank Logs';
         document.getElementById('jinaHolder3').value = '2 Bank Logs';

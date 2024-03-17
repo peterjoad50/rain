@@ -279,6 +279,7 @@ blink {
 #discountModal .modal-content,
 #verifyModal .modal-content,
 #vpnModal .modal-content,
+#contactModal .modal-content,
 #emailModal .modal-content,
 #profileModal .modal-content,
 #saveModal .modal-content,
@@ -327,6 +328,7 @@ blink {
 #verifyModal .modal-header .close img,
 #vpnModal .modal-header .close img,
 #emailModal .modal-header .close img,
+#contactModal .modal-header .close img,
 #profileModal .modal-header .close img,
 #saveModal .modal-header .close img,
 #exampleModal .modal-header .close img,
@@ -525,10 +527,13 @@ span#uids {
 .google {
   background: rgb(232, 214, 170)
 }
-#my-invoice p, 
-#my-invoice p span {
-  color: rgb(60, 61, 59) !important;
+#my-invoice p {
+  color: #d0ad55 !important;
 }
+#my-invoice p span {
+  color: rgb(139, 209, 68) !important;
+}
+
 
 .cd-time-img {
   border: 1.4px solid #d0ad55;

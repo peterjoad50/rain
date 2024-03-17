@@ -79,23 +79,12 @@ auth.onAuthStateChanged(user => {
 		mailP3.innerHTML = `Verify your email address <br> before checkout.`;
 
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
-		voiceDiv.setAttribute('data-bs-target', '#discountModal');
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
 		voiceDiv.innerHTML = thePhoneNo;
 
 		showLink.classList.add('green');
-
-
-		emailH4.innerHTML = thePhoneNo.replace('+', '');
-		verCheck.innerHTML = `Send Email <img src="img/partners/tele.png">`;
-		verCheck.setAttribute('href', 'mailto: darkweb.log@proton.me');
-		verCheck.setAttribute('target', '_blank');
-
-		mailP1.innerHTML = `For queries on darkweb <br> send an email to:  `;
-		mailP2.innerHTML = `<span id="mail-span">darkweb.log@proton.me</span>`;
-		mailP3.innerHTML = ` Make your <span id="uids"> User ID </span> the <br> email subject.`;
 
 		emailShow();
 	} 

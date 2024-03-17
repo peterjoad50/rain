@@ -61,7 +61,6 @@ a:active {
 }
 #my-invoice {
   border: 5px solid rgba(22, 160, 134, 0.5) !important;
-  background: rgba(22, 160, 134, 0.3) !important;
 }
 .thegold {
   background-color: rgba(22, 160, 134, 0.3);
@@ -277,6 +276,7 @@ blink {
 #discountModal .modal-content,
 #verifyModal .modal-content,
 #vpnModal .modal-content,
+#contactModal .modal-content,
 #profileModal .modal-content,
 #emailModal .modal-content,
 #saveModal .modal-content,
@@ -325,6 +325,7 @@ blink {
 #verifyModal .modal-header .close img,
 #vpnModal .modal-header .close img,
 #emailModal .modal-header .close img,
+#contactModal .modal-header .close img,
 #profileModal .modal-header .close img,
 #saveModal .modal-header .close img,
 #exampleModal .modal-header .close img,
@@ -508,9 +509,11 @@ span#uids {
 .google {
   background: rgb(139, 208, 195)
 }
-#my-invoice p, 
+#my-invoice p {
+  color: #16a086 !important;
+}
 #my-invoice p span {
-  color: rgb(19, 58, 69) !important;
+  color: rgb(139, 209, 68) !important;
 }
 
 .cd-time-img {
