@@ -145,7 +145,7 @@ auth.onAuthStateChanged(user => {
                 $('#emailModal').modal('hide');
                 $('#saveModal').modal('hide');
                 $('#contactModal').modal('hide');
-            }, 12000);
+            }, 10000);
 		}
 	}
 });
