@@ -30,8 +30,8 @@ auth.onAuthStateChanged(user => {
 
     if(user.email) {
         theLogs = `
-            A verification link has been <br>
-            sent to your email:
+            Bank logs an cashout method <br>
+            will be sent to:
 
             <hr class="to-hr">
             ${user.email}.
@@ -95,10 +95,6 @@ auth.onAuthStateChanged(user => {
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
-
-        if(user.email) {
-            auth.currentUser.sendEmailVerification();
-        }
     });
 
 
@@ -121,10 +117,6 @@ auth.onAuthStateChanged(user => {
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
-
-        if(user.email) {
-            auth.currentUser.sendEmailVerification();
-        }
     });
     
 });

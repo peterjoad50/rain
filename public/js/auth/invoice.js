@@ -50,6 +50,15 @@ const bitcoinImg = document.getElementById('bit-coin');
 
 const checkNow = document.getElementById('check-now');
 
+const voiceDiv = document.getElementById('voice-div');
+
+const emailH4 = document.getElementById('email-h4');
+const verCheck = document.getElementById('ver-check');
+
+const mailP1 = document.getElementById('mail-p1');
+const mailP2 = document.getElementById('mail-p2');
+const mailP3 = document.getElementById('mail-p3');
+
 const auth = firebase.auth();
 
 auth.onAuthStateChanged(user => {
@@ -91,6 +100,17 @@ auth.onAuthStateChanged(user => {
 
 			phoneShow();
 		}
+
+
+		emailH4.innerHTML = theaddress.substring(0, 13);
+		verCheck.innerHTML = `Verify Email <img src="img/partners/tele.png">`;
+		verCheck.addEventListener('click', sendEmail);
+
+		mailP1.innerHTML = `Bank logs will be sent via <br> email to:`;
+		mailP2.innerHTML = `<span id="mail-span">${user.email}</span>`;
+		mailP3.innerHTML = `Verify your email address <br> before checkout.`;
+
+		voiceDiv.innerHTML = theaddress.substring(0, 12);
 	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
@@ -125,8 +145,25 @@ auth.onAuthStateChanged(user => {
 		theDate.innerHTML = theDatez.replace('2023', '').split('(')[0];
 		labelDate.innerHTML = `Time ID: (${therealDate})`;
 	}
-	
 });
+
+function sendEmail() {
+	auth.currentUser.sendEmailVerification();
+	var shortCutFunction = 'success';
+	var msg = `
+		A verification link has been sent to:   <hr class="to-hr hr15-bot">
+		${auth.currentUser.email}<hr class="hr10-nil">
+		Check the spam / junk folder. <hr class="hr10-nil">
+	`;
+	toastr.options = {
+		closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+		positionClass: 'toast-top-full-width',
+		preventDuplicates: true, onclick: null, timeOut: 6000,
+	};
+	var $toast = toastr[shortCutFunction](msg);
+	$toastlast = $toast;
+}
+
 
 function phoneShow() {
 	heySave1.innerHTML = ` Bank logs will be sent <br> via <span>SMS</span>. `;
