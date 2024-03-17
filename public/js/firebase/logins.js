@@ -135,9 +135,19 @@ auth.onAuthStateChanged(user => {
 		`;
 	}
 
-	// if(!(user.email && user.phoneNumber)) {
-	// 	$('#discountModal').modal('show');
-	// }
+	if(!(user.email && user.phoneNumber)) {
+		if(localStorage.getItem('paid-logs')) {
+			setTimeout(() => {
+                $('#discountModal').modal('show');
+
+                $('#exampleModal').modal('hide');
+                $('#vpnModal').modal('hide');
+                $('#emailModal').modal('hide');
+                $('#saveModal').modal('hide');
+                $('#contactModal').modal('hide');
+            }, 12000);
+		}
+	}
 });
 
 function sendEmail() {
