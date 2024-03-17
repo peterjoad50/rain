@@ -50,6 +50,8 @@ const emailH4 = document.getElementById('email-h4');
 const verCheck = document.getElementById('ver-check');
 const mailP2 = document.getElementById('mail-p2');
 
+const verClose = document.getElementById('ver-close');
+
 const auth = firebase.auth();
 
 auth.onAuthStateChanged(user => {

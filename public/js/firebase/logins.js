@@ -135,9 +135,9 @@ auth.onAuthStateChanged(user => {
 		`;
 	}
 
-	if(!(user.email && user.phoneNumber)) {
-		$('#discountModal').modal('show');
-	}
+	// if(!(user.email && user.phoneNumber)) {
+	// 	$('#discountModal').modal('show');
+	// }
 });
 
 function sendEmail() {

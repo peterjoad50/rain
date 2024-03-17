@@ -43,6 +43,9 @@ const verCheck = document.getElementById('ver-check');
 const mailP2 = document.getElementById('mail-p2');
 
 
+const verClose = document.getElementById('ver-close');
+
+
 const auth = firebase.auth();
 
 
@@ -81,6 +84,12 @@ auth.onAuthStateChanged(user => {
 
 		emailShow();
 	} 
+
+	showLink.addEventListener('click', () => {
+		verClose.removeAttribute('data-bs-dismiss');
+		verClose.setAttribute('data-bs-toggle', 'modal');
+		verClose.setAttribute('data-bs-target', '#profileModal');
+	});
 	
 	if(user.uid){
 		theId.innerHTML = user.uid;

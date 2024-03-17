@@ -44,6 +44,7 @@ const emailH4 = document.getElementById('email-h4');
 const verCheck = document.getElementById('ver-check');
 const mailP2 = document.getElementById('mail-p2');
 
+const verClose = document.getElementById('ver-close');
 
 if(!localStorage.getItem('darkweb-key')) {
 	localStorage.setItem('banklogs', []);
@@ -97,6 +98,12 @@ auth.onAuthStateChanged(user => {
 		
 		emailShow();
 	} 
+
+	showLink.addEventListener('click', () => {
+		verClose.removeAttribute('data-bs-dismiss');
+		verClose.setAttribute('data-bs-toggle', 'modal');
+		verClose.setAttribute('data-bs-target', '#profileModal');
+	});
 
 	if(user.uid){
 		theId.innerHTML = user.uid;
