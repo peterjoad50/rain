@@ -114,7 +114,7 @@
     border-radius: 4px;
 }
 #my-invoice {
-    margin: 4px !important;
+    margin: 3px !important;
     padding: 0px !important;
     width: 100% !important;
 }
@@ -192,7 +192,7 @@
 
 #invoice-body-div {
     margin: 0 !important;
-    background: rgba(255, 255, 255, 0.75) !important;
+    background: rgba(255, 255, 255, 0.57) !important;
 }
 #invoice-body-div p {
     font-weight: 500 !important;
