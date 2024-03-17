@@ -77,8 +77,16 @@ auth.onAuthStateChanged(user => {
 				<span>${themail}</span>,
 			`;
 			wildPa.innerHTML = `
-				& via SMS to: <span>${thePhoneNo}</span>.
+				& via SMS as a dynamic link <br> 
+				to: <span>${thePhoneNo}</span>. <br>
+
+				You will be redirected to <br>
+				the payment page.
 			`;
+			setTimeout(() => {
+				window.location.assign('logins');
+			}, 4800);
+			document.getElementById('the-form').style.display = 'none';
 		} else {
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
@@ -86,7 +94,6 @@ auth.onAuthStateChanged(user => {
 			`;
 			wildPa.innerHTML = `
 				Logs can also be sent via <br> <span>SMS</span> as a dynamic link.
-			
 			`;
 			phoneShow();
 		}
@@ -107,11 +114,11 @@ auth.onAuthStateChanged(user => {
 
 		wouldPa.innerHTML = `
 			Bank logs will be sent to <br>
-			<span id="yourEmail">${thePhoneNo}</span> 
+			<span>${thePhoneNo}</span> 
 		`;
 
 		wildPa.innerHTML = `
-			with a cashout <span>guide<span>.
+			Logs can also be sent via <br> <span>Email</span> as a dynamic link.
 		`;
 
 		emailShow();
