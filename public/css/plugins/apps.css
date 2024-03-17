@@ -3364,9 +3364,10 @@ blink.nav-blink {
     position: absolute !important;
 }
 
+#contact-h4,
 #email-h4 {
     text-transform: uppercase !important;
-    letter-spacing: 2px !important;    
+    letter-spacing: 1.8px !important;    
 }
 span#uida {
     color: yellow !important;
