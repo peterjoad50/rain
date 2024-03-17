@@ -79,6 +79,7 @@ auth.onAuthStateChanged(user => {
 		mailP3.innerHTML = `Verify your email address <br> before checkout.`;
 
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
+		voiceDiv.setAttribute('data-bs-target', '#discountModal');
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
