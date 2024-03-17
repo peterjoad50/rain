@@ -86,7 +86,7 @@ auth.onAuthStateChanged(user => {
 				}
 			}
 
-			showLink.setAttribute('data-bs-target', '#vpnModal');
+			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;

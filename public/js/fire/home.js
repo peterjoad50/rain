@@ -79,7 +79,7 @@ auth.onAuthStateChanged(user => {
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
-			showLink.setAttribute('data-bs-target', '#vpnModal');
+			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			phoneShow();
 		}

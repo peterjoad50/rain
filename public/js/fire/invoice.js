@@ -87,7 +87,7 @@ auth.onAuthStateChanged(user => {
 				& via SMS to: <span>${thePhoneNo}</span>.
 			`;
 
-			showLink.setAttribute('data-bs-target', '#vpnModal');
+			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
