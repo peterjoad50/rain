@@ -4,10 +4,11 @@ var anonLink = document.getElementById('anon-link');
 
 var bitCoin = document.getElementById('bit-coin');
 
-const btcChecking = document.getElementById('btc-check');
-
 var theLogo = document.getElementById('logo');
 var theLogo2 = document.getElementById('vpn-img');
+
+const bitcoinCheck = document.getElementById('btc-check');
+const bitcoinImg = document.getElementById('bit-coin');
 
 var profileModal = document.getElementById('profileModal');
 var modalDialog = profileModal.getElementsByClassName('modal-dialog')[0];
@@ -57,6 +58,13 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 
 } else {
     document.getElementById('cartlength').style.display = 'none';
+
+    bitcoinCheck.innerHTML = 'Homepage ID';
+    bitcoinCheck.removeAttribute('data-bs-toggle');
+    bitcoinCheck.setAttribute('href', 'home');
+
+    bitcoinImg.setAttribute('src', 'img/partners/house.png');
+
 
     document.getElementById('thetot').setAttribute('data-bs-target', '#vpnModal');
 

@@ -185,13 +185,50 @@
 <!-- start projet ection -->
 <section class="bg-img bg-animate" data-background="img/content/home12.jpg" id="logs-invoice">
     <div class="opacity-full-dark bg-extra-dark-gray">
-        <div id="particles-js"></div>
+       
     </div>
     <div class="container-fluid">
         <div class="row">
 
 
-            <div class="col-lg-5 col-md-7 col-12 center-col" id="invoice-div">
+            <div class="col-lg-4 col-md-5 col-12 center-col ticketz" id="invoice-div" style="margin-top: 140px !important;">
+                <div class="modal-content" id="modalsend">
+                    <div class="brock">
+
+                        <div class="modal-body" id="invoice-body">
+                            <div id="wnvoice-body-div">
+    
+                                <p class="modal-p" id="save-1"  style="text-align: center !important;">
+                                    A login link will be sent <br> via <span>Email</span> or <span>SMS</span>,
+                                </p> <hr class="thehr pending-1">
+                                <p class="modal-p"  id="save-2" style="text-align: center !important;">
+                                    Use the link to login here <br> on <span>darkweb</span>.
+                                </p> <hr class="thehr pending-2">
+                
+                                <form id="the-form" onsubmit="signUpFunction()">
+                                    <div class="form-group col-md-12">
+                                        <div id="the-life">
+                                            <img src="img/partners/comment.png" id="the-flag7" />
+                                            <input type="text" class="form-control" id="inputLife" placeholder="Enter Email / Phone" required 
+                                            style="z-index: 1 !important;">
+                                        </div>
+                                        <div id="recaptcha-container"></div>
+                                    </div>
+                                    <hr class="thehr" style="margin-top: -15px !important;">
+                                    <li class="next" id="verify-li" style="margin: -5px auto !important;">
+                                        <a class="butn modal-btn" id="email-phone"> Verify Now <img src="img/partners/tele.png"> </a>
+                                    </li>
+                                </form>
+                         
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-md-7 col-12 center-col" id="invoice-div" style="display: none !important;">
                 <div class="modal-content" id="modalsend">
                     <div class="brock">
     
@@ -298,6 +335,7 @@
 
 <a class="scroll-to-top">
     <i class="fas fa-angle-up"></i>
+    <div id="particles-js"></div>
 </a>
 
 
@@ -399,28 +437,7 @@
                 <button type="button" class="btn-cloze" data-bs-toggle="modal" data-bs-target="#profileModal"></button>
             </div>
     
-            <div class="modal-body">
-                <p class="modal-p" id="save-1" >
-                    A login link will be sent <br> via <span>Email</span> or <span>SMS</span>,
-                </p> <hr class="thehr pending-1">
-                <p class="modal-p"  id="save-2">
-                    Use the link to login here <br> on <span>darkweb</span>.
-                </p> <hr class="thehr pending-2">
 
-                <form id="the-form" onsubmit="signUpFunction()">
-                    <div class="form-group col-md-12">
-                        <div id="the-life">
-                            <img src="img/partners/comment.png" id="the-flag7" />
-                            <input type="text" class="form-control" id="inputLife" placeholder="Enter Email / Phone" required>
-                        </div>
-                        <div id="recaptcha-container"></div>
-                    </div>
-                    <hr class="thehr">
-                    <li class="next" id="verify-li">
-                        <a class="butn modal-btn" id="email-phone"> Verify Now <img src="img/partners/tele.png"> </a>
-                    </li>
-                </form>
-            </div>
         </div>
     </div>   
 </div>

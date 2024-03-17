@@ -79,10 +79,12 @@ auth.onAuthStateChanged(user => {
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
 		if (user.phoneNumber) {
-			showLink.setAttribute('data-bs-target', '#emailModal');
+	
 		} else {
 			phoneShow();
 		}
+
+		showLink.setAttribute('data-bs-target', '#emailModal');
 
 		emailH4.innerHTML = theaddress.substring(0, 13);
 		verCheck.innerHTML = `Verify Email <img src="img/partners/tele.png">`;
@@ -140,8 +142,9 @@ function sendEmail() {
 }
 
 
+
 function phoneShow() {
-	heySave1.innerHTML = ` Bank logs will be sent <br> via <span>SMS</span>. `;
+	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;
 	heySave2.innerHTML = ` As a dynamic link that  <br> expires in <span>7 hours</span>. `;
 
 	fetch('https://ipapi.co/json/')
@@ -156,7 +159,7 @@ function phoneShow() {
 }
 
 function emailShow() {
-	heySave1.innerHTML = ` Bank logs will be sent <br> via <span>Email</span>. `;
+	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
 	heySave2.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox. `;
 
 	theFlag7.style.display = 'none';

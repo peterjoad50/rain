@@ -45,9 +45,6 @@ const heySave2 = document.getElementById('save-2');
 const wouldPa = document.getElementById('would');
 const wildPa = document.getElementById('wild');
 
-const bitcoinCheck = document.getElementById('btc-check');
-const bitcoinImg = document.getElementById('bit-coin');
-
 const checkNow = document.getElementById('check-now');
 
 const voiceDiv = document.getElementById('voice-div');
@@ -86,21 +83,18 @@ auth.onAuthStateChanged(user => {
 			wildPa.innerHTML = `
 				& via SMS to: <span>${thePhoneNo}</span>.
 			`;
-
-			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
 				<span>${themail}</span> 
 			`;
-
 			wildPa.innerHTML = `
 				with a cashout <span>guide<span>.
 			`;
-
 			phoneShow();
 		}
 
+		showLink.setAttribute('data-bs-target', '#emailModal');
 
 		emailH4.innerHTML = theaddress.substring(0, 13);
 		verCheck.innerHTML = `Verify Email <img src="img/partners/tele.png">`;
@@ -140,14 +134,6 @@ auth.onAuthStateChanged(user => {
 	}
 
 
-	if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) == 0)) {
-		bitcoinCheck.innerHTML = 'Homepage ID';
-		bitcoinCheck.removeAttribute('data-bs-toggle');
-		bitcoinCheck.setAttribute('href', 'home');
-	
-		bitcoinImg.setAttribute('src', 'img/partners/house.png');
-	}
-
 	if(user.uid){
 		theId.innerHTML = user.uid;
 		let theDatez2 = new Date(user.metadata.b * 1);
@@ -176,8 +162,9 @@ function sendEmail() {
 }
 
 
+
 function phoneShow() {
-	heySave1.innerHTML = ` Bank logs will be sent <br> via <span>SMS</span>. `;
+	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;
 	heySave2.innerHTML = ` As a dynamic link that  <br> expires in <span>7 hours</span>. `;
 
 	fetch('https://ipapi.co/json/')
@@ -192,7 +179,7 @@ function phoneShow() {
 }
 
 function emailShow() {
-	heySave1.innerHTML = ` Bank logs will be sent <br> via <span>Email</span>. `;
+	heySave1.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
 	heySave2.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox. `;
 
 	theFlag7.style.display = 'none';
@@ -201,7 +188,6 @@ function emailShow() {
 	phoneNumberField.style.textAlign = 'center';
 	mailField.setAttribute('placeholder', 'Enter your Email...');
 }
-
 
 window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
 	'size': 'invisible'

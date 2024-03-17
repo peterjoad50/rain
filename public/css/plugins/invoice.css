@@ -239,6 +239,16 @@ blink {
 #invoice-body-div p {
     font-weight: 500 !important;
 }
+
+
+
+#wnvoice-body-div {
+    margin: 3px !important;
+    background: rgba(18, 29, 51, 0.5) !important;
+}
+#wnvoice-body-div p {
+    font-weight: 500 !important;
+}
 @media (min-width: 1092px) {
 	.col-lg-5 {
 		-ms-flex: 0 0 38.5%;
@@ -300,3 +310,55 @@ blink {
 #madrid {
     border-radius: 50% !important;
 }
+
+
+#the-life {
+    display: flex !important;
+    width: 92% !important;
+    height: 60px !important;
+    margin: 10px auto 0 !important;
+
+    background: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 0.3px !important;
+}
+
+#the-flag7 {
+    width: 16%;
+    border: none !important;
+    display: none;
+    height: 90% !important;
+    margin: auto 7px !important;
+}
+
+
+#inputLife {
+    border-radius: 0.1px !important;
+    font-weight: 600 !important;
+    text-align: center;
+    width: 99% !important;
+
+    padding: 0 10px !important;
+    height: 96% !important;
+    margin: auto auto !important;
+    letter-spacing: 2px !important;
+    align-items: center !important;
+}
+
+#nameLife::placeholder,
+#inputLife::placeholder {
+    letter-spacing: 1.3px !important;
+}
+@media screen and (max-width: 767px) {
+    #inputLife::placeholder {
+        letter-spacing: 0.3px !important;
+    }
+    #nameLife::placeholder {
+        letter-spacing: 0.3px !important;
+    }
+}
+
+#inputLife {
+    font-size: 23.5px !important;
+}
+
+
