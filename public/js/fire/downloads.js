@@ -124,10 +124,6 @@ auth.onAuthStateChanged(user => {
 		emailShow();
 	} 
 
-	if(!(user.email && user.phoneNumber)) {
-		$('#discountModal').modal('show');
-	}
-
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
 	} else {
