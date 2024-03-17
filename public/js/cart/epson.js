@@ -1,5 +1,5 @@
 if (document.getElementById('boa01')) {
-    (document.getElementById('boa1').innerHTML = "$" + (3423).toLocaleString()),
+    (document.getElementById('boa1').innerHTML = "$" + (3102).toLocaleString()),
     (document.getElementById('boa2').innerHTML = "$" + (4125).toLocaleString()),
     (document.getElementById('boa3').innerHTML = "$" + (4938).toLocaleString()),
     (document.getElementById('boa4').innerHTML = "$" + (5472).toLocaleString()),
@@ -26,7 +26,7 @@ if (document.getElementById('boa01')) {
     (document.getElementById("boa012").innerHTML = "Buy: $" + parseFloat((document.getElementById("boa12").innerHTML.replace("$", "").replace(",", "") / 57).toFixed(0)).toLocaleString())
 
 } else if (document.getElementById('chase01')) {
-    (document.getElementById("chase1").innerHTML = "$" + (5245).toLocaleString()),
+    (document.getElementById("chase1").innerHTML = "$" + (5240).toLocaleString()),
     (document.getElementById("chase2").innerHTML = "$" + (6024).toLocaleString()),
     (document.getElementById("chase3").innerHTML = "$" + (6735).toLocaleString()),
     (document.getElementById("chase4").innerHTML = "$" + (7652).toLocaleString()),
@@ -58,9 +58,9 @@ if (document.getElementById('boa01')) {
     (document.getElementById("chase014").innerHTML = "Buy: $" + parseFloat((document.getElementById("chase14").innerHTML.replace("$", "").replace(",", "") / 57).toFixed(0)).toLocaleString())
 
 } else if (document.getElementById('chime01')) {
-    (document.getElementById("chime1").innerHTML = "$" + (3208).toLocaleString()),
-    (document.getElementById("chime2").innerHTML = "$" + (4137).toLocaleString()),
-    (document.getElementById("chime3").innerHTML = "$" + (4825).toLocaleString()),
+    (document.getElementById("chime1").innerHTML = "$" + (3187).toLocaleString()),
+    (document.getElementById("chime2").innerHTML = "$" + (4136).toLocaleString()),
+    (document.getElementById("chime3").innerHTML = "$" + (4824).toLocaleString()),
     (document.getElementById("chime4").innerHTML = "$" + (5407).toLocaleString()),
     (document.getElementById("chime5").innerHTML = "$" + (6346).toLocaleString()),
     (document.getElementById("chime6").innerHTML = "$" + (7240).toLocaleString()),
@@ -95,7 +95,7 @@ if (document.getElementById('boa01')) {
 } else if (document.getElementById('citi01')) {
     (document.getElementById("citi1").innerHTML = "$" + (4510).toLocaleString()),
     (document.getElementById("citi2").innerHTML = "$" + (5025).toLocaleString()),
-    (document.getElementById("citi3").innerHTML = "$" + (5748).toLocaleString()),
+    (document.getElementById("citi3").innerHTML = "$" + (5840).toLocaleString()),
     (document.getElementById("citi4").innerHTML = "$" + (6520).toLocaleString()),
     (document.getElementById("citi5").innerHTML = "$" + (7436).toLocaleString()),
     (document.getElementById("citi6").innerHTML = "$" + (8057).toLocaleString()),
@@ -125,8 +125,8 @@ if (document.getElementById('boa01')) {
     (document.getElementById("citi014").innerHTML = "Buy: $" + parseFloat((document.getElementById("citi14").innerHTML.replace("$", "").replace(",", "") / 57).toFixed(0)).toLocaleString())
 
 } else if (document.getElementById('hunt01')) {
-    (document.getElementById("hunt1").innerHTML = "$" + (5490).toLocaleString()),
-    (document.getElementById("hunt2").innerHTML = "$" + (6325).toLocaleString()),
+    (document.getElementById("hunt1").innerHTML = "$" + (5407).toLocaleString()),
+    (document.getElementById("hunt2").innerHTML = "$" + (6245).toLocaleString()),
     (document.getElementById("hunt3").innerHTML = "$" + (7046).toLocaleString()),
     (document.getElementById("hunt4").innerHTML = "$" + (7827).toLocaleString()),
     (document.getElementById("hunt5").innerHTML = "$" + (8530).toLocaleString()),
@@ -153,7 +153,7 @@ if (document.getElementById('boa01')) {
     (document.getElementById("hunt012").innerHTML = "Buy: $" + parseFloat((document.getElementById("hunt12").innerHTML.replace("$", "").replace(",", "") / 57).toFixed(0)).toLocaleString())
 
 } else if (document.getElementById('nfcu01')) {
-    (document.getElementById("nfcu1").innerHTML = "$" + (3495).toLocaleString()),
+    (document.getElementById("nfcu1").innerHTML = "$" + (3109).toLocaleString()),
     (document.getElementById("nfcu2").innerHTML = "$" + (4328).toLocaleString()),
     (document.getElementById("nfcu3").innerHTML = "$" + (4973).toLocaleString()),
     (document.getElementById("nfcu4").innerHTML = "$" + (5804).toLocaleString()),
@@ -226,7 +226,7 @@ if (document.getElementById('boa01')) {
     (document.getElementById("truist010").innerHTML = "Buy: $" + parseFloat((document.getElementById("truist10").innerHTML.replace("$", "").replace(",", "") / 57).toFixed(0)).toLocaleString()),
     (document.getElementById("truist011").innerHTML = "Buy: $" + parseFloat((document.getElementById("truist11").innerHTML.replace("$", "").replace(",", "") / 57).toFixed(0)).toLocaleString())
 } else if (document.getElementById('wells01')) {
-    (document.getElementById("wells1").innerHTML = "$" + (3259).toLocaleString()),
+    (document.getElementById("wells1").innerHTML = "$" + (3169).toLocaleString()),
     (document.getElementById("wells2").innerHTML = "$" + (4027).toLocaleString()),
     (document.getElementById("wells3").innerHTML = "$" + (4960).toLocaleString()),
     (document.getElementById("wells4").innerHTML = "$" + (5609).toLocaleString()),

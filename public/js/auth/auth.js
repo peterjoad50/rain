@@ -36,6 +36,8 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
+const voiceDiv = document.getElementById('voice-div');
+
 const auth = firebase.auth();
 
 
@@ -57,6 +59,8 @@ auth.onAuthStateChanged(user => {
 		} else {
 			phoneShow();
 		}
+
+		voiceDiv.innerHTML = theaddress.substring(0, 12);
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
