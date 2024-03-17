@@ -44,9 +44,6 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
-const phoneLogins = document.getElementById('phone-logs');
-const emailLogins = document.getElementById('email-logs');
-
 
 if(!window.location.href.includes('rkweb')){
 	if(!window.location.href.includes('5500')) {
@@ -83,8 +80,6 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
 
-			phoneLogins.style.display = 'block';
-			
 			phoneShow();
 		}
 
@@ -97,10 +92,12 @@ auth.onAuthStateChanged(user => {
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
 
-		emailLogins.style.display = 'block';
-
 		emailShow();
 	} 
+
+	if(!(user.email && user.phoneNumber)) {
+		$('#discountModal').modal('show');
+	}
 
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
@@ -363,92 +360,6 @@ fetch('https://ipapi.co/json/')
 	`;
 	document.getElementById('the-ip').innerHTML = ` ${data.region},  ${data.org}.`;
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
