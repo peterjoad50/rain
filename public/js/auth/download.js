@@ -136,17 +136,15 @@ auth.onAuthStateChanged(user => {
 	}
 
 	if(!(user.email && user.phoneNumber)) {
-		if(localStorage.getItem('paid-logs')) {
-			setTimeout(() => {
-                $('#discountModal').modal('show');
+		setTimeout(() => {
+			$('#discountModal').modal('show');
 
-                $('#exampleModal').modal('hide');
-                $('#vpnModal').modal('hide');
-                $('#emailModal').modal('hide');
-                $('#saveModal').modal('hide');
-                $('#contactModal').modal('hide');
-            }, 10000);
-		}
+			$('#exampleModal').modal('hide');
+			$('#vpnModal').modal('hide');
+			$('#emailModal').modal('hide');
+			$('#saveModal').modal('hide');
+			$('#contactModal').modal('hide');
+		}, 2400);
 	}
 });
 
