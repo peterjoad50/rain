@@ -44,8 +44,6 @@ const wildPa = document.getElementById('wild');
 
 const checkNow = document.getElementById('check-now');
 
-const voiceDiv = document.getElementById('voice-div');
-
 const emailH4 = document.getElementById('email-h4');
 const verCheck = document.getElementById('ver-check');
 const mailP2 = document.getElementById('mail-p2');
@@ -99,13 +97,8 @@ auth.onAuthStateChanged(user => {
 		emailH4.innerHTML = theaddress.substring(0, 13);
 		verCheck.addEventListener('click', sendEmail);
 		mailP2.innerHTML = `<span id="mail-span">${user.email}</span>`;
-
-		voiceDiv.innerHTML = theaddress.substring(0, 12);
 	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
-
-		voiceDiv.innerHTML = thePhoneNo;
-		voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 
 		showLink.classList.add('green');
 
@@ -287,15 +280,20 @@ const signUpFunction = () => {
 		var shortCutFunction = 'success';
 		if(auth.currentUser.email) {
 			var msg = `
-				Bank logs can be sent <br> via SMS.  <hr class="to-hr hr15-bot">
+				Bank log files can be sent via SMS.  <hr class="to-hr hr15-bot">
 				Enter a valid phone number.          <hr class=" hr10-nil">
 			`;
 		} else if(auth.currentUser.phoneNumber) {
 			var msg = `
-				Bank logs can be sent <br> via Email.     <hr class="to-hr hr15-bot">
+				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} 
+		} else if(auth.currentUser.isAnonymous) {
+			var msg = `
+				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
+				Logs are sent via email or SMS.       <hr class=" hr10-nil">
+			`;
+		}
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,

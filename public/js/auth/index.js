@@ -15,6 +15,8 @@ var theWebsite = 'https://www.darkweb.ink/invoice';
 const mailField = document.getElementById('inputLife');
 const signUp = document.getElementById('email-phone');
 
+const signAnony = document.getElementById('signAnony');
+
 const signYahoo = document.getElementById('signYahoo');
 const signGoogle = document.getElementById('signGoogle');
 
@@ -35,9 +37,7 @@ const auth = firebase.auth();
 
 
 auth.onAuthStateChanged(user => {
-	if (!user) {
-		auth.signInAnonymously();
-	} else if(!user.isAnonymous) {
+	if (user) {
 		$('#exampleModal').modal('show');
 		fetch('https://ipapi.co/json/')
 		.then(function(response) {return response.json()})
@@ -66,7 +66,9 @@ auth.onAuthStateChanged(user => {
 			} 
 		} else if(user.phoneNumber) {
 			jinaHolder.innerHTML = user.phoneNumber;
-		} 
+		} else if(user.isAnonymous) {
+			jinaHolder.innerHTML = 'Anonymous';
+		}
 	}
 });
 
@@ -256,6 +258,50 @@ function againBro() {
 		theFlag7.style.display = 'flex';
     }
 }
+
+
+const signInAnony = () => {
+	auth.signInAnonymously().then(() => {
+		$('#exampleModal').modal('show');
+
+		fetch('https://ipapi.co/json/')
+		.then(function(response) {
+			return response.json();
+			
+		})
+		.then(function(data) {
+			document.getElementById('mail-p1').innerHTML = `
+				${data.timezone}, ${data.country_code} <br>
+				${data.city}, <span>${data.country_name}</span>.
+			`;
+		});
+
+		if(platform.manufacturer !== null) {
+			document.getElementById('mail-p3').innerHTML = `
+				${platform.name} Browser, <br> 
+				<span id="uidz">${platform.manufacturer} ${platform.product} ${platform.os}</span>.
+				
+			`;
+		} else {
+			document.getElementById('mail-p3').innerHTML = `
+				${platform.name} ID, <br>
+				<span id="uidz">${platform.os} Device</span>.
+			`;
+		}
+		
+	}).catch(error => {
+		var shortCutFunction = 'success';
+		var msg = `${error.message}`;
+		toastr.options =  {
+			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+			positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+		};
+		var $toast = toastr[shortCutFunction](msg);
+		$toastlast = $toast;
+	});
+};
+signAnony.addEventListener("click", signInAnony);
+
 
 
 

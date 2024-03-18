@@ -39,8 +39,6 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
-const voiceDiv = document.getElementById('voice-div');
-
 const emailH4 = document.getElementById('email-h4');
 const verCheck = document.getElementById('ver-check');
 const mailP2 = document.getElementById('mail-p2');
@@ -72,30 +70,21 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 			jinaHolder2.innerHTML = themail;
-
-			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-				goodies = JSON.parse(localStorage.getItem('banklogs'));
-				for (var i = 0; i < goodies.length; i++) {
-					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-						${theaddress} <hr id="hr-table"> ${thePhoneNo.slice(0, -3)}...`;
-				}
-			}
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
 			
 			phoneShow();
-			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-				goodies = JSON.parse(localStorage.getItem('banklogs'));
-				for (var i = 0; i < goodies.length; i++) {
-					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-						${theaddress}
-						<hr id="hr-table">
-						<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#discountModal">
-						PHONE ID
-						</button>
-					`;
-				}
+		}
+
+		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+			goodies = JSON.parse(localStorage.getItem('banklogs'));
+			for (var i = 0; i < goodies.length; i++) {
+				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+					<hr id="hr-table"> 
+					${theaddress}
+					<hr id="hr-table-2">
+				`;
 			}
 		}
 
@@ -104,15 +93,10 @@ auth.onAuthStateChanged(user => {
 		emailH4.innerHTML = theaddress.substring(0, 13);
 		verCheck.addEventListener('click', sendEmail);
 		mailP2.innerHTML = `<span id="mail-span">${user.email}</span>`;
-
-		voiceDiv.innerHTML = theaddress.substring(0, 12);
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
-
-		voiceDiv.innerHTML = thePhoneNo;
-		voiceDiv.setAttribute('data-bs-target', '#discountModal');
 
 		showLink.classList.add('green');
 
@@ -122,15 +106,24 @@ auth.onAuthStateChanged(user => {
 			goodies = JSON.parse(localStorage.getItem('banklogs'));
 			for (var i = 0; i < goodies.length; i++) {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+					<hr id="hr-table"> 
 					${thePhoneNo.slice(0, -3)}...
-					<hr id="hr-table">
-					<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#discountModal">
-					EMAIL ID
-					</button>
+					<hr id="hr-table-2">
 				`; 
 			}
 		}
-	} 
+	} else if(user.isAnonymous) {
+		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+			goodies = JSON.parse(localStorage.getItem('banklogs'));
+			for (var i = 0; i < goodies.length; i++) {
+				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+					<hr id="hr-table"> 
+					Anonymous
+					<hr id="hr-table-2">
+				`; 
+			}
+		}
+	}
 
 	showLink.addEventListener('click', () => {
 		verClose.removeAttribute('data-bs-dismiss');
@@ -309,15 +302,20 @@ const signUpFunction = () => {
 		var shortCutFunction = 'success';
 		if(auth.currentUser.email) {
 			var msg = `
-				Bank logs can be sent <br> via SMS.  <hr class="to-hr hr15-bot">
+				Bank log files can be sent via SMS.  <hr class="to-hr hr15-bot">
 				Enter a valid phone number.          <hr class=" hr10-nil">
 			`;
 		} else if(auth.currentUser.phoneNumber) {
 			var msg = `
-				Bank logs can be sent <br> via Email.     <hr class="to-hr hr15-bot">
+				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} 
+		} else if(auth.currentUser.isAnonymous) {
+			var msg = `
+				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
+				Logs are sent via email or SMS.       <hr class=" hr10-nil">
+			`;
+		}
 		
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,

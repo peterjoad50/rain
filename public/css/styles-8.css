@@ -278,6 +278,7 @@ blink {
 #verifyModal .modal-content,
 #vpnModal .modal-content,
 #profileModal .modal-content,
+#contactModal .modal-content,
 #emailModal .modal-content,
 #saveModal .modal-content,
 #exampleModal .modal-content {
@@ -292,7 +293,6 @@ blink {
   background-color: rgba(22, 160, 134, 1);
 }
 .scroll-down,
-#log-btn,
 #settings,
 .modal-btn,
 .lesnar,
@@ -326,6 +326,7 @@ blink {
 #vpnModal .modal-header .close img,
 #emailModal .modal-header .close img,
 #profileModal .modal-header .close img,
+#contactModal .modal-header .close img,
 #saveModal .modal-header .close img,
 #exampleModal .modal-header .close img,
 .btn-remove {
