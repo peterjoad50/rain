@@ -95,8 +95,8 @@ auth.onAuthStateChanged(user => {
 					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
 						${theaddress}
 						<hr id="hr-table">
-						<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#emailModal">
-						VERIFY ID
+						<button class="butn" id="log-btn" data-bs-toggle="modal" data-bs-target="#discountModal">
+						PHONE ID
 						</button>
 					`;
 				}
@@ -116,6 +116,7 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = thePhoneNo;
 
 		voiceDiv.innerHTML = thePhoneNo;
+		voiceDiv.setAttribute('data-bs-target', '#discountModal');
 
 		showLink.classList.add('green');
 

@@ -101,6 +101,7 @@ auth.onAuthStateChanged(user => {
 		showLink.classList.add('green');
 
 		voiceDiv.innerHTML = thePhoneNo;
+		voiceDiv.setAttribute('data-bs-target', '#discountModal');
 		
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
@@ -143,7 +144,6 @@ auth.onAuthStateChanged(user => {
 			$('#vpnModal').modal('hide');
 			$('#emailModal').modal('hide');
 			$('#saveModal').modal('hide');
-			$('#contactModal').modal('hide');
 		}, 2400);
 	}
 });
