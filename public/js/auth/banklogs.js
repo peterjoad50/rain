@@ -55,10 +55,6 @@ auth.onAuthStateChanged(user => {
 		window.location.assign('index');
 	} 
 
-	if(user.isAnonymous) {
-		window.location.assign('index');
-	}
-
 	if (user.photoURL) {
 		logoHolder.setAttribute("src", user.photoURL);
 		logoHolder.classList.add('logo-50');

@@ -56,10 +56,6 @@ auth.onAuthStateChanged(user => {
 		window.location.assign('index');
 	} 
 
-	if(user.isAnonymous) {
-		window.location.assign('index');
-	}
-
 	if(user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
