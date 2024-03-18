@@ -82,8 +82,6 @@ auth.onAuthStateChanged(user => {
 		verCheck.addEventListener('click', sendEmail);
 		mailP2.innerHTML = `<span id="mail-span">${user.email}</span>`;
 	} else 	if (user.phoneNumber) {
-		var thePhoneNo = user.phoneNumber;
-
 		showLink.classList.add('green');
 		
 		emailShow();
