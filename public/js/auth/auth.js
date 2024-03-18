@@ -41,6 +41,8 @@ const voiceDiv = document.getElementById('voice-div');
 const emailH4 = document.getElementById('email-h4');
 const verCheck = document.getElementById('ver-check');
 const mailP2 = document.getElementById('mail-p2');
+const mailP1 = document.getElementById('mail-p1');
+const mailP3 = document.getElementById('mail-p3');
 
 
 const verClose = document.getElementById('ver-close');

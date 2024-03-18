@@ -144,7 +144,7 @@ auth.onAuthStateChanged(user => {
 			$('#vpnModal').modal('hide');
 			$('#emailModal').modal('hide');
 			$('#saveModal').modal('hide');
-		}, 2400);
+		}, 1200);
 	}
 });
 

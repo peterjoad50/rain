@@ -124,6 +124,7 @@ const signUpFunction = () => {
 		const credential = firebase.auth.PhoneAuthProvider.credential(sentCodeId, code);
 		auth.signInWithCredential(credential)
 			.then(() => {
+				$('#verifyModal').modal('hide');
 				window.location.assign('home');
 			})
 			.catch(error => {

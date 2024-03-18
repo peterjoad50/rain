@@ -109,7 +109,7 @@ auth.onAuthStateChanged(user => {
 		var thePhoneNo = user.phoneNumber;
 
 		voiceDiv.innerHTML = thePhoneNo;
-		voiceDiv.setAttribute('data-bs-target', '#discountModal');
+		voiceDiv.setAttribute('data-bs-target', '#vpnModal');
 
 		showLink.classList.add('green');
 
