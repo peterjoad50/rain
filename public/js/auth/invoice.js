@@ -84,7 +84,7 @@ auth.onAuthStateChanged(user => {
 				the payment page.
 			`;
 			setTimeout(() => {
-				window.location.assign('logins');
+				window.location.assign('download');
 			}, 4800);
 			document.getElementById('the-form').style.display = 'none';
 		} else {
