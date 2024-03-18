@@ -6,6 +6,7 @@ auth.onAuthStateChanged(user => {
 
     var theLogs = '';
 
+    var theMessage = '';
 
     var toastbtc = '';
 
@@ -13,9 +14,17 @@ auth.onAuthStateChanged(user => {
         if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
             toast = localStorage.getItem('banktotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+            theMessage = `
+                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}
+            `;
         } else if(JSON.parse(localStorage.getItem('banklogs')).length == 2) { 
             toast = localStorage.getItem('divtotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            theMessage = `
+                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}, <br>
+                ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}
+            `;
         }
     }
 
@@ -30,23 +39,19 @@ auth.onAuthStateChanged(user => {
 
     if(user.email) {
         theLogs = `
-            Bank logs an cashout method <br>
-            will be sent to:
-
-            <hr class="to-hr">
+            Bank log files will be sent to <br>
             ${user.email}.
-            <hr class="hr3-nil">
         `;
     } else if(user.phoneNumber) {
         theLogs = `
             Bank logs will be sent via SMS <br>
-            as a dynamic link to:
-
-            <hr class="to-hr">
-            ${user.phoneNumber}.
-            <hr class="hr3-nil">
+            to:  ${user.phoneNumber}.
         `;
-    } 
+    } else if(user.isAnonymous) {
+        theLogs = `
+            To download: ${theMessage} Log File.
+        `;
+    }
 
     
     var i = -1;

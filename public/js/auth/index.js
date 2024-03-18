@@ -17,7 +17,6 @@ const signUp = document.getElementById('email-phone');
 
 const signAnony = document.getElementById('signAnony');
 
-const signYahoo = document.getElementById('signYahoo');
 const signGoogle = document.getElementById('signGoogle');
 
 const phoneNumberField = document.getElementById('inputLife');
@@ -328,7 +327,6 @@ const signInWithYahoo = () => {
 		}
 	})
 };
-signYahoo.addEventListener("click", signInWithYahoo);
 
 
 const signInWithGoogle = () => {

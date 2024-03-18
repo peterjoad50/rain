@@ -100,8 +100,10 @@ auth.onAuthStateChanged(user => {
 
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
+		var theBrowser = `${platform.name} Browser`;
 	} else {
 		var  theDevice = `${platform.os} Device`;
+		var theBrowser = `${platform.name} ID`;
 	}
 
 	if(user.uid){
@@ -123,17 +125,11 @@ auth.onAuthStateChanged(user => {
 			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span>, <br>
 			<span id="uidy">${theDevice}</span>.
 		`;
-	}
-
-	if(!(user.email && user.phoneNumber)) {
-		setTimeout(() => {
-			$('#discountModal').modal('show');
-
-			$('#exampleModal').modal('hide');
-			$('#vpnModal').modal('hide');
-			$('#emailModal').modal('hide');
-			$('#saveModal').modal('hide');
-		}, 1200);
+	} else if(user.isAnonymous) {
+		emailP.innerHTML = `
+			<span id="uida">${theBrowser}</span>, <br>
+			<span id="uidy">${theDevice}</span>.
+		`;
 	}
 });
 

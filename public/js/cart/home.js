@@ -159,7 +159,10 @@ function updateCartTotal() {
             ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
             <span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
         `;
-        
+        theSave2.innerHTML = `
+            Bank logs can be sent via <br> 
+            <span>Email</span> or <span>SMS</span>.
+        `;
     } else {
         invoiceType.innerHTML = 'Bank Logs';
 

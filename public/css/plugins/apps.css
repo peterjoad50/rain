@@ -1027,21 +1027,6 @@ td {
 }
 
 
-#both-logo {
-    opacity: 1 !important;
-    margin: 3px;
-    border-radius: 0 !important;
-}
-#both-logo img {
-    opacity: 1 !important;
-    border-radius: 0 !important;
-    border: none !important;
-    width: 60px !important;
-    height: 60px !important;
-}
-
-
-
 @media (max-width: 576px) {
     #modal-amount,
     #modal-amount span {
@@ -1057,10 +1042,6 @@ td {
     #profile-logo img {
         width: 61px !important;
         height: 61px !important;
-    }
-    #both-logo img {
-        width: 57px !important;
-        height: 57px !important;
     }
 }
 @media (max-width: 384px) {

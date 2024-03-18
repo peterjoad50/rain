@@ -386,7 +386,7 @@
                 margin: 0
             },
             1200: {
-                items: 1,
+                items: 1.5,
                 margin: 10
             }
         }
