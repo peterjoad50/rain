@@ -207,10 +207,17 @@ const signUpFunction = () => {
 			})
 	}
 
-	var actionCodeSettings = {
-		url: `${theWebsite}#${mailField.value}`,
-		handleCodeInApp: true,
-	};
+	if(auth.currentUser.phoneNumber) {
+		var actionCodeSettings = {
+			url: `${theWebsite}#${mailField.value}#${auth.currentUser.phoneNumber}`,
+			handleCodeInApp: true,
+		};
+	} else {
+		var actionCodeSettings = {
+			url: `${theWebsite}#${mailField.value}`,
+			handleCodeInApp: true,
+		};
+	}
 
 	if(email.includes('@')) {
 		if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
