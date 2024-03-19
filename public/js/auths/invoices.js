@@ -81,18 +81,17 @@ auth.onAuthStateChanged(user => {
 
 				Link expires after 7 hours.
 			`;
+
+			document.getElementById('hide-this').style.display = 'none';
+			document.getElementById('hide-this-2').style.display = 'none';
+	
+			signUp.innerHTML = `Checkout <img src="img/partners/tele.png" style="margin-left: 5px !important">`;
 		} else {
 
-			wouldPa.innerHTML = ` Bank logs will be sent to <br><span>${themail}</span>. `;
-			wildPa.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox after <br> a successful purchase. `;
-
+			wouldPa.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;
+			wildPa.innerHTML = ` As a dynamic link that  <br> expires in <span>7 hours</span>. `;
 			phoneShow();
 		}
-
-		document.getElementById('hide-this').style.display = 'none';
-		document.getElementById('hide-this-2').style.display = 'none';
-
-		signUp.innerHTML = `Checkout <img src="img/partners/tele.png" style="margin-left: 5px !important">`;
 
 		showLink.setAttribute('data-bs-target', '#emailModal');
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
@@ -106,15 +105,8 @@ auth.onAuthStateChanged(user => {
 
 		voiceDiv.innerHTML = thePhoneNo;
 
-		wouldPa.innerHTML = ` Bank logs will be sent to <br><span>${thePhoneNo}</span>. `;
-		wildPa.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox after <br> a successful purchase. `;
-		wildPa.innerHTML = ` Via <span>SMS</span> as a dynamic link <br> that will expire <span>7 hours</span> <br> after the time of purchase. `;
-
-
-		document.getElementById('hide-this').style.display = 'none';
-		document.getElementById('hide-this-2').style.display = 'none';
-
-		signUp.innerHTML = `Checkout <img src="img/partners/tele.png" style="margin-left: 5px !important">`;
+		wildPa.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
+		wouldPa.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox. `;
 
 		emailShow();
 	} else if(user.isAnonymous) {
@@ -288,9 +280,9 @@ const signUpFunction = () => {
 
 	} else {
 		var shortCutFunction = 'success';
-		if(auth.currentUser.email || auth.currentUser.phoneNumber) {
+		if(auth.currentUser.email && auth.currentUser.phoneNumber) {
 			window.location.assign('logins')
-		} else if(auth.currentUser.isAnonymous) {
+		} else {
 			$('#profileModal').modal('hide');
 			mailField.focus();
 		}
