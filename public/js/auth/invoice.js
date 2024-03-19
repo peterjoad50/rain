@@ -290,7 +290,9 @@ const signUpFunction = () => {
 
 	} else {
 		var shortCutFunction = 'success';
-		if(auth.currentUser.email) {
+		if(auth.currentUser.email && (auth.currentUser.phoneNumber || localStorage.getItem('thePhone'))) {
+			window.location.assign('download')
+		} else if(auth.currentUser.email) {
 			var msg = `
 				Bank log files can be sent via SMS.  <hr class="to-hr hr15-bot">
 				Enter a valid phone number.          <hr class=" hr10-nil">
