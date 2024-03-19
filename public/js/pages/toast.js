@@ -6,25 +6,21 @@ auth.onAuthStateChanged(user => {
 
     var theLogs = '';
 
-    var theMessage = '';
-
     var toastbtc = '';
+
+    if(platform.manufacturer !== null) {
+		var theDevicez = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
+	} else {
+		var  theDevicez = `${platform.os} Device`;
+	}
 
     if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
         if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
             toast = localStorage.getItem('banktotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-            theMessage = `
-                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}
-            `;
         } else if(JSON.parse(localStorage.getItem('banklogs')).length == 2) { 
             toast = localStorage.getItem('divtotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            theMessage = `
-                ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}, <br>
-                ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}
-            `;
         }
     }
 
@@ -46,10 +42,19 @@ auth.onAuthStateChanged(user => {
         `;
     } else if(user.phoneNumber) {
         theLogs = `
-            Bank logs will be sent via SMS <br>
-            to:  ${user.phoneNumber}.
+            Bank log files and a cashout <br>
+            method link will be sent to: <br>
+            <hr class="to-hr">
+            ${user.phoneNumber}.
         `;
-    } 
+    } else if(user.isAnonymous) {
+        theLogs = `
+            Bank log files and a cashout <br>
+            method pdf will be saved to: <br>
+            <hr class="to-hr">
+            ${theDevicez}.
+        `;
+    }
 
     
     var i = -1;
@@ -83,6 +88,16 @@ auth.onAuthStateChanged(user => {
         var shortCutFunction = 'success';
         var msg = '';
         var title = '';
+        toastr.options = {
+            closeButton: true,
+            debug: false,
+            newestOnTop: true,
+            progressBar: true,
+            positionClass: 'toast-top-full-width',
+            preventDuplicates: true,
+            onclick: null,
+            timeOut: 6000
+        };
         if (!msg) {
             msg = getMessage();
         }
@@ -95,6 +110,16 @@ auth.onAuthStateChanged(user => {
         var shortCutFunction = 'success';
         var msg = '';
         var title = '';
+        toastr.options = {
+            closeButton: true,
+            debug: false,
+            newestOnTop: true,
+            progressBar: true,
+            positionClass: 'toast-top-full-width',
+            preventDuplicates: true,
+            onclick: null,
+            timeOut: 6000
+        };
         if (!msg) {
             msg = getMessage();
         }
