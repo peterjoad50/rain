@@ -262,21 +262,8 @@ const signUpFunction = () => {
 
 	} else {
 		var shortCutFunction = 'success';
-		if(auth.currentUser.email) {
-			var msg = `
-				Bank log files can be sent via SMS.  <hr class="to-hr hr15-bot">
-				Enter a valid phone number.          <hr class=" hr10-nil">
-			`;
-		} else if(auth.currentUser.phoneNumber) {
-			var msg = `
-				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
-				Enter a valid email address.         <hr class=" hr10-nil">
-			`;
-		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email or SMS.       <hr class=" hr10-nil">
-			`;
+		if(!(auth.currentUser.email || auth.currentUser.phoneNumber)) {
+			mailField.focus();
 		}
 
 		toastr.options =  {

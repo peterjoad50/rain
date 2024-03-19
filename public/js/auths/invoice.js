@@ -291,11 +291,6 @@ const signUpFunction = () => {
 		if(auth.currentUser.email || auth.currentUser.phoneNumber) {
 			window.location.assign('logins')
 		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email or SMS.       <hr class=" hr10-nil">
-			`;
-
 			$('#profileModal').modal('hide');
 			mailField.focus();
 		}
