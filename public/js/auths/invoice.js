@@ -81,21 +81,20 @@ auth.onAuthStateChanged(user => {
 
 				Link expires after 7 hours.
 			`;
-
-			showLink.setAttribute('data-bs-target', '#emailModal');
-		
-			document.getElementById('hide-this').style.display = 'none';
-			document.getElementById('hide-this-2').style.display = 'none';
-
-			signUp.innerHTML = `Checkout <img src="img/partners/tele.png" style="margin-left: 5px !important">`;
 		} else {
 
-			wouldPa.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;
-			wildPa.innerHTML = ` As a dynamic link that  <br> expires in <span>7 hours</span>. `;
+			wouldPa.innerHTML = ` Bank logs will be sent to <br><span>${themail}</span>. `;
+			wildPa.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox after <br> a successful purchase. `;
 
 			phoneShow();
 		}
 
+		document.getElementById('hide-this').style.display = 'none';
+		document.getElementById('hide-this-2').style.display = 'none';
+
+		signUp.innerHTML = `Checkout <img src="img/partners/tele.png" style="margin-left: 5px !important">`;
+
+		showLink.setAttribute('data-bs-target', '#emailModal');
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
 		emailH4.innerHTML = theaddress.substring(0, 13);
 		verCheck.addEventListener('click', sendEmail);
@@ -282,24 +281,8 @@ const signUpFunction = () => {
 
 	} else {
 		var shortCutFunction = 'success';
-		if(auth.currentUser.email && (auth.currentUser.phoneNumber || localStorage.getItem('thePhone'))) {
+		if(auth.currentUser.email || auth.currentUser.phoneNumber) {
 			window.location.assign('logins')
-		} else if(auth.currentUser.email) {
-			var msg = `
-				Bank log files can be sent via SMS.  <hr class="to-hr hr15-bot">
-				Enter a valid phone number.          <hr class=" hr10-nil">
-			`;
-
-			$('#profileModal').modal('hide');
-			mailField.focus();
-		} else if(auth.currentUser.phoneNumber) {
-			var msg = `
-				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
-				Enter a valid email address.         <hr class=" hr10-nil">
-			`;
-
-			$('#profileModal').modal('hide');
-			mailField.focus();
 		} else if(auth.currentUser.isAnonymous) {
 			var msg = `
 				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">

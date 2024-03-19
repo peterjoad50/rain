@@ -80,13 +80,14 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 
-			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
 
 			phoneShow();
 		}
+
+		showLink.setAttribute('data-bs-target', '#emailModal');
 
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
 		emailH4.innerHTML = theaddress.substring(0, 13);
