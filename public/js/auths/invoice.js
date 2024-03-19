@@ -73,13 +73,13 @@ auth.onAuthStateChanged(user => {
 
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
-				<span>${themail}</span>,
+				<span>${themail}</span>
 			`;
 			wildPa.innerHTML = `
-				& via SMS as a dynamic link <br> 
-				to: <span>${thePhoneNo}</span>. <br>
+				& via SMS as a dynamic <br> 
+				link to: <span>${thePhoneNo}</span>. <br>
 
-				The link expires after 7 hours.
+				Link expires after 7 hours.
 			`;
 
 			showLink.setAttribute('data-bs-target', '#emailModal');
