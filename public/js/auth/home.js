@@ -91,6 +91,7 @@ auth.onAuthStateChanged(user => {
 		showLink.classList.add('green');
 		
 		voiceDiv.innerHTML = thePhoneNo;
+		voiceDiv.setAttribute('data-bs-target', '#discountModal');
 
 		emailShow();
 	} else if(user.isAnonymous) {

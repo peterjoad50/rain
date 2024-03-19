@@ -107,6 +107,7 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = thePhoneNo;
 
 		voiceDiv.innerHTML = thePhoneNo;
+		voiceDiv.setAttribute('data-bs-target', '#discountModal');
 		
 		showLink.classList.add('green');
 
