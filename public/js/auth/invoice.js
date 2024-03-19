@@ -287,17 +287,30 @@ const signUpFunction = () => {
 	} else {
 		var shortCutFunction = 'success';
 		if(auth.currentUser.email && (auth.currentUser.phoneNumber || localStorage.getItem('thePhone'))) {
-			window.location.assign('download')
+			window.location.assign('logins')
 		} else if(auth.currentUser.email) {
 			var msg = `
 				Bank log files can be sent via SMS.  <hr class="to-hr hr15-bot">
 				Enter a valid phone number.          <hr class=" hr10-nil">
 			`;
+			toastr.options = {
+				closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width',
+				preventDuplicates: true, onclick: null, timeOut: 4000,
+			};
+			$('#profileModal').modal('hide');
+			mailField.focus();
 		} else if(auth.currentUser.phoneNumber) {
 			var msg = `
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
+
+			toastr.options = {
+				closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width',
+				preventDuplicates: true, onclick: null, timeOut: 4000,
+			};
+			$('#profileModal').modal('hide');
+			mailField.focus();
 		} 
 
 		toastr.options =  {

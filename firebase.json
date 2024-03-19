@@ -12,8 +12,8 @@
         "destination": "/index.html"
       },
       {
-        "source": "/download",
-        "destination": "/download.html"
+        "source": "/logins",
+        "destination": "/logins.html"
       },
       {
         "source": "/bankofamerica",
@@ -75,8 +75,8 @@
         "type": 301
       },
       {
-        "source": "/download.html",
-        "destination": "/download",
+        "source": "/logins.html",
+        "destination": "/logins",
         "type": 301
       },
       {
