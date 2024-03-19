@@ -135,11 +135,6 @@ function sendEmail() {
 		${auth.currentUser.email}<hr class="hr10-nil">
 		Check the spam / junk folder. <hr class="hr10-nil">
 	`;
-	toastr.options = {
-		closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-		positionClass: 'toast-top-full-width',
-		preventDuplicates: true, onclick: null, timeOut: 6000,
-	};
 	var $toast = toastr[shortCutFunction](msg);
 	$toastlast = $toast;
 }
@@ -294,10 +289,7 @@ const signUpFunction = () => {
 				Bank log files can be sent via SMS.  <hr class="to-hr hr15-bot">
 				Enter a valid phone number.          <hr class=" hr10-nil">
 			`;
-			toastr.options = {
-				closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width',
-				preventDuplicates: true, onclick: null, timeOut: 4000,
-			};
+
 			$('#profileModal').modal('hide');
 			mailField.focus();
 		} else if(auth.currentUser.phoneNumber) {
@@ -306,13 +298,17 @@ const signUpFunction = () => {
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
 
-			toastr.options = {
-				closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width',
-				preventDuplicates: true, onclick: null, timeOut: 4000,
-			};
 			$('#profileModal').modal('hide');
 			mailField.focus();
-		} 
+		} else if(auth.currentUser.isAnonymous) {
+			var msg = `
+				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
+				Logs are sent via email or SMS.       <hr class=" hr10-nil">
+			`;
+
+			$('#profileModal').modal('hide');
+			mailField.focus();
+		}
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,

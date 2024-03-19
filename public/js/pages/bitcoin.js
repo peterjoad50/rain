@@ -18,11 +18,6 @@ binance.onmessage = function(onmsg){
             <hr>
             Contact: darkweb.log@proton.me.
         `;
-        toastr.options =  {
-            closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-            positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
-            timeOut: 13000
-        };
         var $toast = toastr[shortCutFunction](msg);
         $toastlast = $toast;
     }             
