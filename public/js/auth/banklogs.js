@@ -65,8 +65,12 @@ auth.onAuthStateChanged(user => {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
-		if (user.phoneNumber) {
-			var thePhoneNo = user.phoneNumber;
+		if (user.phoneNumber || localStorage.getItem('thePhone')) {
+			if(!localStorage.getItem('thePhone')) {
+				localStorage.setItem('thePhone', user.phoneNumber);
+			}
+			var thePhoneNo = localStorage.getItem('thePhone');
+			
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 			jinaHolder2.innerHTML = themail;

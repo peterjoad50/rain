@@ -63,8 +63,11 @@ auth.onAuthStateChanged(user => {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) { theaddress = user.displayName } 
-		if (user.phoneNumber) {
-			var thePhoneNo = user.phoneNumber;
+		if (user.phoneNumber || localStorage.getItem('thePhone')) {
+			if(!localStorage.getItem('thePhone')) {
+				localStorage.setItem('thePhone', user.phoneNumber);
+			}
+			var thePhoneNo = localStorage.getItem('thePhone');
 
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
@@ -355,14 +358,28 @@ function focusBro() {
 }
 
 if (auth.isSignInWithEmailLink(window.location.href)) {
-    var email = '';
+
+	var email = '';
+	var phone = '';
+
+	var thePhone = '';
+	var theEmail = '';
 
 	var theLink = window.location.href;
 	var noTimes = theLink.split('#').length-1;
 
-	if(noTimes == 1) {
+	if(noTimes == 2) {
 		theLink =  theLink.substring(theLink.indexOf("#") + 1);
-		email = theLink;
+		thePhone = theLink.substring(theLink.indexOf("#") + 1);
+
+		theEmail =  theLink.slice(0, theLink.lastIndexOf('#'));
+
+		email = theEmail
+		phone = thePhone;
+		localStorage.setItem('thePhone', phone);
+	} else {
+		theEmail =  theLink.substring(theLink.indexOf("#") + 1);
+		email = theEmail;
 	}
 	
 	var credential = new firebase.auth.EmailAuthProvider.credentialWithLink(email, window.location.href);

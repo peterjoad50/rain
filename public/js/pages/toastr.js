@@ -39,7 +39,8 @@ auth.onAuthStateChanged(user => {
 
     if(user.email) {
         theLogs = `
-            Bank log files will be sent to <br>
+            Bank log files and a cashout <br>
+            guide pdf will be sent to: <br>
             ${user.email}.
         `;
     } else if(user.phoneNumber) {
