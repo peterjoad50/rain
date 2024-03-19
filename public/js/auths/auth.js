@@ -65,11 +65,12 @@ auth.onAuthStateChanged(user => {
 			var thePhoneNo = localStorage.getItem('thePhone');
 			jinaHolder.value = thePhoneNo;
 		} else {
+			voiceDiv.setAttribute('data-bs-target', '#discountModal');
 			phoneShow();
 		}
 
 		showLink.setAttribute('data-bs-target', '#emailModal');
-		
+
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
 		emailH4.innerHTML = theaddress.substring(0, 13);
 		verCheck.addEventListener('click', sendEmail);

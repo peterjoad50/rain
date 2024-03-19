@@ -79,6 +79,7 @@ auth.onAuthStateChanged(user => {
 			var thePhoneNo = localStorage.getItem('thePhone');
 			jinaHolder.innerHTML = thePhoneNo;
 		} else {
+			voiceDiv.setAttribute('data-bs-target', '#discountModal');
 			phoneShow();
 		}
 

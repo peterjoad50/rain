@@ -106,8 +106,15 @@ auth.onAuthStateChanged(user => {
 
 		voiceDiv.innerHTML = thePhoneNo;
 
-		wouldPa.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
-		wildPa.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox. `;
+		wouldPa.innerHTML = ` Bank logs will be sent to <br><span>${thePhoneNo}</span>. `;
+		wildPa.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox after <br> a successful purchase. `;
+		wildPa.innerHTML = ` Via <span>SMS</span> as a dynamic link <br> that will expire <span>7 hours</span> <br> after the time of purchase. `;
+
+
+		document.getElementById('hide-this').style.display = 'none';
+		document.getElementById('hide-this-2').style.display = 'none';
+
+		signUp.innerHTML = `Checkout <img src="img/partners/tele.png" style="margin-left: 5px !important">`;
 
 		emailShow();
 	} else if(user.isAnonymous) {
