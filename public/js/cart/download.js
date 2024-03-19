@@ -338,26 +338,5 @@ function updateCartTotal() {
 
     } 
 
-
-    const theSave1 = document.getElementById('save-1');
-    const theSave2 = document.getElementById('save-2');
-    var bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
-
-    if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
-        theSave1.innerHTML = `
-            ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
-            <span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
-        `;
-    } else {
-        theSave1.innerHTML = `
-            ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
-            <span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
-        `;
-        theSave2.innerHTML = `
-            ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
-            <span> ${(JSON.parse(localStorage.getItem('banklogs'))[1].balance)}</span>.
-        `;
-    }
-
     localStorage.setItem('banktotal',total);
 }

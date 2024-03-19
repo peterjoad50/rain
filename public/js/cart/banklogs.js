@@ -221,8 +221,7 @@ function updateCartTotal() {
     document.getElementById('theno1').innerHTML = 'Cart: ' + JSON.parse(localStorage.getItem('banklogs')).length + ' , Total: $' + total.toLocaleString();
 
     const invoiceType = document.getElementById('invoice-type');
-    const theSave1 = document.getElementById('save-1');
-    const theSave2 = document.getElementById('save-2');
+
     var bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
     
     if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
@@ -257,21 +256,8 @@ function updateCartTotal() {
         } else {
             invoiceType.innerHTML = bankLog.split('[')[0];
         }
-        theSave1.innerHTML = `
-            ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
-            <span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
-        `;
     } else {
-        invoiceType.innerHTML = 'Bank Logs';
-
-        theSave1.innerHTML = `
-            ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
-            <span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)}</span>.
-        `;
-        theSave2.innerHTML = `
-            ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
-            <span> ${(JSON.parse(localStorage.getItem('banklogs'))[1].balance)}</span>.
-        `;
+        invoiceType.innerHTML = '2 Bank Logs';
     }
 
     if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
