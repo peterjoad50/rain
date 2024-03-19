@@ -45,6 +45,8 @@ const mailP2 = document.getElementById('mail-p2');
 
 const verClose = document.getElementById('ver-close');
 
+const voiceDiv = document.getElementById('voice-div');
+
 const auth = firebase.auth();
 
 
@@ -70,7 +72,7 @@ auth.onAuthStateChanged(user => {
 				localStorage.setItem('thePhone', user.phoneNumber);
 			}
 			var thePhoneNo = localStorage.getItem('thePhone');
-			
+
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 			jinaHolder2.innerHTML = themail;

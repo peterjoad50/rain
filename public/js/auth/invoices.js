@@ -50,6 +50,8 @@ const mailP2 = document.getElementById('mail-p2');
 
 const verClose = document.getElementById('ver-close');
 
+const voiceDiv = document.getElementById('voice-div');
+
 const auth = firebase.auth();
 
 auth.onAuthStateChanged(user => {
@@ -79,6 +81,8 @@ auth.onAuthStateChanged(user => {
 
 				The link expires after 7 hours.
 			`;
+
+			showLink.setAttribute('data-bs-target', '#emailModal');
 		
 			document.getElementById('hide-this').style.display = 'none';
 			document.getElementById('hide-this-2').style.display = 'none';
@@ -90,12 +94,12 @@ auth.onAuthStateChanged(user => {
 				<span>${themail}</span> 
 			`;
 			wildPa.innerHTML = `
-				Logs can also be sent via <br> <span>SMS</span> as a dynamic link.
+				Logins are sent via <span>SMS</span> as a <br> link that expires in <span>7 hours</span>.
 			`;
 			phoneShow();
 		}
 
-		showLink.setAttribute('data-bs-target', '#emailModal');
+		voiceDiv.innerHTML = theaddress.substring(0, 12);
 
 		emailH4.innerHTML = theaddress.substring(0, 13);
 		verCheck.addEventListener('click', sendEmail);

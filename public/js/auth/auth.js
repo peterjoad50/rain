@@ -43,6 +43,8 @@ const mailP2 = document.getElementById('mail-p2');
 
 const verClose = document.getElementById('ver-close');
 
+const voiceDiv = document.getElementById('voice-div');
+
 
 const auth = firebase.auth();
 

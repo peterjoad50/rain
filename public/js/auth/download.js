@@ -48,6 +48,8 @@ const emailH4 = document.getElementById('email-h4');
 const verCheck = document.getElementById('ver-check');
 const mailP2 = document.getElementById('mail-p2');
 
+const voiceDiv = document.getElementById('voice-div');
+
 if(!window.location.href.includes('rkweb')){
 	if(!window.location.href.includes('5500')) {
 		window.location.assign('home')
@@ -74,7 +76,7 @@ auth.onAuthStateChanged(user => {
 				localStorage.setItem('thePhone', user.phoneNumber);
 			}
 			var thePhoneNo = localStorage.getItem('thePhone');
-			
+
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 		} else {
