@@ -82,7 +82,6 @@ auth.onAuthStateChanged(user => {
 				Link expires after 7 hours.
 			`;
 
-			voiceDiv.setAttribute('data-bs-target', '#emailModal');
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		
 			document.getElementById('hide-this').style.display = 'none';

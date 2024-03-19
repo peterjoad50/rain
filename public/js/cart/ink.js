@@ -202,7 +202,7 @@ if (document.getElementById('boa01')) {
     (document.getElementById("pnc010").innerHTML = "Buy: $" + parseFloat((document.getElementById("pnc10").innerHTML.replace("$", "").replace(",", "") / 57).toFixed(0)).toLocaleString())
 
 } else if (document.getElementById('truist01')) {
-    (document.getElementById("truist1").innerHTML = "$" + (4075).toLocaleString()),
+    (document.getElementById("truist1").innerHTML = "$" + (4102).toLocaleString()),
     (document.getElementById("truist2").innerHTML = "$" + (4682).toLocaleString()),
     (document.getElementById("truist3").innerHTML = "$" + (5576).toLocaleString()),
     (document.getElementById("truist4").innerHTML = "$" + (6358).toLocaleString()),

@@ -78,7 +78,6 @@ auth.onAuthStateChanged(user => {
 			jinaHolder3.value = thePhoneNo;
 			jinaHolder2.innerHTML = themail;
 
-			voiceDiv.setAttribute('data-bs-target', '#emailModal');
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			jinaHolder.value = theaddress;

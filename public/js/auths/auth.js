@@ -65,7 +65,6 @@ auth.onAuthStateChanged(user => {
 			var thePhoneNo = localStorage.getItem('thePhone');
 			jinaHolder.value = thePhoneNo;
 
-			voiceDiv.setAttribute('data-bs-target', '#emailModal');
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			phoneShow();
