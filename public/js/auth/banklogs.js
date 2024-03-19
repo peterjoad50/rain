@@ -72,10 +72,13 @@ auth.onAuthStateChanged(user => {
 				localStorage.setItem('thePhone', user.phoneNumber);
 			}
 			var thePhoneNo = localStorage.getItem('thePhone');
+			
 
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 			jinaHolder2.innerHTML = themail;
+
+			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
@@ -93,8 +96,6 @@ auth.onAuthStateChanged(user => {
 				`;
 			}
 		}
-
-		showLink.setAttribute('data-bs-target', '#emailModal');
 
 		emailH4.innerHTML = theaddress.substring(0, 13);
 		verCheck.addEventListener('click', sendEmail);
