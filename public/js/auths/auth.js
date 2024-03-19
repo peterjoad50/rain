@@ -81,9 +81,7 @@ auth.onAuthStateChanged(user => {
 		voiceDiv.innerHTML = thePhoneNo;
 
 		emailShow();
-	} else if(user.isAnonymous) {
-		window.location.assign('index');
-	}
+	} 
 
 	showLink.addEventListener('click', () => {
 		verClose.removeAttribute('data-bs-dismiss');

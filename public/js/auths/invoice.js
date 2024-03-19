@@ -112,9 +112,7 @@ auth.onAuthStateChanged(user => {
 		wildPa.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox. `;
 
 		emailShow();
-	} else if(user.isAnonymous) {
-		window.location.assign('index');
-	}
+	} 
 
 
 	if(user.uid){

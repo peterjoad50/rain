@@ -106,9 +106,7 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = thePhoneNo;
 
 		emailShow();
-	} else if(user.isAnonymous) {
-		window.location.assign('index');
-	}
+	} 
 	
 
 	if(platform.manufacturer !== null) {
