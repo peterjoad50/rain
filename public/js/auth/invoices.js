@@ -100,7 +100,6 @@ auth.onAuthStateChanged(user => {
 		}
 
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
-
 		emailH4.innerHTML = theaddress.substring(0, 13);
 		verCheck.addEventListener('click', sendEmail);
 		mailP2.innerHTML = `<span id="mail-span">${user.email}</span>`;
@@ -108,6 +107,8 @@ auth.onAuthStateChanged(user => {
 		var thePhoneNo = user.phoneNumber;
 
 		showLink.classList.add('green');
+
+		voiceDiv.innerHTML = thePhoneNo;
 
 		wouldPa.innerHTML = `
 			Bank logs will be sent to <br>

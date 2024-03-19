@@ -88,6 +88,7 @@ auth.onAuthStateChanged(user => {
 			phoneShow();
 		}
 
+		voiceDiv.innerHTML = theaddress.substring(0, 12);
 		emailH4.innerHTML = theaddress.substring(0, 13);
 		verCheck.addEventListener('click', sendEmail);
 		mailP2.innerHTML = `<span id="mail-span">${user.email}</span>`;
@@ -95,6 +96,8 @@ auth.onAuthStateChanged(user => {
 		jinaHolder2.innerHTML = themail;
 	} else 	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
+
+		voiceDiv.innerHTML = thePhoneNo;
 
 		showLink.classList.add('green');
 		
