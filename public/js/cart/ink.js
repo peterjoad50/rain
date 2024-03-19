@@ -1,8 +1,8 @@
 if (document.getElementById('boa01')) {
-    (document.getElementById('boa1').innerHTML = "$" + (3423).toLocaleString()),
+    (document.getElementById('boa1').innerHTML = "$" + (3189).toLocaleString()),
     (document.getElementById('boa2').innerHTML = "$" + (4125).toLocaleString()),
     (document.getElementById('boa3').innerHTML = "$" + (4938).toLocaleString()),
-    (document.getElementById('boa4').innerHTML = "$" + (5472).toLocaleString()),
+    (document.getElementById('boa4').innerHTML = "$" + (5402).toLocaleString()),
     (document.getElementById('boa5').innerHTML = "$" + (6145).toLocaleString()),
     (document.getElementById('boa6').innerHTML = "$" + (7036).toLocaleString()),
     (document.getElementById('boa7').innerHTML = "$" + (7820).toLocaleString()),
@@ -59,10 +59,10 @@ if (document.getElementById('boa01')) {
 
 } else if (document.getElementById('chime01')) {
     (document.getElementById("chime1").innerHTML = "$" + (3102).toLocaleString()),
-    (document.getElementById("chime2").innerHTML = "$" + (4137).toLocaleString()),
+    (document.getElementById("chime2").innerHTML = "$" + (4135).toLocaleString()),
     (document.getElementById("chime3").innerHTML = "$" + (4825).toLocaleString()),
-    (document.getElementById("chime4").innerHTML = "$" + (5407).toLocaleString()),
-    (document.getElementById("chime5").innerHTML = "$" + (6346).toLocaleString()),
+    (document.getElementById("chime4").innerHTML = "$" + (5370).toLocaleString()),
+    (document.getElementById("chime5").innerHTML = "$" + (6246).toLocaleString()),
     (document.getElementById("chime6").innerHTML = "$" + (7240).toLocaleString()),
     (document.getElementById("chime7").innerHTML = "$" + (7854).toLocaleString()),
     (document.getElementById("chime8").innerHTML = "$" + (8650).toLocaleString()),
@@ -153,7 +153,7 @@ if (document.getElementById('boa01')) {
     (document.getElementById("hunt012").innerHTML = "Buy: $" + parseFloat((document.getElementById("hunt12").innerHTML.replace("$", "").replace(",", "") / 57).toFixed(0)).toLocaleString())
 
 } else if (document.getElementById('nfcu01')) {
-    (document.getElementById("nfcu1").innerHTML = "$" + (3495).toLocaleString()),
+    (document.getElementById("nfcu1").innerHTML = "$" + (3065).toLocaleString()),
     (document.getElementById("nfcu2").innerHTML = "$" + (4328).toLocaleString()),
     (document.getElementById("nfcu3").innerHTML = "$" + (4973).toLocaleString()),
     (document.getElementById("nfcu4").innerHTML = "$" + (5804).toLocaleString()),
