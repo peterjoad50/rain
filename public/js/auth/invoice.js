@@ -89,13 +89,10 @@ auth.onAuthStateChanged(user => {
 
 			signUp.innerHTML = `Checkout <img src="img/partners/tele.png" style="margin-left: 5px !important">`;
 		} else {
-			wouldPa.innerHTML = `
-				Bank logs will be sent to <br>
-				<span>${themail}</span> 
-			`;
-			wildPa.innerHTML = `
-				Logins are sent via <span>SMS</span> as a <br> link that expires in <span>7 hours</span>.
-			`;
+
+			wouldPa.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;
+			wildPa.innerHTML = ` As a dynamic link that  <br> expires in <span>7 hours</span>. `;
+
 			phoneShow();
 		}
 
@@ -110,14 +107,8 @@ auth.onAuthStateChanged(user => {
 
 		voiceDiv.innerHTML = thePhoneNo;
 
-		wouldPa.innerHTML = `
-			Bank logs will be sent to <br>
-			<span>${thePhoneNo}</span> 
-		`;
-
-		wildPa.innerHTML = `
-			Logs can also be sent via <br> <span>Email</span> as a dynamic link.
-		`;
+		wouldPa.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
+		wildPa.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox. `;
 
 		emailShow();
 	} else if(user.isAnonymous) {
