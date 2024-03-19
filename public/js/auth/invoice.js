@@ -113,15 +113,7 @@ auth.onAuthStateChanged(user => {
 
 		emailShow();
 	} else if(user.isAnonymous) {
-		wouldPa.innerHTML = `
-			Bank logs can be sent via <br>
-			<span>Email</span> or <span>SMS</span>.
-		`;
-
-		wildPa.innerHTML = `
-			Enter a valid email or phone <br>
-			number here below.
-		`;
+		window.location.assign('index');
 	}
 
 
@@ -298,12 +290,7 @@ const signUpFunction = () => {
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email or SMS.       <hr class=" hr10-nil">
-			`;
-		}
+		} 
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,

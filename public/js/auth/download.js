@@ -96,7 +96,10 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = thePhoneNo;
 
 		emailShow();
-	} 
+	} else if(user.isAnonymous) {
+		window.location.assign('index');
+	}
+	
 
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
@@ -125,12 +128,7 @@ auth.onAuthStateChanged(user => {
 			<span id="uida" style="letter-spacing: 1.5px !important">${user.phoneNumber}</span>, <br>
 			<span id="uidy">${theDevice}</span>.
 		`;
-	} else if(user.isAnonymous) {
-		emailP.innerHTML = `
-			<span id="uida">${theBrowser}</span>, <br>
-			<span id="uidy">${theDevice}</span>.
-		`;
-	}
+	} 
 });
 
 function sendEmail() {
@@ -301,12 +299,7 @@ const signUpFunction = () => {
 				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
 				Enter a valid email address.         <hr class=" hr10-nil">
 			`;
-		} else if(auth.currentUser.isAnonymous) {
-			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via email or SMS.       <hr class=" hr10-nil">
-			`;
-		}
+		} 
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,

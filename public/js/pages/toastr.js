@@ -47,11 +47,7 @@ auth.onAuthStateChanged(user => {
             Bank logs will be sent via SMS <br>
             to:  ${user.phoneNumber}.
         `;
-    } else if(user.isAnonymous) {
-        theLogs = `
-            To download: ${theMessage} Log File.
-        `;
-    }
+    } 
 
     
     var i = -1;
