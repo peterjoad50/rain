@@ -111,7 +111,10 @@ auth.onAuthStateChanged(user => {
 		wildPa.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox. `;
 
 		emailShow();
-	} 
+	} else if(user.isAnonymous) {
+		wouldPa.innerHTML = ` Bank logs can be sent <br> via <span>Email</span> or <span>SMS</span>. `;
+		wildPa.innerHTML = ` Use a burner mail / phone <br> to login on <span>darkweb</span>. `;
+	}
 
 
 	if(user.uid){
