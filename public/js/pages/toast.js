@@ -151,7 +151,7 @@ auth.onAuthStateChanged(user => {
                     $('#emailModal').modal('hide');
                     $('#contactModal').modal('hide');
                 }
-            }, 1200);
+            }, 2400);
             paidLogs = false;
         }
     }
