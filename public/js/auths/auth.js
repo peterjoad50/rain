@@ -65,6 +65,7 @@ auth.onAuthStateChanged(user => {
 			var thePhoneNo = localStorage.getItem('thePhone');
 			jinaHolder.value = thePhoneNo;
 
+			voiceDiv.setAttribute('data-bs-target', '#emailModal');
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			phoneShow();
@@ -78,7 +79,6 @@ auth.onAuthStateChanged(user => {
 		showLink.classList.add('green');
 
 		voiceDiv.innerHTML = thePhoneNo;
-		voiceDiv.setAttribute('data-bs-target', '#discountModal');
 
 		emailShow();
 	} else if(user.isAnonymous) {

@@ -82,6 +82,7 @@ auth.onAuthStateChanged(user => {
 				Link expires after 7 hours.
 			`;
 
+			voiceDiv.setAttribute('data-bs-target', '#emailModal');
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		
 			document.getElementById('hide-this').style.display = 'none';
@@ -106,7 +107,6 @@ auth.onAuthStateChanged(user => {
 		showLink.classList.add('green');
 
 		voiceDiv.innerHTML = thePhoneNo;
-		voiceDiv.setAttribute('data-bs-target', '#discountModal');
 
 		wouldPa.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
 		wildPa.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox. `;

@@ -80,6 +80,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 
+			voiceDiv.setAttribute('data-bs-target', '#emailModal');
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		} else {
 			jinaHolder.value = theaddress;
@@ -98,7 +99,6 @@ auth.onAuthStateChanged(user => {
 		var thePhoneNo = user.phoneNumber;
 
 		voiceDiv.innerHTML = thePhoneNo;
-		voiceDiv.setAttribute('data-bs-target', '#discountModal');
 
 		showLink.classList.add('green');
 		
