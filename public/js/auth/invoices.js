@@ -77,13 +77,13 @@ auth.onAuthStateChanged(user => {
 				& via SMS as a dynamic link <br> 
 				to: <span>${thePhoneNo}</span>. <br>
 
-				You will be redirected to <br>
-				the payment page.
+				The link expires after 7 hours.
 			`;
-			setTimeout(() => {
-				window.location.assign('download');
-			}, 4800);
-			document.getElementById('the-form').style.display = 'none';
+		
+			document.getElementById('hide-this').style.display = 'none';
+			document.getElementById('hide-this-2').style.display = 'none';
+
+			signUp.innerHTML = `Checkout <img src="img/partners/tele.png" style="margin-left: 5px !important">`;
 		} else {
 			wouldPa.innerHTML = `
 				Bank logs will be sent to <br>
