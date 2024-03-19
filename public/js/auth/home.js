@@ -46,9 +46,9 @@ const verClose = document.getElementById('ver-close');
 
 const voiceDiv = document.getElementById('voice-div');
 
-if(!localStorage.getItem('darkweb-key')) {
+if(!localStorage.getItem('darkweb-ink7')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-key', true);
+	localStorage.setItem('darkweb-ink7', true);
 
 	window.location.assign('home');
 }
@@ -91,7 +91,7 @@ auth.onAuthStateChanged(user => {
 		showLink.classList.add('green');
 		
 		voiceDiv.innerHTML = thePhoneNo;
-		
+
 		emailShow();
 	} else if(user.isAnonymous) {
 		window.location.assign('index');
