@@ -117,7 +117,7 @@ auth.onAuthStateChanged(user => {
 		wouldPa.innerHTML = `  Bank logs can be sent <br> via <span>Email</span> or <span>SMS</span>. `;
 		wildPa.innerHTML = ` Use a burner mail / phone <br> to login on <span>darkweb</span>. `;
 
-		contactH4.innerHTML = 'Anonymous';
+		contactH4.innerHTML = 'Darkweb';
 	}
 
 
