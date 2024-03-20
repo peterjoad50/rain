@@ -66,7 +66,7 @@ auth.onAuthStateChanged(user => {
 		} else if(user.phoneNumber) {
 			jinaHolder.innerHTML = (user.phoneNumber).replace('+', '');
 		} else if(user.isAnonymous) {
-			jinaHolder.innerHTML = '-Darkweb-';
+			jinaHolder.innerHTML = 'Darkweb';
 		}
 	}
 });
