@@ -56,7 +56,7 @@ const voiceDiv = document.getElementById('voice-div');
 const auth = firebase.auth();
 
 auth.onAuthStateChanged(user => {
-	if(!user || user.isAnonymous) {
+	if(!user) {
 		if(!auth.isSignInWithEmailLink(window.location.href)) {
 			window.location.assign('index');
 		}
@@ -113,7 +113,10 @@ auth.onAuthStateChanged(user => {
 	
 
 		emailShow();
-	} 
+	} else if(user.isAnonymous) {
+		wouldPa.innerHTML = `  Bank logs can be sent <br> via <span>Email</span> or <span>SMS</span>. `;
+		wildPa.innerHTML = ` Use a burner mail / phone <br> to login on <span>darkweb</span>. `;
+	}
 
 
 	if(user.uid){

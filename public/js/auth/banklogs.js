@@ -52,7 +52,7 @@ const auth = firebase.auth();
 
 
 auth.onAuthStateChanged(user => {
-	if (!user || user.isAnonymous) {
+	if (!user) {
 		window.location.assign('index');
 	} 
 
@@ -125,7 +125,18 @@ auth.onAuthStateChanged(user => {
 				`; 
 			}
 		}
-	} 
+	} else if(user.isAnonymous) {
+		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+			goodies = JSON.parse(localStorage.getItem('banklogs'));
+			for (var i = 0; i < goodies.length; i++) {
+				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+					<hr id="hr-table"> 
+					Anonymous
+					<hr id="hr-table-2">
+				`; 
+			}
+		}
+	}
 
 	showLink.addEventListener('click', () => {
 		verClose.removeAttribute('data-bs-dismiss');
