@@ -44,6 +44,7 @@ const signInWithPhoneButton = document.getElementById('signInWithPhone');
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
 
+const contactH4 = document.getElementById('contact-h4');
 const emailH4 = document.getElementById('email-h4');
 const verCheck = document.getElementById('ver-check');
 const mailP2 = document.getElementById('mail-p2');
@@ -91,6 +92,7 @@ auth.onAuthStateChanged(user => {
 
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
 		emailH4.innerHTML = theaddress.substring(0, 13);
+		contactH4.innerHTML = theaddress.substring(0, 13);
 		verCheck.addEventListener('click', sendEmail);
 		mailP2.innerHTML = `<span id="mail-span">${user.email}</span>`;
 
@@ -99,7 +101,8 @@ auth.onAuthStateChanged(user => {
 		var thePhoneNo = user.phoneNumber;
 
 		voiceDiv.innerHTML = thePhoneNo;
-
+		contactH4.innerHTML = thePhoneNo.replace('+', '');
+		
 		showLink.classList.add('green');
 		
 		jinaHolder.value = thePhoneNo;
