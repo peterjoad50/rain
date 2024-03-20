@@ -8,11 +8,6 @@ auth.onAuthStateChanged(user => {
 
     var toastbtc = '';
 
-    if(platform.manufacturer !== null) {
-		var theDevicez = `${platform.manufacturer} ${platform.product}, ${platform.os}`;
-	} else {
-		var  theDevicez = `${platform.os} Device`;
-	}
 
     if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
         if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
@@ -47,14 +42,7 @@ auth.onAuthStateChanged(user => {
             <hr class="to-hr">
             ${user.phoneNumber}.
         `;
-    } else if(user.isAnonymous) {
-        theLogs = `
-            Bank log files and a cashout <br>
-            method pdf will be saved to: <br>
-            <hr class="to-hr">
-            ${theDevicez}.
-        `;
-    }
+    } 
 
     
     var i = -1;

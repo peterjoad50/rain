@@ -15,7 +15,7 @@ var theWebsite = 'https://www.darkweb.ink/invoice';
 const mailField = document.getElementById('inputLife');
 const signUp = document.getElementById('email-phone');
 
-const signAnony = document.getElementById('signAnony');
+const signYahoo = document.getElementById('signYahoo');
 
 const signGoogle = document.getElementById('signGoogle');
 
@@ -36,7 +36,9 @@ const auth = firebase.auth();
 
 
 auth.onAuthStateChanged(user => {
-	if (user) {
+	if(!user) {
+		auth.signInAnonymously();
+	}else if (!user.isAnonymous) {
 		$('#exampleModal').modal('show');
 		fetch('https://ipapi.co/json/')
 		.then(function(response) {return response.json()})
@@ -65,9 +67,7 @@ auth.onAuthStateChanged(user => {
 			} 
 		} else if(user.phoneNumber) {
 			jinaHolder.innerHTML = (user.phoneNumber).replace('+', '');
-		} else if(user.isAnonymous) {
-			jinaHolder.innerHTML = 'Anonymous';
-		}
+		} 
 	}
 });
 
@@ -259,29 +259,6 @@ function againBro() {
 }
 
 
-const signInAnony = () => {
-	auth.signInAnonymously().then(() => {
-		$('#exampleModal').modal('show');
-		fetch('https://ipapi.co/json/')
-		.then(function(response) {return response.json()})
-		.then(function(data) {
-			document.getElementById('mail-p1').innerHTML = `
-				${data.timezone}, ${data.country_code} <br>
-				${data.city}, ${data.country_name}.
-			`;
-		});
-		if(platform.manufacturer !== null) {
-			document.getElementById('mail-p3').innerHTML = ` <span>${platform.name} Browser</span>, <br> 
-				<span id="uidz">${platform.manufacturer} ${platform.product} ${platform.os}</span>.`;
-		} else {
-			document.getElementById('mail-p3').innerHTML = ` <span>${platform.name}</span>, <br>
-				<span id="uidz">${platform.os} ID</span>. `;
-		}
-	})
-};
-signAnony.addEventListener("click", signInAnony);
-
-
 
 const signInWithYahoo = () => {
 	const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
@@ -306,6 +283,7 @@ const signInWithYahoo = () => {
 		}
 	})
 };
+signYahoo.addEventListener("click", signInWithYahoo);
 
 
 const signInWithGoogle = () => {
