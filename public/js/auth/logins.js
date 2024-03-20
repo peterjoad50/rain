@@ -110,6 +110,11 @@ auth.onAuthStateChanged(user => {
 		emailShow();
 	} 
 	
+	if(!(user.email && user.phoneNumber)) {
+		setTimeout(() => {
+			window.location.assign('invoice');
+		}, 1800);
+	}
 
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;

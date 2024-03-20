@@ -89,7 +89,7 @@ auth.onAuthStateChanged(user => {
 		} else {
 
 			wouldPa.innerHTML = ` Bank logs can be sent <br> via <span>SMS</span>. `;
-			wildPa.innerHTML = ` As a dynamic link that  <br> expires in <span>7 hours</span>. `;
+			wildPa.innerHTML = ` Use a burner phone number <br> to login on <span>darkweb</span>. `;
 			phoneShow();
 		}
 
@@ -106,7 +106,7 @@ auth.onAuthStateChanged(user => {
 		voiceDiv.innerHTML = thePhoneNo;
 
 		wildPa.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
-		wouldPa.innerHTML = ` To the <span>spam / junk</span> folder <br> of your mailbox. `;
+		wildPa.innerHTML = ` Use a burner email address <br> to login on <span>darkweb</span>. `;
 
 		emailShow();
 	} else if(user.isAnonymous) {
@@ -285,11 +285,16 @@ const signUpFunction = () => {
 		} else {
 			$('#profileModal').modal('hide');
 			mailField.focus();
+
+			var msg = `
+				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
+				Logs are sent via Email & SMS.       <hr class=" hr10-nil">
+			`;
 		}
 
 		toastr.options =  {
 			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-			positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+			positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, timeOut: 1800
 		};
 		var $toast = toastr[shortCutFunction](msg);
 		$toastlast = $toast;
