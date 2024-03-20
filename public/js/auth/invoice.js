@@ -287,8 +287,8 @@ const signUpFunction = () => {
 			mailField.focus();
 
 			var msg = `
-				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
-				Logs are sent via Email & SMS.       <hr class=" hr10-nil">
+				Enter a valid Email or Phone <br> number.   <hr class="to-hr hr15-bot">
+				Bank log files are sent via <br> Email & SMS.  <hr class="to-hr hr10-nil" style="opacity: 0 !important">
 			`;
 		}
 
