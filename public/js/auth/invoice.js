@@ -286,7 +286,7 @@ const signUpFunction = () => {
 
 	} else {
 		if(auth.currentUser.email && auth.currentUser.phoneNumber) {
-			window.location.assign('logins')
+			window.location.assign('download')
 		} else {
 			$('#profileModal').modal('hide');
 			mailField.focus();
