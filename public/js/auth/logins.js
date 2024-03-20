@@ -109,9 +109,11 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = thePhoneNo;
 
 		emailShow();
-	} 
+	} else if(user.isAnonymous) {
+		contactH4.innerHTML = 'Anonymous';
+	}
 
-	
+
 
 	if(platform.manufacturer !== null) {
 		var theDevice = `${platform.manufacturer} ${platform.product}, ${platform.os}`;

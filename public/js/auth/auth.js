@@ -84,7 +84,9 @@ auth.onAuthStateChanged(user => {
 		contactH4.innerHTML = thePhoneNo.replace('+', '');
 		
 		emailShow();
-	} 
+	} else if(user.isAnonymous) {
+		contactH4.innerHTML = 'Anonymous';
+	}
 
 	showLink.addEventListener('click', () => {
 		verClose.removeAttribute('data-bs-dismiss');

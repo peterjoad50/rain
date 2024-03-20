@@ -136,6 +136,8 @@ auth.onAuthStateChanged(user => {
 				`; 
 			}
 		}
+
+		contactH4.innerHTML = 'Anonymous';
 	}
 
 	showLink.addEventListener('click', () => {
