@@ -74,6 +74,8 @@ auth.onAuthStateChanged(user => {
 phoneLog.addEventListener('click', () => {
 	document.getElementById('invoice-type').innerHTML = 'PHONE LOGIN';
 
+	theFlag7.style.display = 'flex';
+
 	document.getElementById('save-1').innerHTML = ` A <span>code</span> will be sent to your <br> phone number. `;
 	document.getElementById('save-2').innerHTML = ` Use the code to sign-in on <br> <span>darkweb</span>. `;
 
@@ -85,7 +87,6 @@ phoneLog.addEventListener('click', () => {
 		phoneNumberField.value = data.country_calling_code;
 		phoneNumberField.setAttribute('type', 'tel');
 		phoneNumberField.style.textAlign = 'left';
-		theFlag7.style.display = 'flex';
 		phoneNumberField.setAttribute('pattern', '[+]{1}[0-9]{11,14}');
 	});
 });

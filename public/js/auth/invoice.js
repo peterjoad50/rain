@@ -280,7 +280,6 @@ const signUpFunction = () => {
 		})
 
 	} else {
-		var shortCutFunction = 'success';
 		if(auth.currentUser.email && auth.currentUser.phoneNumber) {
 			window.location.assign('logins')
 		} else {
