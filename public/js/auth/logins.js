@@ -84,8 +84,6 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
 
-			voiceDiv.setAttribute('data-bs-target', '#discountModal');
-
 			phoneShow();
 		}
 
