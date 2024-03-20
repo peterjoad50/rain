@@ -103,7 +103,7 @@ auth.onAuthStateChanged(user => {
 	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
-		wildPa.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
+		wouldPa.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
 		wildPa.innerHTML = ` Use a burner email address <br> to login on <span>darkweb</span>. `;
 
 		showLink.classList.add('green');
