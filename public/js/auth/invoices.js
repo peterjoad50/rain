@@ -103,13 +103,14 @@ auth.onAuthStateChanged(user => {
 	} else	if (user.phoneNumber) {
 		var thePhoneNo = user.phoneNumber;
 
+		wildPa.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
+		wildPa.innerHTML = ` Use a burner email address <br> to login on <span>darkweb</span>. `;
+
 		showLink.classList.add('green');
 
 		voiceDiv.innerHTML = thePhoneNo;
 		contactH4.innerHTML = thePhoneNo.replace('+', '');
-		
-		wildPa.innerHTML = ` Bank logs can be sent <br> via <span>Email</span>. `;
-		wildPa.innerHTML = ` Use a burner email address <br> to login on <span>darkweb</span>. `;
+	
 
 		emailShow();
 	} 
@@ -285,19 +286,7 @@ const signUpFunction = () => {
 		} else {
 			$('#profileModal').modal('hide');
 			mailField.focus();
-
-			var msg = `
-				Enter a valid Email or Phone <br> number.   <hr class="to-hr hr15-bot">
-				Bank log files are sent via <br> Email & SMS.  <hr class="to-hr hr10-nil" style="opacity: 0 !important">
-			`;
 		}
-
-		toastr.options =  {
-			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-			positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, timeOut: 1800
-		};
-		var $toast = toastr[shortCutFunction](msg);
-		$toastlast = $toast;
 	}
 }
 signUp.addEventListener('click', signUpFunction);
