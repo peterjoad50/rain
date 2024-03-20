@@ -192,7 +192,7 @@
 
 #invoice-body-div {
     margin: 0 !important;
-    background: rgba(255, 255, 255, 0.5) !important;
+    background: rgba(255, 255, 255, 0.7) !important;
 }
 #invoice-body-div p {
     font-weight: 500 !important;
@@ -209,9 +209,9 @@
 
   @media (max-width: 500px)  {
     .col-12 {
-      -ms-flex:0 0 96%;
-      flex:0 0 96%;
-      max-width: 96%;
+      -ms-flex:0 0 98%;
+      flex:0 0 98%;
+      max-width: 98%;
     }  
   }
 
