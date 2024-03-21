@@ -1547,7 +1547,6 @@ td {
 }
 #saveModal .modal-dialog,
 #emailModal .modal-dialog,
-#contactModal .modal-dialog,
 #exampleModal .modal-dialog,
 #verifyModal .modal-dialog, 
 #vpnModal .modal-dialog,
@@ -1558,7 +1557,6 @@ td {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
     #emailModal .modal-dialog,
-    #contactModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1569,7 +1567,6 @@ td {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
     #verifyModal .modal-dialog, 
-    #contactModal .modal-dialog,
     #emailModal .modal-dialog,
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1581,7 +1578,6 @@ td {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
     #emailModal .modal-dialog,
-    #contactModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1592,7 +1588,6 @@ td {
 @media screen and (max-width: 769px) {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
-    #contactModal .modal-dialog,
     #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
@@ -1605,7 +1600,6 @@ td {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
     #verifyModal .modal-dialog, 
-    #contactModal .modal-dialog,
     #emailModal .modal-dialog,
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1617,7 +1611,6 @@ td {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
     #verifyModal .modal-dialog, 
-    #contactModal .modal-dialog,
     #emailModal .modal-dialog,
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1629,7 +1622,6 @@ td {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
     #emailModal .modal-dialog,
-    #contactModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1642,7 +1634,6 @@ td {
     #exampleModal .modal-dialog,
     #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
-    #contactModal .modal-dialog,
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
         top: 19vh !important;
@@ -1655,7 +1646,6 @@ td {
     #emailModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
-    #contactModal .modal-dialog,
     #discountModal .modal-dialog {
         top: 19vh !important;
         max-width: 88vw !important;
@@ -1665,7 +1655,6 @@ td {
     #saveModal .modal-dialog,
     #exampleModal .modal-dialog,
     #emailModal .modal-dialog,
-    #contactModal .modal-dialog,
     #verifyModal .modal-dialog, 
     #vpnModal .modal-dialog,
     #discountModal .modal-dialog {
@@ -1682,7 +1671,6 @@ td {
 #verifyModal .modal-dialog,
 #discountModal .modal-dialog,
 #emailModal .modal-dialog,
-#contactModal .modal-dialog,
 #vpnModal .modal-dialog,
 #saveModal .modal-dialog,
 #exampleModal .modal-dialog {
@@ -1693,7 +1681,6 @@ td {
 #discountModal .modal-header,
 #vpnModal .modal-header,
 #emailModal .modal-header,
-#contactModal .modal-header,
 #saveModal .modal-header,
 #exampleModal .modal-header {
     margin: 2px;
@@ -1705,7 +1692,6 @@ td {
 #verifyModal .modal-header img,
 #discountModal .modal-header img,
 #emailModal .modal-header img,
-#contactModal .modal-header img,
 #vpnModal .modal-header img,
 #saveModal .modal-header img,
 #exampleModal .modal-header img {
@@ -1717,7 +1703,6 @@ td {
 #discountModal .modal-header h4.modal-title,
 #emailModal .modal-header h4.modal-title,
 #vpnModal .modal-header h4.modal-title,
-#contactModal .modal-header h4.modal-title,
 #saveModal .modal-header h4.modal-title,
 #exampleModal .modal-header h4.modal-title {
     font-weight: 600;
@@ -1727,7 +1712,6 @@ td {
 #discountModal .modal-header .close img,
 #vpnModal .modal-header .close img,
 #emailModal .modal-header .close img,
-#contactModal .modal-header .close img,
 #saveModal .modal-header .close img,
 #exampleModal .modal-header .close img {
     width: 30px;
@@ -1739,7 +1723,6 @@ td {
 #discountModal .modal-header .close img:hover,
 #emailModal .modal-header .close img:hover,
 #vpnModal .modal-header .close img:hover,
-#contactModal .modal-header .close img:hover,
 #saveModal .modal-header .close img:hover,
 #exampleModal .modal-header .close img:hover {
     opacity: 1 !important;
@@ -1749,7 +1732,6 @@ td {
 #discountModal .modal-footer,
 #emailModal .modal-footer,
 #vpnModal .modal-footer,
-#contactModal .modal-footer,
 #saveModal .modal-footer,
 #exampleModal .modal-footer {
     margin: 4px;
@@ -1760,7 +1742,6 @@ td {
 #verifyModal .modal-body,
 #discountModal .modal-body,
 #emailModal .modal-body,
-#contactModal .modal-body,
 #vpnModal .modal-body,
 #saveModal .modal-body,
 #exampleModal .modal-body {
@@ -1771,7 +1752,6 @@ td {
 
 #verifyModal .modal-backdrop div p,
 #discountModal .modal-backdrop div p,
-#contactModal .modal-backdrop div p,
 #emailModal .modal-backdrop div p,
 #saveModal .modal-body div p,
 #exampleModal .modal-body div p {

@@ -97,6 +97,7 @@ auth.onAuthStateChanged(user => {
 		}
 
 		showLink.setAttribute('data-bs-target', '#emailModal');
+		showLink.classList.add('green');
 
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
 		emailH4.innerHTML = theaddress.substring(0, 13);
@@ -138,6 +139,7 @@ auth.onAuthStateChanged(user => {
 		}
 
 		contactH4.innerHTML = 'Darkweb';
+		voiceDiv.innerHTML = 'Email / SMS';
 	}
 
 	showLink.addEventListener('click', () => {

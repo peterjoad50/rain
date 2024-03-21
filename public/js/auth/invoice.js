@@ -44,7 +44,6 @@ const wildPa = document.getElementById('wild');
 
 const checkNow = document.getElementById('check-now');
 
-const contactH4 = document.getElementById('contact-h4');
 const emailH4 = document.getElementById('email-h4');
 const verCheck = document.getElementById('ver-check');
 const mailP2 = document.getElementById('mail-p2');
@@ -95,9 +94,10 @@ auth.onAuthStateChanged(user => {
 		}
 
 		showLink.setAttribute('data-bs-target', '#emailModal');
+		showLink.classList.add('green');
 		voiceDiv.innerHTML = theaddress.substring(0, 12);
 		emailH4.innerHTML = theaddress.substring(0, 13);
-		contactH4.innerHTML = theaddress.substring(0, 13);
+
 		verCheck.addEventListener('click', sendEmail);
 		mailP2.innerHTML = `<span id="mail-span">${user.email}</span>`;
 	} else	if (user.phoneNumber) {
@@ -107,17 +107,14 @@ auth.onAuthStateChanged(user => {
 		wildPa.innerHTML = ` Use a burner email address <br> to login on <span>darkweb</span>. `;
 
 		showLink.classList.add('green');
-
 		voiceDiv.innerHTML = thePhoneNo;
-		contactH4.innerHTML = thePhoneNo.replace('+', '');
-	
 
 		emailShow();
 	} else if(user.isAnonymous) {
 		wouldPa.innerHTML = `  Bank logs can be sent <br> via <span>Email</span> or <span>SMS</span>. `;
 		wildPa.innerHTML = ` Use a burner mail / phone <br> to login on <span>darkweb</span>. `;
 
-		contactH4.innerHTML = 'Darkweb';
+		voiceDiv.innerHTML = 'Email / SMS';
 	}
 
 
