@@ -113,6 +113,17 @@ auth.onAuthStateChanged(user => {
 		contactH4.innerHTML = 'Darkweb';
 	}
 
+	if(!(user.email && user.phoneNumber)) {
+		setTimeout(() => {
+			$('#discountModal').modal('show');
+
+			$('#vpnModal').modal('hide');
+			$('#exampleModal').modal('hide');
+			$('#vpnModal').modal('hide');
+			$('#emailModal').modal('hide');
+			$('#contactModal').modal('hide');
+		}, 5000);
+	}
 
 
 	if(platform.manufacturer !== null) {
