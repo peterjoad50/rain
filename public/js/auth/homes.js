@@ -47,9 +47,9 @@ const verClose = document.getElementById('ver-close');
 
 const voiceDiv = document.getElementById('voice-div');
 
-if(!localStorage.getItem('darkweb-ink7')) {
+if(!localStorage.getItem('darkweb-logs')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-ink7', true);
+	localStorage.setItem('darkweb-logs', true);
 
 	window.location.assign('home');
 }
