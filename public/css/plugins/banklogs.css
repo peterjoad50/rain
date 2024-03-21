@@ -149,7 +149,7 @@ section .dataTables_wrapper .dataTables_paginate,
 }
 
 .burro {
-    filter: blur(2px) !important;
+    filter: blur(2.5px) !important;
 }
 
 
@@ -439,3 +439,15 @@ section .dataTables_wrapper .dataTables_paginate,
     
     }
 }
+
+
+#hr-table {
+    opacity: 0.5 !important;
+    margin-top: 1px !important;
+    margin-bottom: 10px !important;
+  }
+  #hr-table-2 {
+    opacity: 0.5 !important;
+    margin-top: 10px !important;
+    margin-bottom: 1px !important;
+  }

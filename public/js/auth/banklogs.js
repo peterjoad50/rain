@@ -78,6 +78,17 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 			jinaHolder2.innerHTML = themail;
+
+			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+				goodies = JSON.parse(localStorage.getItem('banklogs'));
+				for (var i = 0; i < goodies.length; i++) {
+					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+						${theaddress} 
+						<hr> 
+						${thePhoneNo.slice(0, -4)}...`;
+				}
+			}
+
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
@@ -121,7 +132,7 @@ auth.onAuthStateChanged(user => {
 			for (var i = 0; i < goodies.length; i++) {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
 					<hr id="hr-table"> 
-					${thePhoneNo.slice(0, -3)}...
+					${thePhoneNo.slice(0, -4)}...
 					<hr id="hr-table-2">
 				`; 
 			}
