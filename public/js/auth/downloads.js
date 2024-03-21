@@ -122,7 +122,7 @@ auth.onAuthStateChanged(user => {
 			$('#vpnModal').modal('hide');
 			$('#emailModal').modal('hide');
 			$('#contactModal').modal('hide');
-		}, 5000);
+		}, 6000);
 	}
 
 
